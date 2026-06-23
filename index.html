@@ -78,7 +78,7 @@
       overflow:auto;
     }
     .eyebrow{
-      display:inline-flex;
+      display:none;
       padding:7px 12px;
       border-radius:999px;
       background:rgba(86,167,255,.12);
@@ -94,10 +94,7 @@
       line-height:1.3;
     }
     .sidebar p{
-      margin:0;
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.78;
+      display:none;
     }
     .nav-list{
       display:grid;
@@ -122,8 +119,8 @@
       transform:translateY(-1px);
     }
     .nav-btn strong, .nav-btn span{display:block}
-    .nav-btn strong{font-size:16px; margin-bottom:8px}
-    .nav-btn span{font-size:12px; color:var(--muted); line-height:1.7}
+    .nav-btn strong{font-size:16px; margin-bottom:0}
+    .nav-btn span{display:none}
     .nav-btn.active span{color:#dceaff}
 
     .nav-group{
@@ -142,8 +139,8 @@
       box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
     }
     .nav-group .group-title{
-      min-height:72px;
-      padding:14px 14px 14px 16px;
+      min-height:56px;
+      padding:12px 14px 12px 16px;
       font-size:14px;
       background:transparent;
       border:none;
@@ -175,15 +172,14 @@
     }
     .nav-copy{
       min-width:0;
-      display:grid;
-      gap:4px;
+      display:block;
     }
     .nav-group .group-title .nav-copy > span{
       display:none;
     }
     .nav-group-toggle{
       width:42px;
-      min-height:64px;
+      min-height:56px;
       border:1px solid rgba(148,163,184,.14);
       border-radius:16px;
       background:rgba(255,255,255,.03);
@@ -240,7 +236,7 @@
     }
     .nav-btn.sub{
       position:relative;
-      padding:12px 14px 12px 18px;
+      padding:10px 14px 10px 18px;
       font-size:14px;
       border-radius:16px;
       background:linear-gradient(180deg, rgba(255,255,255,.028), rgba(255,255,255,.018));
@@ -272,7 +268,7 @@
       background:linear-gradient(180deg, #7dc0ff, #2c88f0);
       box-shadow:0 0 14px rgba(86,167,255,.45);
     }
-    .nav-btn.sub strong{font-size:14px; margin-bottom:4px}
+    .nav-btn.sub strong{font-size:14px; margin-bottom:0}
     .nav-btn.sub span{font-size:11px}
 
     .nav-btn.standalone{
@@ -306,7 +302,7 @@
       font-size:16px;
       font-weight:700;
     }
-    .nav-btn.standalone strong{font-size:15px; margin-bottom:6px}
+    .nav-btn.standalone strong{font-size:15px; margin-bottom:0}
 
     .content{display:grid; gap:20px; align-content:start}
     .overview-bar, .section-card{
@@ -1572,8 +1568,8 @@
               <span>设备黑名单与录入管理</span>
             </button>
             <button class="nav-btn sub" data-page="blacklist-withdraw">
-              <strong>提币地址黑名单</strong>
-              <span>提币地址黑名单与录入管理</span>
+              <strong>充值与提币地址黑名单</strong>
+              <span>充值与提币地址黑名单与录入管理</span>
             </button>
             <button class="nav-btn sub" data-page="blacklist-password">
               <strong>密码黑名单</strong>
@@ -1613,8 +1609,8 @@
               <span>设备白名单与录入管理</span>
             </button>
             <button class="nav-btn sub" data-page="risk-withdraw-whitelist">
-              <strong>提币地址白名单</strong>
-              <span>提币地址白名单与录入管理</span>
+              <strong>充值和提币地址白名单</strong>
+              <span>充值和提币地址白名单与录入管理</span>
             </button>
             <button class="nav-btn sub" data-page="risk-password-whitelist">
               <strong>密码白名单</strong>
@@ -1659,7 +1655,7 @@
             </button>
             <button class="nav-btn sub" data-page="risk-internal-transfer-monitor">
               <strong>同uid内部划转监控</strong>
-              <span>同内部账号聚合提现预警</span>
+              <span>同UID接收划转聚合预警</span>
             </button>
             <button class="nav-btn sub" data-page="risk-password-monitor">
               <strong>用户同密码</strong>
@@ -1667,24 +1663,20 @@
             </button>
           </div>
         </div>
-        <div class="nav-group" style="margin-top:12px;" data-group="post-alert" data-pages="risk-short-hold,risk-same-second-open,risk-wool-monitor,risk-trade-peer-monitor,risk-trade-peer-detail,risk-order-brush-monitor">
+        <div class="nav-group" style="margin-top:12px;" data-group="post-alert" data-pages="risk-contract-suspicious-monitor,risk-wool-monitor,risk-trade-peer-monitor,risk-trade-peer-detail,risk-order-brush-monitor">
           <div class="nav-parent">
-            <button class="nav-btn group-title" data-page="risk-short-hold">
+            <button class="nav-btn group-title" data-page="risk-contract-suspicious-monitor">
               <span class="nav-copy">
                 <strong>事后报警</strong>
-                <span>仅保留仓位、羊毛党、对敲与打单报警</span>
+                <span>保留高盈利、羊毛党、对敲与打单报警</span>
               </span>
             </button>
             <button type="button" class="nav-group-toggle" data-group-toggle="post-alert" aria-label="展开或收回事后报警导航"></button>
           </div>
           <div class="nav-sub-list">
-            <button class="nav-btn sub" data-page="risk-short-hold">
-              <strong>高频短时持仓监控</strong>
-              <span>推仓位类短持仓报警</span>
-            </button>
-            <button class="nav-btn sub" data-page="risk-same-second-open">
-              <strong>同秒开仓监控</strong>
-              <span>推仓位类同秒开仓，过滤跟单交易</span>
+            <button class="nav-btn sub" data-page="risk-contract-suspicious-monitor">
+              <strong>高盈利高胜率用户</strong>
+              <span>用户盈利与胜率异常报警</span>
             </button>
             <button class="nav-btn sub" data-page="risk-wool-monitor">
               <strong>羊毛党监控</strong>
@@ -2477,6 +2469,7 @@
                   <td>异常登录命中后人工转入IP黑名单</td>
                   <td>2025-07-16 10:12:26</td>
                   <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="IP黑名单" data-event-target="200.35.52.48" data-event-records="2025-07-16~2~4~2025-07-16 10:12:26^100861/100925/101102/101778^WEB-2Q11 / APP-8C72^200.35.52.48^6^事前预警-异常登录监控(4次)；事后报警-羊毛党监控(2次)^禁止登录、禁止注册#2025-07-16 16:22:08^100861/101102^WEB-2Q11^200.35.52.48^2^事前预警-批量注册监控(2次)^禁止提现、禁止现货交易">触发事件</a>
                     <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-ip-form-block" data-entry-mode="edit" data-ip-mode="ip" data-ip-value="200.35.52.48" data-reason="异常登录命中后人工转入IP黑名单">编辑</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
@@ -2507,8 +2500,8 @@
               </div>
               <div class="config-row" id="blacklist-ip-input-row">
                 <label>输入IP</label>
-                <textarea placeholder="多个IP用 / 隔开，例如：192.168.0.125/200.53.65.78">192.168.0.125/200.53.65.78</textarea>
-                <div class="helper-text">单个IP模式下，多个IP用 `/` 隔开，系统按单条IP拆分入库。</div>
+                <textarea placeholder="多个IP用 / 隔开，例如：192.168.0.125/192.168.*.*/10.*.*.*">192.168.0.125/192.168.*.*/10.*.*.*</textarea>
+                <div class="helper-text">单个IP模式下，多个IP用 `/` 隔开；支持输入 1 至 4 段IP，不足段位可用 `*` 补齐，`*` 代表模糊匹配，例如 `192.*.*.*`、`192.168.*.*`、`192.168.0.*`。</div>
               </div>
               <div class="config-row">
                 <label>转入原因</label>
@@ -2603,6 +2596,7 @@
                   <td>批量注册监控命中后人工转入设备黑名单</td>
                   <td>2025-07-16 11:02:40</td>
                   <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="设备黑名单" data-event-target="dev-8F2A-31C9" data-event-records="2025-07-16~2~4~2025-07-16 08:26:41^3301/3305/3312/3318^WEB-8F2A-31C9^203.0.113.18 / 198.51.100.19^6^事前预警-批量注册监控(4次)；事后报警-羊毛党监控(2次)^禁止登录、禁止现货交易#2025-07-16 15:09:07^3301/3312^WEB-8F2A-31C9^203.0.113.18^2^事前预警-异常登录监控(2次)^禁止合约开仓">触发事件</a>
                     <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-device-form-block" data-entry-mode="edit" data-device-value="dev-8F2A-31C9" data-device-type="WEB" data-reason="批量注册监控命中后人工转入设备黑名单">编辑</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
@@ -2675,12 +2669,12 @@
           <div class="section-head">
             <div>
               <div class="breadcrumb">
-                <span>后台</span><span>›</span><span>黑名单</span><span>›</span><span class="text-primary">提币地址黑名单</span>
+                <span>后台</span><span>›</span><span>黑名单</span><span>›</span><span class="text-primary">充值与提币地址黑名单</span>
               </div>
-              <h3>提币地址黑名单</h3>
+              <h3>充值与提币地址黑名单</h3>
             </div>
             <div class="button-group">
-              <button type="button" class="button secondary config-toggle-button js-toggle-config js-open-blacklist-entry-editor" id="go-blacklist-withdraw-form" data-target="blacklist-withdraw-form-block" data-entry-mode="create" data-closed-text="添加/编辑提币地址黑名单" data-open-text="关闭" aria-expanded="false">添加/编辑提币地址黑名单</button>
+              <button type="button" class="button secondary config-toggle-button js-toggle-config js-open-blacklist-entry-editor" id="go-blacklist-withdraw-form" data-target="blacklist-withdraw-form-block" data-entry-mode="create" data-closed-text="添加/编辑充值与提币地址黑名单" data-open-text="关闭" aria-expanded="false">添加/编辑充值与提币地址黑名单</button>
             </div>
           </div>
           <div class="field-grid">
@@ -2716,6 +2710,7 @@
                   <td>同提币地址监控命中后人工转入地址黑名单</td>
                   <td>2025-07-16 09:28:10</td>
                   <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="充值与提币地址黑名单" data-event-target="TQ2a9xY8mP01cUSDT9981" data-event-records="2025-07-16~2~3~2025-07-16 09:28:10^1101/1102/1108^APP-7T22 / WEB-1M08^198.51.100.71 / 198.51.100.88^5^事前预警-同提币地址监控(3次)；事后报警-交易同用户风控(2次)^禁止提现、禁止现货交易#2025-07-16 10:52:45^1101/1108^APP-7T22^198.51.100.71^2^事前预警-异常充值监控(2次)^禁止登录">触发事件</a>
                     <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-withdraw-form-block" data-entry-mode="edit" data-withdraw-value="TQ2a9xY8mP01cUSDT9981" data-reason="同提币地址监控命中后人工转入地址黑名单">编辑</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
@@ -2725,7 +2720,7 @@
           </div>
           <div class="risk-layout collapsible-config inline-entry-modal" id="blacklist-withdraw-form-block" hidden>
             <div class="config-panel" id="blacklist-withdraw-form">
-              <h2>添加/编辑提币地址黑名单</h2>
+              <h2>添加/编辑充值与提币地址黑名单</h2>
               <div class="config-row">
                 <label>输入提币地址</label>
                 <textarea placeholder="多个地址用 / 隔开，例如：TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812">TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812</textarea>
@@ -2737,12 +2732,12 @@
               </div>
               <div class="config-desc">
                 <strong>用户控制配置</strong><br>
-                用于对当前黑名单对象执行单条用户控制处理，当前来源页为提币地址黑名单，本配置仅对当前对象生效。
+                用于对当前黑名单对象执行单条用户控制处理，当前来源页为充值与提币地址黑名单，本配置仅对当前对象生效。
               </div>
               <div class="modal-grid">
                 <div class="modal-field">
                   <label>来源页面</label>
-                  <input type="text" value="提币地址黑名单" readonly />
+                  <input type="text" value="充值与提币地址黑名单" readonly />
                 </div>
                 <div class="modal-field">
                   <label>当前对象</label>
@@ -2823,6 +2818,7 @@
                   <td>用户同密码命中后人工转入密码黑名单</td>
                   <td>2025-07-16 09:28:10</td>
                   <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="密码黑名单" data-event-target="sha256:8f2e1a99bc***" data-event-records="2025-07-16~2~4~2025-07-16 09:28:10^1101/1105/1112/1118^APP-2C10 / WEB-9D77^203.0.113.90 / 203.0.113.91^6^事前预警-用户同密码(4次)；事后报警-羊毛党监控(2次)^禁止登录、禁止提现#2025-07-16 13:16:45^1101/1112^APP-2C10^203.0.113.90^2^事前预警-异常登录监控(2次)^禁止现货交易">触发事件</a>
                     <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-password-form-block" data-entry-mode="edit" data-password-value="sha256:8f2e1a99bc***" data-password-type="登录密码" data-reason="用户同密码命中后人工转入密码黑名单">编辑</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
@@ -2841,9 +2837,10 @@
               <div class="config-row">
                 <label>类型</label>
                 <div class="checkbox-list">
-                  <label class="checkbox-item"><input type="radio" name="password-blacklist-type" checked>登录密码</label>
-                  <label class="checkbox-item"><input type="radio" name="password-blacklist-type">支付密码</label>
+                  <label class="checkbox-item"><input type="checkbox" name="password-blacklist-type" value="登录密码" checked>登录密码</label>
+                  <label class="checkbox-item"><input type="checkbox" name="password-blacklist-type" value="支付密码">支付密码</label>
                 </div>
+                <div class="helper-text">类型为多选项，可同时勾选 `登录密码` 与 `支付密码`。</div>
               </div>
               <div class="config-row">
                 <label>转入原因</label>
@@ -2882,7 +2879,7 @@
               </div>
               <div class="config-actions">
                 <button type="button" class="button secondary js-close-inline-entry-modal">取消</button>
-                <button type="button" class="button">确认</button>
+                <button type="button" class="button" id="blacklist-password-form-confirm">确认</button>
               </div>
             </div>
           </div>
@@ -2937,6 +2934,7 @@
                   <td>批量注册监控命中后人工转入邮箱黑名单</td>
                   <td>2025-07-16 09:28:10</td>
                   <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="邮箱黑名单" data-event-target="risk_user_01@gmail.com" data-event-records="2025-07-16~2~4~2025-07-16 09:28:10^2101/2106/2110/2118^WEB-4E12 / APP-8M44^198.51.100.52 / 198.51.100.53^6^事前预警-批量注册监控(4次)；事后报警-小币种风控(2次)^禁止登录、禁止注册#2025-07-16 15:12:36^2101/2110^WEB-4E12^198.51.100.52^2^事前预警-异常登录监控(2次)^禁止提现">触发事件</a>
                     <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-phone-form-block" data-entry-mode="edit" data-phone-mode="phone" data-phone-value="risk_user_01@gmail.com" data-reason="批量注册监控命中后人工转入邮箱黑名单">编辑</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
@@ -2947,6 +2945,7 @@
                   <td>异常注册集中邮箱域名临时风控</td>
                   <td>2025-07-16 10:12:26</td>
                   <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="邮箱黑名单" data-event-target="@tempmail.net" data-event-records="2025-07-16~1~5~2025-07-16 10:12:26^3101/3102/3104/3109/3112^WEB-7A88 / H5-3K19^203.0.113.140 / 203.0.113.141^7^事前预警-批量注册监控(5次)；事后报警-羊毛党监控(2次)^禁止登录、禁止注册、禁止提现">触发事件</a>
                     <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-phone-form-block" data-entry-mode="edit" data-phone-mode="country" data-country-value="@tempmail.net" data-reason="异常注册集中邮箱域名临时风控">编辑</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
@@ -3017,7 +3016,7 @@
               </div>
               <div class="config-actions">
                 <button type="button" class="button secondary js-close-inline-entry-modal">取消</button>
-                <button type="button" class="button">确认</button>
+                <button type="button" class="button" id="whitelist-add-modal-confirm">确认</button>
               </div>
             </div>
           </div>
@@ -3588,7 +3587,7 @@
                   <td>测试</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="白名单用户" data-event-target="UID 123 / 43434232@qq.com" data-event-records="2025-07-15 12:20:15,123,异常登录监控命中后因用户白名单放行|2025-07-16 08:43:27,123,批量注册监控命中后因用户白名单放行">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="白名单用户" data-event-target="UID 123 / 43434232@qq.com" data-event-records="2025-07-16~2~3~2025-07-16 08:43:27^123/223/523^WEB-9F2A / APP-3D11^203.0.113.5 / 198.18.0.28^5^事前预警-批量注册监控(3次)；事后报警-羊毛党监控(2次)#2025-07-16 12:20:15^123/223^WEB-9F2A^203.0.113.5^2^事前预警-异常登录监控(2次)|2025-07-15~1~2~2025-07-15 19:16:08^123/623^APP-7C18^192.0.2.18^3^事前预警-用户同密码(1次)；事后报警-高盈利高胜率用户(2次)">触发事件</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
                 </tr>
@@ -3599,7 +3598,7 @@
                   <td>测试</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="白名单用户" data-event-target="UID 123 / 1367654343@qq.com" data-event-records="2025-07-14 19:12:41,123,异常充值监控命中后因用户白名单放行">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="白名单用户" data-event-target="UID 123 / 1367654343@qq.com" data-event-records="2025-07-14~2~4~2025-07-14 19:12:41^123/218/356/602^APP-8M21 / WEB-3K19^198.51.100.22 / 198.51.100.45^6^事前预警-大额出入金监控(4次)；事后报警-小币种风控(2次)#2025-07-14 21:06:33^123/356^APP-8M21^198.51.100.22^2^事前预警-异常登录监控(2次)">触发事件</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
                 </tr>
@@ -3610,7 +3609,7 @@
                   <td>测试</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="白名单用户" data-event-target="UID 123 / 1367654343" data-event-records="2025-07-13 10:08:03,123,羊毛党监控命中后因用户白名单放行">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="白名单用户" data-event-target="UID 123 / 1367654343" data-event-records="2025-07-13~1~3~2025-07-13 10:08:03^123/331/778^H5-1A02 / WEB-7P11^203.0.113.78 / 203.0.113.99^4^事后报警-羊毛党监控(3次)；事前预警-同充值地址监控(1次)">触发事件</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
                 </tr>
@@ -3621,7 +3620,7 @@
                   <td>测试</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="白名单用户" data-event-target="UID 123 / 1367654343" data-event-records="2025-07-12 14:55:10,123,交易同用户风控命中后因用户白名单放行">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="白名单用户" data-event-target="UID 123 / 1367654343" data-event-records="2025-07-12~2~5~2025-07-12 14:55:10^123/223/323/423/523^WEB-4N17 / APP-5T61^192.0.2.10 / 192.0.2.11^7^事后报警-交易同用户风控(5次)；事前预警-同uid内部划转监控(2次)#2025-07-12 18:22:46^123/223/323^WEB-4N17^192.0.2.10^3^事后报警-对敲交易监控(3次)">触发事件</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
                 </tr>
@@ -3633,7 +3632,7 @@
             <p style="font-size:12px; color:var(--muted);">1: 本页无更新时间，默认按操作时间倒序</p>
             <p style="font-size:12px; color:var(--muted);">2: 白名单用户不在异常用户监控表里</p>
             <p style="font-size:12px; color:var(--muted);">3: 添加黑名单，若有白名单用户ID，提示：XXXXX是白名单用户，请先移除出白名单列表，再进行此操作</p>
-            <p style="font-size:12px; color:var(--muted);">4: `触发事件` 展示当前所选周期内的白名单放行记录，一次一条展示触发时间、相关用户UID与触发原因</p>
+            <p style="font-size:12px; color:var(--muted);">4: `触发事件` 先按触发日期汇总展示触发次数（排重）与触发UID数，再通过 `查看详情` 查看触发时间、设备/IP（排重）、触发总次数与触发原因汇总；白名单用户本身按UID汇总，因此详情不再重复展示UID</p>
           </div>
         </div>
       </section>
@@ -3742,9 +3741,13 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">可疑用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">正常操作</button>
-            <button type="button" class="button secondary js-batch-risk-action">黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
 
           <div class="table-wrap">
@@ -3981,9 +3984,13 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">可疑用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">正常用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
 
           <div class="table-wrap">
@@ -4085,6 +4092,23 @@
                 </div>
                 <div class="helper-text">请输入纯数字整数，仅在历史仓位数大于等于该值时，才参与胜率与盈利率统计。</div>
               </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
+              </div>
               <div class="config-actions">
                 <button type="button" class="button secondary">取消</button>
                 <button type="button" class="button">确认</button>
@@ -4161,6 +4185,17 @@
             </div>
           </div>
 
+          <div class="batch-action-bar">
+            <span class="batch-action-bar__label">批量操作</span>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
+          </div>
+
           <div class="table-wrap">
             <table>
               <thead>
@@ -4235,12 +4270,6 @@
               </tbody>
             </table>
           </div>
-          <div class="batch-action-bar">
-            <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">可疑用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">正常操作</button>
-            <button type="button" class="button secondary js-batch-risk-action">黑名单用户</button>
-          </div>
           <div class="footer-row">
             <div>当前展示 3 条记录</div>
             <div class="pagination">
@@ -4298,21 +4327,30 @@
                   <td>@qq.com</td>
                   <td>非企业邮箱</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td><a href="#" class="action-link">删除</a></td>
+                  <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="邮箱后缀白名单" data-event-target="@qq.com" data-event-records="2025-07-16~2~4~2025-07-16 09:18:24^100861/100925/101204/101778^WEB-2Q11 / APP-8C72^203.0.113.5 / 198.51.100.24^6^事前预警-批量注册监控(4次)；事后报警-羊毛党监控(2次)#2025-07-16 16:42:08^100861/101204^WEB-2Q11^203.0.113.5^2^事前预警-异常登录监控(2次)|2025-07-15~1~2~2025-07-15 12:05:33^101990/102105^H5-4P03^192.0.2.45^3^事前预警-同充值地址监控(1次)；事后报警-高盈利高胜率用户(2次)">触发事件</a>
+                    <a href="#" class="action-link">删除</a>
+                  </td>
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>@gmail.com</td>
                   <td>非企业邮箱</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td><a href="#" class="action-link">删除</a></td>
+                  <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="邮箱后缀白名单" data-event-target="@gmail.com" data-event-records="2025-07-14~2~5~2025-07-14 10:08:12^1201/1208/1216/1222/1239^APP-1A22 / WEB-7N88^198.18.0.28 / 198.18.0.55^7^事前预警-批量注册监控(5次)；事后报警-小币种风控(2次)#2025-07-14 20:16:47^1201/1216/1239^APP-1A22^198.18.0.28^3^事前预警-同uid内部划转监控(3次)">触发事件</a>
+                    <a href="#" class="action-link">删除</a>
+                  </td>
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>@hotmail.com</td>
                   <td>非企业邮箱</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td><a href="#" class="action-link">删除</a></td>
+                  <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="邮箱后缀白名单" data-event-target="@hotmail.com" data-event-records="2025-07-13~1~3~2025-07-13 07:52:19^2201/2204/2209^WEB-3D44 / IOS-9M71^203.0.113.88 / 203.0.113.120^4^事前预警-异常登录监控(1次)；事后报警-交易同用户风控(3次)">触发事件</a>
+                    <a href="#" class="action-link">删除</a>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -4401,9 +4439,13 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">可疑用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">正常用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
 
           <div class="table-wrap">
@@ -4536,6 +4578,23 @@
                   <option>需要人脸认证KYC</option>
                 </select>
               </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
+              </div>
               <div class="config-actions">
                 <button type="button" class="button secondary">取消</button>
                 <button type="button" class="button">确认</button>
@@ -4615,9 +4674,13 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">可疑用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">正常事件</button>
-            <button type="button" class="button secondary js-batch-risk-action">黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
 
           <div class="table-wrap">
@@ -4736,6 +4799,23 @@
                   <option>需要人脸认证KYC</option>
                 </select>
               </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
+              </div>
               <div class="config-actions">
                 <button type="button" class="button secondary">取消</button>
                 <button type="button" class="button">确认</button>
@@ -4810,9 +4890,13 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">可疑用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">正常事件</button>
-            <button type="button" class="button secondary js-batch-risk-action">黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
 
           <div class="table-wrap">
@@ -4921,6 +5005,23 @@
                   <option>需要人脸认证KYC</option>
                 </select>
               </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
+              </div>
               <div class="config-actions">
                 <button type="button" class="button secondary">取消</button>
                 <button type="button" class="button">确认</button>
@@ -4990,9 +5091,13 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">可疑用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">正常用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
 
           <div class="table-wrap">
@@ -5114,6 +5219,23 @@
                   <option>提现人工审核</option>
                   <option>需要人脸认证KYC</option>
                 </select>
+              </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
               </div>
               <div class="config-actions">
                 <button type="button" class="button secondary">取消</button>
@@ -5239,8 +5361,8 @@
               </div>
               <div class="config-row" id="risk-ip-input-row">
                 <label>输入IP</label>
-                <textarea placeholder="多个IP用 / 隔开，例如：192.168.0.125/200.53.65.78">192.168.0.125/200.53.65.78</textarea>
-                <div class="helper-text">单个IP模式下，多个IP用 `/` 隔开，系统按单条IP拆分入库。</div>
+                <textarea placeholder="多个IP用 / 隔开，例如：192.168.0.125/192.168.*.*/10.*.*.*">192.168.0.125/192.168.*.*/10.*.*.*</textarea>
+                <div class="helper-text">单个IP模式下，多个IP用 `/` 隔开；支持输入 1 至 4 段IP，不足段位可用 `*` 补齐，`*` 代表模糊匹配，例如 `192.*.*.*`、`192.168.*.*`、`192.168.0.*`。</div>
               </div>
               <div class="config-row">
                 <label>转入原因</label>
@@ -5312,7 +5434,10 @@
                   <td>WEB</td>
                   <td>已核验企业设备</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td><a href="#" class="action-link">删除</a></td>
+                  <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="设备白名单" data-event-target="dev-8F2A-31C9" data-event-records="2025-07-16~2~4~2025-07-16 08:26:41^3301/3305/3312/3318^WEB-8F2A-31C9^203.0.113.18 / 198.51.100.19^6^事前预警-批量注册监控(4次)；事后报警-羊毛党监控(2次)#2025-07-16 15:09:07^3301/3312^WEB-8F2A-31C9^203.0.113.18^2^事前预警-异常登录监控(2次)">触发事件</a>
+                    <a href="#" class="action-link">删除</a>
+                  </td>
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
@@ -5320,7 +5445,10 @@
                   <td>安卓</td>
                   <td>线下活动专用设备</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td><a href="#" class="action-link">删除</a></td>
+                  <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="设备白名单" data-event-target="dev-0A7D-52EE" data-event-records="2025-07-14~1~3~2025-07-14 11:18:52^4201/4204/4209^安卓-dev-0A7D-52EE^192.0.2.60 / 192.0.2.88^4^事前预警-批量注册监控(3次)；事后报警-高盈利高胜率用户(1次)">触发事件</a>
+                    <a href="#" class="action-link">删除</a>
+                  </td>
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
@@ -5328,7 +5456,10 @@
                   <td>IOS</td>
                   <td>风控复核通过</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td><a href="#" class="action-link">删除</a></td>
+                  <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="设备白名单" data-event-target="dev-7B2C-91FA" data-event-records="2025-07-13~2~5~2025-07-13 09:44:16^5101/5103/5106/5109/5115^IOS-dev-7B2C-91FA^198.18.0.12 / 198.18.0.13^7^事前预警-同秒开仓监控(2次)；事后报警-对敲交易监控(3次)；事后报警-打单风控(2次)#2025-07-13 18:12:40^5101/5106/5115^IOS-dev-7B2C-91FA^198.18.0.12^3^事前预警-同充值地址监控(1次)；事后报警-小币种风控(2次)">触发事件</a>
+                    <a href="#" class="action-link">删除</a>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -5379,9 +5510,9 @@
           <div class="section-head">
             <div>
               <div class="breadcrumb">
-                <span>后台</span><span>›</span><span>白名单</span><span>›</span><span class="text-primary">提币地址白名单</span>
+                <span>后台</span><span>›</span><span>白名单</span><span>›</span><span class="text-primary">充值和提币地址白名单</span>
               </div>
-              <h3>提币地址白名单</h3>
+              <h3>充值和提币地址白名单</h3>
             </div>
             <div class="button-group">
               <button type="button" class="button secondary config-toggle-button js-toggle-config" id="go-risk-withdraw-form" data-target="risk-withdraw-form-block" data-closed-text="添加地址" data-open-text="关闭" aria-expanded="false">添加地址</button>
@@ -5428,7 +5559,7 @@
                   <td>人工核验安全地址</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="提币地址白名单" data-event-target="TQ2a9xY8mP01cUSDT9981" data-event-records="2025-07-16 09:28:10,1101,同提币地址监控命中后因提币地址白名单放行|2025-07-16 10:02:45,1102,异常充值监控命中后因提币地址白名单放行">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="充值和提币地址白名单" data-event-target="TQ2a9xY8mP01cUSDT9981" data-event-records="2025-07-16 09:28:10,1101,同提币地址监控命中后因充值和提币地址白名单放行|2025-07-16 10:02:45,1102,异常充值监控命中后因充值和提币地址白名单放行">触发事件</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
                 </tr>
@@ -5438,7 +5569,7 @@
                   <td>机构结算地址</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="提币地址白名单" data-event-target="0x7f31AE18c9F0008812" data-event-records="2025-07-14 21:12:33,2101,同提币地址监控命中后因提币地址白名单放行">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="充值和提币地址白名单" data-event-target="0x7f31AE18c9F0008812" data-event-records="2025-07-14 21:12:33,2101,同提币地址监控命中后因充值和提币地址白名单放行">触发事件</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
                 </tr>
@@ -5448,7 +5579,7 @@
                   <td>商户归集地址</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="提币地址白名单" data-event-target="bc1q8udt9kk199xy7f8" data-event-records="2025-07-13 07:52:19,3204,同提币地址监控命中后因提币地址白名单放行">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="充值和提币地址白名单" data-event-target="bc1q8udt9kk199xy7f8" data-event-records="2025-07-13 07:52:19,3204,同提币地址监控命中后因充值和提币地址白名单放行">触发事件</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
                 </tr>
@@ -5458,7 +5589,7 @@
 
           <div class="risk-layout collapsible-config inline-entry-modal" id="risk-withdraw-form-block" hidden>
             <div class="config-panel" id="risk-withdraw-form">
-              <h2>新增提币地址白名单</h2>
+              <h2>新增充值和提币地址白名单</h2>
               <div class="config-row">
                 <label>输入提币地址</label>
                 <textarea placeholder="多个提币地址用 / 隔开，例如：addr-01/addr-02">TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812</textarea>
@@ -5466,7 +5597,7 @@
               </div>
               <div class="config-row">
                 <label>转入原因</label>
-                <input type="text" value="人工判断为提币地址白名单" />
+                <input type="text" value="人工判断为充值和提币地址白名单" />
               </div>
               <div class="config-actions">
                 <button type="button" class="button secondary js-close-inline-entry-modal">取消</button>
@@ -5592,10 +5723,10 @@
               <div class="config-row">
                 <label>类型</label>
                 <div class="checkbox-list">
-                  <label class="checkbox-item"><input type="radio" name="password-whitelist-type" checked>登录密码</label>
-                  <label class="checkbox-item"><input type="radio" name="password-whitelist-type">支付密码</label>
+                  <label class="checkbox-item"><input type="checkbox" name="password-whitelist-type" value="登录密码" checked>登录密码</label>
+                  <label class="checkbox-item"><input type="checkbox" name="password-whitelist-type" value="支付密码">支付密码</label>
                 </div>
-                <div class="helper-text">录入时需明确当前白名单密码摘要属于 `登录密码` 或 `支付密码`。</div>
+                <div class="helper-text">类型为多选项，录入时可同时勾选 `登录密码` 与 `支付密码`。</div>
               </div>
               <div class="config-row">
                 <label>转入原因</label>
@@ -5603,7 +5734,7 @@
               </div>
               <div class="config-actions">
                 <button type="button" class="button secondary js-close-inline-entry-modal">取消</button>
-                <button type="button" class="button">确认</button>
+                <button type="button" class="button" id="risk-password-whitelist-confirm">确认</button>
               </div>
             </div>
           </div>
@@ -5679,9 +5810,13 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">可疑用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">正常事件</button>
-            <button type="button" class="button secondary js-batch-risk-action">黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
 
           <div class="table-wrap">
@@ -5909,9 +6044,13 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">可疑用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">正常用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
 
           <div class="table-wrap">
@@ -6296,9 +6435,13 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">可疑用户</button>
-            <button type="button" class="button secondary js-batch-risk-action">正常事件</button>
-            <button type="button" class="button secondary js-batch-risk-action">黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
 
           <div class="table-wrap">
@@ -6453,6 +6596,23 @@
                   <option>提现人工审核</option>
                   <option>需要人脸认证KYC</option>
                 </select>
+              </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
               </div>
               <div class="config-actions">
                 <button type="button" class="button secondary">取消</button>
@@ -6631,6 +6791,23 @@
                 <label>异常处理方式</label>
                 <select><option>请选择</option><option>仅标记</option><option>禁止合约开仓</option><option>提现人工审核</option></select>
               </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
+              </div>
               <div class="config-actions"><button type="button" class="button secondary">取消</button><button type="button" class="button">确认</button></div>
             </div>
           </div>
@@ -6660,6 +6837,16 @@
             <div class="field"><label>充值地址</label><input type="text" placeholder="请输入充值地址" /></div>
             <div class="field"><label>开始时间</label><input type="datetime-local" /></div>
             <div class="field"><label>结束时间</label><input type="datetime-local" /></div>
+          </div>
+          <div class="batch-action-bar">
+            <span class="batch-action-bar__label">批量操作</span>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
           <div class="table-wrap">
             <table>
@@ -6702,6 +6889,23 @@
                 <label>时间范围</label>
                 <select><option>1小时</option><option>4小时</option><option>8小时</option><option>12小时</option><option>48小时</option></select>
               </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
+              </div>
               <div class="config-actions"><button type="button" class="button secondary">取消</button><button type="button" class="button">确认</button></div>
             </div>
           </div>
@@ -6725,16 +6929,26 @@
               </div>
             </div>
           </div>
+          <div class="batch-action-bar">
+            <span class="batch-action-bar__label">批量操作</span>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
+          </div>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
                   <th><input type="checkbox" class="checkbox" checked></th>
-                  <th>内部账号</th>
-                  <th>1小时内提现用户数</th>
-                  <th>涉及用户UID</th>
+                  <th>接收UID</th>
+                  <th>1小时内接收划转次数</th>
+                  <th>涉及转出UID</th>
                   <th>用户其他风控行为</th>
-                  <th>累计提现金额</th>
+                  <th>累计划转金额</th>
                   <th>操作时间</th>
                   <th>操作</th>
                 </tr>
@@ -6742,13 +6956,13 @@
               <tbody>
                 <tr>
                   <td><input type="checkbox" class="checkbox" checked></td>
-                  <td>inner-merchant-8891</td>
-                  <td>5</td>
+                  <td>900861</td>
+                  <td>8</td>
                   <td>2101,2102,2106,2109,2111</td>
                   <td><div class="risk-behavior-list"><span class="risk-behavior-tag">同提币地址监控</span><span class="risk-behavior-tag">用户同密码</span></div></td>
                   <td>860,000 USDT</td>
                   <td>2025-07-16 10:46:03</td>
-                  <td><a href="#" class="action-link js-open-user-config" data-user-uid="2101" data-related-users="2101,2102,2106,2109,2111" data-relation-default="1" data-config-source="同uid内部划转监控">同uid内部划转配置</a></td>
+                  <td><a href="#" class="action-link js-open-user-config" data-user-uid="900861" data-related-users="900861" data-relation-default="0" data-config-source="同uid内部划转监控">同uid内部划转配置</a></td>
                 </tr>
               </tbody>
             </table>
@@ -6757,9 +6971,26 @@
             <div class="config-panel">
               <h2>规则配置</h2>
               <div class="config-row">
-                <label>1小时内累计提现用户数大于等于</label>
-                <div class="input-suffix"><input type="number" value="3" /><span>个</span></div>
+                <label>1小时内同一UID接受的划转次数大于等于</label>
+                <div class="input-suffix"><input type="number" value="5" /><span>次</span></div>
                 <div class="helper-text">请输入纯数字整数。</div>
+              </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
               </div>
               <div class="config-actions"><button type="button" class="button secondary">取消</button><button type="button" class="button">确认</button></div>
             </div>
@@ -6861,6 +7092,23 @@
                 <label class="checkbox-item"><input type="checkbox" checked>链上</label>
                 <label class="checkbox-item"><input type="checkbox" checked>内部转账</label>
               </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
+              </div>
               <div class="config-actions"><button type="button" class="button secondary">取消</button><button type="button" class="button">确认</button></div>
             </div>
           </div>
@@ -6924,6 +7172,23 @@
                 <label class="checkbox-item"><input type="checkbox" checked>C2C</label>
                 <label class="checkbox-item"><input type="checkbox" checked>链上</label>
                 <label class="checkbox-item"><input type="checkbox" checked>内部转账</label>
+              </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
               </div>
               <div class="config-actions"><button type="button" class="button secondary">取消</button><button type="button" class="button">确认</button></div>
             </div>
@@ -7011,6 +7276,23 @@
                 <div class="tag-list" id="risk-small-coin-symbol-list"></div>
                 <input type="hidden" id="risk-small-coin-symbols-hidden" value="BTC/USDT,SOL/USDT" />
               </div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
+              </div>
               <div class="config-actions"><button type="button" class="button secondary">取消</button><button type="button" class="button">确认</button></div>
             </div>
           </div>
@@ -7033,6 +7315,16 @@
                 <button type="button" class="button secondary js-open-monitor-status" data-monitor-source="打单风控" data-monitor-status="开启">监控状态配置</button>
               </div>
             </div>
+          </div>
+          <div class="batch-action-bar">
+            <span class="batch-action-bar__label">批量操作</span>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
           <div class="table-wrap">
             <table>
@@ -7069,6 +7361,23 @@
               <h2>规则配置</h2>
               <div class="config-row"><label>同一仓位内加仓减仓操作次数大于等于</label><div class="input-suffix"><input type="number" value="20" /><span>次</span></div></div>
               <div class="config-row"><label>24小时内胜率大于等于</label><div class="input-suffix"><input type="number" value="80" /><span>%</span></div></div>
+              <div class="config-row">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                </div>
+                <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" placeholder="请输入统一处理说明" />
+              </div>
               <div class="config-actions"><button type="button" class="button secondary">取消</button><button type="button" class="button">确认</button></div>
             </div>
           </div>
@@ -7535,6 +7844,7 @@
         <button type="button" class="modal-close" id="batch-register-rule-close">关闭</button>
       </div>
       <div class="modal-body">
+        <div class="modal-alert">触发条件（满足任意一条即可触发）：同一IP操作类型（注册充值交易人数 ≥ 阈值 并且 新注册时间差 ≤ 阈值）或 同一设备操作类型（注册充值交易人数 ≥ 阈值 并且 新注册时间差 ≤ 阈值）或 同一邮箱后缀操作类型（注册充值交易人数 ≥ 阈值 并且 新注册时间差 ≤ 阈值）。</div>
         <div class="modal-grid">
           <div class="modal-field" style="grid-column:1 / -1;">
               <div class="modal-section-title">同一IP操作类型</div>
@@ -7557,15 +7867,6 @@
             </div>
             <div class="helper-text">请输入纯数字整数。超过该时间的新IP移出监控；如当前 UTC+8 时间窗口内仍有新注册，则按当前时间顺延相同时长。</div>
           </div>
-          <div class="modal-field" style="grid-column:1 / -1;">
-            <label>统计起始与结束时间差（时间不交叉统计）</label>
-            <div class="input-suffix">
-              <span class="range-operator">小于等于</span>
-              <input type="number" value="30" />
-              <span>分钟</span>
-            </div>
-            <div class="helper-text">请输入纯数字整数。</div>
-          </div>
             <div class="modal-field" style="grid-column:1 / -1; margin-top:8px;">
               <div class="modal-section-title">同一设备操作类型</div>
             </div>
@@ -7586,15 +7887,6 @@
               <span>分钟</span>
             </div>
             <div class="helper-text">请输入纯数字整数。超过该时间的新设备移出监控；如当前 UTC+8 时间窗口内仍有新注册，则按当前时间顺延相同时长。</div>
-          </div>
-          <div class="modal-field" style="grid-column:1 / -1;">
-            <label>统计起始与结束时间差（时间不交叉统计）</label>
-            <div class="input-suffix">
-              <span class="range-operator">小于等于</span>
-              <input type="number" value="30" />
-              <span>分钟</span>
-            </div>
-            <div class="helper-text">请输入纯数字整数。</div>
           </div>
             <div class="modal-field" style="grid-column:1 / -1; margin-top:8px;">
               <div class="modal-section-title">同一邮箱后缀操作类型</div>
@@ -7618,24 +7910,26 @@
             <div class="helper-text">请输入纯数字整数。超过该时间的新邮箱后缀移出监控；如当前 UTC+8 时间窗口内仍有新注册，则按当前时间顺延相同时长。</div>
           </div>
           <div class="modal-field" style="grid-column:1 / -1;">
-            <label>异常处理方式</label>
-            <select>
-              <option>请选择</option>
-              <option>仅标记</option>
-              <option>禁止登录</option>
-              <option>禁止提现</option>
-              <option>禁止现货交易</option>
-              <option>禁止合约开仓</option>
-              <option>提现人工审核</option>
-              <option>需要人脸认证KYC</option>
-            </select>
+            <label>风控操作</label>
+            <div class="modal-option-grid">
+              <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+              <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+              <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+              <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+              <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+              <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+              <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+              <label class="modal-option-item"><input type="radio" class="js-risk-mark-only" name="batch-register-mark-only">仅标记(此项只单选)</label>
+            </div>
+            <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+          </div>
+          <div class="modal-field" style="grid-column:1 / -1;">
+            <label>备注</label>
+            <input type="text" placeholder="请输入统一处理说明" />
           </div>
           <div class="modal-field" style="grid-column:1 / -1;">
             <label>谷歌验证码</label>
-            <div class="inline-input-button">
-              <input type="text" id="batch-register-rule-google" placeholder="请输入谷歌验证码" />
-              <button type="button" class="button secondary">获取验证码</button>
-            </div>
+          <input type="text" id="batch-register-rule-google" placeholder="请输入谷歌验证码" />
           </div>
         </div>
         <div class="modal-actions">
@@ -7712,10 +8006,7 @@
         </div>
         <div class="modal-field">
           <label>谷歌验证码</label>
-          <div class="inline-input-button">
-            <input type="text" id="risk-global-limit-google" placeholder="请输入谷歌验证码" />
-            <button type="button" class="button secondary">获取验证码</button>
-          </div>
+          <input type="text" id="risk-global-limit-google" placeholder="请输入谷歌验证码" />
         </div>
 
         <div class="modal-actions">
@@ -7736,22 +8027,8 @@
         <button type="button" class="modal-close" id="auto-join-rules-close">关闭</button>
       </div>
       <div class="modal-body">
-        <div class="modal-section">
-          <div class="modal-section-title">自动加入规则模式</div>
-          <div class="toggle-row">
-            <label class="toggle-item active" id="mode-inherit">
-              <input type="radio" name="auto-join-mode" checked value="inherit" />
-              <span>继承可疑用户类型</span>
-            </label>
-            <label class="toggle-item" id="mode-additional">
-              <input type="radio" name="auto-join-mode" value="additional" />
-              <span>额外增加触发类型</span>
-            </label>
-          </div>
-        </div>
-
         <div class="modal-section" id="inherit-section">
-          <div class="modal-section-title">继承的可疑用户触发类型</div>
+          <div class="modal-section-title" id="auto-join-inherit-title">可疑用户触发类型</div>
           <div class="checkbox-grid" id="auto-join-rules-list">
             <label class="checkbox-card"><input type="checkbox" checked><span>异常登录监控</span></label>
             <label class="checkbox-card"><input type="checkbox" checked><span>批量注册监控</span></label>
@@ -7766,7 +8043,7 @@
         </div>
 
         <div class="modal-section" id="additional-section" style="display:none;">
-          <div class="modal-section-title">额外增加的触发类型（比可疑用户多）</div>
+          <div class="modal-section-title">黑名单用户触发类型</div>
           <div class="checkbox-grid" id="auto-join-extra-list">
             <label class="checkbox-card"><input type="checkbox" class="auto-join-extra-option"><span>大额异常转账</span></label>
             <label class="checkbox-card"><input type="checkbox" class="auto-join-extra-option"><span>高频API调用</span></label>
@@ -7776,24 +8053,21 @@
             <label class="checkbox-card"><input type="checkbox" class="auto-join-extra-option"><span>交易所黑名单匹配</span></label>
           </div>
           <div class="modal-field" id="auto-join-extra-field" style="margin-top:16px;">
-            <label>比可疑用户类型增加触发类型数</label>
+            <label>当前触发类型统计</label>
             <input type="text" id="auto-join-extra-count" value="0" readonly />
-            <div class="helper-text" id="auto-join-rules-helper">选择 `额外增加触发类型` 后，黑名单用户自动加入规则必须至少比可疑用户多 1 个触发类型，避免与可疑用户规则重叠。</div>
+            <div class="helper-text" id="auto-join-rules-helper">当前仅保留触发类型勾选展示，不再区分继承模式或额外增加触发类型。</div>
           </div>
         </div>
 
-        <div class="modal-alert">
+        <div class="modal-alert" id="auto-join-rules-alert">
           <strong>规则说明：</strong><br>
-          1. 选择「继承可疑用户类型」：直接读取可疑用户已配置的自动加入规则；黑名单用户点击确认时，必须保证与可疑用户规则不完全重叠。<br>
-          2. 选择「额外增加触发类型」：在可疑用户类型基础上，额外增加更多风控触发类型，并明确展示比可疑用户多出的触发类型数。<br>
+          1. 勾选需要自动加入名单的触发类型；当用户满足所选类型命中条件时，自动进入当前名单列表。<br>
+          2. 当前弹窗仅保留触发类型勾选，不再区分继承模式或额外增加触发类型。<br>
           3. 确认保存前需填写谷歌验证码；用户命中规则后自动加入名单，触发类型将在备注字段中展示。
         </div>
         <div class="modal-field">
           <label>谷歌验证码</label>
-          <div class="inline-input-button">
-            <input type="text" id="auto-join-rules-google" placeholder="请输入谷歌验证码" />
-            <button type="button" class="button secondary">获取验证码</button>
-          </div>
+          <input type="text" id="auto-join-rules-google" placeholder="请输入谷歌验证码" />
         </div>
 
         <div class="modal-actions">
@@ -7881,14 +8155,14 @@
     <div class="modal-panel modal-panel--wide" role="dialog" aria-modal="true" aria-labelledby="whitelist-events-title">
       <div class="modal-head">
         <div>
-          <h3 id="whitelist-events-title">白名单触发事件</h3>
-          <p id="whitelist-events-desc">展示当前所选周期内命中白名单后被放行的触发事件，一次一条展示。</p>
+          <h3 id="whitelist-events-title">名单触发事件</h3>
+          <p id="whitelist-events-desc">展示当前所选周期内与名单对象关联的触发汇总，按触发日期聚合展示。</p>
         </div>
         <button type="button" class="modal-close" id="whitelist-events-close">关闭</button>
       </div>
       <div class="modal-body">
         <div class="modal-kv">
-          <strong>白名单类型</strong>
+          <strong>名单类型</strong>
           <span id="whitelist-events-source">白名单用户</span>
         </div>
         <div class="modal-kv" style="margin-top:12px;">
@@ -7899,16 +8173,18 @@
           <table>
             <thead>
               <tr>
-                <th>触发时间</th>
-                <th>相关用户UID</th>
-                <th>触发原因</th>
+                <th>触发日期</th>
+                <th>触发次数（排重）</th>
+                <th>触发UID数</th>
+                <th>操作</th>
               </tr>
             </thead>
             <tbody id="whitelist-events-table-body">
               <tr>
-                <td>2025-07-15 12:20:15</td>
-                <td>123</td>
-                <td>异常登录监控命中后因用户白名单放行</td>
+                <td>2025-07-16</td>
+                <td>2</td>
+                <td>3</td>
+                <td><a href="#" class="action-link">查看详情</a></td>
               </tr>
             </tbody>
           </table>
@@ -7920,12 +8196,63 @@
     </div>
   </div>
 
+  <div class="modal-overlay" id="whitelist-events-detail-modal" aria-hidden="true">
+    <div class="modal-panel modal-panel--wide" role="dialog" aria-modal="true" aria-labelledby="whitelist-events-detail-title">
+      <div class="modal-head">
+        <div>
+          <h3 id="whitelist-events-detail-title">名单触发详情</h3>
+          <p id="whitelist-events-detail-desc">展示当前触发日期下的明细记录；白名单用户按设备/IP展示排重结果，其余名单按当前名单类型仅展示一种维度并做排重。</p>
+        </div>
+        <button type="button" class="modal-close" id="whitelist-events-detail-close">关闭</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-kv">
+          <strong>名单类型</strong>
+          <span id="whitelist-events-detail-source">白名单用户</span>
+        </div>
+        <div class="modal-kv" style="margin-top:12px;">
+          <strong>当前对象</strong>
+          <span id="whitelist-events-detail-target">UID 123 / 43434232@qq.com</span>
+        </div>
+        <div class="modal-kv" style="margin-top:12px;">
+          <strong>触发日期</strong>
+          <span id="whitelist-events-detail-date">2025-07-16</span>
+        </div>
+        <div class="table-wrap" style="margin-top:16px;">
+          <table>
+            <thead>
+              <tr>
+                <th>触发时间</th>
+                <th id="whitelist-events-detail-identity-header">相关用户UID/设备/IP（排重）</th>
+                <th>触发总次数</th>
+                <th>风控操作</th>
+                <th>触发原因</th>
+              </tr>
+            </thead>
+            <tbody id="whitelist-events-detail-table-body">
+              <tr>
+                <td>2025-07-16 08:43:27</td>
+                <td>设备: WEB-9F2A / APP-3D11<br>IP: 203.0.113.5 / 198.18.0.28</td>
+                <td>5</td>
+                <td>禁止登录、禁止现货交易</td>
+                <td>事前预警-批量注册监控(3次)；事后报警-羊毛党监控(2次)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="button secondary" id="whitelist-events-detail-cancel">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal-overlay" id="blacklist-whitelist-confirm-modal" aria-hidden="true">
     <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="blacklist-whitelist-confirm-title">
       <div class="modal-head">
         <div>
-          <h3 id="blacklist-whitelist-confirm-title">白名单冲突提示</h3>
-          <p id="blacklist-whitelist-confirm-desc">当前移入黑名单的对象中存在白名单相关对象。白名单默认不受当前黑名单处理控制，确认后将同步移出白名单并转入黑名单。</p>
+          <h3 id="blacklist-whitelist-confirm-title">名单冲突提示</h3>
+          <p id="blacklist-whitelist-confirm-desc">以下数据当前已存在于另一侧名单中，确认后将移出原名单，并以本次配置为准。</p>
         </div>
         <button type="button" class="modal-close" id="blacklist-whitelist-confirm-close">关闭</button>
       </div>
@@ -7935,15 +8262,15 @@
           <span id="blacklist-whitelist-confirm-source">当前页面</span>
         </div>
         <div class="modal-field" style="margin-top:16px;">
-          <label>白名单对象</label>
+          <label id="blacklist-whitelist-confirm-users-label">冲突对象</label>
           <div class="readonly-box" id="blacklist-whitelist-confirm-users">暂无</div>
         </div>
         <div class="modal-alert" id="blacklist-whitelist-confirm-alert">
-          这些对象当前命中白名单用户或白名单域配置，确认后将按本次黑名单处理一并移出白名单并转入黑名单。
+          以下数据当前已存在于另一侧名单中，确认移出后，以此次配置为准。
         </div>
         <div class="modal-actions">
           <button type="button" class="button secondary" id="blacklist-whitelist-confirm-cancel">取消</button>
-          <button type="button" class="button" id="blacklist-whitelist-confirm-submit">确认移至黑名单</button>
+          <button type="button" class="button" id="blacklist-whitelist-confirm-submit">确认并以此次配置为准</button>
         </div>
       </div>
     </div>
@@ -7993,19 +8320,16 @@
         <em>功能说明</em>
         <ol>
           <li>用于配置用户自动加入 `可疑用户` 或 `黑名单用户` 的触发规则。</li>
-          <li>黑名单用户的自动加入规则不得与可疑用户规则完全重叠，必须存在额外增加的触发类型。</li>
+          <li>当前原型统一按触发类型勾选方式配置自动加入规则，不再区分继承模式或额外增加触发类型。</li>
         </ol>
         <em>字段说明</em>
         <ol>
-          <li>自动加入规则模式：单选字段，取值为 `继承可疑用户类型` 或 `额外增加触发类型`；黑名单用户点击确认时，不允许停留在与可疑用户完全相同的继承结果。</li>
-          <li>继承的可疑用户触发类型：多选展示字段，用于显示当前可疑用户已配置的自动加入类型；在继承模式下展示，在额外模式下仅作为对比基准。</li>
-          <li>额外增加的触发类型：多选输入字段，仅在 `额外增加触发类型` 模式显示；勾选项为黑名单相对可疑用户新增的触发来源。</li>
-          <li>比可疑用户类型增加触发类型数：只读输入框，展示当前额外勾选项实时统计结果；黑名单用户确认保存时该值必须 `大于等于 1`。</li>
+          <li>触发类型：多选字段，用于配置当前名单自动加入的触发来源；可疑用户与黑名单用户均使用同一组勾选结构。</li>
           <li>谷歌验证码：必填字段；当前原型按非空校验，未填写时不允许确认保存。</li>
         </ol>
         <em>操作说明</em>
         <ol>
-          <li>确认：先校验 `模式差异`、`额外触发类型数`、`谷歌验证码`；任一条件不满足时拦截保存。</li>
+          <li>确认：先校验 `谷歌验证码`；校验通过后保存当前勾选的触发类型。</li>
           <li>取消：关闭弹窗，不保存配置。</li>
         </ol>
       </div>
@@ -8070,7 +8394,7 @@
           <li>当前用户UID：只读输入框，默认带出当前操作用户UID。</li>
           <li>关联用户展示：按来源页面动态显示，如 `关联同秒开仓用户`、`关联同提币地址用户`、`关联交易对手用户`；该字段为只读输入框展示。</li>
           <li>是否关联用户：单选字段，取值为 `是/否`；选择 `是` 时，处理对象从当前用户切换为关联用户集合。</li>
-          <li>风控操作：多选字段，当前可选 `禁止登录`、`禁止注册`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`；确认前至少勾选 `1` 项，否则不允许保存。</li>
+          <li>风控操作：多选字段，当前可选 `禁止登录`、`禁止注册`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`；确认前至少勾选 `1` 项，否则不允许保存；如选择 `禁止登录`，用户一旦触发会立即退出登录，登录态丢失，且不能再登录。</li>
           <li>备注：选填字段，用于记录统一处理说明；当前原型不做必填校验。</li>
         </ol>
         <em>操作说明</em>
@@ -8162,7 +8486,6 @@
           <li>同一IP操作类型 / 同一设备操作类型 / 同一邮箱后缀操作类型：分组标题，只读展示当前配置分组。</li>
           <li>注册充值交易人数：纯数字整数字段，比较符号固定为 `大于等于`，单位为 `人`。</li>
           <li>新注册时间差（与第一人注册时间比）：纯数字整数字段，比较符号固定为 `小于等于`，单位为 `分钟`；超过该时间的新对象移出监控。</li>
-          <li>统计起始与结束时间差（时间不交叉统计）：纯数字整数字段，比较符号固定为 `小于等于`，单位为 `分钟`。</li>
           <li>异常处理方式：单选字段，取值以页面统一下拉项为准。</li>
           <li>谷歌验证码：必填字段；当前原型按非空校验，未填写时不允许确认保存。</li>
         </ol>
@@ -8258,7 +8581,7 @@
         <ol>
           <li>来源页面：只读输入框，显示当前来源页面名称。</li>
           <li>当前用户UID：只读输入框，默认带出当前命中用户UID。</li>
-          <li>风控操作：多选字段；确认前至少勾选 `1` 项，否则不允许保存。</li>
+          <li>风控操作：多选字段；确认前至少勾选 `1` 项，否则不允许保存；如选择 `禁止登录`，用户一旦触发会立即退出登录，登录态丢失，且不能再登录。</li>
           <li>备注：选填字段，用于记录处理说明。</li>
         </ol>
         <em>操作说明</em>
@@ -8295,21 +8618,86 @@
 
     <div class="spec-page" data-spec-page="modal-whitelist-events">
       <div class="spec-card">
-        <strong>白名单事件记录弹窗口径定义</strong>
+        <strong>名单触发事件弹窗口径定义</strong>
         <em>功能说明</em>
         <ol>
-          <li>展示白名单相关的事件记录。</li>
-          <li>用于查看白名单用户的操作历史。</li>
+          <li>展示名单相关的触发事件汇总与明细。</li>
+          <li>用于查看当前名单对象在所选周期内的触发情况。</li>
         </ol>
         <em>字段说明</em>
         <ol>
-          <li>事件来源：显示事件触发的来源页面。</li>
-          <li>事件目标：显示事件关联的目标用户或IP。</li>
-          <li>事件列表：展示事件时间、用户ID、原因。</li>
+          <li>名单类型：显示当前事件对应的名单类型。</li>
+          <li>当前对象：显示事件关联的名单目标对象。</li>
+          <li>汇总列表：按 `触发日期` 展示 `触发次数（排重）`、`触发UID数`，并提供 `查看详情` 入口。</li>
+          <li>详情列表：展示 `触发时间（到秒）`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`风控操作`、`触发原因`；其中白名单用户详情列固定展示 `设备/IP（排重）`，其余名单同一条明细仅展示一种维度，触发原因按 `事前预警/事后报警-监控类型(次数)` 汇总。</li>
         </ol>
         <em>操作说明</em>
         <ol>
-          <li>关闭：关闭弹窗。</li>
+          <li>查看详情：查看指定触发日期下的放行明细。</li>
+          <li>关闭：关闭当前弹窗。</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="spec-page" data-spec-page="modal-whitelist-events-detail">
+      <div class="spec-card">
+        <strong>名单触发详情弹窗口径定义</strong>
+        <em>功能说明</em>
+        <ol>
+          <li>展示当前名单对象在指定触发日期下的明细记录。</li>
+          <li>当前弹窗只用于查看，不在详情内直接执行名单处理动作。</li>
+        </ol>
+        <em>字段说明</em>
+        <ol>
+          <li>基础信息：展示 `名单类型`、`当前对象`、`触发日期`。</li>
+          <li>明细列表：展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`风控操作`、`触发原因`。</li>
+          <li>白名单用户详情因主列表已按UID汇总，明细列固定展示 `设备/IP（排重）`；其余名单同一条明细仅展示一种维度，按当前名单类型取值。</li>
+        </ol>
+        <em>操作说明</em>
+        <ol>
+          <li>关闭：返回上一层 `名单触发事件` 汇总弹窗。</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="spec-page" data-spec-page="modal-multi-id">
+      <div class="spec-card">
+        <strong>多ID查看弹窗口径定义</strong>
+        <em>功能说明</em>
+        <ol>
+          <li>用于一次性查看页面中被折叠展示的全部仓位ID或长ID集合。</li>
+          <li>适用于表格内ID过长或数量过多的场景。</li>
+        </ol>
+        <em>字段说明</em>
+        <ol>
+          <li>标题：默认展示为 `仓位ID`，与来源字段保持一致。</li>
+          <li>ID列表：按标签方式展示当前单元格对应的全部ID，不做业务改写。</li>
+        </ol>
+        <em>操作说明</em>
+        <ol>
+          <li>关闭：返回来源列表页。</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="spec-page" data-spec-page="modal-blacklist-whitelist-confirm">
+      <div class="spec-card">
+        <strong>名单冲突提示弹窗口径定义</strong>
+        <em>功能说明</em>
+        <ol>
+          <li>用于提示当前录入对象已存在于另一侧名单中，继续保存前需二次确认。</li>
+          <li>确认后，相关对象从原名单移出，并以本次配置为准写入当前名单。</li>
+        </ol>
+        <em>字段说明</em>
+        <ol>
+          <li>来源页面：显示本次触发冲突确认的来源页。</li>
+          <li>冲突对象：按当前方向展示 `白名单对象` 或 `黑名单对象`。</li>
+          <li>提示说明：展示“以下数据在白名单（或黑名单），确认移出，以此次配置为准”口径。</li>
+        </ol>
+        <em>操作说明</em>
+        <ol>
+          <li>`确认移出白名单/黑名单`：继续执行当前录入配置，并从原名单移出冲突对象。</li>
+          <li>`取消`：关闭弹窗，不执行本次转入。</li>
         </ol>
       </div>
     </div>
@@ -8440,7 +8828,7 @@
         <em>注意事项</em>
         <ol>
           <li>批量UID输入框按 `/` 分隔解析，空项应忽略；提交前需校验UID非空、原因非空。</li>
-          <li>如UID已在白名单中，不允许直接静默转黑；确认时需弹窗提示这些对象当前为白名单，并由管理员确认是否同步移至黑名单。</li>
+          <li>如UID已在白名单中，不允许直接静默转黑；确认时需弹窗提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
     </div>
@@ -8457,9 +8845,9 @@
         <em>注意事项</em>
         <ol>
           <li>进入IP黑名单的IP按黑名单口径参与后续风控限制。</li>
-          <li>`单个IP` 模式：支持多个IP使用 `/` 分隔批量录入。</li>
+          <li>`单个IP` 模式：支持多个IP使用 `/` 分隔批量录入；单条IP支持输入 1 至 4 段，不足段位可用 `*` 补齐，`*` 代表模糊匹配。</li>
           <li>`国家` 模式：选择国家后，表示该国家范围内的IP按黑名单口径参与风控限制。</li>
-          <li>如该IP当前属于白名单域对象，移入黑名单时需先弹窗确认。</li>
+          <li>如该IP当前已在IP白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
     </div>
@@ -8476,24 +8864,24 @@
         <em>注意事项</em>
         <ol>
           <li>设备类型固定为 `WEB`、`安卓`、`IOS`。</li>
-          <li>如该设备当前属于白名单域对象，移入黑名单时需先弹窗确认。</li>
+          <li>如该设备当前已在设备白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
     </div>
 
     <div class="spec-page" data-spec-page="blacklist-withdraw">
       <div class="spec-card">
-        <strong>提币地址黑名单说明</strong>
+        <strong>充值与提币地址黑名单说明</strong>
         <em>运营说明</em>
         <ol>
-          <li>筛选项支持按 `提币地址` 与时间范围检索提币地址黑名单记录。</li>
-          <li>列表字段包含 `提币地址`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `编辑`、`删除`。</li>
-          <li>页头提供 `添加/编辑提币地址黑名单` 入口，新增与编辑共用同一配置区域。</li>
+          <li>筛选项支持按 `充值/提币地址` 与时间范围检索充值与提币地址黑名单记录。</li>
+          <li>列表字段包含 `充值/提币地址`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `编辑`、`删除`。</li>
+          <li>页头提供 `添加/编辑充值与提币地址黑名单` 入口，新增与编辑共用同一配置区域。</li>
         </ol>
         <em>注意事项</em>
         <ol>
-          <li>进入提币地址黑名单的地址按黑名单口径参与后续风控限制。</li>
-          <li>如该地址当前属于白名单域对象，移入黑名单时需先弹窗确认。</li>
+          <li>进入充值与提币地址黑名单的地址按黑名单口径参与后续风控限制。</li>
+          <li>如该地址当前已在充值和提币地址白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
     </div>
@@ -8510,24 +8898,27 @@
         <em>注意事项</em>
         <ol>
           <li>密码黑名单仅展示脱敏摘要，不展示原始密码。</li>
-          <li>如该密码摘要当前属于白名单域对象，移入黑名单时需先弹窗确认。</li>
+          <li>`类型` 为多选项，可同时选择 `登录密码` 与 `支付密码`。</li>
+          <li>如该密码摘要当前属于密码白名单，移入黑名单时需弹窗提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
     </div>
 
     <div class="spec-page" data-spec-page="blacklist-phone">
       <div class="spec-card">
-        <strong>手机号码黑名单说明</strong>
+        <strong>邮箱黑名单说明</strong>
         <em>运营说明</em>
         <ol>
-          <li>筛选项支持按 `手机号/国家` 与 `类型` 检索手机号码黑名单记录。</li>
-          <li>列表字段包含 `类型`、`手机号/国家`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `编辑`、`删除`。</li>
-          <li>页头提供 `添加/编辑手机号码黑名单` 入口，新增与编辑共用同一配置区域，用于维护手机号黑名单或按国家控制规则。</li>
+          <li>筛选项支持按 `邮箱/域名` 与 `类型` 检索邮箱黑名单记录。</li>
+          <li>列表字段包含 `类型`、`邮箱/域名`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `触发事件`、`编辑`、`删除`。</li>
+          <li>页头提供 `添加/编辑邮箱黑名单` 入口，新增与编辑共用同一配置区域，用于维护单个邮箱或邮箱域名黑名单。</li>
         </ol>
         <em>注意事项</em>
         <ol>
-          <li>`单个手机号` 模式：不展示国家选择；多个手机号使用 `/` 分隔批量录入，系统按单条手机号拆分入库。</li>
-          <li>`按国家控制` 模式：不展示手机号输入框；选择国家后，表示该国家号段下的手机号默认禁止注册。</li>
+          <li>`单个邮箱` 模式：不展示域名选择；多个邮箱使用 `/` 分隔批量录入，系统按单条邮箱拆分入库。</li>
+          <li>`邮箱域名` 模式：不展示邮箱输入框；录入域名后，表示该域名下邮箱默认按黑名单口径处理。</li>
+          <li>如该邮箱或域名当前已在邮箱后缀白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
+          <li>`触发事件` 弹窗支持查看该邮箱/域名关联的触发汇总与详情。</li>
         </ol>
       </div>
     </div>
@@ -8655,6 +9046,7 @@
         <em>注意事项</em>
         <ol>
           <li>批量UID输入框按 `/` 分隔解析，空项应忽略；提交前需校验UID非空、原因非空。</li>
+          <li>如UID已在黑名单中，不允许直接静默转白；确认时需弹窗提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
     </div>
@@ -8714,7 +9106,7 @@
         <ol>
           <li>筛选项 `查询条件` 支持按邮箱后缀检索白名单后缀。</li>
           <li>列表字段依次为 `邮箱后缀`、`转入原因`、`操作时间`、`操作`。</li>
-          <li>`操作` 当前支持 `删除`，表示将该邮箱后缀从白名单中移除。</li>
+          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
           <li>新增区 `输入邮箱后缀` 支持多个后缀使用 `/` 分隔录入；`转入原因` 为本次加入白名单的原因。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
           <li>默认白名单邮箱后缀列表包括：`@gmail.com`、`@icloud.com`、`@me.com`、`@mac.com`、`@outlook.com`、`@hotmail.com`、`@live.com`、`@yahoo.com`、`@yahoo.co.jp`、`@yahoo.co.uk`、`@protonmail.com`、`@proton.me`、`@aol.com`、`@zoho.com`、`@gmx.net`、`@gmx.com`、`@yandex.ru`、`@yandex.com`、`@mail.ru`、`@tutanota.com`、`@fastmail.com`、`@web.de`、`@comcast.net`、`@sbcglobal.net`、`@mail.com`、`@qq.com`、`@vip.qq.com`、`@163.com`、`@126.com`、`@139.com`，便于运营快速核对默认放行范围。</li>
@@ -8723,7 +9115,9 @@
         <ol>
           <li>邮箱后缀录入时建议统一包含 `@` 前缀，如 `@gmail.com`、`@outlook.com`。</li>
           <li>多个后缀使用 `/` 分隔后，前端应先拆分、去空格、去重，再按单条后缀写入。</li>
+          <li>邮箱后缀进入白名单后，命中该后缀的相关风控事件可通过 `触发事件` 查看放行汇总与明细。</li>
           <li>`转入原因` 不能为空；删除白名单后缀后，后续批量注册监控不再按该后缀做白名单过滤。</li>
+          <li>如该邮箱后缀当前已在邮箱黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
     </div>
@@ -8974,10 +9368,11 @@
         <em>注意事项</em>
         <ol>
           <li>进入IP白名单的IP不再参与异常登录等IP维度风控监控命中。</li>
-          <li>`单个IP` 模式：`输入IP` 支持多个IP使用 `/` 分隔；需先拆分、去空格、去重，再按单条IP写入。</li>
+          <li>`单个IP` 模式：`输入IP` 支持多个IP使用 `/` 分隔；单条IP支持输入 1 至 4 段，不足段位可用 `*` 补齐，`*` 代表模糊匹配；录入前需先拆分、去空格、去重，再按单条规则写入。</li>
           <li>`国家` 模式：选择国家后，表示该国家范围内的IP按白名单口径放行。</li>
           <li>`转入原因` 不能为空；移出IP白名单后，后续监控重新按普通IP规则扫描。</li>
           <li>IP白名单属于白名单域配置，应与用户白名单、邮箱后缀白名单、设备白名单并列维护。</li>
+          <li>如该IP当前已在IP黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
     </div>
@@ -8990,33 +9385,36 @@
           <li>列表字段依次为 `设备ID`、`类型`、`转入原因`、`操作时间`、`操作`。</li>
           <li>`类型` 用于区分设备所属终端来源，固定展示为 `WEB`、`安卓`、`IOS`。</li>
           <li>`转入原因` 用于说明设备进入白名单的业务依据。</li>
-          <li>`操作` 当前支持 `删除`，表示将该设备从白名单中移除。</li>
+          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
         </ol>
         <em>注意事项</em>
         <ol>
           <li>进入设备白名单的设备不再参与批量注册等设备维度风控监控命中。</li>
+          <li>设备相关白名单放行记录可通过 `触发事件` 查看触发汇总与明细，明细中需展示设备关联的UID、设备与IP排重结果。</li>
           <li>`输入设备ID` 支持多个设备ID使用 `/` 分隔；前端需先拆分、去空格、去重，再按单条设备写入。</li>
           <li>录入设备时需同步标记终端类型，类型口径固定为 `WEB`、`安卓`、`IOS` 三类。</li>
           <li>`转入原因` 不能为空；移出设备白名单后，后续监控重新按普通设备规则扫描。</li>
           <li>设备白名单属于白名单域配置，应与用户白名单、IP白名单、邮箱后缀白名单并列维护。</li>
+          <li>如该设备当前已在设备黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-withdraw-whitelist">
       <div class="spec-card">
-        <strong>提币地址白名单说明</strong>
+        <strong>充值和提币地址白名单说明</strong>
         <em>运营说明</em>
         <ol>
           <li>筛选项包含 `查询条件`、`开始时间`、`结束时间`，用于按提币地址与选择周期检索白名单记录。</li>
           <li>列表字段依次为 `提币地址`、`转入原因`、`操作时间`、`操作`。</li>
-          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式展示当前所选周期内的一次一条放行记录。</li>
+          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
           <li>新增地址支持多个提币地址使用 `/` 分隔批量录入；`转入原因` 为本次加入白名单的业务依据。</li>
         </ol>
         <em>注意事项</em>
         <ol>
-          <li>进入提币地址白名单的地址不再参与同提币地址监控、异常充值监控等地址维度命中。</li>
-          <li>`触发事件` 弹窗需展示 `触发时间`、`相关用户UID`、`触发原因` 三项内容，且一次一条展示。</li>
+          <li>进入充值和提币地址白名单的地址不再参与同提币地址监控、异常充值监控等地址维度命中。</li>
+          <li>如该地址当前已在充值与提币地址黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
+          <li>`触发事件` 弹窗需先展示 `触发日期`、`触发次数（排重）`、`触发UID数`，并在详情中展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`触发原因`；同一条明细仅展示一种维度。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
         </ol>
       </div>
@@ -9028,15 +9426,16 @@
         <ol>
           <li>筛选项包含 `查询条件`、`类型`、`开始时间`、`结束时间`，用于按密码摘要、密码类型与选择周期检索白名单记录。</li>
           <li>列表字段依次为 `密码摘要`、`类型`、`转入原因`、`操作时间`、`操作`。</li>
-          <li>`类型` 固定区分为 `登录密码` 与 `支付密码` 两类；录入和筛选时均需明确类型。</li>
-          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式展示当前所选周期内的一次一条放行记录。</li>
-          <li>新增密码支持多个密码摘要使用 `/` 分隔批量录入；录入时必须同时指定当前摘要所属 `登录密码` 或 `支付密码`。</li>
+          <li>`类型` 为多选项，可同时选择 `登录密码` 与 `支付密码`；录入和筛选时均需明确类型。</li>
+          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
+          <li>新增密码支持多个密码摘要使用 `/` 分隔批量录入；录入时可同时勾选当前摘要所属 `登录密码` 和 `支付密码`。</li>
         </ol>
         <em>注意事项</em>
         <ol>
           <li>密码白名单仅展示脱敏后的密码摘要，不应在前端、日志或说明中暴露原始密码。</li>
           <li>进入密码白名单的密码摘要不再参与 `用户同密码` 相关密码维度命中。</li>
-          <li>`触发事件` 弹窗需展示 `触发时间`、`相关用户UID`、`触发原因` 三项内容，且一次一条展示。</li>
+          <li>如该密码摘要当前已在密码黑名单，确认时需弹窗提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
+          <li>`触发事件` 弹窗需先展示 `触发日期`、`触发次数（排重）`、`触发UID数`，并在详情中展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`触发原因`；同一条明细仅展示一种维度。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
         </ol>
       </div>
@@ -9066,8 +9465,8 @@
         <strong>同uid内部划转监控说明</strong>
         <em>运营说明</em>
         <ol>
-          <li>本页用于识别 `1小时内累计超过3个用户向同一内部账号提现` 的预警记录。</li>
-          <li>规则配置核心项为 `1小时内累计提现用户数大于等于`。</li>
+          <li>本页用于识别 `1小时内同一UID接受的划转次数` 异常聚合的预警记录。</li>
+          <li>规则配置核心项为 `1小时内同一UID接受的划转次数大于等于`。</li>
         </ol>
       </div>
     </div>
@@ -9230,6 +9629,7 @@
     const autoJoinRulesTitle = document.getElementById('auto-join-rules-title');
     const autoJoinRulesDesc = document.getElementById('auto-join-rules-desc');
     const autoJoinModeChoices = Array.from(document.querySelectorAll('input[name="auto-join-mode"]'));
+    const autoJoinModeSection = document.getElementById('auto-join-mode-section');
     const autoJoinModeInherit = document.getElementById('mode-inherit');
     const autoJoinModeAdditional = document.getElementById('mode-additional');
     const autoJoinInheritSection = document.getElementById('inherit-section');
@@ -9240,6 +9640,8 @@
     const autoJoinExtraCount = document.getElementById('auto-join-extra-count');
     const autoJoinRulesExtraField = document.getElementById('auto-join-rules-extra-field');
     const autoJoinRulesGoogle = document.getElementById('auto-join-rules-google');
+    const autoJoinInheritTitle = document.getElementById('auto-join-inherit-title');
+    const autoJoinRulesAlert = document.getElementById('auto-join-rules-alert');
     const monitorStatusModal = document.getElementById('monitor-status-modal');
     const monitorStatusOpeners = Array.from(document.querySelectorAll('.js-open-monitor-status'));
     const ruleConfigModal = document.getElementById('rule-config-modal');
@@ -9257,9 +9659,21 @@
     const whitelistEventsSource = document.getElementById('whitelist-events-source');
     const whitelistEventsTarget = document.getElementById('whitelist-events-target');
     const whitelistEventsTableBody = document.getElementById('whitelist-events-table-body');
+    const whitelistEventsDetailModal = document.getElementById('whitelist-events-detail-modal');
+    const whitelistEventsDetailDesc = document.getElementById('whitelist-events-detail-desc');
+    const whitelistEventsDetailSource = document.getElementById('whitelist-events-detail-source');
+    const whitelistEventsDetailTarget = document.getElementById('whitelist-events-detail-target');
+    const whitelistEventsDetailDate = document.getElementById('whitelist-events-detail-date');
+    const whitelistEventsDetailIdentityHeader = document.getElementById('whitelist-events-detail-identity-header');
+    const whitelistEventsDetailTableBody = document.getElementById('whitelist-events-detail-table-body');
     const blacklistWhitelistConfirmModal = document.getElementById('blacklist-whitelist-confirm-modal');
+    const blacklistWhitelistConfirmTitle = document.getElementById('blacklist-whitelist-confirm-title');
+    const blacklistWhitelistConfirmDesc = document.getElementById('blacklist-whitelist-confirm-desc');
     const blacklistWhitelistConfirmSource = document.getElementById('blacklist-whitelist-confirm-source');
+    const blacklistWhitelistConfirmUsersLabel = document.getElementById('blacklist-whitelist-confirm-users-label');
     const blacklistWhitelistConfirmUsers = document.getElementById('blacklist-whitelist-confirm-users');
+    const blacklistWhitelistConfirmAlert = document.getElementById('blacklist-whitelist-confirm-alert');
+    const blacklistWhitelistConfirmSubmit = document.getElementById('blacklist-whitelist-confirm-submit');
     const monitorStatusSource = document.getElementById('monitor-status-source');
     const monitorStatusCurrent = document.getElementById('monitor-status-current');
     const monitorStatusSelected = document.getElementById('monitor-status-selected');
@@ -9461,11 +9875,41 @@
     function getWhitelistProtectedUsers() {
       const users = new Set();
       document.querySelectorAll('#whitelist-monitor tbody tr').forEach(row => {
-        const uidCell = row.querySelector('td');
+        const uidCell = row.cells[1];
         const uid = uidCell ? uidCell.textContent.replace(/\s+/g, ' ').trim() : '';
         if (uid) users.add(uid);
       });
       return users;
+    }
+
+    function getBlacklistProtectedUsers() {
+      const users = new Set();
+      document.querySelectorAll('#blacklist-monitor tbody tr').forEach(row => {
+        const uidCell = row.cells[1];
+        const uid = uidCell ? uidCell.textContent.replace(/\s+/g, ' ').trim() : '';
+        if (uid) users.add(uid);
+      });
+      return users;
+    }
+
+    function getPasswordWhitelistValues() {
+      const values = new Set();
+      document.querySelectorAll('#risk-password-whitelist tbody tr').forEach(row => {
+        const valueCell = row.cells[1];
+        const value = valueCell ? valueCell.textContent.replace(/\s+/g, ' ').trim() : '';
+        if (value) values.add(value);
+      });
+      return values;
+    }
+
+    function getPasswordBlacklistValues() {
+      const values = new Set();
+      document.querySelectorAll('#blacklist-password tbody tr').forEach(row => {
+        const valueCell = row.cells[0];
+        const value = valueCell ? valueCell.textContent.replace(/\s+/g, ' ').trim() : '';
+        if (value) values.add(value);
+      });
+      return values;
     }
 
     function setBlacklistWhitelistConfirmModalOpen(open) {
@@ -9478,8 +9922,16 @@
     }
 
     function fillBlacklistWhitelistConfirmModal(source, users, context) {
+      const direction = context && context.direction === 'to-whitelist' ? 'to-whitelist' : 'to-blacklist';
+      const fromLabel = direction === 'to-whitelist' ? '黑名单' : '白名单';
+      const toLabel = direction === 'to-whitelist' ? '白名单' : '黑名单';
+      if (blacklistWhitelistConfirmTitle) blacklistWhitelistConfirmTitle.textContent = `${fromLabel}冲突提示`;
+      if (blacklistWhitelistConfirmDesc) blacklistWhitelistConfirmDesc.textContent = `以下数据当前在${fromLabel}，确认移出，并以此次${toLabel}配置为准么？`;
       if (blacklistWhitelistConfirmSource) blacklistWhitelistConfirmSource.textContent = source || '当前页面';
+      if (blacklistWhitelistConfirmUsersLabel) blacklistWhitelistConfirmUsersLabel.textContent = `${fromLabel}对象`;
       if (blacklistWhitelistConfirmUsers) blacklistWhitelistConfirmUsers.textContent = uniqueList(users).join('、') || '暂无';
+      if (blacklistWhitelistConfirmAlert) blacklistWhitelistConfirmAlert.textContent = `以下数据当前在${fromLabel}，确认移出后，以此次${toLabel}配置为准。`;
+      if (blacklistWhitelistConfirmSubmit) blacklistWhitelistConfirmSubmit.textContent = `确认移出${fromLabel}`;
       blacklistWhitelistConfirmContext = context || null;
     }
 
@@ -9509,7 +9961,7 @@
       'blacklist-add': '添加黑名单',
       'blacklist-ip': 'IP黑名单',
       'blacklist-device': '设备黑名单',
-      'blacklist-withdraw': '提币地址黑名单',
+      'blacklist-withdraw': '充值与提币地址黑名单',
       'blacklist-password': '密码黑名单',
       'blacklist-phone': '邮箱黑名单',
       'market-history': '市价历史订单',
@@ -9522,7 +9974,7 @@
       'risk-batch-register': '批量注册监控',
       'risk-email-suffix': '邮箱后缀白名单',
       'risk-device-whitelist': '设备白名单',
-      'risk-withdraw-whitelist': '提币地址白名单',
+      'risk-withdraw-whitelist': '充值和提币地址白名单',
       'risk-password-whitelist': '密码白名单',
       'risk-contract-suspicious-monitor': '高盈利高胜率用户',
       'risk-short-hold': '高频短时持仓监控',
@@ -9565,7 +10017,7 @@
       '打单风控': '打单风控配置',
       'IP黑名单': '用户控制配置',
       '设备黑名单': '用户控制配置',
-      '提币地址黑名单': '用户控制配置',
+      '充值与提币地址黑名单': '用户控制配置',
       '密码黑名单': '用户控制配置',
       '邮箱黑名单': '用户控制配置'
     };
@@ -9668,10 +10120,10 @@
         { title: '累计放行设备', values: { day: '56', week: '218', month: '930', total: '11,820' }, hint: '通过设备白名单累计放行的设备量', className: 'text-ok' }
       ],
       'risk-withdraw-whitelist': [
-        { title: '白名单地址数', values: { day: '9', week: '9', month: '10', total: '10' }, hint: '当前启用的提币地址白名单数量' },
-        { title: '新增地址', values: { day: '1', week: '2', month: '4', total: '26' }, hint: '新增录入的提币地址白名单数量' },
-        { title: '放行命中', values: { day: '4', week: '15', month: '61', total: '822' }, hint: '命中提币地址白名单并被放行的记录数' },
-        { title: '累计放行地址', values: { day: '42', week: '166', month: '704', total: '9,630' }, hint: '通过提币地址白名单累计放行的地址请求量', className: 'text-ok' }
+        { title: '白名单地址数', values: { day: '9', week: '9', month: '10', total: '10' }, hint: '当前启用的充值和提币地址白名单数量' },
+        { title: '新增地址', values: { day: '1', week: '2', month: '4', total: '26' }, hint: '新增录入的充值和提币地址白名单数量' },
+        { title: '放行命中', values: { day: '4', week: '15', month: '61', total: '822' }, hint: '命中充值和提币地址白名单并被放行的记录数' },
+        { title: '累计放行地址', values: { day: '42', week: '166', month: '704', total: '9,630' }, hint: '通过充值和提币地址白名单累计放行的地址请求量', className: 'text-ok' }
       ],
       'risk-password-whitelist': [
         { title: '白名单密码数', values: { day: '7', week: '7', month: '8', total: '8' }, hint: '当前启用的密码白名单摘要数量' },
@@ -9761,7 +10213,7 @@
 
     const specSupplementMeta = {
       'overview': {
-        hierarchy: ['一级：可疑用户、黑名单、白名单、风控、处理记录', '二级：各一级导航下的监控页、名单页与配置页', '三级：限制规则、历史订单、详情页、配置页', '弹窗：规则配置、监控状态配置、自动加入规则、白名单触发事件、开启权限等'],
+        hierarchy: ['一级：可疑用户、黑名单、白名单、风控、处理记录', '二级：各一级导航下的监控页、名单页与配置页', '三级：限制规则、历史订单、详情页、配置页', '弹窗：规则配置、监控状态配置、自动加入规则、名单触发事件、开启权限等'],
         modals: ['总览页用于汇总所有页面层级与弹窗关系，便于开发与测试逐页核对入口。', '本页右侧卡片为总导航说明，不直接承载业务录入或处理动作。']
       },
       'modal-manual-adl': {
@@ -9770,7 +10222,7 @@
       },
       'modal-auto-join-rules': {
         hierarchy: ['一级：可疑用户 或 黑名单', '二级：用户监控 或 黑名单用户', '三级：无', '弹窗：自动加入规则配置'],
-        modals: ['自动加入规则配置弹窗：自动加入规则模式为单选，黑名单用户确认保存时不允许与可疑用户规则完全重叠|额外增加的触发类型仅在额外模式展示，比可疑用户类型增加触发类型数为只读输入框，展示实时统计结果，且必须大于等于 1|确认前需填写谷歌验证码；若模式差异、增加数量或验证码不满足条件则不允许保存。']
+        modals: ['自动加入规则配置弹窗：仅保留当前名单的触发类型勾选区，不再展示自动加入规则模式、继承文案或额外增加触发类型区域|可疑用户与黑名单用户均使用同一结构|确认前需填写谷歌验证码。']
       },
       'modal-risk-limit': {
         hierarchy: ['一级：风控', '二级：合约可疑用户', '三级：合约可疑用户限制规则', '弹窗：合约可疑用户限制规则'],
@@ -9782,7 +10234,7 @@
       },
       'modal-same-user': {
         hierarchy: ['一级：风控', '二级：异常登录监控/同秒开仓监控/同提币地址监控/羊毛党监控等', '三级：无', '弹窗：同一用户配置'],
-        modals: ['同一用户配置弹窗：来源页面、当前用户UID、关联用户展示按当前来源页面动态带出|是否关联用户为 是/否 单选，选择 是 时处理对象切换为关联用户集合|风控操作至少勾选 1 项，否则不允许确认；备注当前为选填字段。']
+        modals: ['同一用户配置弹窗：来源页面、当前用户UID、关联用户展示按当前来源页面动态带出|是否关联用户为 是/否 单选，选择 是 时处理对象切换为关联用户集合|风控操作至少勾选 1 项，否则不允许确认；如选择 禁止登录，则用户一旦触发会立即退出登录，登录态丢失，且不能再登录|备注当前为选填字段。']
       },
       'modal-permission': {
         hierarchy: ['一级：处理记录', '二级：处理记录', '三级：查看详情', '弹窗：开启权限'],
@@ -9790,7 +10242,7 @@
       },
       'modal-batch-register': {
         hierarchy: ['一级：风控', '二级：批量注册监控', '三级：无', '弹窗：批量注册规则配置'],
-        modals: ['批量注册规则配置弹窗：同一IP/同一设备/同一邮箱后缀为分组标题，只读展示当前配置组|注册充值交易人数、新注册时间差、统计起始与结束时间差均为纯数字整数，并保留大于等于/小于等于与分钟口径|异常处理方式按统一下拉项取值，确认保存前需填写谷歌验证码。']
+        modals: ['批量注册规则配置弹窗：同一IP/同一设备/同一邮箱后缀为分组标题，只读展示当前配置组|注册充值交易人数、新注册时间差均为纯数字整数，并保留对应的大于等于/小于等于与单位口径|异常处理方式按统一下拉项取值，确认保存前需填写谷歌验证码。']
       },
       'modal-short-hold-config': {
         hierarchy: ['一级：风控', '二级：高频短时持仓监控', '三级：无', '弹窗：高频短时持仓配置'],
@@ -9806,19 +10258,31 @@
       },
       'modal-related-action-config': {
         hierarchy: ['一级：风控', '二级：合约可疑用户 或 异常充值监控', '三级：无', '弹窗：相关操作配置'],
-        modals: ['相关操作配置弹窗：来源页面与当前用户UID为只读输入框，仅对当前用户生效|风控操作为多选字段，确认前至少勾选 1 项|备注当前为选填字段，确认后仅处理当前用户。']
+        modals: ['相关操作配置弹窗：来源页面与当前用户UID为只读输入框，仅对当前用户生效|风控操作为多选字段，确认前至少勾选 1 项；如选择 禁止登录，则用户一旦触发会立即退出登录，登录态丢失，且不能再登录|备注当前为选填字段，确认后仅处理当前用户。']
       },
       'modal-rule-config': {
         hierarchy: ['一级：风控', '二级：各风控监控页', '三级：无', '弹窗：规则配置'],
         modals: ['通用规则配置弹窗：标题与正文按当前点击来源动态加载，只展示当前来源页面对应的配置块|数字类字段必须明确为 价格/数量字段按后端返回截取、百分比默认保留两位小数点、普通数字展示整数、分钟/MS仅展示整数无小数点，并与页面中的大于等于/小于等于及单位保持一致|底部统一追加谷歌验证码输入框，主确认按钮保存前必须完成当前配置项与验证码校验。']
       },
       'modal-whitelist-events': {
-        hierarchy: ['一级：白名单', '二级：白名单用户/IP白名单/提币地址白名单/密码白名单', '三级：无', '弹窗：触发事件'],
-        modals: ['白名单触发事件弹窗：展示触发时间、相关用户UID、触发原因，一次一条，便于开发与测试核对白名单放行链路。']
+        hierarchy: ['一级：白名单 或 黑名单', '二级：各名单页', '三级：无', '弹窗：触发事件'],
+        modals: ['名单触发事件弹窗：先按触发日期展示触发次数（排重）与触发UID数，再通过查看详情展示触发时间、相关用户UID/设备/IP（排重）、触发总次数、风控操作、触发原因；其中相关用户UID/设备/IP同一条明细仅展示一种维度，触发原因需按事前预警/事后报警-监控类型(次数)汇总。']
+      },
+      'modal-whitelist-events-detail': {
+        hierarchy: ['一级：白名单 或 黑名单', '二级：各名单页', '三级：触发事件', '弹窗：触发详情'],
+        modals: ['名单触发详情弹窗：展示当前触发日期下的时间明细、唯一维度排重结果、触发总次数、风控操作与触发原因；当前弹窗只读，不直接执行处理动作。']
+      },
+      'modal-multi-id': {
+        hierarchy: ['一级：可疑用户、黑名单、风控', '二级：历史订单/详情列表', '三级：无', '弹窗：多ID查看'],
+        modals: ['多ID查看弹窗：用于一次性查看当前单元格中被折叠展示的全部仓位ID或长ID集合。']
+      },
+      'modal-blacklist-whitelist-confirm': {
+        hierarchy: ['一级：黑名单', '二级：黑名单用户/黑名单名单页', '三级：无', '弹窗：白名单冲突提示'],
+        modals: ['名单冲突提示弹窗：当当前录入对象已存在于另一侧名单中时触发；弹窗需明确提示“以下数据在白名单（或黑名单），确认移出，以此次配置为准么？”，确认后从原名单移出并以本次配置为准。']
       },
       'monitor': {
         hierarchy: ['一级：可疑用户', '二级：用户监控', '三级：可疑用户限制规则、市价历史订单、限价历史订单', '弹窗：自动加入规则配置'],
-        modals: ['自动加入规则配置弹窗：自动加入规则模式为单选字段，黑名单用户保存时必须与可疑用户规则存在差异|额外增加的触发类型仅在额外模式显示，比可疑用户类型增加触发类型数为只读输入框，展示实时统计结果，且必须大于等于 1|确认前需填写谷歌验证码。']
+        modals: ['自动加入规则配置弹窗：仅展示可疑用户触发类型勾选区，不展示自动加入规则模式与额外增加触发类型区域|确认前需填写谷歌验证码。']
       },
       'rules': {
         hierarchy: ['一级：可疑用户', '二级：用户监控', '三级：可疑用户限制规则', '弹窗：无'],
@@ -9826,31 +10290,31 @@
       },
       'blacklist-monitor': {
         hierarchy: ['一级：黑名单', '二级：黑名单用户', '三级：黑名单合约下单与强平规则配置、市价历史订单、限价历史订单', '弹窗：自动加入规则配置'],
-        modals: ['自动加入规则配置弹窗：默认读取可疑用户自动加入规则作为对比基准；若与可疑用户完全相同则不允许确认|额外增加的触发类型必须至少勾选 1 项，且确认前需填写谷歌验证码。']
+        modals: ['自动加入规则配置弹窗：仅展示黑名单用户触发类型勾选区，不展示自动加入规则模式与额外增加触发类型区域|确认前需填写谷歌验证码。']
       },
       'blacklist-add': {
         hierarchy: ['一级：黑名单', '二级：添加黑名单', '三级：无', '弹窗：无'],
-        modals: ['当前页无独立弹窗，新增黑名单在当前录入页直接填写UID集合与转入原因。']
+        modals: ['当前页录入UID集合与转入原因后，如UID已存在于白名单，需弹出名单冲突提示，确认移出白名单后再以此次黑名单配置为准。']
       },
       'blacklist-ip': {
         hierarchy: ['一级：黑名单', '二级：IP黑名单', '三级：无', '弹窗：新增IP黑名单、用户控制配置'],
-        modals: ['新增IP黑名单弹窗：输入IP支持多个IP用 / 分隔批量录入|转入原因为必填输入框|确认保存后在列表新增对应记录。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+        modals: ['新增IP黑名单弹窗：输入IP支持多个IP用 / 分隔批量录入|单条IP支持输入 1 至 4 段，不足段位可用 * 补齐，* 代表模糊匹配|转入原因为必填输入框|如录入IP已存在于IP白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”|确认保存后在列表新增对应记录。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-device': {
         hierarchy: ['一级：黑名单', '二级：设备黑名单', '三级：无', '弹窗：新增设备黑名单、用户控制配置'],
-        modals: ['新增设备黑名单弹窗：输入设备ID支持多个设备ID用 / 分隔批量录入|类型固定为 WEB/安卓/IOS|转入原因为必填输入框。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+        modals: ['新增设备黑名单弹窗：输入设备ID支持多个设备ID用 / 分隔批量录入|类型固定为 WEB/安卓/IOS|转入原因为必填输入框|如录入设备已存在于设备白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-withdraw': {
-        hierarchy: ['一级：黑名单', '二级：提币地址黑名单', '三级：无', '弹窗：新增提币地址黑名单、用户控制配置'],
-        modals: ['新增提币地址黑名单弹窗：输入提币地址支持多个地址用 / 分隔批量录入|转入原因为必填输入框。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+        hierarchy: ['一级：黑名单', '二级：充值与提币地址黑名单', '三级：无', '弹窗：新增充值与提币地址黑名单、用户控制配置'],
+        modals: ['新增充值与提币地址黑名单弹窗：输入充值/提币地址支持多个地址用 / 分隔批量录入|转入原因为必填输入框|如录入地址已存在于充值和提币地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-password': {
         hierarchy: ['一级：黑名单', '二级：密码黑名单', '三级：无', '弹窗：新增密码黑名单、用户控制配置'],
-        modals: ['新增密码黑名单弹窗：输入密码摘要支持多个摘要用 / 分隔批量录入|类型固定为 登录密码/支付密码|转入原因为必填输入框。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+        modals: ['新增密码黑名单弹窗：输入密码摘要支持多个摘要用 / 分隔批量录入|类型为多选项，可同时勾选 登录密码/支付密码|如摘要已存在于密码白名单，确认时需弹出名单冲突提示并以此次配置为准|转入原因为必填输入框。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-phone': {
-        hierarchy: ['一级：黑名单', '二级：手机号码黑名单', '三级：无', '弹窗：新增手机号码黑名单'],
-        modals: ['新增手机号码黑名单弹窗：控制方式支持 单个手机号/按国家控制|单个手机号支持多个手机号用 / 分隔批量录入|按国家控制时选择国家后表示该国家号段下手机号默认禁止注册|转入原因为必填输入框。']
+        hierarchy: ['一级：黑名单', '二级：邮箱黑名单', '三级：无', '弹窗：新增邮箱黑名单、触发事件'],
+        modals: ['新增邮箱黑名单弹窗：控制方式支持 单个邮箱/邮箱域名|单个邮箱支持多个邮箱用 / 分隔批量录入|邮箱域名模式下录入域名后表示该域名邮箱默认按黑名单口径处理|转入原因为必填输入框|如录入邮箱或域名已存在于邮箱后缀白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '触发事件弹窗：展示邮箱黑名单对象关联的触发汇总与详情。']
       },
       'limit': {
         hierarchy: ['一级：黑名单', '二级：黑名单用户', '三级：黑名单合约下单与强平规则配置', '弹窗：无'],
@@ -9878,31 +10342,31 @@
       },
       'whitelist-monitor': {
         hierarchy: ['一级：白名单', '二级：白名单用户', '三级：无', '弹窗：添加白名单用户、触发事件'],
-        modals: ['添加白名单用户弹窗：字段包含用户UID集合与转入原因，居中展示。', '触发事件弹窗：展示触发时间、相关用户UID、触发原因，一次一条。']
+        modals: ['添加白名单用户弹窗：字段包含用户UID集合与转入原因，居中展示；如录入UID已存在于黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。', '触发事件弹窗：展示触发时间、相关用户UID、触发原因，一次一条。']
       },
       'whitelist-add': {
         hierarchy: ['一级：白名单', '二级：白名单用户', '三级：兼容保留页', '弹窗：添加白名单用户'],
-        modals: ['当前业务入口已统一改为添加白名单用户弹窗；本页仅保留兼容说明。']
+        modals: ['当前业务入口已统一改为添加白名单用户弹窗；录入UID集合与转入原因后，如UID已存在于黑名单，需弹出名单冲突提示，确认移出黑名单后再以此次白名单配置为准。']
       },
       'risk-email-suffix': {
         hierarchy: ['一级：白名单', '二级：邮箱后缀白名单', '三级：无', '弹窗：添加后缀'],
-        modals: ['添加后缀弹窗：字段包含邮箱后缀集合与转入原因，多个后缀用 `/` 分隔。']
+        modals: ['添加后缀弹窗：字段包含邮箱后缀集合与转入原因，多个后缀用 `/` 分隔；如录入后缀已存在于邮箱黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。']
       },
       'risk-ip-whitelist': {
         hierarchy: ['一级：白名单', '二级：IP白名单', '三级：无', '弹窗：添加IP、触发事件'],
-        modals: ['添加IP弹窗：字段包含IP集合与转入原因，多个IP用 `/` 分隔。', '触发事件弹窗：展示命中IP白名单后的放行记录明细。']
+        modals: ['添加IP弹窗：字段包含IP集合与转入原因，多个IP用 `/` 分隔；单条IP支持输入 1 至 4 段，不足段位可用 * 补齐，* 代表模糊匹配；如录入IP已存在于IP黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。', '触发事件弹窗：展示命中IP白名单后的放行记录明细。']
       },
       'risk-device-whitelist': {
         hierarchy: ['一级：白名单', '二级：设备白名单', '三级：无', '弹窗：添加设备'],
-        modals: ['添加设备弹窗：字段包含设备ID集合、类型、转入原因，多个设备用 `/` 分隔。']
+        modals: ['添加设备弹窗：字段包含设备ID集合、类型、转入原因，多个设备用 `/` 分隔；如录入设备已存在于设备黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。']
       },
       'risk-withdraw-whitelist': {
-        hierarchy: ['一级：白名单', '二级：提币地址白名单', '三级：无', '弹窗：添加地址、触发事件'],
-        modals: ['添加地址弹窗：字段包含提币地址集合与转入原因，多个地址用 `/` 分隔。', '触发事件弹窗：展示提币地址白名单放行记录明细。']
+        hierarchy: ['一级：白名单', '二级：充值和提币地址白名单', '三级：无', '弹窗：添加地址、触发事件'],
+        modals: ['添加地址弹窗：字段包含充值/提币地址集合与转入原因，多个地址用 `/` 分隔；如录入地址已存在于充值与提币地址黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。', '触发事件弹窗：展示充值和提币地址白名单放行记录明细。']
       },
       'risk-password-whitelist': {
         hierarchy: ['一级：白名单', '二级：密码白名单', '三级：无', '弹窗：添加密码、触发事件'],
-        modals: ['添加密码弹窗：字段包含密码摘要集合、类型、转入原因，支持登录密码与支付密码。', '触发事件弹窗：展示密码白名单放行的时间、相关用户UID与原因。']
+        modals: ['添加密码弹窗：字段包含密码摘要集合、类型、转入原因；类型为多选项，可同时选择登录密码与支付密码|如摘要已存在于密码黑名单，确认时需弹出名单冲突提示并以此次配置为准。', '触发事件弹窗：展示密码白名单放行的时间、相关用户UID与原因。']
       },
       'risk-login': {
         hierarchy: ['一级：风控', '二级：异常登录监控', '三级：无', '弹窗：规则配置、监控状态配置、同一用户配置'],
@@ -10732,7 +11196,10 @@
         'auto-join-rules-modal': 'modal-auto-join-rules',
         'monitor-status-modal': 'modal-monitor-status',
         'rule-config-modal': 'modal-rule-config',
-        'whitelist-events-modal': 'modal-whitelist-events'
+        'whitelist-events-modal': 'modal-whitelist-events',
+        'whitelist-events-detail-modal': 'modal-whitelist-events-detail',
+        'multi-id-modal': 'modal-multi-id',
+        'blacklist-whitelist-confirm-modal': 'modal-blacklist-whitelist-confirm'
       };
       Object.entries(modalSpecMap).forEach(([modalId, targetPageId]) => {
         const modal = document.getElementById(modalId);
@@ -10753,7 +11220,7 @@
 
     function ensureInlineModalSpecTriggers() {
       const inlineModalSpecMap = {
-        'whitelist-add-modal': 'whitelist-monitor',
+        'whitelist-add-modal': 'whitelist-add',
         'risk-email-suffix-form-block': 'risk-email-suffix',
         'risk-ip-form-block': 'risk-ip-whitelist',
         'risk-device-form-block': 'risk-device-whitelist',
@@ -10837,6 +11304,25 @@
       if (!matched) return;
       matched.checked = true;
       matched.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
+    function setCheckboxChoices(root, inputName, targetValues) {
+      if (!root || !inputName) return;
+      const normalizedTargets = uniqueList(Array.isArray(targetValues) ? targetValues : String(targetValues || '').split(/[、,，/]/))
+        .map(item => item.replace(/\s+/g, '').trim())
+        .filter(Boolean);
+      const checkboxes = Array.from(root.querySelectorAll(`input[type="checkbox"][name="${inputName}"]`));
+      if (!checkboxes.length) return;
+      checkboxes.forEach(item => {
+        const labelText = item.parentElement ? item.parentElement.textContent.replace(/\s+/g, '').trim() : '';
+        const valueText = (item.value || '').replace(/\s+/g, '').trim();
+        item.checked = normalizedTargets.length
+          ? normalizedTargets.includes(valueText) || normalizedTargets.includes(labelText)
+          : false;
+      });
+      if (!checkboxes.some(item => item.checked)) {
+        checkboxes[0].checked = true;
+      }
     }
 
     function setSelectChoice(select, targetValue) {
@@ -10931,7 +11417,7 @@
       } else if (targetId === 'blacklist-withdraw-form-block') {
         if (textarea) textarea.value = mode === 'edit' ? (trigger.dataset.withdrawValue || '') : '';
       } else if (targetId === 'blacklist-password-form-block') {
-        setRadioChoice(panel, 'password-blacklist-type', mode === 'edit' ? (trigger.dataset.passwordType || '登录密码') : '登录密码');
+        setCheckboxChoices(panel, 'password-blacklist-type', mode === 'edit' ? (trigger.dataset.passwordType || '登录密码') : '登录密码');
         if (textarea) textarea.value = mode === 'edit' ? (trigger.dataset.passwordValue || '') : '';
       } else if (targetId === 'blacklist-phone-form-block') {
         setRadioChoice(panel, 'phone-blacklist-mode', mode === 'edit' ? (trigger.dataset.phoneMode || 'phone') : 'phone');
@@ -10951,6 +11437,24 @@
       document.body.style.overflow = 'hidden';
       const button = document.querySelector(`.js-toggle-config[data-target="${targetId}"]`);
       if (button) syncConfigToggle(button);
+    }
+
+    function getCheckedValues(root, inputName) {
+      if (!root || !inputName) return [];
+      return Array.from(root.querySelectorAll(`input[name="${inputName}"]:checked`))
+        .map(item => item.value || (item.parentElement ? item.parentElement.textContent : ''))
+        .map(item => String(item || '').replace(/\s+/g, ' ').trim())
+        .filter(Boolean);
+    }
+
+    function closeInlineEntryModalById(modalId) {
+      const modal = document.getElementById(modalId);
+      if (!modal) return;
+      closeOverlaySpecPanel(modal);
+      modal.hidden = true;
+      document.body.style.overflow = '';
+      const trigger = document.querySelector(`.js-toggle-config[data-target="${modalId}"]`);
+      if (trigger) syncConfigToggle(trigger);
     }
 
     function getGroupPages(group) {
@@ -11179,15 +11683,14 @@
       const mode = getAutoJoinMode();
       if (autoJoinModeInherit) autoJoinModeInherit.classList.toggle('active', mode === 'inherit');
       if (autoJoinModeAdditional) autoJoinModeAdditional.classList.toggle('active', mode === 'additional');
-      if (autoJoinInheritSection) autoJoinInheritSection.style.display = mode === 'inherit' ? '' : 'none';
-      if (autoJoinAdditionalSection) autoJoinAdditionalSection.style.display = mode === 'additional' ? '' : 'none';
+      if (autoJoinModeSection) autoJoinModeSection.style.display = 'none';
+      if (autoJoinInheritSection) autoJoinInheritSection.style.display = '';
+      if (autoJoinAdditionalSection) autoJoinAdditionalSection.style.display = 'none';
       const extraCount = autoJoinExtraOptions.filter(item => item.checked).length;
       if (autoJoinExtraCount) autoJoinExtraCount.value = String(extraCount);
-      if (autoJoinRulesExtraField) autoJoinRulesExtraField.style.display = mode === 'additional' ? '' : 'none';
+      if (autoJoinRulesExtraField) autoJoinRulesExtraField.style.display = 'none';
       if (autoJoinRulesHelper) {
-        autoJoinRulesHelper.textContent = mode === 'additional'
-          ? `当前比可疑用户类型额外增加 ${extraCount} 个触发类型；黑名单用户至少需要增加 1 个，避免与可疑用户自动加入规则重叠。`
-          : '当前为继承模式；若来源页面为黑名单用户，确认保存时必须与可疑用户自动加入规则存在差异，否则不允许保存。';
+        autoJoinRulesHelper.textContent = '当前仅保留触发类型勾选展示，不再区分继承模式或额外增加触发类型。';
       }
     }
 
@@ -11213,11 +11716,20 @@
       state.autoJoinRulesSource = currentSource;
       if (autoJoinRulesTitle) autoJoinRulesTitle.textContent = `${currentSource}自动加入规则配置`;
       if (autoJoinRulesDesc) autoJoinRulesDesc.textContent = isBlacklist
-        ? '直接读取可疑用户自动加入规则配置，并在此基础上增加黑名单专属附加规则；满足条件的用户自动进入黑名单用户列表。'
+        ? '勾选需要自动纳入黑名单用户列表的触发类型；当用户满足所选类型命中条件时，自动进入黑名单用户列表。'
         : '勾选风控用户下需要自动纳入可疑用户列表的类型；当用户满足所选类型命中条件时，自动进入可疑用户列表。';
+      if (autoJoinInheritTitle) autoJoinInheritTitle.textContent = `${currentSource}触发类型`;
+      if (autoJoinRulesAlert) {
+        autoJoinRulesAlert.innerHTML = `
+          <strong>规则说明：</strong><br>
+          1. 勾选需要自动加入${currentSource}的触发类型；当用户满足所选类型命中条件时，自动进入当前名单列表。<br>
+          2. 当前弹窗仅保留触发类型勾选，不再区分继承模式或额外增加触发类型。<br>
+          3. 确认保存前需填写谷歌验证码；用户命中规则后自动加入名单，触发类型将在备注字段中展示。
+        `;
+      }
       resetAutoJoinRulesModal();
       if (autoJoinRulesHelper) autoJoinRulesHelper.textContent = isBlacklist
-        ? '当前为黑名单用户自动加入规则；确认保存时必须至少比可疑用户规则多 1 个触发类型，避免规则完全重叠。'
+        ? '当前为黑名单用户自动加入规则；按勾选的触发类型命中后，用户自动进入黑名单用户列表。'
         : '当前为可疑用户自动加入规则；勾选的风控类型命中后，用户自动进入可疑用户列表。';
       syncAutoJoinModeUI();
     }
@@ -11277,48 +11789,279 @@
       if (!trigger || !ruleConfigModalBody) return;
       const target = document.getElementById(trigger.dataset.target || '');
       if (!target) return;
+      const source = trigger.dataset.configSource || '当前页面';
       if (ruleConfigModalTitle) ruleConfigModalTitle.textContent = trigger.dataset.configTitle || '规则配置';
-      if (ruleConfigModalDesc) ruleConfigModalDesc.textContent = `${trigger.dataset.configSource || '当前页面'}的规则配置通过弹窗展示，避免列表下方展开后在长数据场景下被遮挡。`;
+      if (ruleConfigModalDesc) ruleConfigModalDesc.textContent = `${source}的规则配置通过弹窗展示，避免列表下方展开后在长数据场景下被遮挡。`;
       ruleConfigModalBody.innerHTML = target.innerHTML;
+
+      const rows = Array.from(ruleConfigModalBody.querySelectorAll('.config-row, .modal-field'));
+      rows.forEach(row => {
+        const label = row.querySelector('label');
+        if (!label) return;
+        if (label.textContent.trim() === '异常处理方式') row.remove();
+      });
+
+      const logicModeMap = {
+        '异常登录监控': 'or',
+        '批量注册监控': 'or',
+        '异常充值监控': 'or',
+        '用户同密码': 'or',
+        '大额出入金监控': 'or'
+      };
+      const logicMode = logicModeMap[source] || 'and';
+      const logicJoinWord = logicMode === 'or' ? ' 或 ' : ' 并且 ';
+      const logicPrefix = logicMode === 'or'
+        ? '触发条件（满足任意一条即可触发）：'
+        : '触发条件（需同时满足以下全部条件才触发）：';
+
+      const configPanel = ruleConfigModalBody.querySelector('.config-panel');
+      if (configPanel) {
+        const oldLogic = configPanel.querySelector('.js-rule-condition-logic');
+        if (oldLogic) oldLogic.remove();
+        const conditionLabels = Array.from(configPanel.querySelectorAll('.config-row > label'))
+          .map(label => label.textContent.trim())
+          .filter(text => text && !['风控操作', '备注', '谷歌验证码'].includes(text));
+        if (conditionLabels.length) {
+          const logicAlert = document.createElement('div');
+          logicAlert.className = 'modal-alert js-rule-condition-logic';
+          logicAlert.textContent = `${logicPrefix}${conditionLabels.join(logicJoinWord)}。`;
+          const title = configPanel.querySelector('h2');
+          if (title && title.parentNode) title.parentNode.insertBefore(logicAlert, title.nextSibling);
+          else configPanel.insertBefore(logicAlert, configPanel.firstChild);
+        }
+      }
+
       const actionBar = ruleConfigModalBody.querySelector('.config-actions');
+      if (actionBar) {
+        const hasRiskActions = Array.from(ruleConfigModalBody.querySelectorAll('.config-row > label')).some(label => label.textContent.trim() === '风控操作');
+        if (!hasRiskActions) {
+          const riskRow = document.createElement('div');
+          riskRow.className = 'config-row';
+          riskRow.innerHTML = `
+            <label>风控操作</label>
+            <div class="modal-option-grid js-risk-action-grid">
+              <label class="modal-option-item"><input type="checkbox">禁止登录</label>
+              <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+              <label class="modal-option-item"><input type="checkbox">禁止提现</label>
+              <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
+              <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
+              <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
+              <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+              <label class="modal-option-item"><input type="radio" class="js-risk-mark-only" name="risk-mark-only">仅标记(此项只单选)</label>
+            </div>
+            <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
+          `;
+          actionBar.parentNode.insertBefore(riskRow, actionBar);
+        } else {
+          const grid = ruleConfigModalBody.querySelector('.modal-option-grid');
+          if (grid && !Array.from(grid.querySelectorAll('label')).some(label => label.textContent.replace(/\s+/g, '').includes('仅标记'))) {
+            const markOnlyLabel = document.createElement('label');
+            markOnlyLabel.className = 'modal-option-item';
+            markOnlyLabel.innerHTML = '<input type="radio" class="js-risk-mark-only" name="risk-mark-only">仅标记(此项只单选)';
+            grid.appendChild(markOnlyLabel);
+          }
+        }
+      }
+
       if (actionBar && !ruleConfigModalBody.querySelector('.js-rule-config-google')) {
         const googleField = document.createElement('div');
         googleField.className = 'modal-field';
         googleField.style.gridColumn = '1 / -1';
         googleField.innerHTML = `
           <label>谷歌验证码</label>
-          <div class="inline-input-button">
-            <input type="text" class="js-rule-config-google" placeholder="请输入谷歌验证码" />
-            <button type="button" class="button secondary">获取验证码</button>
-          </div>
+          <input type="text" class="js-rule-config-google" placeholder="请输入谷歌验证码" />
         `;
         actionBar.parentNode.insertBefore(googleField, actionBar);
       }
+
+      const markOnly = ruleConfigModalBody.querySelector('.js-risk-mark-only');
+      const checkboxActions = Array.from(ruleConfigModalBody.querySelectorAll('.modal-option-grid input[type="checkbox"]'));
+      if (markOnly && checkboxActions.length) {
+        markOnly.addEventListener('change', () => {
+          if (!markOnly.checked) return;
+          checkboxActions.forEach(item => {
+            item.checked = false;
+          });
+        });
+        checkboxActions.forEach(item => {
+          item.addEventListener('change', () => {
+            if (!item.checked) return;
+            markOnly.checked = false;
+          });
+        });
+      }
+    }
+
+    let whitelistEventGroupsCache = [];
+
+    function escapeHtml(text) {
+      return String(text || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function getWhitelistDetailIdentity(source, detail) {
+      const normalizedSource = String(source || '').trim();
+      const uid = String(detail && detail.uid ? detail.uid : '').trim();
+      const device = String(detail && detail.device ? detail.device : '').trim();
+      const ip = String(detail && detail.ip ? detail.ip : '').trim();
+      const pickFirstValid = (...items) => items.find(item => item && item.value && item.value !== '--') || { label: 'UID', value: uid || '--' };
+      if (normalizedSource === '白名单用户') {
+        const parts = [];
+        if (device && device !== '--') parts.push(`设备: ${device}`);
+        if (ip && ip !== '--') parts.push(`IP: ${ip}`);
+        return {
+          label: '设备/IP',
+          value: parts.join('\n') || '--',
+          header: '设备/IP（排重）',
+          multiline: true
+        };
+      }
+      if (normalizedSource === '设备白名单' || normalizedSource === '设备黑名单') {
+        const selected = pickFirstValid({ label: '设备', value: device }, { label: 'UID', value: uid }, { label: 'IP', value: ip });
+        return { ...selected, header: '相关用户UID/设备/IP（排重）', multiline: false };
+      }
+      if (normalizedSource === 'IP白名单' || normalizedSource === 'IP黑名单') {
+        const selected = pickFirstValid({ label: 'IP', value: ip }, { label: 'UID', value: uid }, { label: '设备', value: device });
+        return { ...selected, header: '相关用户UID/设备/IP（排重）', multiline: false };
+      }
+      const selected = pickFirstValid({ label: 'UID', value: uid }, { label: '设备', value: device }, { label: 'IP', value: ip });
+      return { ...selected, header: '相关用户UID/设备/IP（排重）', multiline: false };
+    }
+
+    function setWhitelistEventsDetailModalOpen(open) {
+      if (!whitelistEventsDetailModal) return;
+      whitelistEventsDetailModal.classList.toggle('open', open);
+      whitelistEventsDetailModal.setAttribute('aria-hidden', open ? 'false' : 'true');
+      if (!open) closeOverlaySpecPanel(whitelistEventsDetailModal);
+      document.body.style.overflow = open ? 'hidden' : (whitelistEventsModal && whitelistEventsModal.classList.contains('open') ? 'hidden' : '');
     }
 
     function setWhitelistEventsModalOpen(open) {
       if (!whitelistEventsModal) return;
       whitelistEventsModal.classList.toggle('open', open);
       whitelistEventsModal.setAttribute('aria-hidden', open ? 'false' : 'true');
-      if (!open) closeOverlaySpecPanel(whitelistEventsModal);
+      if (!open) {
+        closeOverlaySpecPanel(whitelistEventsModal);
+        setWhitelistEventsDetailModalOpen(false);
+      }
       document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    function parseWhitelistEventGroups(rawRecords) {
+      const items = String(rawRecords || '').split('|').map(item => item.trim()).filter(Boolean);
+      if (!items.length) return [];
+      const hasNewFormat = items.some(item => item.includes('~'));
+      if (hasNewFormat) {
+        return items.map(item => {
+          const [date = '', dedupCount = '', uidCount = '', detailsRaw = ''] = item.split('~');
+          const details = String(detailsRaw || '').split('#').map(detail => detail.trim()).filter(Boolean).map(detail => {
+            const [time = '', uid = '', device = '--', ip = '--', totalCount = '1', reason = '--', action = '--'] = detail.split('^');
+            return {
+              time,
+              uid: uid || '--',
+              device: device || '--',
+              ip: ip || '--',
+              totalCount: totalCount || '1',
+              reason: reason || '--',
+              action: action || '--'
+            };
+          });
+          const uidSet = new Set();
+          details.forEach(detail => {
+            String(detail.uid || '').split('/').map(item => item.trim()).filter(Boolean).forEach(uid => uidSet.add(uid));
+          });
+          return {
+            date: date || '未知日期',
+            dedupCount: dedupCount || String(details.length),
+            uidCount: uidCount || String(uidSet.size || 0),
+            details
+          };
+        });
+      }
+      const grouped = new Map();
+      items.forEach(item => {
+        const [time = '', uid = '', reason = ''] = item.split(',');
+        const date = time ? time.slice(0, 10) : '未知日期';
+        if (!grouped.has(date)) grouped.set(date, { date, dedupCount: 0, uidSet: new Set(), details: [] });
+        const group = grouped.get(date);
+        group.dedupCount += 1;
+        String(uid || '').split('/').map(value => value.trim()).filter(Boolean).forEach(value => group.uidSet.add(value));
+        group.details.push({
+          time: time || '--',
+          uid: uid || '--',
+          device: '--',
+          ip: '--',
+          totalCount: '1',
+          reason: reason || '--',
+          action: '--'
+        });
+      });
+      return Array.from(grouped.values())
+        .sort((a, b) => String(b.date).localeCompare(String(a.date)))
+        .map(group => ({
+          date: group.date,
+          dedupCount: String(group.dedupCount),
+          uidCount: String(group.uidSet.size),
+          details: group.details
+        }));
+    }
+
+    function fillWhitelistEventDetailModal(detailIndex) {
+      const group = whitelistEventGroupsCache[Number(detailIndex)];
+      if (!group || !whitelistEventsDetailTableBody) return;
+      const eventSource = whitelistEventsModal ? whitelistEventsModal.dataset.eventSource || '' : '';
+      const eventTarget = whitelistEventsModal ? whitelistEventsModal.dataset.eventTarget || '' : '';
+      if (whitelistEventsDetailSource) whitelistEventsDetailSource.textContent = eventSource;
+      if (whitelistEventsDetailTarget) whitelistEventsDetailTarget.textContent = eventTarget;
+      if (whitelistEventsDetailDate) whitelistEventsDetailDate.textContent = group.date || '';
+      if (whitelistEventsDetailIdentityHeader) {
+        whitelistEventsDetailIdentityHeader.textContent = eventSource === '白名单用户' ? '设备/IP（排重）' : '相关用户UID/设备/IP（排重）';
+      }
+      if (whitelistEventsDetailDesc) {
+        whitelistEventsDetailDesc.textContent = eventSource === '白名单用户'
+          ? '展示当前触发日期下的明细记录；白名单用户本身按UID汇总，因此详情仅展示设备/IP排重结果。'
+          : '展示当前触发日期下的明细记录，相关用户UID/设备/IP按当前名单类型仅展示一种维度并做排重。';
+      }
+      whitelistEventsDetailTableBody.innerHTML = group.details.map(detail => {
+          const identity = getWhitelistDetailIdentity(eventSource, detail);
+          const identityText = identity.multiline
+            ? escapeHtml(identity.value).replace(/\n/g, '<br>')
+            : `${escapeHtml(identity.label)}: ${escapeHtml(identity.value)}`;
+          return `
+          <tr>
+            <td>${escapeHtml(detail.time)}</td>
+            <td>${identityText}</td>
+            <td>${escapeHtml(detail.totalCount)}</td>
+            <td>${escapeHtml(detail.action || '--')}</td>
+            <td>${escapeHtml(detail.reason)}</td>
+          </tr>
+        `;
+        }).join('') || '<tr><td colspan="5">当前日期暂无触发详情</td></tr>';
     }
 
     function fillWhitelistEventsModal(trigger) {
       if (!trigger || !whitelistEventsTableBody) return;
-      if (whitelistEventsSource) whitelistEventsSource.textContent = trigger.dataset.eventSource || '';
-      if (whitelistEventsTarget) whitelistEventsTarget.textContent = trigger.dataset.eventTarget || '';
-      const rows = (trigger.dataset.eventRecords || '').split('|').map(item => item.trim()).filter(Boolean);
-      whitelistEventsTableBody.innerHTML = rows.map(record => {
-        const [time, uid, reason] = record.split(',');
-        return `
+      const eventSource = trigger.dataset.eventSource || '';
+      const eventTarget = trigger.dataset.eventTarget || '';
+      if (whitelistEventsSource) whitelistEventsSource.textContent = eventSource;
+      if (whitelistEventsTarget) whitelistEventsTarget.textContent = eventTarget;
+      if (whitelistEventsModal) {
+        whitelistEventsModal.dataset.eventSource = eventSource;
+        whitelistEventsModal.dataset.eventTarget = eventTarget;
+      }
+      whitelistEventGroupsCache = parseWhitelistEventGroups(trigger.dataset.eventRecords || '');
+      whitelistEventsTableBody.innerHTML = whitelistEventGroupsCache.map((group, index) => `
           <tr>
-            <td>${time || ''}</td>
-            <td>${uid || ''}</td>
-            <td>${reason || ''}</td>
+            <td>${escapeHtml(group.date)}</td>
+            <td>${escapeHtml(group.dedupCount)}</td>
+            <td>${escapeHtml(group.uidCount)}</td>
+            <td><a href="#" class="action-link js-open-whitelist-event-detail" data-detail-index="${index}">查看详情</a></td>
           </tr>
-        `;
-      }).join('') || '<tr><td colspan="3">当前周期内暂无触发事件</td></tr>';
+        `).join('') || '<tr><td colspan="4">当前周期内暂无触发事件</td></tr>';
     }
 
     function getSameUserBatchUsers() {
@@ -11373,7 +12116,7 @@
       const isAbnormalDeposit = source === '异常充值监控';
       const isTradePeerMonitor = source === '对敲交易监控';
       const isWithdrawAddressMonitor = source === '同提币地址监控';
-      const isBlacklistManage = ['IP黑名单', '设备黑名单', '提币地址黑名单', '密码黑名单', '邮箱黑名单'].includes(source);
+      const isBlacklistManage = ['IP黑名单', '设备黑名单', '充值与提币地址黑名单', '密码黑名单', '邮箱黑名单'].includes(source);
       const hideRelationBlock = isBatchRegister || isContractSuspicious || isShortHold || isWoolMonitor || isAbnormalDeposit || isBlacklistManage;
       const relatedIpUsers = trigger.dataset.relatedIpUsers || uid;
       const relatedDeviceUsers = trigger.dataset.relatedDeviceUsers || uid;
@@ -11803,6 +12546,7 @@
       const whiteListConflicts = targetUsers.filter(uid => getWhitelistProtectedUsers().has(uid));
       if (whiteListConflicts.length) {
         openBlacklistWhitelistConfirm('添加黑名单', whiteListConflicts, {
+          direction: 'to-blacklist',
           type: 'blacklist-add',
           payload: { targetUsers, reason }
         });
@@ -11824,7 +12568,119 @@
     bindClick('back-from-blacklist-liquidation-history', () => activate('blacklist-monitor'));
     bindClick('back-from-whitelist-add', () => activate('whitelist-monitor'));
     bindClick('whitelist-cancel', () => activate('whitelist-monitor'));
-    bindClick('whitelist-confirm', () => alert('白名单添加成功'));
+    bindClick('whitelist-confirm', () => {
+      const page = document.getElementById('whitelist-add');
+      const textarea = page ? page.querySelector('textarea') : null;
+      const reasonInput = page ? page.querySelector('input[type="text"]') : null;
+      const targetUsers = uniqueList(parseCsvList(textarea ? textarea.value : ''));
+      const reason = reasonInput ? reasonInput.value.trim() : '';
+      if (!targetUsers.length) {
+        alert('请输入用户UID');
+        return;
+      }
+      if (!reason) {
+        alert('请输入转入原因');
+        return;
+      }
+      const blackListConflicts = targetUsers.filter(uid => getBlacklistProtectedUsers().has(uid));
+      if (blackListConflicts.length) {
+        openBlacklistWhitelistConfirm('添加白名单用户', blackListConflicts, {
+          direction: 'to-whitelist',
+          type: 'whitelist-add',
+          payload: { targetUsers, reason }
+        });
+        return;
+      }
+      alert(`白名单添加成功：${targetUsers.join('、')}；原因：${reason}`);
+    });
+    bindClick('whitelist-add-modal-confirm', () => {
+      const modal = document.getElementById('whitelist-add-modal');
+      const textarea = modal ? modal.querySelector('textarea') : null;
+      const reasonInput = modal ? modal.querySelector('input[type="text"]') : null;
+      const targetUsers = uniqueList(parseCsvList(textarea ? textarea.value : ''));
+      const reason = reasonInput ? reasonInput.value.trim() : '';
+      if (!targetUsers.length) {
+        alert('请输入用户UID');
+        return;
+      }
+      if (!reason) {
+        alert('请输入转入原因');
+        return;
+      }
+      const blackListConflicts = targetUsers.filter(uid => getBlacklistProtectedUsers().has(uid));
+      if (blackListConflicts.length) {
+        openBlacklistWhitelistConfirm('添加白名单用户', blackListConflicts, {
+          direction: 'to-whitelist',
+          type: 'whitelist-add-inline',
+          payload: { targetUsers, reason }
+        });
+        return;
+      }
+      closeInlineEntryModalById('whitelist-add-modal');
+      alert(`白名单添加成功：${targetUsers.join('、')}；原因：${reason}`);
+    });
+    bindClick('risk-password-whitelist-confirm', () => {
+      const panel = document.getElementById('risk-password-whitelist-form');
+      const textarea = panel ? panel.querySelector('textarea') : null;
+      const reasonInput = panel ? panel.querySelector('input[type="text"]') : null;
+      const values = uniqueList(parseCsvList(textarea ? textarea.value : ''));
+      const types = getCheckedValues(panel, 'password-whitelist-type');
+      const reason = reasonInput ? reasonInput.value.trim() : '';
+      if (!values.length) {
+        alert('请输入密码摘要');
+        return;
+      }
+      if (!types.length) {
+        alert('请至少选择一种类型');
+        return;
+      }
+      if (!reason) {
+        alert('请输入转入原因');
+        return;
+      }
+      const conflicts = values.filter(item => getPasswordBlacklistValues().has(item));
+      if (conflicts.length) {
+        openBlacklistWhitelistConfirm('密码白名单', conflicts, {
+          direction: 'to-whitelist',
+          type: 'password-whitelist-inline',
+          payload: { values, types, reason }
+        });
+        return;
+      }
+      closeInlineEntryModalById('risk-password-whitelist-form-block');
+      alert(`密码白名单添加成功：${values.join('、')}；类型：${types.join('、')}；原因：${reason}`);
+    });
+    bindClick('blacklist-password-form-confirm', () => {
+      const panel = document.getElementById('blacklist-password-form');
+      const textarea = panel ? panel.querySelector('textarea') : null;
+      const reasonInput = panel ? panel.querySelector('input[type="text"]') : null;
+      const values = uniqueList(parseCsvList(textarea ? textarea.value : ''));
+      const types = getCheckedValues(panel, 'password-blacklist-type');
+      const reason = reasonInput ? reasonInput.value.trim() : '';
+      if (!values.length) {
+        alert('请输入密码摘要');
+        return;
+      }
+      if (!types.length) {
+        alert('请至少选择一种类型');
+        return;
+      }
+      if (!reason) {
+        alert('请输入转入原因');
+        return;
+      }
+      const conflicts = values.filter(item => getPasswordWhitelistValues().has(item));
+      if (conflicts.length) {
+        openBlacklistWhitelistConfirm('密码黑名单', conflicts, {
+          direction: 'to-blacklist',
+          type: 'password-blacklist-inline',
+          payload: { values, types, reason }
+        });
+        return;
+      }
+      closeInlineEntryModalById('blacklist-password-form-block');
+      alert(`密码黑名单添加成功：${values.join('、')}；类型：${types.join('、')}；原因：${reason}`);
+    });
     bindClick('risk-global-limit-close', () => setRiskGlobalLimitModalOpen(false));
     bindClick('risk-global-limit-cancel', () => setRiskGlobalLimitModalOpen(false));
     bindClick('risk-global-limit-confirm', () => {
@@ -11839,17 +12695,7 @@
     bindClick('auto-join-rules-close', () => setAutoJoinRulesModalOpen(false));
     bindClick('auto-join-rules-cancel', () => setAutoJoinRulesModalOpen(false));
     bindClick('auto-join-rules-confirm', () => {
-      const mode = getAutoJoinMode();
-      const extraCount = autoJoinExtraOptions.filter(item => item.checked).length;
       const googleCode = autoJoinRulesGoogle ? autoJoinRulesGoogle.value.trim() : '';
-      if (state.autoJoinRulesSource === '黑名单用户' && mode === 'inherit') {
-        alert('黑名单用户自动加入规则不能与可疑用户完全重叠，请选择“额外增加触发类型”，并至少增加 1 个触发类型。');
-        return;
-      }
-      if (mode === 'additional' && extraCount < 1) {
-        alert('请至少额外增加 1 个触发类型，避免与可疑用户规则重叠。');
-        return;
-      }
       if (!googleCode) {
         alert('请填写谷歌验证码');
         return;
@@ -11915,6 +12761,15 @@
         setWhitelistEventsModalOpen(true);
       });
     });
+    if (whitelistEventsTableBody) {
+      whitelistEventsTableBody.addEventListener('click', event => {
+        const detailTrigger = event.target.closest('.js-open-whitelist-event-detail');
+        if (!detailTrigger) return;
+        event.preventDefault();
+        fillWhitelistEventDetailModal(detailTrigger.dataset.detailIndex || '0');
+        setWhitelistEventsDetailModalOpen(true);
+      });
+    }
 
     recordDetailOpeners.forEach(item => {
       item.addEventListener('click', event => {
@@ -12098,6 +12953,11 @@
         if (event.target === whitelistEventsModal) setWhitelistEventsModalOpen(false);
       });
     }
+    if (whitelistEventsDetailModal) {
+      whitelistEventsDetailModal.addEventListener('click', event => {
+        if (event.target === whitelistEventsDetailModal) setWhitelistEventsDetailModalOpen(false);
+      });
+    }
 
     if (blacklistWhitelistConfirmModal) {
       blacklistWhitelistConfirmModal.addEventListener('click', event => {
@@ -12126,7 +12986,7 @@
       const blacklistAction = event.target.closest('.action-link, .js-batch-risk-action');
       if (blacklistAction) {
         const actionText = blacklistAction.textContent.replace(/\s+/g, ' ').trim();
-        if (actionText === '黑名单用户') {
+        if (/黑名单用户$/.test(actionText)) {
           event.preventDefault();
           const proxyTrigger = createBlacklistConfigTrigger(blacklistAction);
           if (proxyTrigger) {
@@ -12174,6 +13034,25 @@
       }
       if (context.type === 'blacklist-add') {
         alert(`黑名单添加成功：${context.payload.targetUsers.join('、')} 已从白名单移至黑名单；原因：${context.payload.reason}`);
+        return;
+      }
+      if (context.type === 'whitelist-add') {
+        alert(`白名单添加成功：${context.payload.targetUsers.join('、')} 已从黑名单移出并加入白名单；原因：${context.payload.reason}`);
+        return;
+      }
+      if (context.type === 'whitelist-add-inline') {
+        closeInlineEntryModalById('whitelist-add-modal');
+        alert(`白名单添加成功：${context.payload.targetUsers.join('、')} 已从黑名单移出并加入白名单；原因：${context.payload.reason}`);
+        return;
+      }
+      if (context.type === 'password-whitelist-inline') {
+        closeInlineEntryModalById('risk-password-whitelist-form-block');
+        alert(`密码白名单添加成功：${context.payload.values.join('、')} 已从密码黑名单移出并加入密码白名单；类型：${context.payload.types.join('、')}；原因：${context.payload.reason}`);
+        return;
+      }
+      if (context.type === 'password-blacklist-inline') {
+        closeInlineEntryModalById('blacklist-password-form-block');
+        alert(`密码黑名单添加成功：${context.payload.values.join('、')} 已从密码白名单移出并加入密码黑名单；类型：${context.payload.types.join('、')}；原因：${context.payload.reason}`);
       }
     });
     bindClick('same-user-batch-search-delete', () => {
@@ -12382,6 +13261,27 @@
     });
     bindClick('open-batch-register-rule-modal', () => {
       if (batchRegisterRuleGoogle) batchRegisterRuleGoogle.value = '';
+      const markOnly = batchRegisterRuleModal ? batchRegisterRuleModal.querySelector('.js-risk-mark-only') : null;
+      const checkboxActions = batchRegisterRuleModal
+        ? Array.from(batchRegisterRuleModal.querySelectorAll('.modal-option-grid input[type="checkbox"]'))
+        : [];
+      if (markOnly && checkboxActions.length && !markOnly.dataset.bound) {
+        markOnly.dataset.bound = '1';
+        markOnly.addEventListener('change', () => {
+          if (!markOnly.checked) return;
+          checkboxActions.forEach(item => {
+            item.checked = false;
+          });
+        });
+        checkboxActions.forEach(item => {
+          if (item.dataset.bound) return;
+          item.dataset.bound = '1';
+          item.addEventListener('change', () => {
+            if (!item.checked) return;
+            markOnly.checked = false;
+          });
+        });
+      }
       setBatchRegisterRuleModalOpen(true);
     });
     bindClick('batch-register-rule-close', () => setBatchRegisterRuleModalOpen(false));
@@ -12421,6 +13321,8 @@
     bindClick('multi-id-modal-cancel', () => setMultiIdModalOpen(false));
     bindClick('whitelist-events-close', () => setWhitelistEventsModalOpen(false));
     bindClick('whitelist-events-cancel', () => setWhitelistEventsModalOpen(false));
+    bindClick('whitelist-events-detail-close', () => setWhitelistEventsDetailModalOpen(false));
+    bindClick('whitelist-events-detail-cancel', () => setWhitelistEventsDetailModalOpen(false));
     bindClick('monitor-status-confirm', () => {
       const targetStatus = monitorStatusSelected ? monitorStatusSelected.value : monitorStatusContext.selected;
       setMonitorStatusModalOpen(false);
@@ -12474,6 +13376,8 @@
 
     normalizeStaticSpecCards();
     renderSupplementSpecCards();
+    ensurePageSpecTriggers();
+    ensureSectionHeadSpecTriggers();
     ensureModalSpecTriggers();
     ensureInlineModalSpecTriggers();
     ensureInlineEntryModeToggles();
