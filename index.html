@@ -120,7 +120,7 @@
     }
     .nav-btn strong, .nav-btn span{display:block}
     .nav-btn strong{font-size:16px; margin-bottom:0}
-    .nav-btn span{display:none}
+    .nav-btn span{display:block}
     .nav-btn.active span{color:#dceaff}
 
     .nav-group{
@@ -269,7 +269,7 @@
       box-shadow:0 0 14px rgba(86,167,255,.45);
     }
     .nav-btn.sub strong{font-size:14px; margin-bottom:0}
-    .nav-btn.sub span{font-size:11px}
+    .nav-btn.sub span{display:none}
 
     .nav-btn.standalone{
       padding:16px 18px 16px 52px;
@@ -1524,7 +1524,7 @@
             </button>
           </div>
         </div>
-        <div class="nav-group" data-group="blacklist" data-pages="blacklist-monitor,blacklist-liquidation-history,blacklist-ip,blacklist-device,blacklist-withdraw,blacklist-password,blacklist-phone,limit,blacklist-market-history,blacklist-limit-history,blacklist-add">
+        <div class="nav-group" data-group="blacklist" data-pages="blacklist-monitor,blacklist-liquidation-history,blacklist-ip,blacklist-device,blacklist-withdraw,blacklist-password,blacklist-phone,limit,blacklist-market-history,blacklist-limit-history">
           <div class="nav-parent">
             <button class="nav-btn group-title" data-page="blacklist-monitor">
               <span class="nav-copy">
@@ -1554,10 +1554,6 @@
             <button class="nav-btn sub" data-page="blacklist-limit-history">
               <strong>限价历史订单</strong>
               <span>限价订单历史记录</span>
-            </button>
-            <button class="nav-btn sub" data-page="blacklist-add">
-              <strong>添加黑名单</strong>
-              <span>批量添加黑名单</span>
             </button>
             <button class="nav-btn sub" data-page="blacklist-ip">
               <strong>IP黑名单</strong>
@@ -2110,6 +2106,7 @@
               <h3>黑名单用户</h3>
             </div>
             <div class="button-group">
+              <button type="button" class="button" id="go-add-blacklist">添加黑名单</button>
               <button type="button" class="button secondary" id="go-blacklist-auto-join-rules">自动加入规则配置</button>
               <button type="button" class="button" id="go-blacklist-rules">黑名单合约下单与强平规则配置</button>
             </div>
@@ -2388,40 +2385,24 @@
           </div>
         </div>
       </section>
-
-      <section id="blacklist-add" class="page">
-        <div class="section-card">
-          <div class="section-head">
-            <div>
-              <div class="breadcrumb">
-                <span>后台</span><span>›</span><span>黑名单</span><span>›</span><span class="text-primary">添加黑名单</span>
-              </div>
-              <h3>添加黑名单</h3>
-            </div>
-            <div class="button-group">
-              <button type="button" class="button secondary" id="back-from-blacklist-add">返回黑名单用户</button>
-            </div>
+      <div class="collapsible-config inline-entry-modal" id="blacklist-add-modal" hidden>
+        <div class="config-panel">
+          <h2>添加黑名单</h2>
+          <div class="config-row">
+            <label>输入用户ID</label>
+            <textarea placeholder="多UID用 / 隔开，例如：10009/10010"></textarea>
+            <div class="helper-text">多UID用 / 隔开；如UID当前在白名单中，确认时会提示“以下数据在白名单，确认移出，以此次配置为准么？”。</div>
           </div>
-
-          <div class="config-panel">
-            <div class="config-row">
-              <label>输入用户ID:</label>
-              <textarea style="width:100%; height:150px; border-radius:12px; border:1px solid rgba(148,163,184,.18); background:rgba(11,18,32,.72); color:var(--text); padding:12px; font-size:14px; resize:none;" placeholder="多UID用/隔开，例如：10009/10010"></textarea>
-              <span style="font-size:12px; color:var(--muted); margin-top:8px; display:block;">多UID用/隔开，例如：10009/10010；如UID当前在白名单中，确认时会弹窗提示是否移至黑名单。</span>
-            </div>
-
-            <div class="config-row">
-              <label>转入原因:</label>
-              <input type="text" placeholder="请输入转入原因">
-            </div>
-
-            <div class="config-actions">
-              <button type="button" class="button secondary" id="blacklist-cancel">取消</button>
-              <button type="button" class="button" id="blacklist-confirm">确认</button>
-            </div>
+          <div class="config-row">
+            <label>转入原因</label>
+            <input type="text" placeholder="请输入转入原因">
+          </div>
+          <div class="config-actions">
+            <button type="button" class="button secondary js-close-inline-entry-modal">取消</button>
+            <button type="button" class="button" id="blacklist-add-modal-confirm">确认</button>
           </div>
         </div>
-      </section>
+      </div>
 
       <section id="blacklist-ip" class="page">
         <div class="section-card">
@@ -11221,6 +11202,7 @@
     function ensureInlineModalSpecTriggers() {
       const inlineModalSpecMap = {
         'whitelist-add-modal': 'whitelist-add',
+        'blacklist-add-modal': 'blacklist-add',
         'risk-email-suffix-form-block': 'risk-email-suffix',
         'risk-ip-form-block': 'risk-ip-whitelist',
         'risk-device-form-block': 'risk-device-whitelist',
@@ -12526,13 +12508,21 @@
     bindClick('limit-cancel', () => activate('blacklist-monitor'));
     bindClick('rules-confirm', () => alert('可疑用户限制规则已保存'));
     bindClick('limit-confirm', () => alert('黑名单合约下单与强平规则配置已保存'));
-    bindClick('go-add-blacklist', () => activate('blacklist-add'));
-    bindClick('back-from-blacklist-add', () => activate('blacklist-monitor'));
-    bindClick('blacklist-cancel', () => activate('blacklist-monitor'));
-    bindClick('blacklist-confirm', () => {
-      const page = document.getElementById('blacklist-add');
-      const textarea = page ? page.querySelector('textarea') : null;
-      const reasonInput = page ? page.querySelector('input[type="text"]') : null;
+    bindClick('go-add-blacklist', () => {
+      const modal = document.getElementById('blacklist-add-modal');
+      if (!modal) return;
+      const textarea = modal.querySelector('textarea');
+      const reasonInput = modal.querySelector('input[type="text"]');
+      if (textarea) textarea.value = '';
+      if (reasonInput) reasonInput.value = '';
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+    });
+    bindClick('blacklist-add-modal-confirm', () => {
+      const modal = document.getElementById('blacklist-add-modal');
+      if (!modal) return;
+      const textarea = modal.querySelector('textarea');
+      const reasonInput = modal.querySelector('input[type="text"]');
       const targetUsers = uniqueList(parseCsvList(textarea ? textarea.value : ''));
       const reason = reasonInput ? reasonInput.value.trim() : '';
       if (!targetUsers.length) {
@@ -12547,11 +12537,12 @@
       if (whiteListConflicts.length) {
         openBlacklistWhitelistConfirm('添加黑名单', whiteListConflicts, {
           direction: 'to-blacklist',
-          type: 'blacklist-add',
+          type: 'blacklist-add-inline',
           payload: { targetUsers, reason }
         });
         return;
       }
+      closeInlineEntryModalById('blacklist-add-modal');
       alert(`黑名单添加成功：${targetUsers.join('、')}；原因：${reason}`);
     });
     bindClick('go-blacklist-rules', () => activate('limit'));
@@ -13033,6 +13024,11 @@
         return;
       }
       if (context.type === 'blacklist-add') {
+        alert(`黑名单添加成功：${context.payload.targetUsers.join('、')} 已从白名单移至黑名单；原因：${context.payload.reason}`);
+        return;
+      }
+      if (context.type === 'blacklist-add-inline') {
+        closeInlineEntryModalById('blacklist-add-modal');
         alert(`黑名单添加成功：${context.payload.targetUsers.join('、')} 已从白名单移至黑名单；原因：${context.payload.reason}`);
         return;
       }
