@@ -2663,7 +2663,16 @@
           <div class="field-grid">
             <div class="field">
               <label>查询条件</label>
-              <input type="text" placeholder="请输入提币地址" />
+              <input type="text" placeholder="请输入地址" />
+            </div>
+            <div class="field">
+              <label>地址类型</label>
+              <select>
+                <option>全部</option>
+                <option>充值/提币</option>
+                <option>充值</option>
+                <option>提币</option>
+              </select>
             </div>
             <div class="field">
               <label>开始时间</label>
@@ -2681,7 +2690,8 @@
             <table>
               <thead>
                 <tr>
-                  <th>提币地址</th>
+                  <th>地址</th>
+                  <th>地址类型</th>
                   <th>转入原因</th>
                   <th>操作时间</th>
                   <th>操作</th>
@@ -2690,6 +2700,7 @@
               <tbody>
                 <tr>
                   <td>TQ2a9xY8mP01cUSDT9981</td>
+                  <td>充值/提币</td>
                   <td>同提币地址监控命中后人工转入地址黑名单</td>
                   <td>2025-07-16 09:28:10</td>
                   <td>
@@ -2705,9 +2716,16 @@
             <div class="config-panel" id="blacklist-withdraw-form">
               <h2>添加/编辑充值与提币地址黑名单</h2>
               <div class="config-row">
-                <label>输入提币地址</label>
+                <label>输入地址</label>
                 <textarea placeholder="多个地址用 / 隔开，例如：TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812">TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812</textarea>
-                <div class="helper-text">多个提币地址用 `/` 隔开，系统按单条地址拆分入库。</div>
+                <div class="helper-text">多个地址用 `/` 隔开，系统按单条地址拆分入库。</div>
+              </div>
+              <div class="config-row">
+                <label>地址类型</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">充值</label>
+                  <label class="modal-option-item"><input type="checkbox" checked>提币</label>
+                </div>
               </div>
               <div class="config-row">
                 <label>转入原因</label>
@@ -5505,7 +5523,16 @@
           <div class="field-grid">
             <div class="field">
               <label>查询条件</label>
-              <input type="text" placeholder="请输入提币地址" />
+              <input type="text" placeholder="请输入地址" />
+            </div>
+            <div class="field">
+              <label>地址类型</label>
+              <select>
+                <option>全部</option>
+                <option>充值/提币</option>
+                <option>充值</option>
+                <option>提币</option>
+              </select>
             </div>
             <div class="field">
               <label>开始时间</label>
@@ -5529,7 +5556,8 @@
               <thead>
                 <tr>
                   <th><input type="checkbox" class="checkbox" checked></th>
-                  <th>提币地址</th>
+                  <th>地址</th>
+                  <th>地址类型</th>
                   <th>转入原因</th>
                   <th>操作时间</th>
                   <th>操作</th>
@@ -5539,6 +5567,7 @@
                 <tr>
                   <td><input type="checkbox" class="checkbox" checked></td>
                   <td>TQ2a9xY8mP01cUSDT9981</td>
+                  <td>充值/提币</td>
                   <td>人工核验安全地址</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
@@ -5549,6 +5578,7 @@
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>0x7f31AE18c9F0008812</td>
+                  <td>充值</td>
                   <td>机构结算地址</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
@@ -5559,6 +5589,7 @@
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>bc1q8udt9kk199xy7f8</td>
+                  <td>提币</td>
                   <td>商户归集地址</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
@@ -5574,9 +5605,16 @@
             <div class="config-panel" id="risk-withdraw-form">
               <h2>新增充值和提币地址白名单</h2>
               <div class="config-row">
-                <label>输入提币地址</label>
-                <textarea placeholder="多个提币地址用 / 隔开，例如：addr-01/addr-02">TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812</textarea>
-                <div class="helper-text">多个提币地址用 `/` 隔开，系统按单条地址拆分入库。</div>
+                <label>输入地址</label>
+                <textarea placeholder="多个地址用 / 隔开，例如：addr-01/addr-02">TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812</textarea>
+                <div class="helper-text">多个地址用 `/` 隔开，系统按单条地址拆分入库。</div>
+              </div>
+              <div class="config-row">
+                <label>地址类型</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox">充值</label>
+                  <label class="modal-option-item"><input type="checkbox" checked>提币</label>
+                </div>
               </div>
               <div class="config-row">
                 <label>转入原因</label>
@@ -8857,13 +8895,14 @@
         <strong>充值与提币地址黑名单说明</strong>
         <em>运营说明</em>
         <ol>
-          <li>筛选项支持按 `充值/提币地址` 与时间范围检索充值与提币地址黑名单记录。</li>
-          <li>列表字段包含 `充值/提币地址`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `编辑`、`删除`。</li>
+          <li>筛选项支持按 `地址`、`地址类型` 与时间范围检索充值与提币地址黑名单记录，其中 `地址类型` 支持 `充值/提币`、`充值`、`提币` 三种口径；未选择时等同于不过滤。</li>
+          <li>列表字段包含 `地址`、`地址类型`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `编辑`、`删除`。</li>
           <li>页头提供 `添加/编辑充值与提币地址黑名单` 入口，新增与编辑共用同一配置区域。</li>
         </ol>
         <em>注意事项</em>
         <ol>
           <li>进入充值与提币地址黑名单的地址按黑名单口径参与后续风控限制。</li>
+          <li>`地址类型` 为多选项：同一地址可同时勾选 `充值` 与 `提币`；当两项同时勾选时，列表中展示为 `充值/提币`。</li>
           <li>如该地址当前已在充值和提币地址白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
@@ -9388,14 +9427,15 @@
         <strong>充值和提币地址白名单说明</strong>
         <em>运营说明</em>
         <ol>
-          <li>筛选项包含 `查询条件`、`开始时间`、`结束时间`，用于按提币地址与选择周期检索白名单记录。</li>
-          <li>列表字段依次为 `提币地址`、`转入原因`、`操作时间`、`操作`。</li>
+          <li>筛选项包含 `查询条件`、`地址类型`、`开始时间`、`结束时间`，用于按地址、地址类型与选择周期检索白名单记录，其中 `地址类型` 支持 `充值/提币`、`充值`、`提币` 三种口径；未选择时等同于不过滤。</li>
+          <li>列表字段依次为 `地址`、`地址类型`、`转入原因`、`操作时间`、`操作`。</li>
           <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
-          <li>新增地址支持多个提币地址使用 `/` 分隔批量录入；`转入原因` 为本次加入白名单的业务依据。</li>
+          <li>新增地址支持多个地址使用 `/` 分隔批量录入；`地址类型` 为多选项，可勾选 `充值`、`提币` 或同时勾选；`转入原因` 为本次加入白名单的业务依据。</li>
         </ol>
         <em>注意事项</em>
         <ol>
           <li>进入充值和提币地址白名单的地址不再参与同提币地址监控、异常充值监控等地址维度命中。</li>
+          <li>`地址类型` 为多选项：同一地址可同时属于 `充值` 与 `提币`；当两项同时勾选时，列表中展示为 `充值/提币`。</li>
           <li>如该地址当前已在充值与提币地址黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
           <li>`触发事件` 弹窗需先展示 `触发日期`、`触发次数（排重）`、`触发UID数`，并在详情中展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`触发原因`；同一条明细仅展示一种维度。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
@@ -10289,7 +10329,7 @@
       },
       'blacklist-withdraw': {
         hierarchy: ['一级：黑名单', '二级：充值与提币地址黑名单', '三级：无', '弹窗：新增充值与提币地址黑名单、用户控制配置'],
-        modals: ['新增充值与提币地址黑名单弹窗：输入充值/提币地址支持多个地址用 / 分隔批量录入|转入原因为必填输入框|如录入地址已存在于充值和提币地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+        modals: ['新增充值与提币地址黑名单弹窗：输入地址支持多个地址用 / 分隔批量录入|地址类型为多选项，可勾选 充值/提币 或同时勾选|转入原因为必填输入框|如录入地址已存在于充值和提币地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-password': {
         hierarchy: ['一级：黑名单', '二级：密码黑名单', '三级：无', '弹窗：新增密码黑名单、用户控制配置'],
@@ -10345,7 +10385,7 @@
       },
       'risk-withdraw-whitelist': {
         hierarchy: ['一级：白名单', '二级：充值和提币地址白名单', '三级：无', '弹窗：添加地址、触发事件'],
-        modals: ['添加地址弹窗：字段包含充值/提币地址集合与转入原因，多个地址用 `/` 分隔；如录入地址已存在于充值与提币地址黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。', '触发事件弹窗：展示充值和提币地址白名单放行记录明细。']
+        modals: ['添加地址弹窗：字段包含地址集合、地址类型与转入原因；地址类型为多选项，可勾选 充值/提币 或同时勾选；多个地址用 `/` 分隔；如录入地址已存在于充值与提币地址黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。', '触发事件弹窗：展示充值和提币地址白名单放行记录明细。']
       },
       'risk-password-whitelist': {
         hierarchy: ['一级：白名单', '二级：密码白名单', '三级：无', '弹窗：添加密码、触发事件'],
