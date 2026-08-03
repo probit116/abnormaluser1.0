@@ -1616,9 +1616,9 @@
             </button>
           </div>
         </div>
-        <div class="nav-group" style="margin-top:12px;" data-group="pre-warning" data-pages="risk-login,risk-batch-register,risk-short-hold,risk-same-second-open,risk-withdraw-address-monitor,risk-deposit-address-monitor,risk-internal-transfer-monitor,risk-password-monitor,risk-password-detail,risk-password-config">
+        <div class="nav-group" style="margin-top:12px;" data-group="pre-warning" data-pages="risk-large-position-monitor,risk-login,risk-batch-register,risk-short-hold,risk-same-second-open,risk-withdraw-address-monitor,risk-deposit-address-monitor,risk-internal-transfer-monitor,risk-abnormal-deposit-monitor,risk-large-transfer-monitor,risk-cumulative-withdraw-monitor,risk-password-monitor,risk-password-detail,risk-password-config">
           <div class="nav-parent">
-            <button class="nav-btn group-title" data-page="risk-login">
+            <button class="nav-btn group-title" data-page="risk-large-position-monitor">
               <span class="nav-copy">
                 <strong>事前预警</strong>
                 <span>仅保留登录、注册、地址、划转、密码与仓位预警</span>
@@ -1627,6 +1627,10 @@
             <button type="button" class="nav-group-toggle" data-group-toggle="pre-warning" aria-label="展开或收回事前预警导航"></button>
           </div>
           <div class="nav-sub-list">
+            <button class="nav-btn sub" data-page="risk-large-position-monitor">
+              <strong>大额持仓监控</strong>
+              <span>按持仓名义价值与盈利率预警</span>
+            </button>
             <button class="nav-btn sub" data-page="risk-login">
               <strong>异常登录监控</strong>
               <span>异常登录与敏感操作监控</span>
@@ -1655,13 +1659,25 @@
               <strong>同uid内部划转监控</strong>
               <span>同UID接收划转聚合预警</span>
             </button>
+            <button class="nav-btn sub" data-page="risk-abnormal-deposit-monitor">
+              <strong>异常充值监控</strong>
+              <span>异常充值与快进快出行为识别</span>
+            </button>
+            <button class="nav-btn sub" data-page="risk-large-transfer-monitor">
+              <strong>大额出入金监控</strong>
+              <span>单笔大额出入金预警</span>
+            </button>
+            <button class="nav-btn sub" data-page="risk-cumulative-withdraw-monitor">
+              <strong>累计出金超过入金监控</strong>
+              <span>累计出金超入金预警</span>
+            </button>
             <button class="nav-btn sub" data-page="risk-password-monitor">
               <strong>用户同密码</strong>
               <span>同登录密码与支付密码关联监控</span>
             </button>
           </div>
         </div>
-        <div class="nav-group" style="margin-top:12px;" data-group="post-alert" data-pages="risk-contract-suspicious-monitor,risk-wool-monitor,risk-trade-peer-monitor,risk-trade-peer-detail,risk-order-brush-monitor">
+        <div class="nav-group" style="margin-top:12px;" data-group="post-alert" data-pages="risk-contract-suspicious-monitor,market-history,limit-history,risk-wool-monitor,risk-trade-peer-monitor,risk-trade-peer-detail,risk-small-coin-monitor,risk-order-brush-monitor">
           <div class="nav-parent">
             <button class="nav-btn group-title" data-page="risk-contract-suspicious-monitor">
               <span class="nav-copy">
@@ -1683,6 +1699,10 @@
             <button class="nav-btn sub" data-page="risk-trade-peer-monitor">
               <strong>对敲交易监控</strong>
               <span>推仓位类对敲交易识别</span>
+            </button>
+            <button class="nav-btn sub" data-page="risk-small-coin-monitor">
+              <strong>小币种风控</strong>
+              <span>小币种同杠杆持仓异常识别</span>
             </button>
             <button class="nav-btn sub" data-page="risk-order-brush-monitor">
               <strong>打单风控</strong>
@@ -2663,16 +2683,7 @@
           <div class="field-grid">
             <div class="field">
               <label>查询条件</label>
-              <input type="text" placeholder="请输入地址" />
-            </div>
-            <div class="field">
-              <label>地址类型</label>
-              <select>
-                <option>全部</option>
-                <option>充值/提币</option>
-                <option>充值</option>
-                <option>提币</option>
-              </select>
+              <input type="text" placeholder="请输入提币地址" />
             </div>
             <div class="field">
               <label>开始时间</label>
@@ -2690,8 +2701,7 @@
             <table>
               <thead>
                 <tr>
-                  <th>地址</th>
-                  <th>地址类型</th>
+                  <th>提币地址</th>
                   <th>转入原因</th>
                   <th>操作时间</th>
                   <th>操作</th>
@@ -2700,7 +2710,6 @@
               <tbody>
                 <tr>
                   <td>TQ2a9xY8mP01cUSDT9981</td>
-                  <td>充值/提币</td>
                   <td>同提币地址监控命中后人工转入地址黑名单</td>
                   <td>2025-07-16 09:28:10</td>
                   <td>
@@ -2716,16 +2725,9 @@
             <div class="config-panel" id="blacklist-withdraw-form">
               <h2>添加/编辑充值与提币地址黑名单</h2>
               <div class="config-row">
-                <label>输入地址</label>
+                <label>输入提币地址</label>
                 <textarea placeholder="多个地址用 / 隔开，例如：TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812">TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812</textarea>
-                <div class="helper-text">多个地址用 `/` 隔开，系统按单条地址拆分入库。</div>
-              </div>
-              <div class="config-row">
-                <label>地址类型</label>
-                <div class="modal-option-grid">
-                  <label class="modal-option-item"><input type="checkbox">充值</label>
-                  <label class="modal-option-item"><input type="checkbox" checked>提币</label>
-                </div>
+                <div class="helper-text">多个提币地址用 `/` 隔开，系统按单条地址拆分入库。</div>
               </div>
               <div class="config-row">
                 <label>转入原因</label>
@@ -5109,10 +5111,10 @@
                   <th>用户UID</th>
                   <th>用户其他风控行为</th>
                   <th>下级总数</th>
-                  <th>下级交易用户总充值数</th>
-                  <th>下级交易用户总提现数</th>
+                  <th>下级交易用户总充值金额</th>
+                  <th>下级交易用户提现总金额</th>
                   <th>下级交易用户数</th>
-                  <th>下级交易用户领取福利数</th>
+                  <th>下级交易用户领取福利总金额</th>
                   <th>命中证据说明</th>
                   <th>操作时间</th>
                   <th>操作</th>
@@ -5128,7 +5130,7 @@
                   <td>46,000 USDT</td>
                   <td>24</td>
                   <td>88,000 USDT</td>
-                  <td>下级交易用户总提现数占领取福利数52.27%，高于阈值45%；下级交易用户总充值数占领取福利数206.82%，未命中第二条件</td>
+                  <td>下级交易用户提现总金额占领取福利总金额52.27%，高于阈值45%；下级交易用户总充值金额占领取福利总金额206.82%，未命中第二条件</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
                     <a href="#" class="action-link">可疑用户</a>
@@ -5147,7 +5149,7 @@
                   <td>28,600 USDT</td>
                   <td>12</td>
                   <td>52,000 USDT</td>
-                  <td>下级交易用户总提现数占领取福利数55.00%，高于阈值45%；下级交易用户总充值数占领取福利数69.23%，低于阈值80%，命中羊毛党规则</td>
+                  <td>下级交易用户提现总金额占领取福利总金额55.00%，高于阈值45%；下级交易用户总充值金额占领取福利总金额69.23%，低于阈值80%，命中羊毛党规则</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
                     <a href="#" class="action-link">可疑用户</a>
@@ -5166,7 +5168,7 @@
                   <td>9,800 USDT</td>
                   <td>7</td>
                   <td>15,000 USDT</td>
-                  <td>下级交易用户总提现数占领取福利数65.33%，高于阈值45%；下级交易用户总充值数占领取福利数120.00%，未命中第二条件</td>
+                  <td>下级交易用户提现总金额占领取福利总金额65.33%，高于阈值45%；下级交易用户总充值金额占领取福利总金额120.00%，未命中第二条件</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
                     <a href="#" class="action-link">可疑用户</a>
@@ -5186,7 +5188,7 @@
               <div class="config-row">
                 <div class="range-group">
                   <div>
-                    <label>下级交易提现数大于等于领取福利数</label>
+                    <label>下级交易提现总金额大于等于领取福利总金额</label>
                     <div class="input-suffix">
                       <input type="number" value="45" />
                       <span>%</span>
@@ -5194,7 +5196,7 @@
                     <div class="helper-text">请输入纯数字整数。</div>
                   </div>
                   <div>
-                    <label>下级交易充值金额小于等于领取福利数</label>
+                    <label>下级交易充值金额小于等于领取福利总金额</label>
                     <div class="input-suffix">
                       <input type="number" value="80" />
                       <span>%</span>
@@ -5204,9 +5206,9 @@
                 </div>
               </div>
               <div class="config-row">
-                <label>福利数口径</label>
-                <div class="readonly-box">福利数 = 体验金 + 虚充（空投数）</div>
-                <div class="helper-text">当“下级交易用户总提现数 / 下级交易用户领取福利数”大于阈值，且“下级交易用户总充值数 / 下级交易用户领取福利数”小于阈值时，记录进入羊毛党监控。</div>
+                <label>领取福利总金额口径</label>
+                <div class="readonly-box">领取福利总金额 = 体验金金额 + 虚充（空投金额）</div>
+                <div class="helper-text">当“下级交易用户提现总金额 / 下级交易用户领取福利总金额”大于阈值，且“下级交易用户总充值金额 / 下级交易用户领取福利总金额”小于阈值时，记录进入羊毛党监控。</div>
               </div>
               <div class="config-row">
                 <label>异常处理方式</label>
@@ -5523,16 +5525,7 @@
           <div class="field-grid">
             <div class="field">
               <label>查询条件</label>
-              <input type="text" placeholder="请输入地址" />
-            </div>
-            <div class="field">
-              <label>地址类型</label>
-              <select>
-                <option>全部</option>
-                <option>充值/提币</option>
-                <option>充值</option>
-                <option>提币</option>
-              </select>
+              <input type="text" placeholder="请输入提币地址" />
             </div>
             <div class="field">
               <label>开始时间</label>
@@ -5556,8 +5549,7 @@
               <thead>
                 <tr>
                   <th><input type="checkbox" class="checkbox" checked></th>
-                  <th>地址</th>
-                  <th>地址类型</th>
+                  <th>提币地址</th>
                   <th>转入原因</th>
                   <th>操作时间</th>
                   <th>操作</th>
@@ -5567,7 +5559,6 @@
                 <tr>
                   <td><input type="checkbox" class="checkbox" checked></td>
                   <td>TQ2a9xY8mP01cUSDT9981</td>
-                  <td>充值/提币</td>
                   <td>人工核验安全地址</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
@@ -5578,7 +5569,6 @@
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>0x7f31AE18c9F0008812</td>
-                  <td>充值</td>
                   <td>机构结算地址</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
@@ -5589,7 +5579,6 @@
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>bc1q8udt9kk199xy7f8</td>
-                  <td>提币</td>
                   <td>商户归集地址</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
@@ -5605,16 +5594,9 @@
             <div class="config-panel" id="risk-withdraw-form">
               <h2>新增充值和提币地址白名单</h2>
               <div class="config-row">
-                <label>输入地址</label>
-                <textarea placeholder="多个地址用 / 隔开，例如：addr-01/addr-02">TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812</textarea>
-                <div class="helper-text">多个地址用 `/` 隔开，系统按单条地址拆分入库。</div>
-              </div>
-              <div class="config-row">
-                <label>地址类型</label>
-                <div class="modal-option-grid">
-                  <label class="modal-option-item"><input type="checkbox">充值</label>
-                  <label class="modal-option-item"><input type="checkbox" checked>提币</label>
-                </div>
+                <label>输入提币地址</label>
+                <textarea placeholder="多个提币地址用 / 隔开，例如：addr-01/addr-02">TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812</textarea>
+                <div class="helper-text">多个提币地址用 `/` 隔开，系统按单条地址拆分入库。</div>
               </div>
               <div class="config-row">
                 <label>转入原因</label>
@@ -6767,6 +6749,16 @@
               <div class="button-group"><button type="button" class="button">查询</button><button type="button" class="button secondary">重置</button></div>
             </div>
           </div>
+          <div class="batch-action-bar">
+            <span class="batch-action-bar__label">批量操作</span>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
+          </div>
           <div class="table-wrap">
             <table>
               <thead>
@@ -7065,6 +7057,16 @@
               </div>
             </div>
           </div>
+          <div class="batch-action-bar">
+            <span class="batch-action-bar__label">批量操作</span>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
+          </div>
           <div class="table-wrap">
             <table>
               <thead>
@@ -7153,6 +7155,16 @@
               </div>
             </div>
           </div>
+          <div class="batch-action-bar">
+            <span class="batch-action-bar__label">批量操作</span>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
+          </div>
           <div class="table-wrap">
             <table>
               <thead>
@@ -7233,6 +7245,16 @@
                 <button type="button" class="button secondary js-open-monitor-status" data-monitor-source="小币种风控" data-monitor-status="开启">监控状态配置</button>
               </div>
             </div>
+          </div>
+          <div class="batch-action-bar">
+            <span class="batch-action-bar__label">批量操作</span>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止现货交易</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止合约开仓</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量禁止提现</button>
           </div>
           <div class="table-wrap">
             <table>
@@ -8895,14 +8917,13 @@
         <strong>充值与提币地址黑名单说明</strong>
         <em>运营说明</em>
         <ol>
-          <li>筛选项支持按 `地址`、`地址类型` 与时间范围检索充值与提币地址黑名单记录，其中 `地址类型` 支持 `充值/提币`、`充值`、`提币` 三种口径；未选择时等同于不过滤。</li>
-          <li>列表字段包含 `地址`、`地址类型`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `编辑`、`删除`。</li>
+          <li>筛选项支持按 `充值/提币地址` 与时间范围检索充值与提币地址黑名单记录。</li>
+          <li>列表字段包含 `充值/提币地址`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `编辑`、`删除`。</li>
           <li>页头提供 `添加/编辑充值与提币地址黑名单` 入口，新增与编辑共用同一配置区域。</li>
         </ol>
         <em>注意事项</em>
         <ol>
           <li>进入充值与提币地址黑名单的地址按黑名单口径参与后续风控限制。</li>
-          <li>`地址类型` 为多选项：同一地址可同时勾选 `充值` 与 `提币`；当两项同时勾选时，列表中展示为 `充值/提币`。</li>
           <li>如该地址当前已在充值和提币地址白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
@@ -9216,16 +9237,19 @@
         <em>运营说明</em>
         <ol>
           <li>筛选项包含 `查询条件`、`查询开始时间`、`查询结束时间`、`提现状态`，用于按用户ID/手机/邮箱、时间和提现结果筛选羊毛党候选记录。</li>
-          <li>列表字段依次为 `用户UID`、`用户其他风控行为`、`下级总数`、`下级交易用户总充值数`、`下级交易用户总提现数`、`下级交易用户数`、`下级交易用户领取福利数`、`命中证据说明`、`操作时间`、`操作`。</li>
+          <li>列表字段依次为 `用户UID`、`用户其他风控行为`、`下级总数`、`下级交易用户总充值金额`、`下级交易用户提现总金额`、`下级交易用户数`、`下级交易用户领取福利总金额`、`命中证据说明`、`操作时间`、`操作`。</li>
+          <li>`下级交易用户总充值金额` 指命中用户下级中已发生交易的用户，在统计周期内累计充值的金额汇总，页面按金额口径展示。</li>
+          <li>`下级交易用户提现总金额` 指命中用户下级中已发生交易的用户，在统计周期内累计提现成功的金额汇总，页面按金额口径展示。</li>
+          <li>`下级交易用户领取福利总金额` 指命中用户下级中已发生交易的用户，在统计周期内累计领取的福利金额汇总，页面按金额口径展示。</li>
           <li>`操作` 包含 `可疑用户`、`正常用户`、`黑名单用户`、`此用户与其下级全部列为黑名单`、`同一用户配置`。</li>
-          <li>规则配置中的核心条件为：`下级交易提现数大于等于领取福利数`，且 `下级交易充值金额小于等于领取福利数`；百分比输入统一按纯数字整数维护，`异常处理方式` 使用固定 8 个下拉项。</li>
+          <li>规则配置中的核心条件为：`下级交易提现总金额大于等于领取福利总金额`，且 `下级交易充值金额小于等于领取福利总金额`；百分比输入统一按纯数字整数维护，`异常处理方式` 使用固定 8 个下拉项。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
         </ol>
         <em>注意事项</em>
         <ol>
           <li>进入用户白名单的用户不再进入本页羊毛党监控命中结果。</li>
-          <li>`下级交易用户领取福利数` 中的 `福利数` = `体验金` + `虚充（空投数）`，金额展示以页面展示结果为准。</li>
-          <li>命中逻辑要求同时满足两项比例条件：提现比例高于阈值，且充值比例低于阈值，单独满足其中一项不进入本页。</li>
+          <li>`下级交易用户领取福利总金额` 中的 `领取福利总金额` = `体验金金额` + `虚充（空投金额）`，金额展示以页面展示结果为准。</li>
+          <li>命中逻辑要求同时满足两项比例条件：`提现总金额 / 领取福利总金额` 高于阈值，且 `充值总金额 / 领取福利总金额` 低于阈值；单独满足其中一项不进入本页。</li>
           <li>涉及百分比阈值均按百分比录入和展示，默认保留两位小数。</li>
           <li>`此用户与其下级全部列为黑名单` 表示将当前用户及其下级账户统一转入黑名单名单，需保留批量转入日志。</li>
           <li>若异常处理方式为 `禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`提现人工审核` 或 `需要人脸认证KYC`，应在真实系统中记录执行日志和人工复核结果。</li>
@@ -9427,15 +9451,14 @@
         <strong>充值和提币地址白名单说明</strong>
         <em>运营说明</em>
         <ol>
-          <li>筛选项包含 `查询条件`、`地址类型`、`开始时间`、`结束时间`，用于按地址、地址类型与选择周期检索白名单记录，其中 `地址类型` 支持 `充值/提币`、`充值`、`提币` 三种口径；未选择时等同于不过滤。</li>
-          <li>列表字段依次为 `地址`、`地址类型`、`转入原因`、`操作时间`、`操作`。</li>
+          <li>筛选项包含 `查询条件`、`开始时间`、`结束时间`，用于按提币地址与选择周期检索白名单记录。</li>
+          <li>列表字段依次为 `提币地址`、`转入原因`、`操作时间`、`操作`。</li>
           <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
-          <li>新增地址支持多个地址使用 `/` 分隔批量录入；`地址类型` 为多选项，可勾选 `充值`、`提币` 或同时勾选；`转入原因` 为本次加入白名单的业务依据。</li>
+          <li>新增地址支持多个提币地址使用 `/` 分隔批量录入；`转入原因` 为本次加入白名单的业务依据。</li>
         </ol>
         <em>注意事项</em>
         <ol>
           <li>进入充值和提币地址白名单的地址不再参与同提币地址监控、异常充值监控等地址维度命中。</li>
-          <li>`地址类型` 为多选项：同一地址可同时属于 `充值` 与 `提币`；当两项同时勾选时，列表中展示为 `充值/提币`。</li>
           <li>如该地址当前已在充值与提币地址黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
           <li>`触发事件` 弹窗需先展示 `触发日期`、`触发次数（排重）`、`触发UID数`，并在详情中展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`触发原因`；同一条明细仅展示一种维度。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
@@ -10329,7 +10352,7 @@
       },
       'blacklist-withdraw': {
         hierarchy: ['一级：黑名单', '二级：充值与提币地址黑名单', '三级：无', '弹窗：新增充值与提币地址黑名单、用户控制配置'],
-        modals: ['新增充值与提币地址黑名单弹窗：输入地址支持多个地址用 / 分隔批量录入|地址类型为多选项，可勾选 充值/提币 或同时勾选|转入原因为必填输入框|如录入地址已存在于充值和提币地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+        modals: ['新增充值与提币地址黑名单弹窗：输入充值/提币地址支持多个地址用 / 分隔批量录入|转入原因为必填输入框|如录入地址已存在于充值和提币地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-password': {
         hierarchy: ['一级：黑名单', '二级：密码黑名单', '三级：无', '弹窗：新增密码黑名单、用户控制配置'],
@@ -10385,7 +10408,7 @@
       },
       'risk-withdraw-whitelist': {
         hierarchy: ['一级：白名单', '二级：充值和提币地址白名单', '三级：无', '弹窗：添加地址、触发事件'],
-        modals: ['添加地址弹窗：字段包含地址集合、地址类型与转入原因；地址类型为多选项，可勾选 充值/提币 或同时勾选；多个地址用 `/` 分隔；如录入地址已存在于充值与提币地址黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。', '触发事件弹窗：展示充值和提币地址白名单放行记录明细。']
+        modals: ['添加地址弹窗：字段包含充值/提币地址集合与转入原因，多个地址用 `/` 分隔；如录入地址已存在于充值与提币地址黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。', '触发事件弹窗：展示充值和提币地址白名单放行记录明细。']
       },
       'risk-password-whitelist': {
         hierarchy: ['一级：白名单', '二级：密码白名单', '三级：无', '弹窗：添加密码、触发事件'],
