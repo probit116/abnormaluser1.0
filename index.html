@@ -1526,7 +1526,7 @@
             </button>
           </div>
         </div>
-        <div class="nav-group" data-group="blacklist" data-pages="blacklist-monitor,blacklist-liquidation-history,blacklist-ip,blacklist-device,blacklist-withdraw,blacklist-password,blacklist-phone,limit,blacklist-market-history,blacklist-limit-history">
+        <div class="nav-group" data-group="blacklist" data-pages="blacklist-monitor,blacklist-liquidation-history,blacklist-ip,blacklist-device,blacklist-deposit-address,blacklist-withdraw-address,blacklist-password,blacklist-phone,limit,blacklist-market-history,blacklist-limit-history">
           <div class="nav-parent">
             <button class="nav-btn group-title" data-page="blacklist-monitor">
               <span class="nav-copy">
@@ -1565,9 +1565,13 @@
               <strong>设备黑名单</strong>
               <span>设备黑名单与录入管理</span>
             </button>
-            <button class="nav-btn sub" data-page="blacklist-withdraw">
-              <strong>充值与提币地址黑名单</strong>
-              <span>充值与提币地址黑名单与录入管理</span>
+            <button class="nav-btn sub" data-page="blacklist-deposit-address">
+              <strong>充值地址黑名单</strong>
+              <span>充值地址黑名单与录入管理</span>
+            </button>
+            <button class="nav-btn sub" data-page="blacklist-withdraw-address">
+              <strong>提币地址黑名单</strong>
+              <span>提币地址黑名单与录入管理</span>
             </button>
             <button class="nav-btn sub" data-page="blacklist-password">
               <strong>密码黑名单</strong>
@@ -1579,7 +1583,7 @@
             </button>
           </div>
         </div>
-        <div class="nav-group" style="margin-top:12px;" data-group="whitelist" data-pages="whitelist-monitor,whitelist-add,risk-email-suffix,risk-ip-whitelist,risk-device-whitelist,risk-withdraw-whitelist,risk-password-whitelist">
+        <div class="nav-group" style="margin-top:12px;" data-group="whitelist" data-pages="whitelist-monitor,whitelist-add,risk-email-suffix,risk-ip-whitelist,risk-device-whitelist,risk-deposit-address-whitelist,risk-withdraw-address-whitelist,risk-password-whitelist">
           <div class="nav-parent">
             <button class="nav-btn group-title" data-page="whitelist-monitor">
               <span class="nav-copy">
@@ -1606,9 +1610,13 @@
               <strong>设备白名单</strong>
               <span>设备白名单与录入管理</span>
             </button>
-            <button class="nav-btn sub" data-page="risk-withdraw-whitelist">
-              <strong>充值和提币地址白名单</strong>
-              <span>充值和提币地址白名单与录入管理</span>
+            <button class="nav-btn sub" data-page="risk-deposit-address-whitelist">
+              <strong>充值地址白名单</strong>
+              <span>充值地址白名单与录入管理</span>
+            </button>
+            <button class="nav-btn sub" data-page="risk-withdraw-address-whitelist">
+              <strong>提币地址白名单</strong>
+              <span>提币地址白名单与录入管理</span>
             </button>
             <button class="nav-btn sub" data-page="risk-password-whitelist">
               <strong>密码白名单</strong>
@@ -2647,32 +2655,23 @@
         </div>
       </section>
 
-      <section id="blacklist-withdraw" class="page">
+      <section id="blacklist-deposit-address" class="page">
         <div class="section-card">
           <div class="section-head">
             <div>
               <div class="breadcrumb">
-                <span>后台</span><span>›</span><span>黑名单</span><span>›</span><span class="text-primary">充值与提币地址黑名单</span>
+                <span>后台</span><span>›</span><span>黑名单</span><span>›</span><span class="text-primary">充值地址黑名单</span>
               </div>
-              <h3>充值与提币地址黑名单</h3>
+              <h3>充值地址黑名单</h3>
             </div>
             <div class="button-group">
-              <button type="button" class="button secondary config-toggle-button js-toggle-config js-open-blacklist-entry-editor" id="go-blacklist-withdraw-form" data-target="blacklist-withdraw-form-block" data-entry-mode="create" data-closed-text="添加/编辑充值与提币地址黑名单" data-open-text="关闭" aria-expanded="false">添加/编辑充值与提币地址黑名单</button>
+              <button type="button" class="button secondary config-toggle-button js-toggle-config js-open-blacklist-entry-editor" id="go-blacklist-deposit-address-form" data-target="blacklist-deposit-address-form-block" data-entry-mode="create" data-closed-text="添加/编辑充值地址黑名单" data-open-text="关闭" aria-expanded="false">添加/编辑充值地址黑名单</button>
             </div>
           </div>
           <div class="field-grid">
             <div class="field">
               <label>查询条件</label>
-              <input type="text" placeholder="请输入地址" />
-            </div>
-            <div class="field">
-              <label>地址类型</label>
-              <select>
-                <option>全部</option>
-                <option>充值/提币</option>
-                <option>充值</option>
-                <option>提币</option>
-              </select>
+              <input type="text" placeholder="请输入充值地址" />
             </div>
             <div class="field">
               <label>开始时间</label>
@@ -2691,7 +2690,112 @@
               <thead>
                 <tr>
                   <th>地址</th>
-                  <th>地址类型</th>
+                  <th>转入原因</th>
+                  <th>操作时间</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0x7f31AE18c9F0008812</td>
+                  <td>异常充值监控命中后人工转入充值地址黑名单</td>
+                  <td>2025-07-16 10:02:45</td>
+                  <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="充值地址黑名单" data-event-target="0x7f31AE18c9F0008812" data-event-records="2025-07-16~2~3~2025-07-16 10:02:45^1102/1108/1110^WEB-1M08 / APP-2C10^198.51.100.88 / 203.0.113.90^5^事前预警-异常充值监控(3次)；事后报警-交易同用户风控(2次)^禁止提现、禁止现货交易#2025-07-16 11:15:20^1102/1110^WEB-1M08^198.51.100.88^2^事前预警-异常登录监控(2次)^禁止登录">触发事件</a>
+                    <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-deposit-address-form-block" data-entry-mode="edit" data-withdraw-value="0x7f31AE18c9F0008812" data-reason="异常充值监控命中后人工转入充值地址黑名单">编辑</a>
+                    <a href="#" class="action-link">删除</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="risk-layout collapsible-config inline-entry-modal" id="blacklist-deposit-address-form-block" hidden>
+            <div class="config-panel" id="blacklist-deposit-address-form">
+              <h2>添加/编辑充值地址黑名单</h2>
+              <div class="config-row">
+                <label>输入充值地址</label>
+                <textarea placeholder="多个充值地址用 / 隔开，例如：0x7f31AE18c9F0008812/0x4aC021fDd991EaBb88">0x7f31AE18c9F0008812/0x4aC021fDd991EaBb88</textarea>
+                <div class="helper-text">多个充值地址用 `/` 隔开，系统按单条地址拆分入库。</div>
+              </div>
+              <div class="config-row">
+                <label>转入原因</label>
+                <input type="text" value="异常充值监控命中后人工转入充值地址黑名单" />
+              </div>
+              <div class="config-desc">
+                <strong>用户控制配置</strong><br>
+                用于对当前黑名单对象执行单条用户控制处理，当前来源页为充值地址黑名单，本配置仅对当前对象生效。
+              </div>
+              <div class="modal-grid">
+                <div class="modal-field">
+                  <label>来源页面</label>
+                  <input type="text" value="充值地址黑名单" readonly />
+                </div>
+                <div class="modal-field">
+                  <label>当前对象</label>
+                  <input type="text" class="js-blacklist-inline-target" data-target-form="blacklist-deposit-address-form" placeholder="根据上方录入内容自动带出" readonly />
+                </div>
+              </div>
+              <div class="modal-alert">勾选风控操作后，确认时按当前对象执行统一处理；如操作包含全部列入黑名单且对象命中白名单保护，仍需先进行白名单冲突确认。</div>
+              <div class="modal-field">
+                <label>风控操作</label>
+                <div class="modal-option-grid">
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止登录</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止提现</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入可疑用户</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单</label>
+                </div>
+              </div>
+              <div class="config-row">
+                <label>备注</label>
+                <input type="text" class="js-blacklist-inline-remark" placeholder="请输入统一处理说明" />
+              </div>
+              <div class="config-actions">
+                <button type="button" class="button secondary js-close-inline-entry-modal">取消</button>
+                <button type="button" class="button">确认</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="blacklist-withdraw-address" class="page">
+        <div class="section-card">
+          <div class="section-head">
+            <div>
+              <div class="breadcrumb">
+                <span>后台</span><span>›</span><span>黑名单</span><span>›</span><span class="text-primary">提币地址黑名单</span>
+              </div>
+              <h3>提币地址黑名单</h3>
+            </div>
+            <div class="button-group">
+              <button type="button" class="button secondary config-toggle-button js-toggle-config js-open-blacklist-entry-editor" id="go-blacklist-withdraw-address-form" data-target="blacklist-withdraw-address-form-block" data-entry-mode="create" data-closed-text="添加/编辑提币地址黑名单" data-open-text="关闭" aria-expanded="false">添加/编辑提币地址黑名单</button>
+            </div>
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label>查询条件</label>
+              <input type="text" placeholder="请输入提币地址" />
+            </div>
+            <div class="field">
+              <label>开始时间</label>
+              <input type="datetime-local" />
+            </div>
+            <div class="field">
+              <label>结束时间</label>
+              <input type="datetime-local" />
+            </div>
+            <div class="field field--actions">
+              <button type="button" class="button">查询</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>地址</th>
                   <th>转入原因</th>
                   <th>操作时间</th>
                   <th>操作</th>
@@ -2700,49 +2804,41 @@
               <tbody>
                 <tr>
                   <td>TQ2a9xY8mP01cUSDT9981</td>
-                  <td>充值/提币</td>
-                  <td>同提币地址监控命中后人工转入地址黑名单</td>
+                  <td>同提币地址监控命中后人工转入提币地址黑名单</td>
                   <td>2025-07-16 09:28:10</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="充值与提币地址黑名单" data-event-target="TQ2a9xY8mP01cUSDT9981" data-event-records="2025-07-16~2~3~2025-07-16 09:28:10^1101/1102/1108^APP-7T22 / WEB-1M08^198.51.100.71 / 198.51.100.88^5^事前预警-同提币地址监控(3次)；事后报警-交易同用户风控(2次)^禁止提现、禁止现货交易#2025-07-16 10:52:45^1101/1108^APP-7T22^198.51.100.71^2^事前预警-异常充值监控(2次)^禁止登录">触发事件</a>
-                    <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-withdraw-form-block" data-entry-mode="edit" data-withdraw-value="TQ2a9xY8mP01cUSDT9981" data-reason="同提币地址监控命中后人工转入地址黑名单">编辑</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="提币地址黑名单" data-event-target="TQ2a9xY8mP01cUSDT9981" data-event-records="2025-07-16~2~3~2025-07-16 09:28:10^1101/1102/1108^APP-7T22 / WEB-1M08^198.51.100.71 / 198.51.100.88^5^事前预警-同提币地址监控(3次)；事后报警-交易同用户风控(2次)^禁止提现、禁止现货交易#2025-07-16 10:52:45^1101/1108^APP-7T22^198.51.100.71^2^事前预警-异常充值监控(2次)^禁止登录">触发事件</a>
+                    <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-withdraw-address-form-block" data-entry-mode="edit" data-withdraw-value="TQ2a9xY8mP01cUSDT9981" data-reason="同提币地址监控命中后人工转入提币地址黑名单">编辑</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="risk-layout collapsible-config inline-entry-modal" id="blacklist-withdraw-form-block" hidden>
-            <div class="config-panel" id="blacklist-withdraw-form">
-              <h2>添加/编辑充值与提币地址黑名单</h2>
+          <div class="risk-layout collapsible-config inline-entry-modal" id="blacklist-withdraw-address-form-block" hidden>
+            <div class="config-panel" id="blacklist-withdraw-address-form">
+              <h2>添加/编辑提币地址黑名单</h2>
               <div class="config-row">
-                <label>输入地址</label>
-                <textarea placeholder="多个地址用 / 隔开，例如：TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812">TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812</textarea>
-                <div class="helper-text">多个地址用 `/` 隔开，系统按单条地址拆分入库。</div>
-              </div>
-              <div class="config-row">
-                <label>地址类型</label>
-                <div class="modal-option-grid">
-                  <label class="modal-option-item"><input type="checkbox">充值</label>
-                  <label class="modal-option-item"><input type="checkbox" checked>提币</label>
-                </div>
+                <label>输入提币地址</label>
+                <textarea placeholder="多个提币地址用 / 隔开，例如：TQ2a9xY8mP01cUSDT9981/bc1q8udt9kk199xy7f8">TQ2a9xY8mP01cUSDT9981/bc1q8udt9kk199xy7f8</textarea>
+                <div class="helper-text">多个提币地址用 `/` 隔开，系统按单条地址拆分入库。</div>
               </div>
               <div class="config-row">
                 <label>转入原因</label>
-                <input type="text" value="同提币地址监控命中后人工转入地址黑名单" />
+                <input type="text" value="同提币地址监控命中后人工转入提币地址黑名单" />
               </div>
               <div class="config-desc">
                 <strong>用户控制配置</strong><br>
-                用于对当前黑名单对象执行单条用户控制处理，当前来源页为充值与提币地址黑名单，本配置仅对当前对象生效。
+                用于对当前黑名单对象执行单条用户控制处理，当前来源页为提币地址黑名单，本配置仅对当前对象生效。
               </div>
               <div class="modal-grid">
                 <div class="modal-field">
                   <label>来源页面</label>
-                  <input type="text" value="充值与提币地址黑名单" readonly />
+                  <input type="text" value="提币地址黑名单" readonly />
                 </div>
                 <div class="modal-field">
                   <label>当前对象</label>
-                  <input type="text" class="js-blacklist-inline-target" data-target-form="blacklist-withdraw-form" placeholder="根据上方录入内容自动带出" readonly />
+                  <input type="text" class="js-blacklist-inline-target" data-target-form="blacklist-withdraw-address-form" placeholder="根据上方录入内容自动带出" readonly />
                 </div>
               </div>
               <div class="modal-alert">勾选风控操作后，确认时按当前对象执行统一处理；如操作包含全部列入黑名单且对象命中白名单保护，仍需先进行白名单冲突确认。</div>
@@ -5204,8 +5300,8 @@
                 </div>
               </div>
               <div class="config-row">
-                <label>领取福利总金额口径</label>
-                <div class="readonly-box">领取福利总金额 = 体验金金额 + 虚充金额</div>
+                <label>下级交易用户领取福利总金额口径</label>
+                <div class="readonly-box">下级交易用户领取福利总金额 = 下级交易用户体验金金额 + 下级交易用户虚充金额</div>
                 <div class="helper-text">当“下级交易用户总提现金额 / 下级交易用户领取福利总金额”大于阈值，且“下级交易用户总充值金额 / 下级交易用户领取福利总金额”小于阈值时，记录进入羊毛党监控。</div>
               </div>
               <div class="config-row">
@@ -5506,33 +5602,24 @@
         </div>
       </section>
 
-      <section id="risk-withdraw-whitelist" class="page">
+      <section id="risk-deposit-address-whitelist" class="page">
         <div class="section-card">
           <div class="section-head">
             <div>
               <div class="breadcrumb">
-                <span>后台</span><span>›</span><span>白名单</span><span>›</span><span class="text-primary">充值和提币地址白名单</span>
+                <span>后台</span><span>›</span><span>白名单</span><span>›</span><span class="text-primary">充值地址白名单</span>
               </div>
-              <h3>充值和提币地址白名单</h3>
+              <h3>充值地址白名单</h3>
             </div>
             <div class="button-group">
-              <button type="button" class="button secondary config-toggle-button js-toggle-config" id="go-risk-withdraw-form" data-target="risk-withdraw-form-block" data-closed-text="添加地址" data-open-text="关闭" aria-expanded="false">添加地址</button>
+              <button type="button" class="button secondary config-toggle-button js-toggle-config" id="go-risk-deposit-address-whitelist-form" data-target="risk-deposit-address-whitelist-form-block" data-closed-text="添加充值地址" data-open-text="关闭" aria-expanded="false">添加充值地址</button>
             </div>
           </div>
 
           <div class="field-grid">
             <div class="field">
               <label>查询条件</label>
-              <input type="text" placeholder="请输入地址" />
-            </div>
-            <div class="field">
-              <label>地址类型</label>
-              <select>
-                <option>全部</option>
-                <option>充值/提币</option>
-                <option>充值</option>
-                <option>提币</option>
-              </select>
+              <input type="text" placeholder="请输入充值地址" />
             </div>
             <div class="field">
               <label>开始时间</label>
@@ -5557,7 +5644,6 @@
                 <tr>
                   <th><input type="checkbox" class="checkbox" checked></th>
                   <th>地址</th>
-                  <th>地址类型</th>
                   <th>转入原因</th>
                   <th>操作时间</th>
                   <th>操作</th>
@@ -5566,34 +5652,21 @@
               <tbody>
                 <tr>
                   <td><input type="checkbox" class="checkbox" checked></td>
-                  <td>TQ2a9xY8mP01cUSDT9981</td>
-                  <td>充值/提币</td>
-                  <td>人工核验安全地址</td>
-                  <td>2025-07-15 10:01:15</td>
-                  <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="充值和提币地址白名单" data-event-target="TQ2a9xY8mP01cUSDT9981" data-event-records="2025-07-16 09:28:10,1101,同提币地址监控命中后因充值和提币地址白名单放行|2025-07-16 10:02:45,1102,异常充值监控命中后因充值和提币地址白名单放行">触发事件</a>
-                    <a href="#" class="action-link">删除</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="checkbox"></td>
                   <td>0x7f31AE18c9F0008812</td>
-                  <td>充值</td>
                   <td>机构结算地址</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="充值和提币地址白名单" data-event-target="0x7f31AE18c9F0008812" data-event-records="2025-07-14 21:12:33,2101,同提币地址监控命中后因充值和提币地址白名单放行">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="充值地址白名单" data-event-target="0x7f31AE18c9F0008812" data-event-records="2025-07-14 21:12:33,2101,异常充值监控命中后因充值地址白名单放行|2025-07-14 22:05:18,2102,异常充值监控命中后因充值地址白名单放行">触发事件</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
-                  <td>bc1q8udt9kk199xy7f8</td>
-                  <td>提币</td>
-                  <td>商户归集地址</td>
-                  <td>2025-07-15 10:01:15</td>
+                  <td>0x4aC021fDd991EaBb88</td>
+                  <td>大额做市商充值通道</td>
+                  <td>2025-07-14 16:22:40</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="充值和提币地址白名单" data-event-target="bc1q8udt9kk199xy7f8" data-event-records="2025-07-13 07:52:19,3204,同提币地址监控命中后因充值和提币地址白名单放行">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="充值地址白名单" data-event-target="0x4aC021fDd991EaBb88" data-event-records="2025-07-15 09:30:11,2103,异常充值监控命中后因充值地址白名单放行">触发事件</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
                 </tr>
@@ -5601,24 +5674,17 @@
             </table>
           </div>
 
-          <div class="risk-layout collapsible-config inline-entry-modal" id="risk-withdraw-form-block" hidden>
-            <div class="config-panel" id="risk-withdraw-form">
-              <h2>新增充值和提币地址白名单</h2>
+          <div class="risk-layout collapsible-config inline-entry-modal" id="risk-deposit-address-whitelist-form-block" hidden>
+            <div class="config-panel" id="risk-deposit-address-whitelist-form">
+              <h2>新增充值地址白名单</h2>
               <div class="config-row">
-                <label>输入地址</label>
-                <textarea placeholder="多个地址用 / 隔开，例如：addr-01/addr-02">TQ2a9xY8mP01cUSDT9981/0x7f31AE18c9F0008812</textarea>
-                <div class="helper-text">多个地址用 `/` 隔开，系统按单条地址拆分入库。</div>
-              </div>
-              <div class="config-row">
-                <label>地址类型</label>
-                <div class="modal-option-grid">
-                  <label class="modal-option-item"><input type="checkbox">充值</label>
-                  <label class="modal-option-item"><input type="checkbox" checked>提币</label>
-                </div>
+                <label>输入充值地址</label>
+                <textarea placeholder="多个充值地址用 / 隔开，例如：0x7f31AE18c9F0008812/0x4aC021fDd991EaBb88">0x7f31AE18c9F0008812/0x4aC021fDd991EaBb88</textarea>
+                <div class="helper-text">多个充值地址用 `/` 隔开，系统按单条地址拆分入库。</div>
               </div>
               <div class="config-row">
                 <label>转入原因</label>
-                <input type="text" value="人工判断为充值和提币地址白名单" />
+                <input type="text" value="人工判断为充值地址白名单" />
               </div>
               <div class="config-actions">
                 <button type="button" class="button secondary js-close-inline-entry-modal">取消</button>
@@ -5628,12 +5694,113 @@
           </div>
 
           <div class="footer-row">
-            <div>当前展示 3 条记录</div>
+            <div>当前展示 2 条记录</div>
             <div class="pagination">
               <button type="button" class="page-chip active">1</button>
               <button type="button" class="page-chip">2</button>
-              <button type="button" class="page-chip">3</button>
-              <span>共15条信息</span>
+              <span>共8条信息</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="risk-withdraw-address-whitelist" class="page">
+        <div class="section-card">
+          <div class="section-head">
+            <div>
+              <div class="breadcrumb">
+                <span>后台</span><span>›</span><span>白名单</span><span>›</span><span class="text-primary">提币地址白名单</span>
+              </div>
+              <h3>提币地址白名单</h3>
+            </div>
+            <div class="button-group">
+              <button type="button" class="button secondary config-toggle-button js-toggle-config" id="go-risk-withdraw-address-whitelist-form" data-target="risk-withdraw-address-whitelist-form-block" data-closed-text="添加提币地址" data-open-text="关闭" aria-expanded="false">添加提币地址</button>
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label>查询条件</label>
+              <input type="text" placeholder="请输入提币地址" />
+            </div>
+            <div class="field">
+              <label>开始时间</label>
+              <input type="datetime-local" />
+            </div>
+            <div class="field">
+              <label>结束时间</label>
+              <input type="datetime-local" />
+            </div>
+            <div class="field">
+              <label>操作</label>
+              <div class="button-group">
+                <button type="button" class="button">查询</button>
+                <button type="button" class="button secondary">重置</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox" class="checkbox" checked></th>
+                  <th>地址</th>
+                  <th>转入原因</th>
+                  <th>操作时间</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="checkbox" checked></td>
+                  <td>TQ2a9xY8mP01cUSDT9981</td>
+                  <td>商户归集地址</td>
+                  <td>2025-07-15 10:01:15</td>
+                  <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="提币地址白名单" data-event-target="TQ2a9xY8mP01cUSDT9981" data-event-records="2025-07-16 09:28:10,1101,同提币地址监控命中后因提币地址白名单放行|2025-07-16 10:02:45,1102,同提币地址监控命中后因提币地址白名单放行">触发事件</a>
+                    <a href="#" class="action-link">删除</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="checkbox"></td>
+                  <td>bc1q8udt9kk199xy7f8</td>
+                  <td>OTC 承兑商出金地址</td>
+                  <td>2025-07-13 15:18:02</td>
+                  <td>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="提币地址白名单" data-event-target="bc1q8udt9kk199xy7f8" data-event-records="2025-07-13 07:52:19,3204,同提币地址监控命中后因提币地址白名单放行">触发事件</a>
+                    <a href="#" class="action-link">删除</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="risk-layout collapsible-config inline-entry-modal" id="risk-withdraw-address-whitelist-form-block" hidden>
+            <div class="config-panel" id="risk-withdraw-address-whitelist-form">
+              <h2>新增提币地址白名单</h2>
+              <div class="config-row">
+                <label>输入提币地址</label>
+                <textarea placeholder="多个提币地址用 / 隔开，例如：TQ2a9xY8mP01cUSDT9981/bc1q8udt9kk199xy7f8">TQ2a9xY8mP01cUSDT9981/bc1q8udt9kk199xy7f8</textarea>
+                <div class="helper-text">多个提币地址用 `/` 隔开，系统按单条地址拆分入库。</div>
+              </div>
+              <div class="config-row">
+                <label>转入原因</label>
+                <input type="text" value="人工判断为提币地址白名单" />
+              </div>
+              <div class="config-actions">
+                <button type="button" class="button secondary js-close-inline-entry-modal">取消</button>
+                <button type="button" class="button">确认</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-row">
+            <div>当前展示 2 条记录</div>
+            <div class="pagination">
+              <button type="button" class="page-chip active">1</button>
+              <button type="button" class="page-chip">2</button>
+              <span>共7条信息</span>
             </div>
           </div>
         </div>
@@ -8890,20 +9057,39 @@
       </div>
     </div>
 
-    <div class="spec-page" data-spec-page="blacklist-withdraw">
+    <div class="spec-page" data-spec-page="blacklist-deposit-address">
       <div class="spec-card">
-        <strong>充值与提币地址黑名单说明</strong>
+        <strong>充值地址黑名单说明</strong>
         <em>运营说明</em>
         <ol>
-          <li>筛选项支持按 `地址`、`地址类型` 与时间范围检索充值与提币地址黑名单记录，其中 `地址类型` 支持 `充值/提币`、`充值`、`提币` 三种口径；未选择时等同于不过滤。</li>
-          <li>列表字段包含 `地址`、`地址类型`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `编辑`、`删除`。</li>
-          <li>页头提供 `添加/编辑充值与提币地址黑名单` 入口，新增与编辑共用同一配置区域。</li>
+          <li>筛选项支持按 `充值地址` 与时间范围检索充值地址黑名单记录。</li>
+          <li>列表字段包含 `地址`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `触发事件`、`编辑`、`删除`。</li>
+          <li>页头提供 `添加/编辑充值地址黑名单` 入口，新增与编辑共用同一配置区域。</li>
         </ol>
         <em>注意事项</em>
         <ol>
-          <li>进入充值与提币地址黑名单的地址按黑名单口径参与后续风控限制。</li>
-          <li>`地址类型` 为多选项：同一地址可同时勾选 `充值` 与 `提币`；当两项同时勾选时，列表中展示为 `充值/提币`。</li>
-          <li>如该地址当前已在充值和提币地址白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
+          <li>进入充值地址黑名单的地址按黑名单口径参与后续风控限制。</li>
+          <li>多个充值地址使用 `/` 分隔批量录入，系统按单条地址拆分入库。</li>
+          <li>如该地址当前已在充值地址白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
+          <li>`触发事件` 弹窗支持查看该充值地址关联的触发汇总与详情。</li>
+        </ol>
+      </div>
+    </div>
+    <div class="spec-page" data-spec-page="blacklist-withdraw-address">
+      <div class="spec-card">
+        <strong>提币地址黑名单说明</strong>
+        <em>运营说明</em>
+        <ol>
+          <li>筛选项支持按 `提币地址` 与时间范围检索提币地址黑名单记录。</li>
+          <li>列表字段包含 `地址`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `触发事件`、`编辑`、`删除`。</li>
+          <li>页头提供 `添加/编辑提币地址黑名单` 入口，新增与编辑共用同一配置区域。</li>
+        </ol>
+        <em>注意事项</em>
+        <ol>
+          <li>进入提币地址黑名单的地址按黑名单口径参与后续风控限制。</li>
+          <li>多个提币地址使用 `/` 分隔批量录入，系统按单条地址拆分入库。</li>
+          <li>如该地址当前已在提币地址白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
+          <li>`触发事件` 弹窗支持查看该提币地址关联的触发汇总与详情。</li>
         </ol>
       </div>
     </div>
@@ -9422,21 +9608,39 @@
         </ol>
       </div>
     </div>
-    <div class="spec-page" data-spec-page="risk-withdraw-whitelist">
+    <div class="spec-page" data-spec-page="risk-deposit-address-whitelist">
       <div class="spec-card">
-        <strong>充值和提币地址白名单说明</strong>
+        <strong>充值地址白名单说明</strong>
         <em>运营说明</em>
         <ol>
-          <li>筛选项包含 `查询条件`、`地址类型`、`开始时间`、`结束时间`，用于按地址、地址类型与选择周期检索白名单记录，其中 `地址类型` 支持 `充值/提币`、`充值`、`提币` 三种口径；未选择时等同于不过滤。</li>
-          <li>列表字段依次为 `地址`、`地址类型`、`转入原因`、`操作时间`、`操作`。</li>
+          <li>筛选项包含 `查询条件`、`开始时间`、`结束时间`，用于按充值地址与选择周期检索充值地址白名单记录。</li>
+          <li>列表字段依次为 `勾选`、`地址`、`转入原因`、`操作时间`、`操作`。</li>
           <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
-          <li>新增地址支持多个地址使用 `/` 分隔批量录入；`地址类型` 为多选项，可勾选 `充值`、`提币` 或同时勾选；`转入原因` 为本次加入白名单的业务依据。</li>
+          <li>新增充值地址支持多个地址使用 `/` 分隔批量录入；`转入原因` 为本次加入白名单的业务依据。</li>
         </ol>
         <em>注意事项</em>
         <ol>
-          <li>进入充值和提币地址白名单的地址不再参与同提币地址监控、异常充值监控等地址维度命中。</li>
-          <li>`地址类型` 为多选项：同一地址可同时属于 `充值` 与 `提币`；当两项同时勾选时，列表中展示为 `充值/提币`。</li>
-          <li>如该地址当前已在充值与提币地址黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
+          <li>进入充值地址白名单的地址不再参与异常充值监控等充值维度的地址命中。</li>
+          <li>如该地址当前已在充值地址黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
+          <li>`触发事件` 弹窗需先展示 `触发日期`、`触发次数（排重）`、`触发UID数`，并在详情中展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`触发原因`；同一条明细仅展示一种维度。</li>
+          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
+        </ol>
+      </div>
+    </div>
+    <div class="spec-page" data-spec-page="risk-withdraw-address-whitelist">
+      <div class="spec-card">
+        <strong>提币地址白名单说明</strong>
+        <em>运营说明</em>
+        <ol>
+          <li>筛选项包含 `查询条件`、`开始时间`、`结束时间`，用于按提币地址与选择周期检索提币地址白名单记录。</li>
+          <li>列表字段依次为 `勾选`、`地址`、`转入原因`、`操作时间`、`操作`。</li>
+          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
+          <li>新增提币地址支持多个地址使用 `/` 分隔批量录入；`转入原因` 为本次加入白名单的业务依据。</li>
+        </ol>
+        <em>注意事项</em>
+        <ol>
+          <li>进入提币地址白名单的地址不再参与同提币地址监控等提币维度的地址命中。</li>
+          <li>如该地址当前已在提币地址黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
           <li>`触发事件` 弹窗需先展示 `触发日期`、`触发次数（排重）`、`触发UID数`，并在详情中展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`触发原因`；同一条明细仅展示一种维度。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
         </ol>
@@ -9984,7 +10188,8 @@
       'blacklist-add': '添加黑名单',
       'blacklist-ip': 'IP黑名单',
       'blacklist-device': '设备黑名单',
-      'blacklist-withdraw': '充值与提币地址黑名单',
+      'blacklist-deposit-address': '充值地址黑名单',
+      'blacklist-withdraw-address': '提币地址黑名单',
       'blacklist-password': '密码黑名单',
       'blacklist-phone': '邮箱黑名单',
       'market-history': '市价历史订单',
@@ -9997,7 +10202,8 @@
       'risk-batch-register': '批量注册监控',
       'risk-email-suffix': '邮箱后缀白名单',
       'risk-device-whitelist': '设备白名单',
-      'risk-withdraw-whitelist': '充值和提币地址白名单',
+      'risk-deposit-address-whitelist': '充值地址白名单',
+      'risk-withdraw-address-whitelist': '提币地址白名单',
       'risk-password-whitelist': '密码白名单',
       'risk-contract-suspicious-monitor': '高盈利高胜率用户',
       'risk-short-hold': '高频短时持仓监控',
@@ -10040,7 +10246,8 @@
       '打单风控': '打单风控配置',
       'IP黑名单': '用户控制配置',
       '设备黑名单': '用户控制配置',
-      '充值与提币地址黑名单': '用户控制配置',
+      '充值地址黑名单': '用户控制配置',
+      '提币地址黑名单': '用户控制配置',
       '密码黑名单': '用户控制配置',
       '邮箱黑名单': '用户控制配置'
     };
@@ -10142,11 +10349,17 @@
         { title: '放行命中', values: { day: '5', week: '19', month: '83', total: '996' }, hint: '命中设备白名单并被放行的记录数' },
         { title: '累计放行设备', values: { day: '56', week: '218', month: '930', total: '11,820' }, hint: '通过设备白名单累计放行的设备量', className: 'text-ok' }
       ],
-      'risk-withdraw-whitelist': [
-        { title: '白名单地址数', values: { day: '9', week: '9', month: '10', total: '10' }, hint: '当前启用的充值和提币地址白名单数量' },
-        { title: '新增地址', values: { day: '1', week: '2', month: '4', total: '26' }, hint: '新增录入的充值和提币地址白名单数量' },
-        { title: '放行命中', values: { day: '4', week: '15', month: '61', total: '822' }, hint: '命中充值和提币地址白名单并被放行的记录数' },
-        { title: '累计放行地址', values: { day: '42', week: '166', month: '704', total: '9,630' }, hint: '通过充值和提币地址白名单累计放行的地址请求量', className: 'text-ok' }
+      'risk-deposit-address-whitelist': [
+        { title: '白名单地址数', values: { day: '5', week: '5', month: '6', total: '6' }, hint: '当前启用的充值地址白名单数量' },
+        { title: '新增地址', values: { day: '1', week: '1', month: '2', total: '12' }, hint: '新增录入的充值地址白名单数量' },
+        { title: '放行命中', values: { day: '2', week: '7', month: '31', total: '418' }, hint: '命中充值地址白名单并被放行的记录数' },
+        { title: '累计放行地址', values: { day: '18', week: '76', month: '322', total: '4,410' }, hint: '通过充值地址白名单累计放行的地址请求量', className: 'text-ok' }
+      ],
+      'risk-withdraw-address-whitelist': [
+        { title: '白名单地址数', values: { day: '4', week: '4', month: '4', total: '4' }, hint: '当前启用的提币地址白名单数量' },
+        { title: '新增地址', values: { day: '0', week: '1', month: '2', total: '14' }, hint: '新增录入的提币地址白名单数量' },
+        { title: '放行命中', values: { day: '2', week: '8', month: '30', total: '404' }, hint: '命中提币地址白名单并被放行的记录数' },
+        { title: '累计放行地址', values: { day: '24', week: '90', month: '382', total: '5,220' }, hint: '通过提币地址白名单累计放行的地址请求量', className: 'text-ok' }
       ],
       'risk-password-whitelist': [
         { title: '白名单密码数', values: { day: '7', week: '7', month: '8', total: '8' }, hint: '当前启用的密码白名单摘要数量' },
@@ -10327,9 +10540,13 @@
         hierarchy: ['一级：黑名单', '二级：设备黑名单', '三级：无', '弹窗：新增设备黑名单、用户控制配置'],
         modals: ['新增设备黑名单弹窗：输入设备ID支持多个设备ID用 / 分隔批量录入|类型固定为 WEB/安卓/IOS|转入原因为必填输入框|如录入设备已存在于设备白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
-      'blacklist-withdraw': {
-        hierarchy: ['一级：黑名单', '二级：充值与提币地址黑名单', '三级：无', '弹窗：新增充值与提币地址黑名单、用户控制配置'],
-        modals: ['新增充值与提币地址黑名单弹窗：输入地址支持多个地址用 / 分隔批量录入|地址类型为多选项，可勾选 充值/提币 或同时勾选|转入原因为必填输入框|如录入地址已存在于充值和提币地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+      'blacklist-deposit-address': {
+        hierarchy: ['一级：黑名单', '二级：充值地址黑名单', '三级：无', '弹窗：新增充值地址黑名单、用户控制配置'],
+        modals: ['新增充值地址黑名单弹窗：输入充值地址支持多个地址用 / 分隔批量录入|转入原因为必填输入框|如录入地址已存在于充值地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+      },
+      'blacklist-withdraw-address': {
+        hierarchy: ['一级：黑名单', '二级：提币地址黑名单', '三级：无', '弹窗：新增提币地址黑名单、用户控制配置'],
+        modals: ['新增提币地址黑名单弹窗：输入提币地址支持多个地址用 / 分隔批量录入|转入原因为必填输入框|如录入地址已存在于提币地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-password': {
         hierarchy: ['一级：黑名单', '二级：密码黑名单', '三级：无', '弹窗：新增密码黑名单、用户控制配置'],
@@ -10383,9 +10600,13 @@
         hierarchy: ['一级：白名单', '二级：设备白名单', '三级：无', '弹窗：添加设备'],
         modals: ['添加设备弹窗：字段包含设备ID集合、类型、转入原因，多个设备用 `/` 分隔；如录入设备已存在于设备黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。']
       },
-      'risk-withdraw-whitelist': {
-        hierarchy: ['一级：白名单', '二级：充值和提币地址白名单', '三级：无', '弹窗：添加地址、触发事件'],
-        modals: ['添加地址弹窗：字段包含地址集合、地址类型与转入原因；地址类型为多选项，可勾选 充值/提币 或同时勾选；多个地址用 `/` 分隔；如录入地址已存在于充值与提币地址黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。', '触发事件弹窗：展示充值和提币地址白名单放行记录明细。']
+      'risk-deposit-address-whitelist': {
+        hierarchy: ['一级：白名单', '二级：充值地址白名单', '三级：无', '弹窗：添加充值地址、触发事件'],
+        modals: ['添加充值地址弹窗：字段包含充值地址集合、转入原因；多个充值地址用 `/` 分隔批量录入；如录入地址已存在于充值地址黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。', '触发事件弹窗：展示充值地址白名单放行记录明细。']
+      },
+      'risk-withdraw-address-whitelist': {
+        hierarchy: ['一级：白名单', '二级：提币地址白名单', '三级：无', '弹窗：添加提币地址、触发事件'],
+        modals: ['添加提币地址弹窗：字段包含提币地址集合、转入原因；多个提币地址用 `/` 分隔批量录入；如录入地址已存在于提币地址黑名单，需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。', '触发事件弹窗：展示提币地址白名单放行记录明细。']
       },
       'risk-password-whitelist': {
         hierarchy: ['一级：白名单', '二级：密码白名单', '三级：无', '弹窗：添加密码、触发事件'],
@@ -11248,11 +11469,13 @@
         'risk-email-suffix-form-block': 'risk-email-suffix',
         'risk-ip-form-block': 'risk-ip-whitelist',
         'risk-device-form-block': 'risk-device-whitelist',
-        'risk-withdraw-form-block': 'risk-withdraw-whitelist',
+        'risk-deposit-address-whitelist-form-block': 'risk-deposit-address-whitelist',
+        'risk-withdraw-address-whitelist-form-block': 'risk-withdraw-address-whitelist',
         'risk-password-whitelist-form-block': 'risk-password-whitelist',
         'blacklist-ip-form-block': 'blacklist-ip',
         'blacklist-device-form-block': 'blacklist-device',
-        'blacklist-withdraw-form-block': 'blacklist-withdraw',
+        'blacklist-deposit-address-form-block': 'blacklist-deposit-address',
+        'blacklist-withdraw-address-form-block': 'blacklist-withdraw-address',
         'blacklist-password-form-block': 'blacklist-password',
         'blacklist-phone-form-block': 'blacklist-phone'
       };
@@ -11311,7 +11534,8 @@
 
       bindBlacklistInlineTargetSync('blacklist-ip-form');
       bindBlacklistInlineTargetSync('blacklist-device-form');
-      bindBlacklistInlineTargetSync('blacklist-withdraw-form');
+      bindBlacklistInlineTargetSync('blacklist-deposit-address-form');
+      bindBlacklistInlineTargetSync('blacklist-withdraw-address-form');
       bindBlacklistInlineTargetSync('blacklist-password-form');
       bindBlacklistInlineTargetSync('blacklist-phone-form');
     }
@@ -11382,7 +11606,7 @@
         }
       } else if (formId === 'blacklist-device-form') {
         value = getSlashFirstValue(panel.querySelector('textarea') ? panel.querySelector('textarea').value : '');
-      } else if (formId === 'blacklist-withdraw-form') {
+      } else if (formId === 'blacklist-deposit-address-form' || formId === 'blacklist-withdraw-address-form') {
         value = getSlashFirstValue(panel.querySelector('textarea') ? panel.querySelector('textarea').value : '');
       } else if (formId === 'blacklist-password-form') {
         value = getSlashFirstValue(panel.querySelector('textarea') ? panel.querySelector('textarea').value : '');
@@ -11438,7 +11662,7 @@
       } else if (targetId === 'blacklist-device-form-block') {
         setRadioChoice(panel, 'device-blacklist-type', mode === 'edit' ? (trigger.dataset.deviceType || 'WEB') : 'WEB');
         if (textarea) textarea.value = mode === 'edit' ? (trigger.dataset.deviceValue || '') : '';
-      } else if (targetId === 'blacklist-withdraw-form-block') {
+      } else if (targetId === 'blacklist-deposit-address-form-block' || targetId === 'blacklist-withdraw-address-form-block') {
         if (textarea) textarea.value = mode === 'edit' ? (trigger.dataset.withdrawValue || '') : '';
       } else if (targetId === 'blacklist-password-form-block') {
         setCheckboxChoices(panel, 'password-blacklist-type', mode === 'edit' ? (trigger.dataset.passwordType || '登录密码') : '登录密码');
@@ -12140,7 +12364,7 @@
       const isAbnormalDeposit = source === '异常充值监控';
       const isTradePeerMonitor = source === '对敲交易监控';
       const isWithdrawAddressMonitor = source === '同提币地址监控';
-      const isBlacklistManage = ['IP黑名单', '设备黑名单', '充值与提币地址黑名单', '密码黑名单', '邮箱黑名单'].includes(source);
+      const isBlacklistManage = ['IP黑名单', '设备黑名单', '充值地址黑名单', '提币地址黑名单', '密码黑名单', '邮箱黑名单'].includes(source);
       const hideRelationBlock = isBatchRegister || isContractSuspicious || isShortHold || isWoolMonitor || isAbnormalDeposit || isBlacklistManage;
       const relatedIpUsers = trigger.dataset.relatedIpUsers || uid;
       const relatedDeviceUsers = trigger.dataset.relatedDeviceUsers || uid;
