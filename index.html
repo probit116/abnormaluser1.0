@@ -1715,6 +1715,24 @@
             </button>
           </div>
         </div>
+
+        <div class="nav-group" style="margin-top:12px;" data-group="version-declare" data-pages="risk-version-declare">
+          <div class="nav-parent">
+            <button class="nav-btn group-title" data-page="risk-version-declare">
+              <span class="nav-copy">
+                <strong>版本声明</strong>
+                <span>迭代版本与改动清单说明</span>
+              </span>
+            </button>
+            <button type="button" class="nav-group-toggle" data-group-toggle="version-declare" aria-label="展开或收回版本声明导航"></button>
+          </div>
+          <div class="nav-sub-list">
+            <button class="nav-btn sub" data-page="risk-version-declare">
+              <strong>20260826 14:26</strong>
+              <span>当前版本改动明细</span>
+            </button>
+          </div>
+        </div>
       </div>
     </aside>
 
@@ -2522,7 +2540,7 @@
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单用户</label>
                 </div>
               </div>
               <div class="config-row">
@@ -2639,7 +2657,7 @@
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单用户</label>
                 </div>
               </div>
               <div class="config-row">
@@ -2745,7 +2763,7 @@
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单用户</label>
                 </div>
               </div>
               <div class="config-row">
@@ -2851,7 +2869,7 @@
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单用户</label>
                 </div>
               </div>
               <div class="config-row">
@@ -2967,7 +2985,7 @@
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单用户</label>
                 </div>
               </div>
               <div class="config-row">
@@ -3104,7 +3122,7 @@
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">全部列入黑名单用户</label>
                 </div>
               </div>
               <div class="config-row">
@@ -3874,14 +3892,15 @@
                   <td>2025-07-15 10:01:15</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>合约全平</td>
-                  <td>
-                    <a href="#" class="action-link">IP列入白名单</a>
-                    <a href="#" class="action-link">正常操作</a>
+                                    <td>
+                    <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="异常登录监控">异常登录配置</a>
+                    <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="异常登录监控">异常登录配置</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>123</td>
@@ -3892,14 +3911,13 @@
                   <td>2025-07-15 10:01:15</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>全部提现</td>
-                  <td>
-                    <a href="#" class="action-link">IP列入白名单</a>
-                    <a href="#" class="action-link">正常操作</a>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="异常登录监控">异常登录配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>123</td>
@@ -3910,14 +3928,15 @@
                   <td>2025-07-15 10:01:15</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>平仓</td>
-                  <td>
-                    <a href="#" class="action-link">IP列入白名单</a>
-                    <a href="#" class="action-link">正常操作</a>
+                                    <td>
+                    <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="异常登录监控">异常登录配置</a>
+                    <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="异常登录监控">异常登录配置</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -4117,12 +4136,15 @@
                   <td>286,500 USDT</td>
                   <td>438,500 USDT</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
-                    <a href="#" class="action-link">正常用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高盈利高胜率用户">相关操作配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>123</td>
@@ -4133,12 +4155,15 @@
                   <td>92,300 USDT</td>
                   <td>155,800 USDT</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
-                    <a href="#" class="action-link">正常用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="223" data-related-users="223" data-relation-default="0" data-config-source="高盈利高胜率用户">相关操作配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>123</td>
@@ -4149,12 +4174,15 @@
                   <td>64,200 USDT</td>
                   <td>102,200 USDT</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
-                    <a href="#" class="action-link">正常用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="323" data-related-users="323" data-relation-default="0" data-config-source="高盈利高胜率用户">相关操作配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -4207,7 +4235,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -4329,14 +4357,13 @@
                   <td>2025-07-15 10:18:42</td>
                   <td>--</td>
                   <td>同邮箱后缀批量注册</td>
-                  <td>
-                    <a href="#" class="action-link">邮箱加入白名单</a>
-                    <a href="#" class="action-link">正常操作</a>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123@fex.com" data-related-users="123@fex.com" data-related-ip-users="123@fex.com,223@fex.com,323@fex.com" data-related-device-users="123@fex.com,423@fex.com" data-related-email-users="123@fex.com,223@fex.com,323@fex.com,523@fex.com,623@fex.com" data-white-listed-users="223@fex.com" data-related-ip-count="2" data-related-device-count="2" data-related-email-count="4" data-relation-default="" data-config-source="批量注册监控">批量注册配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>同IP</td>
@@ -4347,14 +4374,13 @@
                   <td>2025-07-15 10:08:20</td>
                   <td>--</td>
                   <td>同IP批量注册</td>
-                  <td>
-                    <a href="#" class="action-link">IP加入白名单</a>
-                    <a href="#" class="action-link">正常操作</a>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123@fex.com" data-related-users="123@fex.com" data-related-ip-users="123@fex.com,223@fex.com,323@fex.com" data-related-device-users="123@fex.com,423@fex.com" data-related-email-users="123@fex.com,223@fex.com,323@fex.com,523@fex.com,623@fex.com" data-white-listed-users="223@fex.com" data-related-ip-count="2" data-related-device-count="2" data-related-email-count="4" data-relation-default="" data-config-source="批量注册监控">批量注册配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>同设备</td>
@@ -4365,14 +4391,13 @@
                   <td>2025-07-15 10:06:40</td>
                   <td>2025-07-15 10:09:18</td>
                   <td>同设备批量注册并首交易</td>
-                  <td>
-                    <a href="#" class="action-link">设备加入白名单</a>
-                    <a href="#" class="action-link">正常操作</a>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123@gmail.com" data-related-users="123@gmail.com" data-related-ip-users="123@gmail.com,523@gmail.com" data-related-device-users="123@gmail.com,623@gmail.com,723@gmail.com" data-related-email-users="123@gmail.com,523@gmail.com,623@gmail.com,723@gmail.com,823@gmail.com" data-white-listed-users="723@gmail.com" data-related-ip-count="2" data-related-device-count="2" data-related-email-count="4" data-relation-default="" data-config-source="批量注册监控">批量注册配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -4589,13 +4614,15 @@
                   <td>65005.00</td>
                   <td>5.00</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">正常用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高频短时持仓监控">高频短时持仓配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>123</td>
@@ -4611,13 +4638,15 @@
                   <td>3502.50</td>
                   <td>2.50</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">正常用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高频短时持仓监控">高频短时持仓配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>123</td>
@@ -4633,13 +4662,15 @@
                   <td>3502.50</td>
                   <td>2.50</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">正常用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高频短时持仓监控">高频短时持仓配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -4693,7 +4724,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -4818,13 +4849,15 @@
                   <td><span class="multi-id" data-ids="pos-ss-1001,pos-ss-1002,pos-ss-1003"></span></td>
                   <td>2</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="1001" data-related-users="1001,1002" data-relation-default="1" data-config-source="同秒开仓监控">同秒开仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>2025-07-15 10:05:30</td>
@@ -4836,13 +4869,15 @@
                   <td><span class="multi-id" data-ids="pos-ss-2001,pos-ss-2005"></span></td>
                   <td>3</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="2001" data-related-users="2001,2005" data-relation-default="1" data-config-source="同秒开仓监控">同秒开仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>2025-07-15 10:07:15</td>
@@ -4854,13 +4889,15 @@
                   <td><span class="multi-id" data-ids="pos-ss-3004,pos-ss-3006,pos-ss-3011,pos-ss-3020"></span></td>
                   <td>2</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="3004" data-related-users="3004,3006" data-relation-default="1" data-config-source="同秒开仓监控">同秒开仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -4914,7 +4951,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -5032,13 +5069,13 @@
                   <td><div class="risk-behavior-list"><span class="risk-behavior-tag">批量注册监控</span><span class="risk-behavior-tag">羊毛党监控</span></div></td>
                   <td>2</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="1101" data-related-users="1101,1102,1106" data-relation-default="1" data-config-source="同提币地址监控">同提币地址配置</a>
                     <a href="#" class="action-link">正常事件</a>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>2025-07-15 10:05:30</td>
@@ -5049,13 +5086,15 @@
                   <td><div class="risk-behavior-list"><span class="risk-behavior-tag">用户同密码</span></div></td>
                   <td>3</td>
                   <td>2025-07-15 10:05:30</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="2101" data-related-users="2101,2105" data-relation-default="1" data-config-source="同提币地址监控">同提币地址配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>2025-07-15 10:07:15</td>
@@ -5066,13 +5105,15 @@
                   <td><div class="risk-behavior-list"><span class="risk-behavior-tag">异常登录监控</span><span class="risk-behavior-tag">高频短时持仓</span></div></td>
                   <td>2</td>
                   <td>2025-07-15 10:07:15</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="3204" data-related-users="3204,3206,3209,3211" data-relation-default="1" data-config-source="同提币地址监控">同提币地址配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -5120,7 +5161,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -5235,14 +5276,13 @@
                   <td>88,000 USDT</td>
                   <td>下级交易用户总提现金额占下级交易用户领取福利总金额52.27%，高于阈值45%；下级交易用户总充值金额占下级交易用户领取福利总金额206.82%，未命中第二条件</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">正常用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">此用户与其下级全部列为黑名单</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123,123001,123002,123003,123101" data-downline-all-users="123,123001,123002,123003,123101" data-downline-level1-users="123,123001,123002" data-downline-level3-users="123,123001,123002,123003" data-downline-default="all" data-config-source="羊毛党监控">羊毛党配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>245</td>
@@ -5254,14 +5294,15 @@
                   <td>52,000 USDT</td>
                   <td>下级交易用户总提现金额占下级交易用户领取福利总金额55.00%，高于阈值45%；下级交易用户总充值金额占下级交易用户领取福利总金额69.23%，低于阈值80%，命中羊毛党规则</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">正常用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">此用户与其下级全部列为黑名单</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123,123001,123002,123003,123101" data-downline-all-users="123,123001,123002,123003,123101" data-downline-level1-users="123,123001,123002" data-downline-level3-users="123,123001,123002,123003" data-downline-default="level1" data-config-source="羊毛党监控">羊毛党配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>318</td>
@@ -5273,14 +5314,15 @@
                   <td>15,000 USDT</td>
                   <td>下级交易用户总提现金额占下级交易用户领取福利总金额65.33%，高于阈值45%；下级交易用户总充值金额占下级交易用户领取福利总金额120.00%，未命中第二条件</td>
                   <td>2025-07-15 10:01:15</td>
-                  <td>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">正常用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">此用户与其下级全部列为黑名单</a>
+                                    <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123,123001,123002,123003,123101" data-downline-all-users="123,123001,123002,123003,123101" data-downline-level1-users="123,123001,123002" data-downline-level3-users="123,123001,123002,123003" data-downline-default="level3" data-config-source="羊毛党监控">羊毛党配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -5335,7 +5377,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -6041,7 +6083,7 @@
                   <td>6</td>
                   <td>3</td>
                   <td>2025-07-16 10:01:15</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-password-detail"
                       data-password-source="用户同密码"
                       data-login-password="8f14e45fceea167a5a36dedd4bea2543"
@@ -6054,9 +6096,6 @@
                       data-related-pay-users="100861,100925,100934"
                       data-related-both-users="100861,100872,100934"
                       data-password-time="2025-07-16 10:01:15">查看详情</a>
-                    <a href="#" class="action-link">正常事件</a>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
                     <a href="#" class="action-link js-open-password-config"
                       data-password-source="用户同密码"
                       data-password-uid="100861"
@@ -6069,8 +6108,13 @@
                       data-related-login-users="100861,100872,100896,100912"
                       data-related-pay-users="100861,100925,100934"
                       data-related-both-users="100861,100872,100934">同密码用户配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>6512bd43d9caa6e02c990b0a82652dca</td>
@@ -6080,7 +6124,7 @@
                   <td>4</td>
                   <td>2</td>
                   <td>2025-07-16 09:48:33</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-password-detail"
                       data-password-source="用户同密码"
                       data-login-password="6512bd43d9caa6e02c990b0a82652dca"
@@ -6093,9 +6137,6 @@
                       data-related-pay-users="100913,100927,100948,100966"
                       data-related-both-users="100913,100966"
                       data-password-time="2025-07-16 09:48:33">查看详情</a>
-                    <a href="#" class="action-link">正常事件</a>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
                     <a href="#" class="action-link js-open-password-config"
                       data-password-source="用户同密码"
                       data-password-uid="100913"
@@ -6108,8 +6149,13 @@
                       data-related-login-users="100913,100921,100955"
                       data-related-pay-users="100913,100927,100948,100966"
                       data-related-both-users="100913,100966">同密码用户配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>c51ce410c124a10e0db5e4b97fc2af39</td>
@@ -6119,7 +6165,7 @@
                   <td>8</td>
                   <td>1</td>
                   <td>2025-07-16 08:25:10</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-password-detail"
                       data-password-source="用户同密码"
                       data-login-password="c51ce410c124a10e0db5e4b97fc2af39"
@@ -6132,9 +6178,6 @@
                       data-related-pay-users="101024,101025,101026"
                       data-related-both-users="101024,101025,101026"
                       data-password-time="2025-07-16 08:25:10">查看详情</a>
-                    <a href="#" class="action-link">正常事件</a>
-                    <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
                     <a href="#" class="action-link js-open-password-config"
                       data-password-source="用户同密码"
                       data-password-uid="101024"
@@ -6147,8 +6190,13 @@
                       data-related-login-users="101024,101025,101026"
                       data-related-pay-users="101024,101025,101026"
                       data-related-both-users="101024,101025,101026">同密码用户配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -6566,7 +6614,7 @@
                 <label class="modal-option-item"><input type="checkbox" class="password-config-action" value="禁止现货交易">禁止现货交易</label>
                 <label class="modal-option-item"><input type="checkbox" class="password-config-action" value="禁止合约开仓">禁止合约开仓</label>
                 <label class="modal-option-item"><input type="checkbox" class="password-config-action" value="全部列入可疑用户">全部列入可疑用户</label>
-                <label class="modal-option-item"><input type="checkbox" class="password-config-action" value="全部列入黑名单">全部列入黑名单</label>
+                <label class="modal-option-item"><input type="checkbox" class="password-config-action" value="全部列入黑名单">全部列入黑名单用户</label>
               </div>
               <div class="config-row" style="margin-top:18px;">
                 <label>备注</label>
@@ -6670,7 +6718,7 @@
                   <td>7</td>
                   <td>2,460,000 USDT</td>
                   <td>2025-07-16 10:12:08</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-trade-peer-detail"
                       data-trade-peer-source="对敲交易监控"
                       data-trade-peer-user="同交易对手高频成交"
@@ -6682,8 +6730,13 @@
                       data-trade-peer-time="2025-07-16 10:12:08"
                       data-trade-peer-records="现货,BTC/USDT,200315,580000,2025-07-16 10:12:08|现货,ETH/USDT,200316,420000,2025-07-16 10:10:22|合约,BTC永续,200317,1460000,2025-07-16 10:08:10">查看详情</a>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="100861" data-related-users="200315,200316,200317" data-relation-default="1" data-config-source="对敲交易监控">对敲交易配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>100925</td>
@@ -6695,7 +6748,7 @@
                   <td>0</td>
                   <td>860,000 USDT</td>
                   <td>2025-07-16 09:55:41</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-trade-peer-detail"
                       data-trade-peer-source="对敲交易监控"
                       data-trade-peer-user="现货对敲疑似"
@@ -6707,8 +6760,11 @@
                       data-trade-peer-time="2025-07-16 09:55:41"
                       data-trade-peer-records="现货,SOL/USDT,200411,260000,2025-07-16 09:55:41|现货,ETH/USDT,200422,600000,2025-07-16 09:41:03">查看详情</a>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="100925" data-related-users="200411,200422" data-relation-default="0" data-config-source="对敲交易监控">对敲交易配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
                   <td>101024</td>
@@ -6720,7 +6776,7 @@
                   <td>31</td>
                   <td>3,120,000 USDT</td>
                   <td>2025-07-16 08:46:19</td>
-                  <td>
+                                    <td>
                     <a href="#" class="action-link js-open-trade-peer-detail"
                       data-trade-peer-source="对敲交易监控"
                       data-trade-peer-user="合约对手集中成交"
@@ -6732,8 +6788,13 @@
                       data-trade-peer-time="2025-07-16 08:46:19"
                       data-trade-peer-records="合约,BTC永续,200801,1820000,2025-07-16 08:46:19|合约,ETH永续,200801,1180000,2025-07-16 08:38:27|现货,BTC/USDT,200801,120000,2025-07-16 08:31:10">查看详情</a>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="101024" data-related-users="200801" data-relation-default="1" data-config-source="对敲交易监控">对敲交易配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
                   </td>
-                </tr>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -6803,7 +6864,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -6997,7 +7058,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -7070,8 +7131,15 @@
                   <td>1201,1203,1206,1210</td>
                   <td><div class="risk-behavior-list"><span class="risk-behavior-tag">同uid内部划转监控</span><span class="risk-behavior-tag">羊毛党监控</span></div></td>
                   <td>2025-07-16 11:06:15</td>
-                  <td><a href="#" class="action-link js-open-user-config" data-user-uid="1201" data-related-users="1201,1203,1206,1210" data-relation-default="1" data-config-source="同充值地址监控">同充值地址配置</a></td>
-                </tr>
+                                    <td>
+                    <a href="#" class="action-link js-open-user-config" data-user-uid="1201" data-related-users="1201,1203,1206,1210" data-relation-default="1" data-config-source="同充值地址监控">同充值地址配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
+                  </td>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -7095,7 +7163,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -7159,8 +7227,15 @@
                   <td><div class="risk-behavior-list"><span class="risk-behavior-tag">同提币地址监控</span><span class="risk-behavior-tag">用户同密码</span></div></td>
                   <td>860,000 USDT</td>
                   <td>2025-07-16 10:46:03</td>
-                  <td><a href="#" class="action-link js-open-user-config" data-user-uid="900861" data-related-users="900861" data-relation-default="0" data-config-source="同uid内部划转监控">同uid内部划转配置</a></td>
-                </tr>
+                                    <td>
+                    <a href="#" class="action-link js-open-user-config" data-user-uid="900861" data-related-users="900861" data-relation-default="0" data-config-source="同uid内部划转监控">同uid内部划转配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
+                  </td>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -7181,7 +7256,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -7298,7 +7373,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -7379,7 +7454,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -7482,7 +7557,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -7548,8 +7623,15 @@
                   <td>91.00%</td>
                   <td>1,880,000 USDT</td>
                   <td>2025-07-16 13:08:12</td>
-                  <td><a href="#" class="action-link js-open-user-config" data-user-uid="8803" data-related-users="8803" data-relation-default="0" data-config-source="打单风控">打单风控配置</a></td>
-                </tr>
+                                    <td>
+                    <a href="#" class="action-link js-open-user-config" data-user-uid="8803" data-related-users="8803" data-relation-default="0" data-config-source="打单风控">打单风控配置</a>
+                    <a href="#" class="action-link">正常事件</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">黑名单用户</a>
+                    <a href="#" class="action-link">移入白名单</a>
+                    <a href="#" class="action-link">移入黑名单</a>
+                  </td>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -7567,7 +7649,7 @@
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
                   <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+                  <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
                 </div>
                 <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
               </div>
@@ -7708,6 +7790,39 @@
               <button type="button" class="page-chip">2</button>
               <button type="button" class="page-chip">3</button>
               <span>共27条信息</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="risk-version-declare" class="page">
+        <div class="section-card">
+          <div class="section-head">
+            <div>
+              <div class="breadcrumb">
+                <span>后台</span><span>›</span><span class="text-primary">版本声明</span>
+              </div>
+              <h3>版本声明</h3>
+              <p style="margin:6px 0 0; font-size:12px; color:rgba(148,163,184,.7);">
+                迭代版本号：<span style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">20260826 14:26</span>
+              </p>
+            </div>
+          </div>
+          <div class="config-panel" style="margin-top:8px;">
+            <div class="config-row">
+              <label>生效范围</label>
+              <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                <span class="tag tag-warn">事前预警 8 页</span>
+                <span class="tag tag-warn">事后报警 4 页</span>
+                <span class="tag tag-silver">高盈利高胜率规则配置区</span>
+              </div>
+            </div>
+            <div class="config-row">
+              <label>当前版本改动明细（20260826 14:26）</label>
+              <div style="font-size:13px; line-height:1.95; color:var(--text);">
+                · 事前预警与事后报警，相关列表操作项按钮统一为：XX配置 正常事件 可疑用户 黑名单用户 移入白名单 移入黑名单<br>
+                · 高盈利高胜率用户规则配置区，增加：「统计时配置 用户最低盈利额统计 ≥ 1000 USDT」配置项；修改：「盈利率阈值」说明追加「盈利率为负数时，进入异常用户名单」
+              </div>
             </div>
           </div>
         </div>
@@ -7880,7 +7995,7 @@
       <div class="modal-head">
         <div>
           <h3 id="same-user-config-title">同一用户配置</h3>
-          <p id="same-user-config-desc">用于将当前用户或关联同秒开仓用户做统一风控处理。勾选关联同秒开仓用户后，当前页面监控用户内容按关联用户集合进行替换展示与处理。</p>
+          <p id="same-user-config-desc">用于对当前用户执行统一风控处理。弹窗标题、说明、关联用户字段会随点击来源页面动态切换。</p>
         </div>
         <button type="button" class="modal-close" id="same-user-config-close">关闭</button>
       </div>
@@ -7895,11 +8010,11 @@
             <input type="text" id="same-user-config-uid" value="1001" />
           </div>
           <div class="modal-field" id="same-user-generic-related-field">
-            <label>关联同秒开仓用户</label>
+            <label id="same-user-generic-related-label">关联用户</label>
             <input type="text" id="same-user-config-related" value="1001,1002" readonly />
           </div>
           <div class="modal-field" id="same-user-generic-relation-field">
-            <label>是否关联同秒开仓用户</label>
+            <label id="same-user-generic-relation-label">是否关联用户</label>
             <select id="same-user-config-relation">
               <option value="0">否</option>
               <option value="1">是</option>
@@ -7953,7 +8068,7 @@
           </div>
         </div>
         <div class="modal-alert" id="same-user-config-alert">
-          当 `是否关联同秒开仓用户` 选择为 `是` 时，本次处理会按关联用户集合统一执行，并以关联用户集合替换当前页面的监控用户内容做展示说明。
+          当 `是否关联用户` 选择为 `是` 时，本次处理会按关联用户集合统一执行，并以关联用户集合替换当前页面的监控用户内容做展示说明。
         </div>
         <div class="modal-field">
           <label>风控操作</label>
@@ -7964,7 +8079,7 @@
             <label class="modal-option-item"><input type="checkbox" class="same-user-action" value="禁止现货交易">禁止现货交易</label>
             <label class="modal-option-item"><input type="checkbox" class="same-user-action" value="禁止合约开仓">禁止合约开仓</label>
             <label class="modal-option-item"><input type="checkbox" class="same-user-action" value="全部列入可疑用户">全部列入可疑用户</label>
-            <label class="modal-option-item"><input type="checkbox" class="same-user-action" value="全部列入黑名单">全部列入黑名单</label>
+            <label class="modal-option-item"><input type="checkbox" class="same-user-action" value="全部列入黑名单">全部列入黑名单用户</label>
           </div>
         </div>
         <div class="modal-field">
@@ -8115,7 +8230,7 @@
               <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
               <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
               <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-              <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+              <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
               <label class="modal-option-item"><input type="radio" class="js-risk-mark-only" name="batch-register-mark-only">仅标记(此项只单选)</label>
             </div>
             <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
@@ -10234,7 +10349,8 @@
       'risk-order-brush-monitor': '打单风控',
       'risk-ip-whitelist': 'IP白名单',
       'risk-handle-record': '处理记录',
-      'risk-handle-record-detail': '处理记录详情'
+      'risk-handle-record-detail': '处理记录详情',
+      'risk-version-declare': '版本声明'
     };
     const userConfigNames = {
       '异常登录监控': '异常登录配置',
@@ -10453,7 +10569,8 @@
         { title: '已选详情用户', values: { day: '2', week: '2', month: '2', total: '2' }, hint: '详情页当前勾选准备处理的用户数' },
         { title: '开启权限', values: { day: '3', week: '11', month: '44', total: '612' }, hint: '当前处理记录详情下执行的开启权限次数' },
         { title: '处理操作项', values: { day: '3', week: '3', month: '3', total: '3' }, hint: '当前记录包含的处理操作数量', className: 'text-ok' }
-      ]
+      ],
+      'risk-version-declare': []
     };
 
     const specSupplementMeta = {
@@ -10680,6 +10797,10 @@
       'risk-handle-record-detail': {
         hierarchy: ['一级：处理记录', '二级：处理记录', '三级：查看详情', '弹窗：开启权限'],
         modals: ['开启权限弹窗：按当前勾选详情用户范围带入处理对象|开启权限项至少勾选 1 项，备注与谷歌验证码均为必填|确认开启前需同时通过 权限项、备注、验证码 三项校验。']
+      },
+      'risk-version-declare': {
+        hierarchy: ['一级：版本声明', '二级：20260826 14:26', '三级：无', '弹窗：无'],
+        modals: ['版本声明页：无弹窗交互；展示当前版本号（20260826 14:26）、生效范围、按「分组-页面」维度逐条列「增加 / 删除 / 修改」的改动说明，便于研发、测试、产品三方对齐版本迭代内容。']
       }
     };
 
@@ -10714,6 +10835,7 @@
       'risk-password-config',
       'risk-trade-peer-detail',
       'risk-handle-record-detail',
+      'risk-version-declare',
       'whitelist-add'
     ]);
 
@@ -11767,7 +11889,14 @@
     function renderOverview(pageId = state.activePage) {
       const granularity = state.granularity || 'day';
       const metrics = overviewMetrics[pageId] || overviewMetrics.monitor;
-      overviewTitle.textContent = '异常统计';
+      const overviewBarEl = document.querySelector('.overview-bar');
+      if (!metrics || metrics.length === 0) {
+        overviewTitle.textContent = pageTitleMap[pageId] || '异常统计';
+        if (overviewBarEl) overviewBarEl.style.display = 'none';
+        return;
+      }
+      if (overviewBarEl) overviewBarEl.style.display = '';
+      overviewTitle.textContent = pageTitleMap[pageId] || '异常统计';
       overviewGrid.innerHTML = metrics.map(m => `
         <div class="overview-card">
           <small>${sanitizeMetricTitle(m.title)}</small>
@@ -12103,7 +12232,7 @@
               <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
               <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
               <label class="modal-option-item"><input type="checkbox">全部列入可疑用户</label>
-              <label class="modal-option-item"><input type="checkbox">全部列入黑名单</label>
+              <label class="modal-option-item"><input type="checkbox">全部列入黑名单用户</label>
               <label class="modal-option-item"><input type="radio" class="js-risk-mark-only" name="risk-mark-only">仅标记(此项只单选)</label>
             </div>
             <div class="helper-text">命中后在后台标记，并按此处配置执行默认处置。</div>
@@ -12383,6 +12512,20 @@
       const relatedEmailCount = trigger.dataset.relatedEmailCount || '0';
       const whiteListedUsers = trigger.dataset.whiteListedUsers || '';
       const downlineDefault = trigger.dataset.downlineDefault || 'all';
+      const relatedTermMap = {
+        '异常登录监控': { related: '关联同登录用户', relation: '是否关联同登录用户', term: '同登录用户' },
+        '同秒开仓监控': { related: '关联同秒开仓用户', relation: '是否关联同秒开仓用户', term: '同秒开仓用户' },
+        '同提币地址监控': { related: '关联同提币地址用户', relation: '是否关联同提币地址用户', term: '同提币地址用户' },
+        '同充值地址监控': { related: '关联同充值地址用户', relation: '是否关联同充值地址用户', term: '同充值地址用户' },
+        '同uid内部划转监控': { related: '关联同内部划转用户', relation: '是否关联同内部划转用户', term: '同内部划转用户' },
+        '用户同密码': { related: '关联同密码用户', relation: '是否关联同密码用户', term: '同密码用户' },
+        '对敲交易监控': { related: '关联交易对手用户', relation: '是否关联交易对手', term: '交易对手用户' },
+        '打单风控': { related: '关联同打单行为用户', relation: '是否关联同打单行为用户', term: '同打单行为用户' }
+      };
+      const relatedTerm = relatedTermMap[source] || null;
+      const relatedTermLabel = relatedTerm ? relatedTerm.related : '';
+      const relationTermLabel = relatedTerm ? relatedTerm.relation : '';
+      const termWord = relatedTerm ? relatedTerm.term : '';
       if (sameUserConfigSource) sameUserConfigSource.value = source;
       if (sameUserConfigTitle) sameUserConfigTitle.textContent = configName;
       if (sameUserConfigDesc) sameUserConfigDesc.textContent = isBatchRegister
@@ -12396,12 +12539,12 @@
           : isAbnormalDeposit
             ? `用于对当前异常充值命中用户执行相关风控处理。当前来源页面为${source}，本配置页仅针对当前用户生效。`
           : isTradePeerMonitor
-            ? `用于对当前对敲交易监控记录执行统一处理。当前来源页面为${source}，可选择是否将交易对手用户一并纳入处理。`
-          : isWithdrawAddressMonitor
-            ? `用于将当前用户或关联同地址用户做统一风控处理。当前来源页面为${source}，勾选关联同地址用户后，当前页面监控用户内容按关联用户集合进行替换展示与处理。`
+            ? `用于将当前用户或关联交易对手用户做统一风控处理。当前来源页面为${source}，勾选关联交易对手用户后，当前页面监控用户内容按关联用户集合进行替换展示与处理。`
+          : relatedTerm
+            ? `用于将当前用户或关联${termWord}做统一风控处理。当前来源页面为${source}，勾选${relatedTermLabel.replace('关联','')}后，当前页面监控用户内容按关联用户集合进行替换展示与处理。`
           : isWoolMonitor
             ? `用于对当前羊毛党监控用户执行风控处理。当前来源页面为${source}，可按下级范围决定是否将其下级账户一并纳入处理。`
-          : `用于将当前用户或关联同秒开仓用户做统一风控处理。当前来源页面为${source}，弹窗名称随页面展示为${configName}。勾选关联同秒开仓用户后，当前页面监控用户内容按关联用户集合进行替换展示与处理。`;
+            : `用于对当前用户执行统一风控处理。当前来源页面为${source}，弹窗名称随页面展示为${configName}。`;
       if (sameUserConfigAlert) sameUserConfigAlert.textContent = isBatchRegister
         ? '当勾选任一关联项时，弹窗会展示默认可处理的关联UID集合；白名单对象默认不受控制，如本次选择全部列入黑名单且关联对象中存在白名单用户，确认前会单独弹窗提示是否移至黑名单。'
         : isContractSuspicious
@@ -12414,13 +12557,13 @@
             ? ''
           : isTradePeerMonitor
             ? '当 `是否关联交易对手` 选择为 `是` 时，本次处理会将当前交易用户与交易对手UID集合作为统一处理对象执行。'
-          : isWithdrawAddressMonitor
-            ? '当 `是否关联同提币地址用户` 选择为 `是` 时，本次处理会按关联用户集合统一执行，并以关联用户集合替换当前页面的监控用户内容做展示说明。'
+          : relatedTerm
+            ? `当 \`${relationTermLabel}\` 选择为 \`是\` 时，本次处理会按关联用户集合统一执行，并以关联用户集合替换当前页面的监控用户内容做展示说明。`
           : isWoolMonitor
             ? ''
-          : '当 `是否关联同秒开仓用户` 选择为 `是` 时，本次处理会按关联用户集合统一执行，并以关联用户集合替换当前页面的监控用户内容做展示说明。';
-      if (sameUserGenericRelatedLabel) sameUserGenericRelatedLabel.textContent = isTradePeerMonitor ? '关联交易对手用户' : (isWithdrawAddressMonitor ? '关联同提币地址用户' : '关联同秒开仓用户');
-      if (sameUserGenericRelationLabel) sameUserGenericRelationLabel.textContent = isTradePeerMonitor ? '是否关联交易对手' : (isWithdrawAddressMonitor ? '是否关联同提币地址用户' : '是否关联同秒开仓用户');
+          : '';
+      if (relatedTermLabel && sameUserGenericRelatedLabel) sameUserGenericRelatedLabel.textContent = relatedTermLabel;
+      if (relationTermLabel && sameUserGenericRelationLabel) sameUserGenericRelationLabel.textContent = relationTermLabel;
       if (sameUserConfigUidLabel) sameUserConfigUidLabel.textContent = isBlacklistManage ? '当前对象' : '当前用户UID';
       if (sameUserConfigUid) sameUserConfigUid.value = uid;
       if (sameUserConfigRelated) sameUserConfigRelated.value = relatedUsers;
