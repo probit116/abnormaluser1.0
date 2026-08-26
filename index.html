@@ -4178,7 +4178,7 @@
                   <input type="number" value="60" />
                   <span>%</span>
                 </div>
-                <div class="helper-text">请输入纯数字整数，命中用户盈利率大于等于该值时满足条件。</div>
+                <div class="helper-text">请输入纯数字整数，命中用户盈利率大于等于该值时满足条件。盈利率为负数时，进入异常用户名单。</div>
               </div>
               <div class="config-row">
                 <label>盈利率与胜率统计最低历史仓位数</label>
@@ -4188,6 +4188,15 @@
                   <span>个</span>
                 </div>
                 <div class="helper-text">请输入纯数字整数，仅在历史仓位数大于等于该值时，才参与胜率与盈利率统计。</div>
+              </div>
+              <div class="config-row">
+                <label>统计时配置 用户最低盈利额统计</label>
+                <div class="input-suffix">
+                  <span class="range-operator">大于等于</span>
+                  <input type="number" value="1000" />
+                  <span>USDT</span>
+                </div>
+                <div class="helper-text">请输入纯数字整数，仅在用户累计盈利额大于等于该值时，才参与胜率与盈利率统计。</div>
               </div>
               <div class="config-row">
                 <label>风控操作</label>
