@@ -2098,17 +2098,17 @@
                     <label><input type="checkbox" checked>关闭</label>
                   </div>
                 </div>
-                <div class="helper-text">逐仓按指定强平触发阈值处理：多仓触发提前 ADL 减仓价格 = 用户原始强平价 ×（1 + 合理阈值），空仓触发提前 ADL 减仓价格 = 用户原始强平价 ×（1 - 合理阈值）；全仓按预设强平比例阈值处理，例如配置强平比例 90% 时，当账户风险比例跌到 89% 时，系统自动补足 1% 风险缓冲并执行强制强平。</div>
+                <div class="helper-text">逐仓按指定强平触发阈值处理：多仓触发提前减仓价格 = 用户原始强平价 ×（1 + 合理阈值），空仓触发提前减仓价格 = 用户原始强平价 ×（1 - 合理阈值）；全仓按预设强平比例阈值处理，例如配置强平比例 90% 时，当账户风险比例跌到 89% 时，系统自动补足 1% 风险缓冲并执行强制强平。</div>
               </div>
             </div>
 
             <div class="config-desc">
               <strong>示例说明：</strong><br>
               4：逐仓-指定强平触发阈值。<br>
-              多仓规则：触发提前 ADL 减仓价格 = 用户原始强平价 ×（1 + 合理阈值）。<br>
+              多仓规则：触发提前减仓价格 = 用户原始强平价 ×（1 + 合理阈值）。<br>
               举例：多仓原始强平价 10000，合理阈值 10%，提前减仓触发价 = 10000 × 1.1 = 11000。<br>
               行情下跌至 11000 时，系统提前执行强平。<br>
-              空仓规则：触发提前 ADL 减仓价格 = 用户原始强平价 ×（1 - 合理阈值）。<br>
+              空仓规则：触发提前减仓价格 = 用户原始强平价 ×（1 - 合理阈值）。<br>
               举例：空仓原始强平价 10000，合理阈值 1%，提前减仓触发价 = 10000 × 0.99 = 9900。<br>
               行情上涨至 9900 时，系统提前执行强平。<br>
               5：全仓规则。<br>
@@ -3896,9 +3896,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="异常登录监控">异常登录配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -3914,8 +3913,9 @@
                                     <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="异常登录监控">异常登录配置</a>
                     <a href="#" class="action-link">正常事件</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -3932,9 +3932,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="异常登录监控">异常登录配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -4065,9 +4064,6 @@
               <div class="button-group">
                 <button type="button" class="button secondary js-open-rule-config" data-target="risk-contract-suspicious-config-block" data-config-source="高盈利高胜率用户" data-config-title="高盈利高胜率用户规则配置">规则配置</button>
                 <button type="button" class="button secondary js-open-monitor-status" data-monitor-source="高盈利高胜率用户" data-monitor-status="开启">监控状态配置</button>
-                <button type="button" class="button secondary" id="go-risk-global-limit">高盈利高胜率用户限制规则</button>
-                <button type="button" class="button secondary" id="go-risk-contract-market-history">市价历史订单</button>
-                <button type="button" class="button secondary" id="go-risk-contract-limit-history">限价历史订单</button>
               </div>
             </div>
           </div>
@@ -4140,9 +4136,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高盈利高胜率用户">相关操作配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -4159,9 +4154,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="223" data-related-users="223" data-relation-default="0" data-config-source="高盈利高胜率用户">相关操作配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -4178,9 +4172,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="323" data-related-users="323" data-relation-default="0" data-config-source="高盈利高胜率用户">相关操作配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -4360,8 +4353,9 @@
                                     <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123@fex.com" data-related-users="123@fex.com" data-related-ip-users="123@fex.com,223@fex.com,323@fex.com" data-related-device-users="123@fex.com,423@fex.com" data-related-email-users="123@fex.com,223@fex.com,323@fex.com,523@fex.com,623@fex.com" data-white-listed-users="223@fex.com" data-related-ip-count="2" data-related-device-count="2" data-related-email-count="4" data-relation-default="" data-config-source="批量注册监控">批量注册配置</a>
                     <a href="#" class="action-link">正常事件</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -4377,8 +4371,9 @@
                                     <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123@fex.com" data-related-users="123@fex.com" data-related-ip-users="123@fex.com,223@fex.com,323@fex.com" data-related-device-users="123@fex.com,423@fex.com" data-related-email-users="123@fex.com,223@fex.com,323@fex.com,523@fex.com,623@fex.com" data-white-listed-users="223@fex.com" data-related-ip-count="2" data-related-device-count="2" data-related-email-count="4" data-relation-default="" data-config-source="批量注册监控">批量注册配置</a>
                     <a href="#" class="action-link">正常事件</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -4394,8 +4389,9 @@
                                     <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123@gmail.com" data-related-users="123@gmail.com" data-related-ip-users="123@gmail.com,523@gmail.com" data-related-device-users="123@gmail.com,623@gmail.com,723@gmail.com" data-related-email-users="123@gmail.com,523@gmail.com,623@gmail.com,723@gmail.com,823@gmail.com" data-white-listed-users="723@gmail.com" data-related-ip-count="2" data-related-device-count="2" data-related-email-count="4" data-relation-default="" data-config-source="批量注册监控">批量注册配置</a>
                     <a href="#" class="action-link">正常事件</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -4618,9 +4614,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高频短时持仓监控">高频短时持仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -4642,9 +4637,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高频短时持仓监控">高频短时持仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -4666,9 +4660,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高频短时持仓监控">高频短时持仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -4853,9 +4846,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="1001" data-related-users="1001,1002" data-relation-default="1" data-config-source="同秒开仓监控">同秒开仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -4873,9 +4865,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="2001" data-related-users="2001,2005" data-relation-default="1" data-config-source="同秒开仓监控">同秒开仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -4893,9 +4884,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="3004" data-related-users="3004,3006" data-relation-default="1" data-config-source="同秒开仓监控">同秒开仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -5072,8 +5062,9 @@
                                     <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="1101" data-related-users="1101,1102,1106" data-relation-default="1" data-config-source="同提币地址监控">同提币地址配置</a>
                     <a href="#" class="action-link">正常事件</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -5090,9 +5081,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="2101" data-related-users="2101,2105" data-relation-default="1" data-config-source="同提币地址监控">同提币地址配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -5109,9 +5099,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="3204" data-related-users="3204,3206,3209,3211" data-relation-default="1" data-config-source="同提币地址监控">同提币地址配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -5279,8 +5268,9 @@
                                     <td>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123,123001,123002,123003,123101" data-downline-all-users="123,123001,123002,123003,123101" data-downline-level1-users="123,123001,123002" data-downline-level3-users="123,123001,123002,123003" data-downline-default="all" data-config-source="羊毛党监控">羊毛党配置</a>
                     <a href="#" class="action-link">正常事件</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -5298,9 +5288,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123,123001,123002,123003,123101" data-downline-all-users="123,123001,123002,123003,123101" data-downline-level1-users="123,123001,123002" data-downline-level3-users="123,123001,123002,123003" data-downline-default="level1" data-config-source="羊毛党监控">羊毛党配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -5318,9 +5307,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123,123001,123002,123003,123101" data-downline-all-users="123,123001,123002,123003,123101" data-downline-level1-users="123,123001,123002" data-downline-level3-users="123,123001,123002,123003" data-downline-default="level3" data-config-source="羊毛党监控">羊毛党配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -6084,18 +6072,6 @@
                   <td>3</td>
                   <td>2025-07-16 10:01:15</td>
                                     <td>
-                    <a href="#" class="action-link js-open-password-detail"
-                      data-password-source="用户同密码"
-                      data-login-password="8f14e45fceea167a5a36dedd4bea2543"
-                      data-login-count="18"
-                      data-pay-password="45c48cce2e2d7fbdea1afc51c7c6ad26"
-                      data-pay-count="9"
-                      data-both-count="6"
-                      data-password-config-count="3"
-                      data-related-login-users="100861,100872,100896,100912"
-                      data-related-pay-users="100861,100925,100934"
-                      data-related-both-users="100861,100872,100934"
-                      data-password-time="2025-07-16 10:01:15">查看详情</a>
                     <a href="#" class="action-link js-open-password-config"
                       data-password-source="用户同密码"
                       data-password-uid="100861"
@@ -6110,9 +6086,8 @@
                       data-related-both-users="100861,100872,100934">同密码用户配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -6125,18 +6100,6 @@
                   <td>2</td>
                   <td>2025-07-16 09:48:33</td>
                                     <td>
-                    <a href="#" class="action-link js-open-password-detail"
-                      data-password-source="用户同密码"
-                      data-login-password="6512bd43d9caa6e02c990b0a82652dca"
-                      data-login-count="12"
-                      data-pay-password="c20ad4d76fe97759aa27a0c99bff6710"
-                      data-pay-count="15"
-                      data-both-count="4"
-                      data-password-config-count="2"
-                      data-related-login-users="100913,100921,100955"
-                      data-related-pay-users="100913,100927,100948,100966"
-                      data-related-both-users="100913,100966"
-                      data-password-time="2025-07-16 09:48:33">查看详情</a>
                     <a href="#" class="action-link js-open-password-config"
                       data-password-source="用户同密码"
                       data-password-uid="100913"
@@ -6151,9 +6114,8 @@
                       data-related-both-users="100913,100966">同密码用户配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -6166,18 +6128,6 @@
                   <td>1</td>
                   <td>2025-07-16 08:25:10</td>
                                     <td>
-                    <a href="#" class="action-link js-open-password-detail"
-                      data-password-source="用户同密码"
-                      data-login-password="c51ce410c124a10e0db5e4b97fc2af39"
-                      data-login-count="8"
-                      data-pay-password="aab3238922bcc25a6f606eb525ffdc56"
-                      data-pay-count="8"
-                      data-both-count="8"
-                      data-password-config-count="1"
-                      data-related-login-users="101024,101025,101026"
-                      data-related-pay-users="101024,101025,101026"
-                      data-related-both-users="101024,101025,101026"
-                      data-password-time="2025-07-16 08:25:10">查看详情</a>
                     <a href="#" class="action-link js-open-password-config"
                       data-password-source="用户同密码"
                       data-password-uid="101024"
@@ -6192,9 +6142,8 @@
                       data-related-both-users="101024,101025,101026">同密码用户配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -6719,22 +6668,11 @@
                   <td>2,460,000 USDT</td>
                   <td>2025-07-16 10:12:08</td>
                                     <td>
-                    <a href="#" class="action-link js-open-trade-peer-detail"
-                      data-trade-peer-source="对敲交易监控"
-                      data-trade-peer-user="同交易对手高频成交"
-                      data-trade-peer-uid="100861"
-                      data-trade-peer-counterparty="200315,200316,200317"
-                      data-trade-peer-spot-count="18"
-                      data-trade-peer-contract-count="7"
-                      data-trade-peer-total-amount="2,460,000 USDT"
-                      data-trade-peer-time="2025-07-16 10:12:08"
-                      data-trade-peer-records="现货,BTC/USDT,200315,580000,2025-07-16 10:12:08|现货,ETH/USDT,200316,420000,2025-07-16 10:10:22|合约,BTC永续,200317,1460000,2025-07-16 10:08:10">查看详情</a>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="100861" data-related-users="200315,200316,200317" data-relation-default="1" data-config-source="对敲交易监控">对敲交易配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -6749,20 +6687,11 @@
                   <td>860,000 USDT</td>
                   <td>2025-07-16 09:55:41</td>
                                     <td>
-                    <a href="#" class="action-link js-open-trade-peer-detail"
-                      data-trade-peer-source="对敲交易监控"
-                      data-trade-peer-user="现货对敲疑似"
-                      data-trade-peer-uid="100925"
-                      data-trade-peer-counterparty="200411,200422"
-                      data-trade-peer-spot-count="26"
-                      data-trade-peer-contract-count="0"
-                      data-trade-peer-total-amount="860,000 USDT"
-                      data-trade-peer-time="2025-07-16 09:55:41"
-                      data-trade-peer-records="现货,SOL/USDT,200411,260000,2025-07-16 09:55:41|现货,ETH/USDT,200422,600000,2025-07-16 09:41:03">查看详情</a>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="100925" data-related-users="200411,200422" data-relation-default="0" data-config-source="对敲交易监控">对敲交易配置</a>
                     <a href="#" class="action-link">正常事件</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">可疑用户</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
                 <tr>
@@ -6777,22 +6706,11 @@
                   <td>3,120,000 USDT</td>
                   <td>2025-07-16 08:46:19</td>
                                     <td>
-                    <a href="#" class="action-link js-open-trade-peer-detail"
-                      data-trade-peer-source="对敲交易监控"
-                      data-trade-peer-user="合约对手集中成交"
-                      data-trade-peer-uid="101024"
-                      data-trade-peer-counterparty="200801"
-                      data-trade-peer-spot-count="2"
-                      data-trade-peer-contract-count="31"
-                      data-trade-peer-total-amount="3,120,000 USDT"
-                      data-trade-peer-time="2025-07-16 08:46:19"
-                      data-trade-peer-records="合约,BTC永续,200801,1820000,2025-07-16 08:46:19|合约,ETH永续,200801,1180000,2025-07-16 08:38:27|现货,BTC/USDT,200801,120000,2025-07-16 08:31:10">查看详情</a>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="101024" data-related-users="200801" data-relation-default="1" data-config-source="对敲交易监控">对敲交易配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -7135,9 +7053,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="1201" data-related-users="1201,1203,1206,1210" data-relation-default="1" data-config-source="同充值地址监控">同充值地址配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -7231,9 +7148,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="900861" data-related-users="900861" data-relation-default="0" data-config-source="同uid内部划转监控">同uid内部划转配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -7627,9 +7543,8 @@
                     <a href="#" class="action-link js-open-user-config" data-user-uid="8803" data-related-users="8803" data-relation-default="0" data-config-source="打单风控">打单风控配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
-                    <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">移入白名单</a>
-                    <a href="#" class="action-link">移入黑名单</a>
+                    <a href="#" class="action-link">移入用户白名单</a>
+                    <a href="#" class="action-link">移入用户黑名单</a>
                   </td>
               </tr>
               </tbody>
@@ -7815,13 +7730,17 @@
                 <span class="tag tag-warn">事前预警 8 页</span>
                 <span class="tag tag-warn">事后报警 4 页</span>
                 <span class="tag tag-silver">高盈利高胜率规则配置区</span>
+                <span class="tag tag-silver">黑名单合约下单与强平规则配置</span>
               </div>
             </div>
             <div class="config-row">
               <label>当前版本改动明细（20260826 14:26）</label>
               <div style="font-size:13px; line-height:1.95; color:var(--text);">
-                · 事前预警与事后报警，相关列表操作项按钮统一为：XX配置 正常事件 可疑用户 黑名单用户 移入白名单 移入黑名单<br>
-                · 高盈利高胜率用户规则配置区，增加：「统计时配置 用户最低盈利额统计 ≥ 1000 USDT」配置项；修改：「盈利率阈值」说明追加「盈利率为负数时，进入异常用户名单」
+                · 高盈利高胜率用户规则配置区，增加：「统计时配置 用户最低盈利额统计 ≥ 1000 USDT」配置项；修改：「盈利率阈值」说明追加「盈利率为负数时，进入异常用户名单」，去掉高盈利高胜率用户限制规则<br>
+                · 市价历史订单<br>
+                · 限价历史订单，<br>
+                · 黑名单合约下单与强平规则配置页面，去掉所有「ADL」字样，统一改为「提前减仓」或「减仓」描述<br>
+                · 事前预警和事后预警操作项统一为：XX配置 正常事件 可疑用户 移入用户白名单 移入用户黑名单，
               </div>
             </div>
           </div>
