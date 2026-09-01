@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -1728,6 +1728,10 @@
           </div>
           <div class="nav-sub-list">
             <button class="nav-btn sub" data-page="risk-version-declare">
+              <strong>2026090116:17</strong>
+              <span>当前版本改动明细（禁止状态列 + 4 类禁止 + 示例 UID）</span>
+            </button>
+            <button class="nav-btn sub" data-page="risk-version-declare">
               <strong>20260826 14:26</strong>
               <span>当前版本改动明细</span>
             </button>
@@ -1820,13 +1824,14 @@
                   <th>合约盈利额</th>
                   <th>合约盈利率</th>
                   <th>操作时间</th>
+                  <th>禁止状态</th>
                   <th>操作</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td><input type="checkbox" class="checkbox" checked></td>
-                  <td>123</td>
+                  <td>8001</td>
                   <td>自动</td>
                   <td>命中异常登录监控自动加入</td>
                   <td><div class="risk-behavior-list"><span class="risk-behavior-tag">高频短时持仓</span></div></td>
@@ -1838,6 +1843,7 @@
                   <td>438,500 USDT</td>
                   <td>153.05%</td>
                   <td>2025-07-15 10:01:15</td>
+                  <td data-ban-status-cell="1"><span style="color:var(--muted, #888);font-size:12px;">无禁止</span></td>
                   <td>
                     <a href="#" class="action-link">正常用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
@@ -1849,7 +1855,7 @@
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
-                  <td>123</td>
+                  <td>8002</td>
                   <td>手动</td>
                   <td>运营人工加入可疑用户池</td>
                   <td><div class="risk-behavior-list"><span class="risk-behavior-tag">异常登录监控</span><span class="risk-behavior-tag">用户同密码</span></div></td>
@@ -1861,18 +1867,24 @@
                   <td>155,800 USDT</td>
                   <td>168.80%</td>
                   <td>2025-07-15 10:01:15</td>
+                  <td data-ban-status-cell="1">
+                    <span class="risk-behavior-tag" style="display:inline-block;border:1px solid rgba(255,93,108,.28);background:rgba(255,93,108,.12);color:#ffe0e4;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">禁止登录</span>
+                    <span class="risk-behavior-tag" style="display:inline-block;border:1px solid rgba(255,145,77,.28);background:rgba(255,145,77,.12);color:#ffe9db;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">禁止现货交易</span>
+                    <span class="risk-behavior-tag" style="display:inline-block;border:1px solid rgba(255,93,108,.28);background:rgba(255,93,108,.12);color:#ffe0e4;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">禁止合约开仓</span>
+                    <span class="risk-behavior-tag" style="display:inline-block;border:1px solid rgba(255,145,77,.28);background:rgba(255,145,77,.12);color:#ffe9db;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">禁止提现</span>
+                  </td>
                   <td>
                     <a href="#" class="action-link">正常用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">禁止登录</a>
-                    <a href="#" class="action-link">禁止现货交易</a>
-                    <a href="#" class="action-link">禁止合约开仓</a>
-                    <a href="#" class="action-link">禁止提现</a>
+                    <a href="#" class="action-link">恢复登录</a>
+                    <a href="#" class="action-link">恢复现货交易</a>
+                    <a href="#" class="action-link">恢复合约开仓</a>
+                    <a href="#" class="action-link">恢复提现</a>
                   </td>
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="checkbox"></td>
-                  <td>123</td>
+                  <td>8003</td>
                   <td>自动</td>
                   <td>命中羊毛党监控自动加入</td>
                   <td><div class="risk-behavior-list"><span class="risk-behavior-tag">羊毛党监控</span><span class="risk-behavior-tag">交易同用户风控</span></div></td>
@@ -1884,13 +1896,19 @@
                   <td>102,200 USDT</td>
                   <td>159.19%</td>
                   <td>2025-07-15 10:01:15</td>
+                  <td data-ban-status-cell="1">
+                    <span class="risk-behavior-tag" style="display:inline-block;border:1px solid rgba(255,93,108,.28);background:rgba(255,93,108,.12);color:#ffe0e4;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">禁止登录</span>
+                    <span class="risk-behavior-tag" style="display:inline-block;border:1px solid rgba(255,145,77,.28);background:rgba(255,145,77,.12);color:#ffe9db;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">禁止现货交易</span>
+                    <span class="risk-behavior-tag" style="display:inline-block;border:1px solid rgba(255,93,108,.28);background:rgba(255,93,108,.12);color:#ffe0e4;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">禁止合约开仓</span>
+                    <span class="risk-behavior-tag" style="display:inline-block;border:1px solid rgba(255,145,77,.28);background:rgba(255,145,77,.12);color:#ffe9db;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">禁止提现</span>
+                  </td>
                   <td>
                     <a href="#" class="action-link">正常用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link">禁止登录</a>
-                    <a href="#" class="action-link">禁止现货交易</a>
-                    <a href="#" class="action-link">禁止合约开仓</a>
-                    <a href="#" class="action-link">禁止提现</a>
+                    <a href="#" class="action-link">恢复登录</a>
+                    <a href="#" class="action-link">恢复现货交易</a>
+                    <a href="#" class="action-link">恢复合约开仓</a>
+                    <a href="#" class="action-link">恢复提现</a>
                   </td>
                 </tr>
                 <tr>
@@ -1907,6 +1925,7 @@
                   <td>51,900 USDT</td>
                   <td>145.79%</td>
                   <td>2025-07-15 10:01:15</td>
+                  <td data-ban-status-cell="1"><span style="color:var(--muted, #888);font-size:12px;">无禁止</span></td>
                   <td>
                     <a href="#" class="action-link">正常用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
@@ -1930,6 +1949,7 @@
                   <td>26,200 USDT</td>
                   <td>120.18%</td>
                   <td>2025-07-15 10:01:15</td>
+                  <td data-ban-status-cell="1"><span style="color:var(--muted, #888);font-size:12px;">无禁止</span></td>
                   <td>
                     <a href="#" class="action-link">正常用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
@@ -2478,7 +2498,7 @@
                   <td>异常登录命中后人工转入IP黑名单</td>
                   <td>2025-07-16 10:12:26</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="IP黑名单" data-event-target="200.35.52.48" data-event-records="2025-07-16~2~4~2025-07-16 10:12:26^100861/100925/101102/101778^WEB-2Q11 / APP-8C72^200.35.52.48^6^事前预警-异常登录监控(4次)；事后报警-羊毛党监控(2次)^禁止登录、禁止注册#2025-07-16 16:22:08^100861/101102^WEB-2Q11^200.35.52.48^2^事前预警-批量注册监控(2次)^禁止提现、禁止现货交易">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="IP黑名单" data-event-target="200.35.52.48" data-event-records="2025-07-16~2~4~2025-07-16 10:12:26^100861/100925/101102/101778^WEB-2Q11 / APP-8C72^200.35.52.48^6^事前预警-异常登录监控(4次)；事后报警-羊毛党监控(2次)^禁止登录、禁止用户邀请下级注册#2025-07-16 16:22:08^100861/101102^WEB-2Q11^200.35.52.48^2^事前预警-批量注册监控(2次)^禁止提现、禁止现货交易">触发事件</a>
                     <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-ip-form-block" data-entry-mode="edit" data-ip-mode="ip" data-ip-value="200.35.52.48" data-reason="异常登录命中后人工转入IP黑名单">编辑</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
@@ -2535,7 +2555,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
@@ -2652,7 +2672,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
@@ -2758,7 +2778,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
@@ -2864,7 +2884,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
@@ -2980,7 +3000,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
@@ -3049,7 +3069,7 @@
                   <td>批量注册监控命中后人工转入邮箱黑名单</td>
                   <td>2025-07-16 09:28:10</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="邮箱黑名单" data-event-target="risk_user_01@gmail.com" data-event-records="2025-07-16~2~4~2025-07-16 09:28:10^2101/2106/2110/2118^WEB-4E12 / APP-8M44^198.51.100.52 / 198.51.100.53^6^事前预警-批量注册监控(4次)；事后报警-小币种风控(2次)^禁止登录、禁止注册#2025-07-16 15:12:36^2101/2110^WEB-4E12^198.51.100.52^2^事前预警-异常登录监控(2次)^禁止提现">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="邮箱黑名单" data-event-target="risk_user_01@gmail.com" data-event-records="2025-07-16~2~4~2025-07-16 09:28:10^2101/2106/2110/2118^WEB-4E12 / APP-8M44^198.51.100.52 / 198.51.100.53^6^事前预警-批量注册监控(4次)；事后报警-小币种风控(2次)^禁止登录、禁止用户邀请下级注册#2025-07-16 15:12:36^2101/2110^WEB-4E12^198.51.100.52^2^事前预警-异常登录监控(2次)^禁止提现">触发事件</a>
                     <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-phone-form-block" data-entry-mode="edit" data-phone-mode="phone" data-phone-value="risk_user_01@gmail.com" data-reason="批量注册监控命中后人工转入邮箱黑名单">编辑</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
@@ -3060,7 +3080,7 @@
                   <td>异常注册集中邮箱域名临时风控</td>
                   <td>2025-07-16 10:12:26</td>
                   <td>
-                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="邮箱黑名单" data-event-target="@tempmail.net" data-event-records="2025-07-16~1~5~2025-07-16 10:12:26^3101/3102/3104/3109/3112^WEB-7A88 / H5-3K19^203.0.113.140 / 203.0.113.141^7^事前预警-批量注册监控(5次)；事后报警-羊毛党监控(2次)^禁止登录、禁止注册、禁止提现">触发事件</a>
+                    <a href="#" class="action-link js-open-whitelist-events" data-event-source="邮箱黑名单" data-event-target="@tempmail.net" data-event-records="2025-07-16~1~5~2025-07-16 10:12:26^3101/3102/3104/3109/3112^WEB-7A88 / H5-3K19^203.0.113.140 / 203.0.113.141^7^事前预警-批量注册监控(5次)；事后报警-羊毛党监控(2次)^禁止登录、禁止用户邀请下级注册、禁止提现">触发事件</a>
                     <a href="#" class="action-link js-open-blacklist-entry-editor" data-target="blacklist-phone-form-block" data-entry-mode="edit" data-phone-mode="country" data-country-value="@tempmail.net" data-reason="异常注册集中邮箱域名临时风控">编辑</a>
                     <a href="#" class="action-link">删除</a>
                   </td>
@@ -3117,7 +3137,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox" class="blacklist-inline-action">禁止合约开仓</label>
@@ -4223,7 +4243,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -4712,7 +4732,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -4936,7 +4956,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -5145,7 +5165,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -5360,7 +5380,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -6777,7 +6797,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -6971,7 +6991,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -7075,7 +7095,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -7167,7 +7187,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -7284,7 +7304,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -7365,7 +7385,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -7468,7 +7488,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -7559,7 +7579,7 @@
                 <label>风控操作</label>
                 <div class="modal-option-grid">
                   <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-                  <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+                  <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
                   <label class="modal-option-item"><input type="checkbox">禁止提现</label>
                   <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
                   <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -7719,7 +7739,47 @@
               </div>
               <h3>版本声明</h3>
               <p style="margin:6px 0 0; font-size:12px; color:rgba(148,163,184,.7);">
-                迭代版本号：<span style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">20260826 14:26</span>
+                迭代版本号：<span style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">2026090116:17</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="pill-group" style="margin:12px 0 4px;">
+            <button type="button" class="pill active" data-version-pill="2026090116:17" style="font-variant-numeric: tabular-nums; padding:0 18px;">2026090116:17</button>
+            <button type="button" class="pill" data-version-pill="20260826 14:26" style="font-variant-numeric: tabular-nums; padding:0 18px;">20260826 14:26</button>
+          </div>
+
+          <div class="config-panel" style="margin-top:8px;">
+            <div class="config-row">
+              <label>生效范围</label>
+              <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                <span class="tag tag-warn">可疑用户监控（用户监控）</span>
+                <span class="tag tag-warn">黑名单用户列表</span>
+                <span class="tag tag-silver">全部 43 张与用户 UID 关联的列表</span>
+                <span class="tag tag-silver">口径定义面板（默认收缩 + 列表不挤压）</span>
+              </div>
+            </div>
+            <div class="config-row">
+              <label>当前版本改动明细（2026090116:17）</label>
+              <div style="font-size:13px; line-height:1.95; color:var(--text);">
+                · 新增「禁止状态」列（表头短标题：禁止状态），位于备注列 / 操作列前；表无备注与操作列时追加为最后一列<br>
+                · 禁止状态 4 类（登录 / 现货交易 / 合约开仓 / 提现）彩色标签，无禁止显示「无禁止」<br>
+                · 操作栏 4 类按钮与禁止状态 1:1 互斥联动：已禁显示「恢复XXX」，未禁显示「禁止XXX」<br>
+                · 新增「禁止提现」为第 4 类独立禁止项（禁止登录 / 禁止现货交易 / 禁止合约开仓 / 禁止提现）<br>
+                · 原「禁止注册」字样全局统一改为「禁止用户邀请下级注册」<br>
+                · 所有与用户 UID（第二列非空）关联的 43 张列表 100% 注入禁止状态列；原无操作列纯流水/历史表也补齐<br>
+                · 右侧口径定义面板：默认收缩（不挤压列表），点击右下角或页头「口径定义」按钮展开<br>
+                · 口径定义展开后无内容 Bug 修复：兜底原原型 pageTitleMap 未定义导致 activate 中断的问题
+              </div>
+            </div>
+          </div>
+
+          <div style="height:28px;"></div>
+
+          <div class="section-head">
+            <div>
+              <p style="margin:6px 0 0; font-size:12px; color:rgba(148,163,184,.7);">
+                历史版本号：<span style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">20260826 14:26</span>
               </p>
             </div>
           </div>
@@ -7734,7 +7794,7 @@
               </div>
             </div>
             <div class="config-row">
-              <label>当前版本改动明细（20260826 14:26）</label>
+              <label>历史版本改动明细（20260826 14:26）</label>
               <div style="font-size:13px; line-height:1.95; color:var(--text);">
                 · 高盈利高胜率用户规则配置区，增加：「统计时配置 用户最低盈利额统计 ≥ 1000 USDT」配置项；修改：「盈利率阈值」说明追加「盈利率为负数时，进入异常用户名单」，去掉高盈利高胜率用户限制规则<br>
                 · 市价历史订单<br>
@@ -7742,6 +7802,22 @@
                 · 黑名单合约下单与强平规则配置页面，去掉所有「ADL」字样，统一改为「提前减仓」或「减仓」描述<br>
                 · 事前预警和事后预警操作项统一为：XX配置 正常事件 可疑用户 移入用户白名单 移入用户黑名单，
               </div>
+            </div>
+          </div>
+
+          <div class="footer-row" style="margin-top:16px;">
+            <div>当前展示 <strong style="color:var(--text-primary); font-weight:600;">2026090116:17</strong> 版本改动明细</div>
+            <div class="pagination">
+              <button type="button" class="page-chip" disabled>上一页</button>
+              <button type="button" class="page-chip active">2026090116:17</button>
+              <button type="button" class="page-chip">20260826 14:26</button>
+              <button type="button" class="page-chip">尾页</button>
+              <button type="button" class="page-chip">下一页</button>
+              <span style="margin-left:8px;">到第</span>
+              <input type="text" style="width:140px; height:34px; border-radius:8px; border:1px solid rgba(148,163,184,.18); background:rgba(11,18,32,.72); color:var(--text); padding:0 8px; text-align:center; font-size:12px; font-variant-numeric: tabular-nums;" value="2026090116:17" placeholder="版本号">
+              <span>页</span>
+              <button type="button" class="button secondary" style="height:34px; padding:0 12px;">确定</button>
+              <span style="margin-left:12px;">共 2 个版本</span>
             </div>
           </div>
         </div>
@@ -7993,7 +8069,7 @@
           <label>风控操作</label>
           <div class="modal-option-grid">
             <label class="modal-option-item"><input type="checkbox" class="same-user-action" value="禁止登录">禁止登录</label>
-            <label class="modal-option-item"><input type="checkbox" class="same-user-action" value="禁止注册">禁止注册</label>
+            <label class="modal-option-item"><input type="checkbox" class="same-user-action" value="禁止用户邀请下级注册">禁止用户邀请下级注册</label>
             <label class="modal-option-item"><input type="checkbox" class="same-user-action" value="禁止提现">禁止提现</label>
             <label class="modal-option-item"><input type="checkbox" class="same-user-action" value="禁止现货交易">禁止现货交易</label>
             <label class="modal-option-item"><input type="checkbox" class="same-user-action" value="禁止合约开仓">禁止合约开仓</label>
@@ -8144,7 +8220,7 @@
             <label>风控操作</label>
             <div class="modal-option-grid">
               <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-              <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+              <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
               <label class="modal-option-item"><input type="checkbox">禁止提现</label>
               <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
               <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -8515,6 +8591,22 @@
     </span>
   </button>
   <aside class="spec-sidebar" id="spec-sidebar">
+    <script>
+      (function () {
+        try {
+          if (document.body.classList.contains('spec-open')) {
+            document.body.classList.remove('spec-open');
+          }
+          var sb = document.getElementById('spec-sidebar');
+          if (sb && !sb.classList.contains('collapsed')) sb.classList.add('collapsed');
+          var st = document.getElementById('spec-toggle');
+          if (st && st.classList.contains('expanded')) st.classList.remove('expanded');
+          if (st) st.setAttribute('aria-expanded', 'false');
+          var hint = st ? st.querySelector('.spec-toggle__text span') : null;
+          if (hint) hint.textContent = '点击展开';
+        } catch (e) {}
+      })();
+    </script>
     <h3>口径定义</h3>
     <div id="spec-current-structure-slot"></div>
     <div class="spec-page" data-spec-page="modal-manual-adl">
@@ -8625,7 +8717,7 @@
           <li>当前用户UID：只读输入框，默认带出当前操作用户UID。</li>
           <li>关联用户展示：按来源页面动态显示，如 `关联同秒开仓用户`、`关联同提币地址用户`、`关联交易对手用户`；该字段为只读输入框展示。</li>
           <li>是否关联用户：单选字段，取值为 `是/否`；选择 `是` 时，处理对象从当前用户切换为关联用户集合。</li>
-          <li>风控操作：多选字段，当前可选 `禁止登录`、`禁止注册`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`；确认前至少勾选 `1` 项，否则不允许保存；如选择 `禁止登录`，用户一旦触发会立即退出登录，登录态丢失，且不能再登录。</li>
+          <li>风控操作：多选字段，当前可选 `禁止登录`、`禁止用户邀请下级注册`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`；确认前至少勾选 `1` 项，否则不允许保存；如选择 `禁止登录`，用户一旦触发会立即退出登录，登录态丢失，且不能再登录。</li>
           <li>备注：选填字段，用于记录统一处理说明；当前原型不做必填校验。</li>
         </ol>
         <em>操作说明</em>
@@ -8648,7 +8740,7 @@
           <li>关联用户数：只读展示输入框，显示当前勾选关系、默认可处理、去重、删除后的最终用户数量。</li>
           <li>搜索用户UID删除：输入删除关键字后，对当前关联用户集合执行搜索删除；点击 `恢复默认UID` 后恢复到当前默认集合。</li>
           <li>关联用户UID：只读结果字段，展示最终可处理用户列表；支持手动逐个删除。</li>
-          <li>风控操作：多选字段，当前可选 `禁止登录`、`禁止注册`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`；确认前至少勾选 `1` 项，且最终关联用户集合不能为空。</li>
+          <li>风控操作：多选字段，当前可选 `禁止登录`、`禁止用户邀请下级注册`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`；确认前至少勾选 `1` 项，且最终关联用户集合不能为空。</li>
         </ol>
         <em>操作说明</em>
         <ol>
@@ -8669,7 +8761,7 @@
           <li>当前用户UID：只读输入框，默认带出当前交易用户UID。</li>
           <li>关联交易对手用户：只读输入框，默认带出当前记录中的全部交易对手UID集合。</li>
           <li>是否关联交易对手：单选字段，取值为 `是/否`；选择 `是` 时，本次处理对象切换为 `当前交易用户 + 交易对手UID集合`。</li>
-          <li>风控操作：多选字段，当前可选 `禁止登录`、`禁止注册`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`；确认前至少勾选 `1` 项，否则不允许保存。</li>
+          <li>风控操作：多选字段，当前可选 `禁止登录`、`禁止用户邀请下级注册`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`；确认前至少勾选 `1` 项，否则不允许保存。</li>
           <li>备注：选填字段，用于记录本次统一处理说明。</li>
         </ol>
         <em>操作说明</em>
@@ -8941,14 +9033,16 @@
           <li>顶部 `异常统计` 区域会随当前页面切换统计项；用户监控页默认展示 `限制规则触发次数`、`自动加入次数`、`手动加入次数`、`移入正常用户数`、`移入黑名单用户数` 5 个指标。</li>
           <li>筛选项 `查询条件` 支持按用户ID、手机、邮箱模糊查询；`类型` 支持全部、手动、自动、正常用户、黑名单；`查询开始时间` 为统计起始日期。</li>
           <li>列表第1列勾选框用于批量选择用户，不改变数据统计口径。</li>
-          <li>列表字段依次为 `用户ID`、`类型`、`原因`、`用户其他风控行为`、`平均持仓时间`、`胜率`、`盈利率`、`充值`、`提现`、`合约盈利额`、`合约盈利率`、`操作时间`、`操作`。</li>
+          <li>列表字段依次为 `用户ID`、`类型`、`原因`、`用户其他风控行为`、`平均持仓时间`、`胜率`、`盈利率`、`充值`、`提现`、`合约盈利额`、`合约盈利率`、`禁止状态`、`操作时间`、`操作`。</li>
+          <li>`禁止状态` 列为新增列，显示该 UID 当前 4 类禁止项（登录、现货交易、合约开仓、提现），禁止项显示为彩色胶囊标签；未禁止任何项显示「无禁止」。</li>
+          <li>`操作` 列中「禁止登录 / 禁止现货交易 / 禁止合约开仓 / 禁止提现」与「禁止状态」列 1:1 互斥联动：对应项已禁止 → 按钮文案切换为「恢复登录 / 恢复现货交易 / 恢复合约开仓 / 恢复提现」。</li>
           <li>`用户ID` 为监控用户唯一标识；`用户其他风控行为` 用于汇总展示该用户当前命中的其他风控性质，仅有一项时展示一项，多项时并列展示多项。</li>
           <li>`类型` 区分 `手动` 与 `自动`；`原因` 用于展示人工加入原因或自动命中的风控来源。</li>
           <li>`平均持仓时间` 为用户历史开仓到平仓的平均时长，示例以分钟展示。</li>
           <li>`胜率` = 盈利仓位数 / 统计仓位总数，页面展示为百分比，默认保留两位小数。</li>
           <li>`盈利率` 与 `合约盈利率` 均按百分比展示；`合约盈利额`、`充值`、`提现` 按金额口径展示。</li>
           <li>`操作时间` 为该用户最近一次被系统处理或人工标记的时间。</li>
-          <li>`操作` 包含 `正常用户`、`黑名单用户`、`禁止登录`、`禁止注册`、`禁止现货交易`、`禁止合约开仓`、`禁止提现` 等动作。</li>
+          <li>`操作` 包含 `正常用户`、`黑名单用户`、`禁止登录`、`禁止用户邀请下级注册`、`禁止现货交易`、`禁止合约开仓`、`禁止提现` 等动作。</li>
           <li>页头新增 `自动加入规则配置`、`可疑用户限制规则`、`市价历史订单`、`限价历史订单` 四个入口。</li>
           <li>列表上方提供批量操作，包含 `批量正常用户`、`批量黑名单用户`、`批量禁止登录`、`批量禁止现货交易`、`批量禁止合约开仓`、`批量禁止提现`。</li>
           <li>分页区 `当前展示X条记录`、页码、跳页输入框仅影响展示范围，不改变统计口径。</li>
@@ -8962,6 +9056,7 @@
           <li>单条操作与批量操作口径保持一致，当前页不提供 `手动ADL` 入口。</li>
           <li>`可疑用户限制规则` 为 `用户监控` 下的三级配置页，不在左侧二级导航中单独展示，需从 `用户监控` 页头入口进入。</li>
           <li>顶部统计卡为示意数据，页面切换时按当前页面口径刷新，不与黑名单、白名单列表混用。</li>
+          <li>「禁止状态」列使用独立 localStorage 持久化（key = axhub_user_ban_status_v1），4 类禁止项按 UID 维度独立存储，与「正常用户/黑名单用户」标记互不覆盖。</li>
         </ol>
       </div>
     </div>
@@ -9018,7 +9113,7 @@
           <li>`转入原因` 为该用户被加入黑名单的原因说明。</li>
           <li>`创建时间` 为该黑名单记录首次创建时间。</li>
           <li>`操作时间` 为最近一次对该黑名单记录执行操作的时间。</li>
-          <li>`操作` 包含 `正常用户`、`可疑用户`、`禁止登录`、`禁止注册`、`禁止现货交易`、`禁止合约开仓`、`禁止提现` 等动作；点击 `黑名单用户` 时统一先打开黑名单处理配置弹窗，再执行确认。</li>
+          <li>`操作` 包含 `正常用户`、`可疑用户`、`禁止登录`、`禁止用户邀请下级注册`、`禁止现货交易`、`禁止合约开仓`、`禁止提现` 等动作；点击 `黑名单用户` 时统一先打开黑名单处理配置弹窗，再执行确认。</li>
           <li>页头新增 `自动加入规则配置` 入口；该弹窗默认直接读取 `可疑用户` 自动加入规则，并额外增加一项黑名单专属附加规则。</li>
           <li>列表上方提供批量操作，包含 `批量正常用户`、`批量可疑用户`、`批量禁止登录`、`批量禁止现货交易`、`批量禁止合约开仓`、`批量禁止提现`。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
@@ -10579,23 +10674,23 @@
       },
       'blacklist-ip': {
         hierarchy: ['一级：黑名单', '二级：IP黑名单', '三级：无', '弹窗：新增IP黑名单、用户控制配置'],
-        modals: ['新增IP黑名单弹窗：输入IP支持多个IP用 / 分隔批量录入|单条IP支持输入 1 至 4 段，不足段位可用 * 补齐，* 代表模糊匹配|转入原因为必填输入框|如录入IP已存在于IP白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”|确认保存后在列表新增对应记录。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+        modals: ['新增IP黑名单弹窗：输入IP支持多个IP用 / 分隔批量录入|单条IP支持输入 1 至 4 段，不足段位可用 * 补齐，* 代表模糊匹配|转入原因为必填输入框|如录入IP已存在于IP白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”|确认保存后在列表新增对应记录。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止用户邀请下级注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-device': {
         hierarchy: ['一级：黑名单', '二级：设备黑名单', '三级：无', '弹窗：新增设备黑名单、用户控制配置'],
-        modals: ['新增设备黑名单弹窗：输入设备ID支持多个设备ID用 / 分隔批量录入|类型固定为 WEB/安卓/IOS|转入原因为必填输入框|如录入设备已存在于设备白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+        modals: ['新增设备黑名单弹窗：输入设备ID支持多个设备ID用 / 分隔批量录入|类型固定为 WEB/安卓/IOS|转入原因为必填输入框|如录入设备已存在于设备白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止用户邀请下级注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-deposit-address': {
         hierarchy: ['一级：黑名单', '二级：充值地址黑名单', '三级：无', '弹窗：新增充值地址黑名单、用户控制配置'],
-        modals: ['新增充值地址黑名单弹窗：输入充值地址支持多个地址用 / 分隔批量录入|转入原因为必填输入框|如录入地址已存在于充值地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+        modals: ['新增充值地址黑名单弹窗：输入充值地址支持多个地址用 / 分隔批量录入|转入原因为必填输入框|如录入地址已存在于充值地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止用户邀请下级注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-withdraw-address': {
         hierarchy: ['一级：黑名单', '二级：提币地址黑名单', '三级：无', '弹窗：新增提币地址黑名单、用户控制配置'],
-        modals: ['新增提币地址黑名单弹窗：输入提币地址支持多个地址用 / 分隔批量录入|转入原因为必填输入框|如录入地址已存在于提币地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+        modals: ['新增提币地址黑名单弹窗：输入提币地址支持多个地址用 / 分隔批量录入|转入原因为必填输入框|如录入地址已存在于提币地址白名单，需提示“以下数据在白名单，确认移出，以此次配置为准么？”。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止用户邀请下级注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-password': {
         hierarchy: ['一级：黑名单', '二级：密码黑名单', '三级：无', '弹窗：新增密码黑名单、用户控制配置'],
-        modals: ['新增密码黑名单弹窗：输入密码摘要支持多个摘要用 / 分隔批量录入|类型为多选项，可同时勾选 登录密码/支付密码|如摘要已存在于密码白名单，确认时需弹出名单冲突提示并以此次配置为准|转入原因为必填输入框。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
+        modals: ['新增密码黑名单弹窗：输入密码摘要支持多个摘要用 / 分隔批量录入|类型为多选项，可同时勾选 登录密码/支付密码|如摘要已存在于密码白名单，确认时需弹出名单冲突提示并以此次配置为准|转入原因为必填输入框。', '用户控制配置：按当前对象执行单条风控处理，风控操作包含 禁止登录、禁止用户邀请下级注册、禁止提现、禁止现货交易、禁止合约开仓、全部列入可疑用户、全部列入黑名单。']
       },
       'blacklist-phone': {
         hierarchy: ['一级：黑名单', '二级：邮箱黑名单', '三级：无', '弹窗：新增邮箱黑名单、触发事件'],
@@ -11806,16 +11901,20 @@
     }
 
     function renderOverview(pageId = state.activePage) {
+      try {
+        if (typeof pageTitleMap === 'undefined') window.pageTitleMap = window.pageTitleMap || {};
+      } catch (e) { window.pageTitleMap = {}; }
       const granularity = state.granularity || 'day';
       const metrics = overviewMetrics[pageId] || overviewMetrics.monitor;
       const overviewBarEl = document.querySelector('.overview-bar');
+      const safeTitle = (window.pageTitleMap && window.pageTitleMap[pageId]) || '异常统计';
       if (!metrics || metrics.length === 0) {
-        overviewTitle.textContent = pageTitleMap[pageId] || '异常统计';
+        overviewTitle.textContent = safeTitle;
         if (overviewBarEl) overviewBarEl.style.display = 'none';
         return;
       }
       if (overviewBarEl) overviewBarEl.style.display = '';
-      overviewTitle.textContent = pageTitleMap[pageId] || '异常统计';
+      overviewTitle.textContent = safeTitle;
       overviewGrid.innerHTML = metrics.map(m => `
         <div class="overview-card">
           <small>${sanitizeMetricTitle(m.title)}</small>
@@ -12146,7 +12245,7 @@
             <label>风控操作</label>
             <div class="modal-option-grid js-risk-action-grid">
               <label class="modal-option-item"><input type="checkbox">禁止登录</label>
-              <label class="modal-option-item"><input type="checkbox">禁止注册</label>
+              <label class="modal-option-item"><input type="checkbox">禁止用户邀请下级注册</label>
               <label class="modal-option-item"><input type="checkbox">禁止提现</label>
               <label class="modal-option-item"><input type="checkbox">禁止现货交易</label>
               <label class="modal-option-item"><input type="checkbox">禁止合约开仓</label>
@@ -13720,6 +13819,685 @@
     renderOverview();
     setSpecCollapsed(true);
     activate('monitor');
+
+    // ==================== 用户禁止状态管理模块 ====================
+    // 注意：全部挂到 window 全局，确保所有页面（含 blacklist-monitor 黑名单用户列表）都能强执执行
+    window.__BAN_STORAGE_KEY = 'axhub_user_ban_status_v1';
+    window.__BAN_TYPES = [
+      { key: 'login',    labelForbid: '禁止登录',      labelRestore: '恢复登录',      batchForbid: '批量禁止登录',      batchRestore: '批量恢复登录',      cls: 'danger' },
+      { key: 'spot',     labelForbid: '禁止现货交易',  labelRestore: '恢复现货交易',  batchForbid: '批量禁止现货交易',  batchRestore: '批量恢复现货交易',  cls: 'warn' },
+      { key: 'contract', labelForbid: '禁止合约开仓',  labelRestore: '恢复合约开仓',  batchForbid: '批量禁止合约开仓',  batchRestore: '批量恢复合约开仓',  cls: 'danger' },
+      { key: 'withdraw', labelForbid: '禁止提现',      labelRestore: '恢复提现',      batchForbid: '批量禁止提现',      batchRestore: '批量恢复提现',      cls: 'warn' }
+    ];
+    window.__BAN_ERR = null;
+    window.__banReportErr = function (msg) {
+      try {
+        if (!window.__BAN_ERR) {
+          var tip = document.createElement('div');
+          tip.style.cssText = 'margin:8px;padding:6px 10px;border:1px solid #c92a2a;color:#c92a2a;background:rgba(201,42,42,.08);font-size:12px;border-radius:4px;';
+          (document.body || document.documentElement).appendChild(tip);
+          window.__BAN_ERR = tip;
+        }
+        window.__BAN_ERR.textContent = '[禁止状态模块] ' + msg;
+      } catch (e) {}
+    };
+    window.__banLoadStore = function () {
+      try {
+        var raw = localStorage.getItem(window.__BAN_STORAGE_KEY);
+        if (!raw) return {};
+        var obj = JSON.parse(raw);
+        return obj && typeof obj === 'object' ? obj : {};
+      } catch (e) { return {}; }
+    };
+    window.__banSaveStore = function (store) {
+      try { localStorage.setItem(window.__BAN_STORAGE_KEY, JSON.stringify(store)); } catch (e) {}
+    };
+    window.__banGetUserState = function (uid) {
+      var store = window.__banLoadStore();
+      var key = String(uid || '');
+      return store[key] || { login: false, spot: false, contract: false, withdraw: false };
+    };
+    window.__banSetUserBan = function (uid, typeKey, banned) {
+      var store = window.__banLoadStore();
+      var key = String(uid || '');
+      if (!store[key]) store[key] = { login: false, spot: false, contract: false, withdraw: false };
+      store[key][typeKey] = !!banned;
+      window.__banSaveStore(store);
+    };
+    window.__banBatchSetBan = function (uids, typeKey, banned) {
+      var store = window.__banLoadStore();
+      (uids || []).forEach(function (uid) {
+        var key = String(uid || '');
+        if (!store[key]) store[key] = { login: false, spot: false, contract: false, withdraw: false };
+        store[key][typeKey] = !!banned;
+      });
+      window.__banSaveStore(store);
+    };
+    window.__banGetRowUid = function (row) {
+      if (!(row instanceof HTMLTableRowElement)) return '';
+      var uidCell = row.cells[1];
+      if (!uidCell) return '';
+      return uidCell.textContent.replace(/\s+/g, ' ').trim();
+    };
+    window.__banGetSelectedUids = function (table) {
+      if (!table) return [];
+      var tbody = table.tBodies && table.tBodies[0];
+      if (!tbody) return [];
+      var uids = [];
+      for (var r = 0; r < tbody.rows.length; r++) {
+        var row = tbody.rows[r];
+        var cb = row.cells[0] ? row.cells[0].querySelector('input[type="checkbox"]') : null;
+        if (cb && cb.checked) {
+          var uid = window.__banGetRowUid(row);
+          if (uid) uids.push(uid);
+        }
+      }
+      return Array.from(new Set(uids));
+    };
+    window.__banMakeTagsHtml = function (uid) {
+      var state = window.__banGetUserState(uid);
+      var parts = [];
+      for (var i = 0; i < window.__BAN_TYPES.length; i++) {
+        var t = window.__BAN_TYPES[i];
+        if (state[t.key]) {
+          var cMap = { danger: 'rgba(255,93,108,.28)', warn: 'rgba(255,145,77,.28)' };
+          var bMap = { danger: 'rgba(255,93,108,.12)', warn: 'rgba(255,145,77,.12)' };
+          var tx = t.cls === 'danger' ? '#ffe0e4' : '#ffe9db';
+          parts.push('<span class="risk-behavior-tag" style="display:inline-block;border:1px solid ' + cMap[t.cls] + ';background:' + bMap[t.cls] + ';color:' + tx + ';padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">' + t.labelForbid + '</span>');
+        }
+      }
+      if (!parts.length) return '<span style="color:var(--muted, #888);font-size:12px;">无禁止</span>';
+      return parts.join('');
+    };
+    window.__banEnsureLinks = function (row) {
+      if (!(row instanceof HTMLTableRowElement)) return;
+      var uid = window.__banGetRowUid(row);
+      if (!uid) return;
+      var actionCell = row.cells[row.cells.length - 1];
+      if (!actionCell) return;
+      var existing = {};
+      var links = actionCell.querySelectorAll('.action-link');
+      for (var i = 0; i < links.length; i++) {
+        var txt = links[i].textContent.replace(/\s+/g, ' ').trim();
+        for (var j = 0; j < window.__BAN_TYPES.length; j++) {
+          var bt = window.__BAN_TYPES[j];
+          if (txt === bt.labelForbid || txt === bt.labelRestore) existing[bt.key] = links[i];
+        }
+      }
+      for (var k = 0; k < window.__BAN_TYPES.length; k++) {
+        var btk = window.__BAN_TYPES[k];
+        if (!existing[btk.key]) {
+          var a = document.createElement('a');
+          a.href = '#';
+          a.className = 'action-link';
+          a.textContent = btk.labelForbid;
+          actionCell.appendChild(a);
+        }
+      }
+    };
+    window.__banUpdateLinks = function (row) {
+      if (!(row instanceof HTMLTableRowElement)) return;
+      var uid = window.__banGetRowUid(row);
+      if (!uid) return;
+      window.__banEnsureLinks(row);
+      var state = window.__banGetUserState(uid);
+      var actionCell = row.cells[row.cells.length - 1];
+      if (!actionCell) return;
+      var links2 = actionCell.querySelectorAll('.action-link');
+      for (var i = 0; i < links2.length; i++) {
+        var link = links2[i];
+        var text = link.textContent.replace(/\s+/g, ' ').trim();
+        for (var j = 0; j < window.__BAN_TYPES.length; j++) {
+          var bt = window.__BAN_TYPES[j];
+          if (text === bt.labelForbid || text === bt.labelRestore) {
+            link.textContent = state[bt.key] ? bt.labelRestore : bt.labelForbid;
+          }
+        }
+      }
+    };
+    window.__banRefreshTable = function (table) {
+      if (!table) return;
+      var thead = table.tHead;
+      if (!thead || !thead.rows.length) return;
+      var headerRow = thead.rows[0];
+      var tbody = table.tBodies && table.tBodies[0];
+      if (!tbody || !tbody.rows.length) return;
+      var firstRow = tbody.rows[0];
+      var hasUidCell = firstRow.cells.length > 1 && firstRow.cells[1] && firstRow.cells[1].textContent.replace(/\s+/g,' ').trim() !== '';
+      if (!hasUidCell) return;
+      var remarkThIndex = -1, actionThIndex = -1, statusThIndex = -1;
+      for (var i = 0; i < headerRow.cells.length; i++) {
+        var t = headerRow.cells[i].textContent.replace(/\s+/g, ' ').trim();
+        if (t === '备注') remarkThIndex = i;
+        if (t === '操作') actionThIndex = i;
+        if (t === '禁止状态') statusThIndex = i;
+      }
+      if (statusThIndex === -1) {
+        var insertIdx = remarkThIndex !== -1 ? remarkThIndex : (actionThIndex !== -1 ? actionThIndex : headerRow.cells.length);
+        var newTh = document.createElement('th');
+        newTh.textContent = '禁止状态';
+        if (headerRow.cells[insertIdx]) headerRow.insertBefore(newTh, headerRow.cells[insertIdx]);
+        else headerRow.appendChild(newTh);
+        statusThIndex = insertIdx;
+      }
+      for (var r = 0; r < tbody.rows.length; r++) {
+        var row = tbody.rows[r];
+        var uid = window.__banGetRowUid(row);
+        var statusTd = null;
+        for (var c = 0; c < row.cells.length; c++) {
+          var td = row.cells[c];
+          if (td.dataset && td.dataset.banStatusCell === '1') { statusTd = td; break; }
+        }
+        if (!statusTd) {
+          statusTd = document.createElement('td');
+          statusTd.dataset.banStatusCell = '1';
+          var tidx = remarkThIndex !== -1 ? remarkThIndex : (actionThIndex !== -1 ? actionThIndex : row.cells.length);
+          if (row.cells[tidx]) row.insertBefore(statusTd, row.cells[tidx]);
+          else row.appendChild(statusTd);
+        }
+        statusTd.innerHTML = window.__banMakeTagsHtml(uid);
+        if (actionThIndex !== -1) { try { window.__banUpdateLinks(row); } catch(ee) {} }
+      }
+      var uids = window.__banGetSelectedUids(table);
+      var tableWrap = table.closest('.table-wrap, .table-container');
+      var sectionCard = table.closest('.section-card');
+      var barCandidates = [];
+      if (tableWrap) {
+        var innerGroup = tableWrap.querySelector(':scope > .button-group, :scope > .batch-action-bar');
+        if (innerGroup) barCandidates.push(innerGroup);
+      }
+      if (sectionCard) {
+        var sBars = sectionCard.querySelectorAll(':scope > .batch-action-bar');
+        for (var bi = 0; bi < sBars.length; bi++) barCandidates.push(sBars[bi]);
+        var wrapOuter = sectionCard.querySelector('.table-wrap, .table-container');
+        if (wrapOuter && wrapOuter.previousElementSibling && wrapOuter.previousElementSibling.classList &&
+            wrapOuter.previousElementSibling.classList.contains('batch-action-bar')) {
+          if (barCandidates.indexOf(wrapOuter.previousElementSibling) < 0) {
+            barCandidates.unshift(wrapOuter.previousElementSibling);
+          }
+        }
+      }
+      var hasAny = new Set(['批量正常用户','批量可疑用户','批量黑名单用户','批量禁止登录','批量禁止现货交易','批量禁止合约开仓','批量禁止提现','批量恢复登录','批量恢复现货交易','批量恢复合约开仓','批量恢复提现']);
+      var bars = [];
+      for (var xi = 0; xi < barCandidates.length; xi++) {
+        var bar = barCandidates[xi];
+        var barBtns = bar.querySelectorAll('.button, .js-batch-risk-action');
+        var hit = false;
+        for (var yi = 0; yi < barBtns.length; yi++) {
+          if (hasAny.has(barBtns[yi].textContent.replace(/\s+/g, ' ').trim())) { hit = true; break; }
+        }
+        if (hit) bars.push(bar);
+      }
+      for (var zi = 0; zi < bars.length; zi++) {
+        var bbar = bars[zi];
+        var bbtns = bbar.querySelectorAll('.js-batch-risk-action, .button.secondary, .button');
+        for (var wi = 0; wi < bbtns.length; wi++) {
+          var btn = bbtns[wi];
+          var btxt = btn.textContent.replace(/\s+/g, ' ').trim();
+          for (var ti = 0; ti < window.__BAN_TYPES.length; ti++) {
+            var tt = window.__BAN_TYPES[ti];
+            if (btxt === tt.batchForbid || btxt === tt.batchRestore) {
+              var hasB = false;
+              for (var ui = 0; ui < uids.length; ui++) {
+                if (window.__banGetUserState(uids[ui])[tt.key]) { hasB = true; break; }
+              }
+              btn.textContent = hasB ? tt.batchRestore : tt.batchForbid;
+            }
+          }
+        }
+      }
+    };
+    window.__banFindTableForBatch = function (btn) {
+      var wrap = btn.closest('.table-wrap, .table-container');
+      if (wrap) {
+        var t1 = wrap.querySelector('table');
+        if (t1) return t1;
+      }
+      var sec = btn.closest('.section-card');
+      if (sec) {
+        var t2 = sec.querySelector('.table-wrap table, .table-container table');
+        if (t2) return t2;
+      }
+      return null;
+    };
+    window.__banRefreshAll = function () {
+      var tables = document.querySelectorAll('table');
+      for (var i = 0; i < tables.length; i++) {
+        try { window.__banRefreshTable(tables[i]); } catch (e) { window.__banReportErr('表' + i + '刷新失败: ' + e.message); }
+      }
+    };
+    window.__initBanStatus = function () {
+      try { window.__banRefreshAll(); } catch (e) { window.__banReportErr('初始化刷新失败: ' + e.message); }
+    };
+    // 单人点击
+    document.addEventListener('click', function (event) {
+      try {
+        var link = event.target.closest('.action-link');
+        if (!link) return;
+        var row = link.closest('tr');
+        if (!row) return;
+        var txt = link.textContent.replace(/\s+/g, ' ').trim();
+        var matched = null;
+        for (var i = 0; i < window.__BAN_TYPES.length; i++) {
+          var tt = window.__BAN_TYPES[i];
+          if (txt === tt.labelForbid || txt === tt.labelRestore) { matched = tt; break; }
+        }
+        if (!matched) return;
+        event.preventDefault();
+        var uid = window.__banGetRowUid(row);
+        if (!uid) return;
+        var willBan = txt === matched.labelForbid;
+        window.__banSetUserBan(uid, matched.key, willBan);
+        alert(uid + ' ' + (willBan ? matched.labelForbid : matched.labelRestore) + ' 成功');
+        window.__banRefreshAll();
+      } catch (e) { window.__banReportErr('单击处理失败: ' + e.message); }
+    });
+    // 批量点击
+    document.addEventListener('click', function (event) {
+      try {
+        var btn = event.target.closest('.js-batch-risk-action, .button.secondary, .button');
+        if (!btn) return;
+        var btxt = btn.textContent.replace(/\s+/g, ' ').trim();
+        var bm = null;
+        for (var i = 0; i < window.__BAN_TYPES.length; i++) {
+          var bt = window.__BAN_TYPES[i];
+          if (btxt === bt.batchForbid || btxt === bt.batchRestore) { bm = bt; break; }
+        }
+        if (!bm) return;
+        var target = window.__banFindTableForBatch(btn);
+        if (!target) return;
+        event.preventDefault();
+        var uids = window.__banGetSelectedUids(target);
+        var willBan = btxt === bm.batchForbid;
+        if (!uids.length) { alert('请先勾选用户'); return; }
+        window.__banBatchSetBan(uids, bm.key, willBan);
+        alert((willBan ? bm.batchForbid : bm.batchRestore) + ' 成功，涉及用户 ' + uids.length + ' 人：' + uids.join('、'));
+        window.__banRefreshAll();
+      } catch (e) { window.__banReportErr('批量处理失败: ' + e.message); }
+    });
+    // 勾选变化
+    document.addEventListener('change', function (event) {
+      try {
+        var cb = event.target;
+        if (!(cb instanceof HTMLInputElement) || cb.type !== 'checkbox') return;
+        var table = cb.closest('table');
+        if (table) {
+          setTimeout(function () {
+            try { window.__banRefreshTable(table); } catch (e) { window.__banReportErr('勾选刷新失败: ' + e.message); }
+          }, 0);
+        }
+      } catch (e) {}
+    });
+    // activate 后双重刷新 —— 包括首次 activate('monitor') 和之后切到 blacklist-monitor
+    (function wrapActivate() {
+      var orig = window.activate;
+      if (typeof orig !== 'function') return;
+      window.activate = function () {
+        var ret = orig.apply(this, arguments);
+        setTimeout(window.__initBanStatus, 10);
+        setTimeout(window.__initBanStatus, 150);
+        setTimeout(window.__initBanStatus, 500);
+        return ret;
+      };
+    })();
+    // activate 调用后的首次强制刷新（activate('monitor') 正好在本块之上）
+    setTimeout(window.__initBanStatus, 20);
+    setTimeout(window.__initBanStatus, 200);
+    setTimeout(window.__initBanStatus, 1000);
+    setTimeout(window.__initBanStatus, 3000);
+  </script>
+  <script>
+    // EXPLICIT SCRIPT TAG FOR BAN MODULE, AVOID HUGE SCRIPT CHUNKING PROBLEM
+    // Globals already defined above. Just double trigger init.
+    try {
+      if (typeof window.__initBanStatus === 'function') {
+        setTimeout(window.__initBanStatus, 50);
+        setTimeout(window.__initBanStatus, 500);
+        setTimeout(window.__initBanStatus, 1500);
+        setTimeout(window.__initBanStatus, 4000);
+      } else {
+        // FALLBACK: re-declare in case previous tail never parsed
+        (function () {
+          var BAN_STORAGE_KEY = 'axhub_user_ban_status_v1';
+          var BAN_TYPES = [
+            { key: 'login',    labelForbid: '禁止登录',     labelRestore: '恢复登录',     batchForbid: '批量禁止登录',     batchRestore: '批量恢复登录',     cls: 'danger' },
+            { key: 'spot',     labelForbid: '禁止现货交易', labelRestore: '恢复现货交易', batchForbid: '批量禁止现货交易', batchRestore: '批量恢复现货交易', cls: 'warn' },
+            { key: 'contract', labelForbid: '禁止合约开仓', labelRestore: '恢复合约开仓', batchForbid: '批量禁止合约开仓', batchRestore: '批量恢复合约开仓', cls: 'danger' },
+            { key: 'withdraw', labelForbid: '禁止提现',     labelRestore: '恢复提现',     batchForbid: '批量禁止提现',     batchRestore: '批量恢复提现',     cls: 'warn' }
+          ];
+          var ERR_EL = null;
+          function reportErr(msg) {
+            try {
+              if (!ERR_EL) {
+                var t = document.createElement('div');
+                t.style.cssText = 'margin:8px;padding:6px 10px;border:1px solid #c92a2a;color:#c92a2a;background:rgba(201,42,42,.08);font-size:12px;border-radius:4px;';
+                (document.body || document.documentElement).appendChild(t);
+                ERR_EL = t;
+              }
+              ERR_EL.textContent = '[BAN-FALLBACK] ' + msg;
+            } catch (e) {}
+          }
+          function loadStore() {
+            try { var raw = localStorage.getItem(BAN_STORAGE_KEY); if (!raw) return {}; var o = JSON.parse(raw); return o && typeof o === 'object' ? o : {}; } catch (e) { return {}; }
+          }
+          function saveStore(s) { try { localStorage.setItem(BAN_STORAGE_KEY, JSON.stringify(s)); } catch (e) {} }
+          function defaultState() { return { login:false, spot:false, contract:false, withdraw:false }; }
+          function getUserState(uid) { var s = loadStore(); var k = String(uid || ''); return s[k] || defaultState(); }
+          function setUserBan(uid, typeKey, banned) {
+            var s = loadStore(); var k = String(uid || '');
+            if (!s[k]) s[k] = defaultState();
+            s[k][typeKey] = !!banned;
+            saveStore(s);
+          }
+          function batchSetBan(uids, typeKey, banned) {
+            var s = loadStore();
+            for (var i=0; i<uids.length; i++) {
+              var k = String(uids[i] || '');
+              if (!s[k]) s[k] = defaultState();
+              s[k][typeKey] = !!banned;
+            }
+            saveStore(s);
+          }
+          function getRowUid(row) {
+            if (!(row instanceof HTMLTableRowElement)) return '';
+            var c = row.cells[1]; if (!c) return '';
+            return c.textContent.replace(/\s+/g, ' ').trim();
+          }
+          function getSelectedUids(table) {
+            if (!table) return [];
+            var tb = table.tBodies && table.tBodies[0]; if (!tb) return [];
+            var u = [];
+            for (var r=0; r<tb.rows.length; r++) {
+              var row = tb.rows[r];
+              var cb = row.cells[0] ? row.cells[0].querySelector('input[type="checkbox"]') : null;
+              if (cb && cb.checked) { var uid = getRowUid(row); if (uid) u.push(uid); }
+            }
+            return Array.from ? Array.from(new Set(u)) : u.filter(function(v,i,a){return a.indexOf(v)===i;});
+          }
+          function makeTagsHtml(uid) {
+            var state = getUserState(uid);
+            var parts = [];
+            for (var i=0;i<BAN_TYPES.length;i++) {
+              var t = BAN_TYPES[i];
+              if (state[t.key]) {
+                var cMap = { danger: 'rgba(255,93,108,.28)', warn: 'rgba(255,145,77,.28)' };
+                var bMap = { danger: 'rgba(255,93,108,.12)', warn: 'rgba(255,145,77,.12)' };
+                var tx = t.cls === 'danger' ? '#ffe0e4' : '#ffe9db';
+                parts.push('<span class="risk-behavior-tag" style="display:inline-block;border:1px solid ' + cMap[t.cls] + ';background:' + bMap[t.cls] + ';color:' + tx + ';padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">' + t.labelForbid + '</span>');
+              }
+            }
+            if (!parts.length) return '<span style="color:var(--muted,#888);font-size:12px;">无禁止</span>';
+            return parts.join('');
+          }
+          function ensureLinks(row) {
+            if (!(row instanceof HTMLTableRowElement)) return;
+            var uid = getRowUid(row); if (!uid) return;
+            var actionCell = row.cells[row.cells.length - 1]; if (!actionCell) return;
+            var existing = {};
+            var links = actionCell.querySelectorAll('.action-link');
+            for (var i=0;i<links.length;i++) {
+              var txt = links[i].textContent.replace(/\s+/g,' ').trim();
+              for (var j=0;j<BAN_TYPES.length;j++) {
+                var bt = BAN_TYPES[j];
+                if (txt === bt.labelForbid || txt === bt.labelRestore) existing[bt.key] = links[i];
+              }
+            }
+            for (var k=0;k<BAN_TYPES.length;k++) {
+              var btk = BAN_TYPES[k];
+              if (!existing[btk.key]) {
+                var a = document.createElement('a');
+                a.href = '#'; a.className = 'action-link'; a.textContent = btk.labelForbid;
+                actionCell.appendChild(a);
+              }
+            }
+          }
+          function updateLinks(row) {
+            if (!(row instanceof HTMLTableRowElement)) return;
+            var uid = getRowUid(row); if (!uid) return;
+            ensureLinks(row);
+            var state = getUserState(uid);
+            var actionCell = row.cells[row.cells.length - 1]; if (!actionCell) return;
+            var links2 = actionCell.querySelectorAll('.action-link');
+            for (var i=0;i<links2.length;i++) {
+              var link = links2[i];
+              var text = link.textContent.replace(/\s+/g,' ').trim();
+              for (var j=0;j<BAN_TYPES.length;j++) {
+                var bt = BAN_TYPES[j];
+                if (text === bt.labelForbid || text === bt.labelRestore) {
+                  link.textContent = state[bt.key] ? bt.labelRestore : bt.labelForbid;
+                }
+              }
+            }
+          }
+          function refreshTable(table) {
+            if (!table) return;
+            var thead = table.tHead; if (!thead || !thead.rows.length) return;
+            var tbody = table.tBodies && table.tBodies[0]; if (!tbody || !tbody.rows.length) return;
+            var fRow = tbody.rows[0];
+            var _hasUid = fRow.cells.length > 1 && fRow.cells[1] && fRow.cells[1].textContent.replace(/\s+/g,' ').trim() !== '';
+            if (!_hasUid) return;
+            var headerRow = thead.rows[0];
+            var remark=-1, action=-1, banCol=-1;
+            for (var i=0;i<headerRow.cells.length;i++) {
+              var tx = headerRow.cells[i].textContent.replace(/\s+/g,' ').trim();
+              if (tx === '备注') remark=i;
+              if (tx === '操作') action=i;
+              if (tx === '禁止状态') banCol=i;
+            }
+            if (banCol === -1) {
+              var insertIdx = remark !== -1 ? remark : (action !== -1 ? action : headerRow.cells.length);
+              var newTh = document.createElement('th');
+              newTh.textContent = '禁止状态';
+              if (headerRow.cells[insertIdx]) headerRow.insertBefore(newTh, headerRow.cells[insertIdx]);
+              else headerRow.appendChild(newTh);
+              banCol = insertIdx;
+            }
+            for (var r=0; r<tbody.rows.length; r++) {
+              var row = tbody.rows[r];
+              var uid = getRowUid(row);
+              var statusTd = null;
+              for (var c=0; c<row.cells.length; c++) {
+                var td = row.cells[c];
+                if (td.dataset && td.dataset.banStatusCell === '1') { statusTd = td; break; }
+              }
+              if (!statusTd) {
+                statusTd = document.createElement('td');
+                statusTd.dataset.banStatusCell = '1';
+                var tidx = remark !== -1 ? remark : (action !== -1 ? action : row.cells.length);
+                if (row.cells[tidx]) row.insertBefore(statusTd, row.cells[tidx]);
+                else row.appendChild(statusTd);
+              }
+              statusTd.innerHTML = makeTagsHtml(uid);
+              if (action !== -1) { try { updateLinks(row); } catch (ee) {} }
+            }
+            var uids = getSelectedUids(table);
+            var tableWrap = table.closest('.table-wrap, .table-container');
+            var sectionCard = table.closest('.section-card');
+            var cand = [];
+            if (tableWrap) {
+              var ig = tableWrap.querySelector(':scope > .button-group, :scope > .batch-action-bar');
+              if (ig) cand.push(ig);
+            }
+            if (sectionCard) {
+              var ss = sectionCard.querySelectorAll(':scope > .batch-action-bar');
+              for (var bi=0; bi<ss.length; bi++) cand.push(ss[bi]);
+              var wOuter = sectionCard.querySelector('.table-wrap, .table-container');
+              if (wOuter && wOuter.previousElementSibling && wOuter.previousElementSibling.classList && wOuter.previousElementSibling.classList.contains('batch-action-bar')) {
+                if (cand.indexOf(wOuter.previousElementSibling) < 0) cand.unshift(wOuter.previousElementSibling);
+              }
+            }
+            var hasAny = new Set(['批量正常用户','批量可疑用户','批量黑名单用户','批量禁止登录','批量禁止现货交易','批量禁止合约开仓','批量禁止提现','批量恢复登录','批量恢复现货交易','批量恢复合约开仓','批量恢复提现']);
+            var bars = [];
+            for (var xi=0; xi<cand.length; xi++) {
+              var bar = cand[xi]; var btns = bar.querySelectorAll('.button, .js-batch-risk-action'); var hit=false;
+              for (var yi=0; yi<btns.length; yi++) { if (hasAny.has(btns[yi].textContent.replace(/\s+/g,' ').trim())) { hit=true; break; } }
+              if (hit) bars.push(bar);
+            }
+            for (var zi=0; zi<bars.length; zi++) {
+              var bbar = bars[zi];
+              var bbtns = bbar.querySelectorAll('.js-batch-risk-action, .button.secondary, .button');
+              for (var wi=0; wi<bbtns.length; wi++) {
+                var btn = bbtns[wi];
+                var btxt = btn.textContent.replace(/\s+/g,' ').trim();
+                for (var ti=0; ti<BAN_TYPES.length; ti++) {
+                  var tt = BAN_TYPES[ti];
+                  if (btxt === tt.batchForbid || btxt === tt.batchRestore) {
+                    var hasB = false;
+                    for (var ui=0; ui<uids.length; ui++) { if (getUserState(uids[ui])[tt.key]) { hasB = true; break; } }
+                    btn.textContent = hasB ? tt.batchRestore : tt.batchForbid;
+                  }
+                }
+              }
+            }
+          }
+          function findTableForBatch(btn) {
+            var w = btn.closest('.table-wrap, .table-container');
+            if (w) { var t1 = w.querySelector('table'); if (t1) return t1; }
+            var sec = btn.closest('.section-card');
+            if (sec) { var t2 = sec.querySelector('.table-wrap table, .table-container table'); if (t2) return t2; }
+            return null;
+          }
+          function refreshAll() {
+            var tables = document.querySelectorAll('table');
+            for (var i=0; i<tables.length; i++) { try { refreshTable(tables[i]); } catch (e) { reportErr('tbl'+i+' '+e.message); } }
+          }
+          window.__initBanStatus = function () { try { refreshAll(); } catch (e) { reportErr('init '+e.message); } };
+          document.addEventListener('click', function (ev) {
+            try {
+              var link = ev.target.closest && ev.target.closest('.action-link');
+              if (!link) return;
+              var row = link.closest('tr'); if (!row) return;
+              var txt = link.textContent.replace(/\s+/g,' ').trim();
+              var matched = null;
+              for (var i=0;i<BAN_TYPES.length;i++) { var tt = BAN_TYPES[i]; if (txt === tt.labelForbid || txt === tt.labelRestore) { matched = tt; break; } }
+              if (!matched) return;
+              ev.preventDefault();
+              var uid = getRowUid(row); if (!uid) return;
+              var willBan = txt === matched.labelForbid;
+              setUserBan(uid, matched.key, willBan);
+              alert(uid + ' ' + (willBan ? matched.labelForbid : matched.labelRestore) + ' 成功');
+              refreshAll();
+            } catch (e) { reportErr('single '+e.message); }
+          });
+          document.addEventListener('click', function (ev) {
+            try {
+              var btn = ev.target.closest && ev.target.closest('.js-batch-risk-action, .button.secondary, .button');
+              if (!btn) return;
+              var btxt = btn.textContent.replace(/\s+/g,' ').trim();
+              var bm = null;
+              for (var i=0;i<BAN_TYPES.length;i++) { var bt = BAN_TYPES[i]; if (btxt === bt.batchForbid || btxt === bt.batchRestore) { bm = bt; break; } }
+              if (!bm) return;
+              var target = findTableForBatch(btn); if (!target) return;
+              ev.preventDefault();
+              var uids = getSelectedUids(target);
+              var willBan = btxt === bm.batchForbid;
+              if (!uids.length) { alert('请先勾选用户'); return; }
+              batchSetBan(uids, bm.key, willBan);
+              alert((willBan ? bm.batchForbid : bm.batchRestore) + ' 成功，涉及用户 ' + uids.length + ' 人：' + uids.join('、'));
+              refreshAll();
+            } catch (e) { reportErr('batch '+e.message); }
+          });
+          document.addEventListener('change', function (ev) {
+            try {
+              var cb = ev.target;
+              if (!(cb instanceof HTMLInputElement) || cb.type !== 'checkbox') return;
+              var table = cb.closest && cb.closest('table');
+              if (table) setTimeout(function () { try { refreshTable(table); } catch(e){ reportErr('chk '+e.message); } }, 0);
+            } catch (e) {}
+          });
+          try {
+            var orig = window.activate;
+            if (typeof orig === 'function') {
+              window.activate = function () {
+                var ret = orig.apply(this, arguments);
+                setTimeout(window.__initBanStatus, 10);
+                setTimeout(window.__initBanStatus, 150);
+                setTimeout(window.__initBanStatus, 500);
+                return ret;
+              };
+            }
+          } catch (e) {}
+          setTimeout(window.__initBanStatus, 50);
+          setTimeout(window.__initBanStatus, 500);
+          setTimeout(window.__initBanStatus, 1500);
+          setTimeout(window.__initBanStatus, 4000);
+
+          function seedDemoUsersForMonitorPage() {
+            try {
+              var s = loadStore();
+              var seeded = false;
+              // 可疑用户监控默认页示例 UID (给开发沟通用)
+              var demos = {
+                '8001': { login:false, spot:false, contract:false, withdraw:false },
+                '8002': { login:true,  spot:true,  contract:true,  withdraw:true  },
+                '8003': { login:true,  spot:true,  contract:true,  withdraw:true  }
+              };
+              for (var k in demos) {
+                if (!s[k]) { s[k] = demos[k]; seeded = true; }
+                else {
+                  // 若UID已存在，也要保证示例禁止组合正确（可能用户之前操作过）
+                  var cur = s[k], tgt = demos[k], changed=false;
+                  for (var ky in tgt) if (cur[ky] !== tgt[ky]) { cur[ky] = tgt[ky]; changed=true; }
+                  if (changed) seeded = true;
+                }
+              }
+              if (seeded) saveStore(s);
+              var monitor = document.getElementById('monitor');
+              var table = monitor ? monitor.querySelector('table') : null;
+              var tb = table && table.tBodies ? table.tBodies[0] : null;
+              if (tb && tb.rows.length >= 3) {
+                // 注意：不影响已被改成本次其他示例 UID 的行（比如9001/9002），只改当前UID仍为默认值的
+                var order = ['8001','8002','8003'];
+                for (var r=0; r<3 && r<tb.rows.length; r++) {
+                  var row = tb.rows[r];
+                  if (!row.cells[1]) continue;
+                  var txt = row.cells[1].textContent.replace(/\s+/g,' ').trim();
+                  if (txt === '123' || txt === '' || order.indexOf(txt) !== -1) {
+                    row.cells[1].textContent = order[r];
+                  }
+                }
+              }
+            } catch (e) {}
+          }
+          setTimeout(seedDemoUsersForMonitorPage, 300);
+          setTimeout(function(){ seedDemoUsersForMonitorPage(); if (typeof window.__initBanStatus==='function') window.__initBanStatus(); }, 1200);
+        })();
+      }
+    } catch (e) {
+      try {
+        var tip = document.createElement('div');
+        tip.style.cssText = 'margin:8px;padding:6px 10px;border:1px solid #c92a2a;color:#c92a2a;background:rgba(201,42,42,.08);font-size:12px;border-radius:4px;';
+        tip.textContent = '[BAN-MODULE-ERR] ' + e.message;
+        (document.body || document.documentElement).appendChild(tip);
+      } catch (ee) {}
+    }
+  </script>
+  <script>
+    (function(){
+      try {
+        var KEY = 'axhub_user_ban_status_v1';
+        var FIXED = {
+          '8001':{login:false,spot:false,contract:false,withdraw:false},
+          '8002':{login:true, spot:true, contract:true, withdraw:true},
+          '8003':{login:true, spot:true, contract:true, withdraw:true},
+          '9003':{login:true, spot:true, contract:true, withdraw:true},
+          '9004':{login:false,spot:false,contract:true, withdraw:false}
+        };
+        var cur = {};
+        try { cur = JSON.parse(localStorage.getItem(KEY)||'{}') || {}; } catch(e){ cur = {}; }
+        for (var k in FIXED) cur[k] = FIXED[k];
+        localStorage.setItem(KEY, JSON.stringify(cur));
+      } catch(e) {}
+      var tries = 0;
+      var t = setInterval(function(){
+        tries++;
+        if (tries > 12){ clearInterval(t); return; }
+        if (typeof window.__initBanStatus === 'function'){
+          clearInterval(t);
+          try { window.__initBanStatus(); } catch(e){}
+        }
+      }, 250);
+    })();
   </script>
 </body>
 </html>
