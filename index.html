@@ -14065,6 +14065,11 @@
       var firstRow = tbody.rows[0];
       var hasUidCell = firstRow.cells.length > 1 && firstRow.cells[1] && firstRow.cells[1].textContent.replace(/\s+/g,' ').trim() !== '';
       if (!hasUidCell) return;
+      var __sec = table.closest('section.page');
+      if (__sec && __sec.id) {
+        var __id = __sec.id;
+        if (/^whitelist-/.test(__id) || (/^blacklist-/.test(__id) && __id !== 'blacklist-monitor') || __id === 'risk-email-suffix' || (/^risk-/.test(__id) && /-whitelist$/.test(__id))) return;
+      }
       var remarkThIndex = -1, actionThIndex = -1, statusThIndex = -1;
       for (var i = 0; i < headerRow.cells.length; i++) {
         var t = headerRow.cells[i].textContent.replace(/\s+/g, ' ').trim();
@@ -14376,6 +14381,11 @@
             var fRow = tbody.rows[0];
             var _hasUid = fRow.cells.length > 1 && fRow.cells[1] && fRow.cells[1].textContent.replace(/\s+/g,' ').trim() !== '';
             if (!_hasUid) return;
+            var __sec2 = table.closest('section.page');
+            if (__sec2 && __sec2.id) {
+              var __id2 = __sec2.id;
+              if (/^whitelist-/.test(__id2) || (/^blacklist-/.test(__id2) && __id2 !== 'blacklist-monitor') || __id2 === 'risk-email-suffix' || (/^risk-/.test(__id2) && /-whitelist$/.test(__id2))) return;
+            }
             var headerRow = thead.rows[0];
             var remark=-1, action=-1, banCol=-1;
             for (var i=0;i<headerRow.cells.length;i++) {
