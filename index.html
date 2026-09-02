@@ -1727,11 +1727,15 @@
             <button type="button" class="nav-group-toggle" data-group-toggle="version-declare" aria-label="展开或收回版本声明导航"></button>
           </div>
           <div class="nav-sub-list">
-            <button class="nav-btn sub" data-page="risk-version-declare">
+            <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="2026090214:30" onclick="try{window.switchVersion('2026090214:30');}catch(e){}finally{return false;}">
+              <strong>2026090214:30</strong>
+              <span>当前版本改动明细（正常事件 / 移出黑名单拆分 + 口径统一）</span>
+            </button>
+            <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="2026090116:17" onclick="try{window.switchVersion('2026090116:17');}catch(e){}finally{return false;}">
               <strong>2026090116:17</strong>
               <span>当前版本改动明细（禁止状态列 + 4 类禁止 + 示例 UID）</span>
             </button>
-            <button class="nav-btn sub" data-page="risk-version-declare">
+            <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="20260826 14:26" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">
               <strong>20260826 14:26</strong>
               <span>当前版本改动明细</span>
             </button>
@@ -1782,7 +1786,7 @@
                 <option>全部</option>
                 <option>手动</option>
                 <option>自动</option>
-                <option>正常用户</option>
+                <option>正常事件</option>
                 <option>黑名单</option>
               </select>
             </div>
@@ -1801,7 +1805,7 @@
 
           <div class="table-wrap">
             <div class="button-group" style="padding:0 0 16px;">
-              <button type="button" class="button secondary">批量正常用户</button>
+              <button type="button" class="button secondary">批量正常事件</button>
               <button type="button" class="button secondary">批量黑名单用户</button>
               <button type="button" class="button secondary">批量禁止登录</button>
               <button type="button" class="button secondary">批量禁止现货交易</button>
@@ -1845,7 +1849,7 @@
                   <td>2025-07-15 10:01:15</td>
                   <td data-ban-status-cell="1"><span style="color:var(--muted, #888);font-size:12px;">无禁止</span></td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">黑名单用户</a>
                     <a href="#" class="action-link">禁止登录</a>
                     <a href="#" class="action-link">禁止现货交易</a>
@@ -1874,7 +1878,7 @@
                     <span class="risk-behavior-tag" style="display:inline-block;border:1px solid rgba(255,145,77,.28);background:rgba(255,145,77,.12);color:#ffe9db;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">禁止提现</span>
                   </td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">黑名单用户</a>
                     <a href="#" class="action-link">恢复登录</a>
                     <a href="#" class="action-link">恢复现货交易</a>
@@ -1903,7 +1907,7 @@
                     <span class="risk-behavior-tag" style="display:inline-block;border:1px solid rgba(255,145,77,.28);background:rgba(255,145,77,.12);color:#ffe9db;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0;">禁止提现</span>
                   </td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">黑名单用户</a>
                     <a href="#" class="action-link">恢复登录</a>
                     <a href="#" class="action-link">恢复现货交易</a>
@@ -1927,7 +1931,7 @@
                   <td>2025-07-15 10:01:15</td>
                   <td data-ban-status-cell="1"><span style="color:var(--muted, #888);font-size:12px;">无禁止</span></td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">黑名单用户</a>
                     <a href="#" class="action-link">禁止登录</a>
                     <a href="#" class="action-link">禁止现货交易</a>
@@ -1951,7 +1955,7 @@
                   <td>2025-07-15 10:01:15</td>
                   <td data-ban-status-cell="1"><span style="color:var(--muted, #888);font-size:12px;">无禁止</span></td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">黑名单用户</a>
                     <a href="#" class="action-link">禁止登录</a>
                     <a href="#" class="action-link">禁止现货交易</a>
@@ -2180,7 +2184,7 @@
 
           <div class="table-wrap">
             <div class="button-group" style="padding:0 0 16px;">
-              <button type="button" class="button secondary">批量正常用户</button>
+              <button type="button" class="button secondary">批量移出黑名单</button>
               <button type="button" class="button secondary">批量可疑用户</button>
               <button type="button" class="button secondary">批量禁止登录</button>
               <button type="button" class="button secondary">批量禁止现货交易</button>
@@ -2214,7 +2218,7 @@
                   <td>2025-07-15 10:01:15</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">移出黑名单</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">禁止登录</a>
                     <a href="#" class="action-link">禁止现货交易</a>
@@ -2233,7 +2237,7 @@
                   <td>2025-07-15 10:01:15</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">移出黑名单</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">禁止登录</a>
                     <a href="#" class="action-link">禁止现货交易</a>
@@ -2252,7 +2256,7 @@
                   <td>2025-07-15 10:01:15</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">移出黑名单</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">禁止登录</a>
                     <a href="#" class="action-link">禁止现货交易</a>
@@ -2271,7 +2275,7 @@
                   <td>2025-07-15 10:01:15</td>
                   <td>2025-07-15 10:01:15</td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">移出黑名单</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">禁止登录</a>
                     <a href="#" class="action-link">禁止现货交易</a>
@@ -3876,7 +3880,7 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -4097,7 +4101,7 @@
               <label>类型</label>
               <select>
                 <option>全部</option>
-                <option>正常用户</option>
+                <option>正常事件</option>
                 <option>黑名单</option>
               </select>
             </div>
@@ -4116,7 +4120,7 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -4334,7 +4338,7 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -4586,7 +4590,7 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -4824,7 +4828,7 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -5043,7 +5047,7 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -5247,7 +5251,7 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -6057,7 +6061,7 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -6258,7 +6262,7 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -6299,7 +6303,7 @@
                   <td>触发角度1：近24小时内充值入账金额达到低风险以上共3次，超过配置阈值2次，直接记录</td>
                   <td>2025-07-16 11:26:18</td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="100312" data-related-users="100312" data-relation-default="0" data-config-source="异常充值监控">相关操作配置</a>
@@ -6318,7 +6322,7 @@
                   <td>触发角度2：停留时长少于12小时，现货交易金额仅占充值金额6.92%，并通过C2C转出，满足触发条件</td>
                   <td>2025-07-16 10:18:42</td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="100488" data-related-users="100488" data-relation-default="0" data-config-source="异常充值监控">相关操作配置</a>
@@ -6337,7 +6341,7 @@
                   <td>触发角度2：停留时长少于24小时，合约交易初始保证金占充值金额18.00%，并通过站内转账转出，满足触发条件</td>
                   <td>2025-07-16 09:44:03</td>
                   <td>
-                    <a href="#" class="action-link">正常用户</a>
+                    <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
                     <a href="#" class="action-link js-open-user-config" data-user-uid="100731" data-related-users="100731" data-relation-default="0" data-config-source="异常充值监控">相关操作配置</a>
@@ -6649,7 +6653,7 @@
 
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -7036,7 +7040,7 @@
           </div>
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -7133,7 +7137,7 @@
           </div>
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -7526,7 +7530,7 @@
           </div>
           <div class="batch-action-bar">
             <span class="batch-action-bar__label">批量操作</span>
-            <button type="button" class="button secondary js-batch-risk-action">批量正常用户</button>
+            <button type="button" class="button secondary js-batch-risk-action">批量正常事件</button>
             <button type="button" class="button secondary js-batch-risk-action">批量可疑用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量黑名单用户</button>
             <button type="button" class="button secondary js-batch-risk-action">批量禁止登录</button>
@@ -7739,85 +7743,126 @@
               </div>
               <h3>版本声明</h3>
               <p style="margin:6px 0 0; font-size:12px; color:rgba(148,163,184,.7);">
-                迭代版本号：<span style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">2026090116:17</span>
+                迭代版本号：<span id="ver-head-span" style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">2026090214:30</span>
               </p>
             </div>
           </div>
 
           <div class="pill-group" style="margin:12px 0 4px;">
-            <button type="button" class="pill active" data-version-pill="2026090116:17" style="font-variant-numeric: tabular-nums; padding:0 18px;">2026090116:17</button>
-            <button type="button" class="pill" data-version-pill="20260826 14:26" style="font-variant-numeric: tabular-nums; padding:0 18px;">20260826 14:26</button>
+            <button type="button" class="pill active" data-version-pill="2026090214:30" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026090214:30');}catch(e){}finally{return false;}">2026090214:30</button>
+            <button type="button" class="pill" data-version-pill="2026090116:17" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026090116:17');}catch(e){}finally{return false;}">2026090116:17</button>
+            <button type="button" class="pill" data-version-pill="20260826 14:26" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">20260826 14:26</button>
           </div>
 
-          <div class="config-panel" style="margin-top:8px;">
-            <div class="config-row">
-              <label>生效范围</label>
-              <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                <span class="tag tag-warn">可疑用户监控（用户监控）</span>
-                <span class="tag tag-warn">黑名单用户列表</span>
-                <span class="tag tag-silver">全部 43 张与用户 UID 关联的列表</span>
-                <span class="tag tag-silver">口径定义面板（默认收缩 + 列表不挤压）</span>
+          <div data-version-block="2026090214:30" style="display:block;">
+            <div class="config-panel" style="margin-top:8px;">
+              <div class="config-row">
+                <label>生效范围</label>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                  <span class="tag tag-warn">可疑用户监控（用户监控 + 事前/事后预警报警 43 表）</span>
+                  <span class="tag tag-warn">黑名单用户列表（全部 10 个黑名单维度）</span>
+                  <span class="tag tag-silver">全局口径定义面板（正常事件 / 移出黑名单口径统一说明）</span>
+                  <span class="tag tag-silver">左侧版本声明展开子项二级导航 + 版本声明分页/药丸 tab</span>
+                </div>
               </div>
-            </div>
-            <div class="config-row">
-              <label>当前版本改动明细（2026090116:17）</label>
-              <div style="font-size:13px; line-height:1.95; color:var(--text);">
-                · 新增「禁止状态」列（表头短标题：禁止状态），位于备注列 / 操作列前；表无备注与操作列时追加为最后一列<br>
-                · 禁止状态 4 类（登录 / 现货交易 / 合约开仓 / 提现）彩色标签，无禁止显示「无禁止」<br>
-                · 操作栏 4 类按钮与禁止状态 1:1 互斥联动：已禁显示「恢复XXX」，未禁显示「禁止XXX」<br>
-                · 新增「禁止提现」为第 4 类独立禁止项（禁止登录 / 禁止现货交易 / 禁止合约开仓 / 禁止提现）<br>
-                · 原「禁止注册」字样全局统一改为「禁止用户邀请下级注册」<br>
-                · 所有与用户 UID（第二列非空）关联的 43 张列表 100% 注入禁止状态列；原无操作列纯流水/历史表也补齐<br>
-                · 右侧口径定义面板：默认收缩（不挤压列表），点击右下角或页头「口径定义」按钮展开<br>
-                · 口径定义展开后无内容 Bug 修复：兜底原原型 pageTitleMap 未定义导致 activate 中断的问题
+              <div class="config-row">
+                <label>当前版本改动明细（2026090214:30）</label>
+                <div style="font-size:13px; line-height:1.95; color:var(--text);">
+                  · 操作按钮拆分：可疑用户范围（用户监控 / 事前预警 / 事后报警 / 黑白名单 / 规则列表等所有非黑名单维度页面）的原「正常行为」统一改为「正常事件」<br>
+                  · 操作按钮拆分：黑名单范围（黑名单用户 / IP / 设备 / 充值地址 / 提币地址 / 密码 / 邮箱 / 黑名单市价 / 限价 / 强平历史共 10 个黑名单维度）的原「正常行为」统一改为「移出黑名单」<br>
+                  · 批量操作同步拆分：原「批量正常行为」同步拆为「批量正常事件」（可疑用户范围）与「批量移出黑名单」（黑名单范围）<br>
+                  · 查询类型筛选项同步拆分：原「正常行为」改为「正常事件」（可疑用户查询）、改为「移出黑名单」（黑名单维度查询）<br>
+                  · 顶部异常统计指标同步改名：原「标记正常行为数」改为「标记正常事件/移出黑名单数」，两种操作统一计入同一项指标<br>
+                  · 写入口径定义面板：新增全局固定的「正常事件 / 移出黑名单 口径说明」，两者口径完全一致<br>
+                  · 正常事件 / 移出黑名单 口径第 1 条：仅从当前操作所在页面的「单一命中风控规则（或单一黑名单维度）」名单中移除；同一用户同时命中多项（例：高盈利高胜率 + 打单风控 / 黑名单用户 + 提币地址黑名单）时，仅当前操作对应名单移除，其他仍命中名单保留，不做跨表/跨名单移出<br>
+                  · 正常事件 / 移出黑名单 口径第 2 条：截止本次操作时间之前的历史数据全部视为正常；后续重新判断是否重新命中任一规则/维度时，所有统计、累计、比例、频率、阈值均以本次操作时间作为新的判定起点，不再回溯操作时间之前的任何历史数据<br>
+                  · 版本声明迭代：本版本（20260902 14:30）新增为当前展示的第一个版本，原 2026090116:17 与 20260826 14:26 作为历史版本保留
+                </div>
               </div>
             </div>
           </div>
 
-          <div style="height:28px;"></div>
-
-          <div class="section-head">
-            <div>
-              <p style="margin:6px 0 0; font-size:12px; color:rgba(148,163,184,.7);">
-                历史版本号：<span style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">20260826 14:26</span>
-              </p>
-            </div>
-          </div>
-          <div class="config-panel" style="margin-top:8px;">
-            <div class="config-row">
-              <label>生效范围</label>
-              <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                <span class="tag tag-warn">事前预警 8 页</span>
-                <span class="tag tag-warn">事后报警 4 页</span>
-                <span class="tag tag-silver">高盈利高胜率规则配置区</span>
-                <span class="tag tag-silver">黑名单合约下单与强平规则配置</span>
+          <div data-version-block="2026090116:17" style="display:none;">
+            <div style="height:28px;"></div>
+            <div class="section-head">
+              <div>
+                <p style="margin:6px 0 0; font-size:12px; color:rgba(148,163,184,.7);">
+                  历史版本号：<span style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">2026090116:17</span>
+                </p>
               </div>
             </div>
-            <div class="config-row">
-              <label>历史版本改动明细（20260826 14:26）</label>
-              <div style="font-size:13px; line-height:1.95; color:var(--text);">
-                · 高盈利高胜率用户规则配置区，增加：「统计时配置 用户最低盈利额统计 ≥ 1000 USDT」配置项；修改：「盈利率阈值」说明追加「盈利率为负数时，进入异常用户名单」，去掉高盈利高胜率用户限制规则<br>
-                · 市价历史订单<br>
-                · 限价历史订单，<br>
-                · 黑名单合约下单与强平规则配置页面，去掉所有「ADL」字样，统一改为「提前减仓」或「减仓」描述<br>
-                · 事前预警和事后预警操作项统一为：XX配置 正常事件 可疑用户 移入用户白名单 移入用户黑名单，
+            <div class="config-panel" style="margin-top:8px;">
+              <div class="config-row">
+                <label>生效范围</label>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                  <span class="tag tag-warn">可疑用户监控（用户监控）</span>
+                  <span class="tag tag-warn">黑名单用户列表</span>
+                  <span class="tag tag-silver">全部 43 张与用户 UID 关联的列表</span>
+                  <span class="tag tag-silver">口径定义面板（默认收缩 + 列表不挤压）</span>
+                </div>
+              </div>
+              <div class="config-row">
+                <label>历史版本改动明细（2026090116:17）</label>
+                <div style="font-size:13px; line-height:1.95; color:var(--text);">
+                  · 新增「禁止状态」列（表头短标题：禁止状态），位于备注列 / 操作列前；表无备注与操作列时追加为最后一列<br>
+                  · 禁止状态 4 类（登录 / 现货交易 / 合约开仓 / 提现）彩色标签，无禁止显示「无禁止」<br>
+                  · 操作栏 4 类按钮与禁止状态 1:1 互斥联动：已禁显示「恢复XXX」，未禁显示「禁止XXX」<br>
+                  · 新增「禁止提现」为第 4 类独立禁止项（禁止登录 / 禁止现货交易 / 禁止合约开仓 / 禁止提现）<br>
+                  · 原「禁止注册」字样全局统一改为「禁止用户邀请下级注册」<br>
+                  · 所有与用户 UID（第二列非空）关联的 43 张列表 100% 注入禁止状态列；原无操作列纯流水/历史表也补齐<br>
+                  · 右侧口径定义面板：默认收缩（不挤压列表），点击右下角或页头「口径定义」按钮展开<br>
+                  · 口径定义展开后无内容 Bug 修复：兜底原原型 pageTitleMap 未定义导致 activate 中断的问题
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-version-block="20260826 14:26" style="display:none;">
+            <div style="height:28px;"></div>
+            <div class="section-head">
+              <div>
+                <p style="margin:6px 0 0; font-size:12px; color:rgba(148,163,184,.7);">
+                  历史版本号：<span style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">20260826 14:26</span>
+                </p>
+              </div>
+            </div>
+            <div class="config-panel" style="margin-top:8px;">
+              <div class="config-row">
+                <label>生效范围</label>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                  <span class="tag tag-warn">事前预警 8 页</span>
+                  <span class="tag tag-warn">事后报警 4 页</span>
+                  <span class="tag tag-silver">高盈利高胜率规则配置区</span>
+                  <span class="tag tag-silver">黑名单合约下单与强平规则配置</span>
+                </div>
+              </div>
+              <div class="config-row">
+                <label>历史版本改动明细（20260826 14:26）</label>
+                <div style="font-size:13px; line-height:1.95; color:var(--text);">
+                  · 高盈利高胜率用户规则配置区，增加：「统计时配置 用户最低盈利额统计 ≥ 1000 USDT」配置项；修改：「盈利率阈值」说明追加「盈利率为负数时，进入异常用户名单」，去掉高盈利高胜率用户限制规则<br>
+                  · 市价历史订单<br>
+                  · 限价历史订单，<br>
+                  · 黑名单合约下单与强平规则配置页面，去掉所有「ADL」字样，统一改为「提前减仓」或「减仓」描述<br>
+                  · 事前预警和事后预警操作项统一为：XX配置 正常事件 可疑用户 移入用户白名单 移入用户黑名单，
+                </div>
               </div>
             </div>
           </div>
 
           <div class="footer-row" style="margin-top:16px;">
-            <div>当前展示 <strong style="color:var(--text-primary); font-weight:600;">2026090116:17</strong> 版本改动明细</div>
+            <div>当前展示 <strong id="ver-footer-strong" style="color:var(--text-primary); font-weight:600;">2026090214:30</strong> 版本改动明细</div>
             <div class="pagination">
-              <button type="button" class="page-chip" disabled>上一页</button>
-              <button type="button" class="page-chip active">2026090116:17</button>
-              <button type="button" class="page-chip">20260826 14:26</button>
-              <button type="button" class="page-chip">尾页</button>
-              <button type="button" class="page-chip">下一页</button>
+              <button type="button" class="page-chip" disabled id="ver-chip-prev">上一页</button>
+              <button type="button" class="page-chip active" data-version-chip="2026090214:30" onclick="try{window.switchVersion('2026090214:30');}catch(e){}finally{return false;}">2026090214:30</button>
+              <button type="button" class="page-chip" data-version-chip="2026090116:17" onclick="try{window.switchVersion('2026090116:17');}catch(e){}finally{return false;}">2026090116:17</button>
+              <button type="button" class="page-chip" data-version-chip="20260826 14:26" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">20260826 14:26</button>
+              <button type="button" class="page-chip" id="ver-chip-last" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">尾页</button>
+              <button type="button" class="page-chip" id="ver-chip-next" onclick="try{window.switchVersion('2026090116:17');}catch(e){}finally{return false;}">下一页</button>
               <span style="margin-left:8px;">到第</span>
-              <input type="text" style="width:140px; height:34px; border-radius:8px; border:1px solid rgba(148,163,184,.18); background:rgba(11,18,32,.72); color:var(--text); padding:0 8px; text-align:center; font-size:12px; font-variant-numeric: tabular-nums;" value="2026090116:17" placeholder="版本号">
+              <input id="ver-jump-input" type="text" style="width:140px; height:34px; border-radius:8px; border:1px solid rgba(148,163,184,.18); background:rgba(11,18,32,.72); color:var(--text); padding:0 8px; text-align:center; font-size:12px; font-variant-numeric: tabular-nums;" value="2026090214:30" placeholder="版本号">
               <span>页</span>
-              <button type="button" class="button secondary" style="height:34px; padding:0 12px;">确定</button>
-              <span style="margin-left:12px;">共 2 个版本</span>
+              <button type="button" class="button secondary" id="ver-jump-btn" style="height:34px; padding:0 12px;" onclick="try{var v=document.getElementById('ver-jump-input'); if(v) window.switchVersion(v.value.trim());}catch(e){}">确定</button>
+              <span style="margin-left:12px;">共 3 个版本</span>
             </div>
           </div>
         </div>
@@ -8609,6 +8654,14 @@
     </script>
     <h3>口径定义</h3>
     <div id="spec-current-structure-slot"></div>
+    <div class="spec-card" style="margin-top:16px;">
+      <strong>正常事件 / 移出黑名单 口径说明</strong>
+      <em>口径定义-全局统一适用：可疑用户=正常事件；黑名单用户=移出黑名单；两者口径完全一致</em>
+      <ol>
+        <li>在可疑用户范围（用户监控、事前/事后各预警/报警列表），用户被标记为「正常事件」后，仅从「当前操作所在页面的单一命中风控规则列表」中移除：若同一用户同时命中多项风控（例：同时命中「高盈利高胜率用户」与「打单风控」两个列表），仅本次执行「正常事件」操作的对应命中列表移除该用户；其他仍命中的风控列表保留该用户，不做跨表移出。<br>在黑名单范围（黑名单用户列表、IP/设备/充值/提币地址/密码/邮箱黑名单、黑名单市价/限价历史、黑名单强平历史），用户被标记为「移出黑名单」后，仅从「当前操作所在页面的对应黑名单维度名单（单一维度）」中移除：若同一对象同时命中多个维度黑名单（例：同时在黑名单用户列表 + 在提币地址黑名单），仅本次执行「移出黑名单」操作的对应维度名单移除该对象；其他仍命中的维度名单保留，不做跨名单移出。</li>
+        <li>标记为「正常事件」或「移出黑名单」后，截止本次操作时间之前的历史数据全部视为正常；后续重新判断用户/对象是否会重新命中任一风控规则或任一黑名单维度时，所有统计、累计、比例、频率、阈值计算均以本次「正常事件 / 移出黑名单 的操作时间」作为新的判定起点，不再回溯操作时间之前的任何历史数据。</li>
+      </ol>
+    </div>
     <div class="spec-page" data-spec-page="modal-manual-adl">
       <div class="spec-card">
         <strong>手动ADL弹窗口径定义</strong>
@@ -9030,8 +9083,8 @@
         <strong>用户监控列表口径</strong>
         <em>运营说明</em>
         <ol>
-          <li>顶部 `异常统计` 区域会随当前页面切换统计项；用户监控页默认展示 `限制规则触发次数`、`自动加入次数`、`手动加入次数`、`移入正常用户数`、`移入黑名单用户数` 5 个指标。</li>
-          <li>筛选项 `查询条件` 支持按用户ID、手机、邮箱模糊查询；`类型` 支持全部、手动、自动、正常用户、黑名单；`查询开始时间` 为统计起始日期。</li>
+          <li>顶部 `异常统计` 区域会随当前页面切换统计项；用户监控页默认展示 `限制规则触发次数`、`自动加入次数`、`手动加入次数`、`标记正常事件/移出黑名单数`、`移入黑名单用户数` 5 个指标。</li>
+          <li>筛选项 `查询条件` 支持按用户ID、手机、邮箱模糊查询；`类型` 支持全部、手动、自动、正常事件、黑名单；`查询开始时间` 为统计起始日期。</li>
           <li>列表第1列勾选框用于批量选择用户，不改变数据统计口径。</li>
           <li>列表字段依次为 `用户ID`、`类型`、`原因`、`用户其他风控行为`、`平均持仓时间`、`胜率`、`盈利率`、`充值`、`提现`、`合约盈利额`、`合约盈利率`、`禁止状态`、`操作时间`、`操作`。</li>
           <li>`禁止状态` 列为新增列，显示该 UID 当前 4 类禁止项（登录、现货交易、合约开仓、提现），禁止项显示为彩色胶囊标签；未禁止任何项显示「无禁止」。</li>
@@ -9042,12 +9095,12 @@
           <li>`胜率` = 盈利仓位数 / 统计仓位总数，页面展示为百分比，默认保留两位小数。</li>
           <li>`盈利率` 与 `合约盈利率` 均按百分比展示；`合约盈利额`、`充值`、`提现` 按金额口径展示。</li>
           <li>`操作时间` 为该用户最近一次被系统处理或人工标记的时间。</li>
-          <li>`操作` 包含 `正常用户`、`黑名单用户`、`禁止登录`、`禁止用户邀请下级注册`、`禁止现货交易`、`禁止合约开仓`、`禁止提现` 等动作。</li>
+          <li>`操作` 包含 `正常事件`、`黑名单用户`、`禁止登录`、`禁止用户邀请下级注册`、`禁止现货交易`、`禁止合约开仓`、`禁止提现` 等动作。</li>
           <li>页头新增 `自动加入规则配置`、`可疑用户限制规则`、`市价历史订单`、`限价历史订单` 四个入口。</li>
-          <li>列表上方提供批量操作，包含 `批量正常用户`、`批量黑名单用户`、`批量禁止登录`、`批量禁止现货交易`、`批量禁止合约开仓`、`批量禁止提现`。</li>
+          <li>列表上方提供批量操作，包含 `批量正常事件`、`批量黑名单用户`、`批量禁止登录`、`批量禁止现货交易`、`批量禁止合约开仓`、`批量禁止提现`。</li>
           <li>分页区 `当前展示X条记录`、页码、跳页输入框仅影响展示范围，不改变统计口径。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
-          <li>用户被标记为正常用户后，此前时间段历史胜率与盈利率归零，从归为正常用户时间起重新累计。</li>
+          <li>用户被标记为「正常事件」后，仅从「当前命中的单一风控规则列表」中移除：若一用户同时命中多项（例：高盈利高胜率 + 打单风控），仅在本次执行正常事件的对应命中列表中移除，其他仍命中的风控列表保留该用户。&#10;标记为「正常事件」后，截止本次正常事件操作时间之前的数据视为正常；后续重新判断是否命中任一风控规则时，均以本次「正常事件的操作时间」作为新的累计与判定起点，不再回溯操作时间之前的历史数据。</li>
         </ol>
         <em>注意事项</em>
         <ol>
@@ -9056,7 +9109,7 @@
           <li>单条操作与批量操作口径保持一致，当前页不提供 `手动ADL` 入口。</li>
           <li>`可疑用户限制规则` 为 `用户监控` 下的三级配置页，不在左侧二级导航中单独展示，需从 `用户监控` 页头入口进入。</li>
           <li>顶部统计卡为示意数据，页面切换时按当前页面口径刷新，不与黑名单、白名单列表混用。</li>
-          <li>「禁止状态」列使用独立 localStorage 持久化（key = axhub_user_ban_status_v1），4 类禁止项按 UID 维度独立存储，与「正常用户/黑名单用户」标记互不覆盖。</li>
+          <li>「禁止状态」列使用独立 localStorage 持久化（key = axhub_user_ban_status_v1），4 类禁止项按 UID 维度独立存储，与「正常事件/黑名单用户」标记互不覆盖。</li>
         </ol>
       </div>
     </div>
@@ -9113,16 +9166,16 @@
           <li>`转入原因` 为该用户被加入黑名单的原因说明。</li>
           <li>`创建时间` 为该黑名单记录首次创建时间。</li>
           <li>`操作时间` 为最近一次对该黑名单记录执行操作的时间。</li>
-          <li>`操作` 包含 `正常用户`、`可疑用户`、`禁止登录`、`禁止用户邀请下级注册`、`禁止现货交易`、`禁止合约开仓`、`禁止提现` 等动作；点击 `黑名单用户` 时统一先打开黑名单处理配置弹窗，再执行确认。</li>
+          <li>`操作` 包含 `正常事件`、`可疑用户`、`禁止登录`、`禁止用户邀请下级注册`、`禁止现货交易`、`禁止合约开仓`、`禁止提现` 等动作；点击 `黑名单用户` 时统一先打开黑名单处理配置弹窗，再执行确认。</li>
           <li>页头新增 `自动加入规则配置` 入口；该弹窗默认直接读取 `可疑用户` 自动加入规则，并额外增加一项黑名单专属附加规则。</li>
-          <li>列表上方提供批量操作，包含 `批量正常用户`、`批量可疑用户`、`批量禁止登录`、`批量禁止现货交易`、`批量禁止合约开仓`、`批量禁止提现`。</li>
+          <li>列表上方提供批量操作，包含 `批量正常事件`、`批量可疑用户`、`批量禁止登录`、`批量禁止现货交易`、`批量禁止合约开仓`、`批量禁止提现`。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
           <li>分页区仅切换数据展示范围，不改变黑名单统计结果。</li>
         </ol>
         <em>注意事项</em>
         <ol>
           <li>黑名单自动加入规则继承可疑用户自动加入类型，并新增 `命中可疑用户限制规则后自动转黑名单` 附加项，避免与可疑用户配置完全重复。</li>
-          <li>所有禁止类动作均应保留操作日志与审批记录；`正常用户` 与 `可疑用户` 用于调整黑名单用户的目标归属名单。</li>
+          <li>所有禁止类动作均应保留操作日志与审批记录；`正常事件` 与 `可疑用户` 用于调整黑名单用户的目标归属名单。</li>
           <li>禁止状态触发后，用户在前端执行对应行为时统一提示 `账号异常，请联系客服`。</li>
           <li>当前新 HTML 中黑名单用户页不提供 `手动ADL` 入口，页面仅保留名单归属与禁止类处理动作。</li>
         </ol>
@@ -9416,7 +9469,7 @@
           <li>监控状态关闭时，本页不再新增新的扫描结果；已存在记录仅用于历史查看。</li>
           <li>列入 `可疑用户`、`黑名单用户` 或 `IP列入白名单` 时，应同步写入备注或转入原因，保证运营可追溯。</li>
           <li>`同一用户配置` 用于对当前用户及其关联用户集合统一执行风控动作。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已转为正常用户的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
         </ol>
       </div>
     </div>
@@ -9441,7 +9494,7 @@
           <li>如用户邮箱后缀已在 `邮箱后缀白名单` 中，进入监控列表前应先按白名单规则过滤。</li>
           <li>列入 `可疑用户`、`黑名单用户` 或对应类型白名单时，应同步记录转入原因并更新名单状态。</li>
           <li>批量注册配置中的关联UID集合需先自动剔除白名单用户UID；管理员可手动删除，也可通过搜索用户UID删除，再按最终保留的UID集合统一处理。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已转为正常用户的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
         </ol>
       </div>
     </div>
@@ -9476,7 +9529,7 @@
           <li>列表字段依次为 `用户ID`、`仓位ID`、`用户其他风控行为`、`合约币对`、`持仓时间`、`交易频率`、`胜率`、`平台最新价`、`币安最新价`、`价差`、`操作时间`、`操作`。</li>
           <li>`持仓时间` 表示单笔交易从买入到卖出的持有时长；`交易频率` 表示单位时间内的交易次数。</li>
           <li>`价差` = 币安最新价 - 平台最新价，用于辅助判断是否存在跨平台价格差套利行为。</li>
-          <li>`操作` 包含 `可疑用户`、`正常用户`、`黑名单用户`、`同一用户配置`。</li>
+          <li>`操作` 包含 `可疑用户`、`正常事件`、`黑名单用户`、`同一用户配置`。</li>
           <li>规则配置中的 `持仓时间阈值`、`交易频率阈值`、`胜率阈值`、`异常处理方式` 用于识别高频短持行为；`异常处理方式` 统一使用固定 8 个下拉项。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
         </ol>
@@ -9487,7 +9540,7 @@
           <li>如选择 `禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`提现人工审核` 或 `需要人脸认证KYC`，应在实际系统中记录执行日志与人工复核结果。</li>
           <li>`仓位ID` 默认最多展示 2 个；超出展示长度时显示 `查看更多`，点击后弹窗展示全部仓位ID。</li>
           <li>`高频短时持仓配置` 仅针对当前命中的单条用户记录执行风控处理，不再附带关联用户范围配置。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已转为正常用户的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
         </ol>
       </div>
     </div>
@@ -9511,7 +9564,7 @@
           <li>`涉及用户ID` 为组合字段，展示时可按逗号分隔，后台应保留原始数组结构。</li>
           <li>`仓位ID` 默认最多展示 2 个；超出展示长度时显示 `查看更多`，点击后弹窗展示全部仓位ID。</li>
           <li>统一风控操作固定包含 `禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有事件是否仍属于命中范围；此前已转为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有事件是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
         </ol>
       </div>
     </div>
@@ -9541,7 +9594,7 @@
         <ol>
           <li>筛选项包含 `查询条件`、`查询开始时间`、`查询结束时间`、`提现状态`，用于按用户ID/手机/邮箱、时间和提现结果筛选羊毛党候选记录。</li>
           <li>列表字段依次为 `用户UID`、`用户其他风控行为`、`下级总数`、`下级交易用户总充值金额`、`下级交易用户总提现金额`、`下级交易用户数`、`下级交易用户领取福利总金额`、`命中证据说明`、`操作时间`、`操作`。</li>
-          <li>`操作` 包含 `可疑用户`、`正常用户`、`黑名单用户`、`此用户与其下级全部列为黑名单`、`同一用户配置`。</li>
+          <li>`操作` 包含 `可疑用户`、`正常事件`、`黑名单用户`、`此用户与其下级全部列为黑名单`、`同一用户配置`。</li>
           <li>规则配置中的核心条件为：`下级交易用户总提现金额大于等于下级交易用户领取福利总金额`，且 `下级交易用户总充值金额小于等于下级交易用户领取福利总金额`；百分比输入统一按纯数字整数维护，`异常处理方式` 使用固定 8 个下拉项。</li>
           <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
         </ol>
@@ -9554,7 +9607,7 @@
           <li>`此用户与其下级全部列为黑名单` 表示将当前用户及其下级账户统一转入黑名单名单，需保留批量转入日志。</li>
           <li>若异常处理方式为 `禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`提现人工审核` 或 `需要人脸认证KYC`，应在真实系统中记录执行日志和人工复核结果。</li>
           <li>`羊毛党配置` 可针对当前用户，并按 `所有下级`、`一级以内`、`三级以内` 三种范围选择是否将其下级账户一并纳入统一处理。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已转为正常用户的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
         </ol>
       </div>
     </div>
@@ -9566,9 +9619,9 @@
           <li>本页用于识别高盈利、高胜率且具备持续盈利特征的用户，不再使用 `合约可疑用户` 命名。</li>
           <li>筛选项包含 `查询条件`、`类型`、`查询开始时间`，其中 `查询条件` 统一按 `用户ID/手机/邮箱` 检索合约可疑用户池中的用户记录。</li>
           <li>列表字段依次为 `用户ID`、`用户其他风控行为`、`平均持仓时间`、`胜率`、`盈利率`、`账户余额`、`盈利`、`操作时间`、`操作`。</li>
-          <li>`操作` 当前支持 `正常用户`、`黑名单用户`、`相关操作配置` 三类入口；`相关操作配置` 按当前用户单条生效。</li>
+          <li>`操作` 当前支持 `正常事件`、`黑名单用户`、`相关操作配置` 三类入口；`相关操作配置` 按当前用户单条生效。</li>
           <li>右上角提供 `规则配置`、`监控状态配置`、`合约可疑用户限制规则`、`市价历史订单`、`限价历史订单` 五个入口。</li>
-          <li>列表上方提供批量操作，固定包含 `可疑用户`、`正常用户`、`黑名单用户` 三类入口。</li>
+          <li>列表上方提供批量操作，固定包含 `可疑用户`、`正常事件`、`黑名单用户` 三类入口。</li>
         </ol>
         <em>注意事项</em>
         <ol>
@@ -9590,7 +9643,7 @@
           <li>筛选项包含 `查询条件`、`开始时间`、`结束时间`，其中 `查询条件` 仅支持按 `用户UID` 检索异常充值记录。</li>
           <li>列表字段依次为 `用户UID`、`用户其他风控行为`、`充值笔数`、`充值总额`、`充值后交易次数`、`充值后交易总额`、`停留时长`、`交易金额占比`、`命中证据说明`、`操作时间`、`操作`。</li>
           <li>`命中证据说明` 必须按实际触发规则清晰展示次数阈值、停留时长、现货交易金额占比或合约交易初始保证金占比，以及 `提现`、`站内转账`、`C2C` 等转出方式，便于审计复核与客诉解释。</li>
-          <li>`操作` 当前支持 `正常用户`、`可疑用户`、`黑名单用户`、`相关操作配置` 四类人工分流动作；`相关操作配置` 按当前用户单条生效。</li>
+          <li>`操作` 当前支持 `正常事件`、`可疑用户`、`黑名单用户`、`相关操作配置` 四类人工分流动作；`相关操作配置` 按当前用户单条生效。</li>
           <li>规则配置仅保留 `触发角度1：充值入账金额触发次数`、`触发角度2：停留时长 + 低交易占比 + 转出方式`、`异常处理方式`、`记录逻辑` 四块内容。</li>
         </ol>
         <em>注意事项</em>
@@ -9601,7 +9654,7 @@
           <li>`异常处理方式` 沿用统一风控处理选项，包括 `仅标记`、`禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`提现人工审核`、`需要人脸认证KYC`。</li>
           <li>`相关操作配置` 展示来源页面、当前用户UID、风控操作与备注，适合对当前单条异常充值命中用户执行人工处置。</li>
           <li>数字类规则配置统一使用纯数字整数录入，不支持输入文字描述。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已转为正常用户的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
         </ol>
       </div>
     </div>
@@ -9624,7 +9677,7 @@
           <li>密码关联识别只展示加密摘要，不应在前端或日志中暴露原始密码内容。</li>
           <li>同密码用户配置按当前监控页面单独生效，不应作为跨页面的全局统一配置。</li>
           <li>数字类规则配置统一使用纯数字整数录入，不支持输入文字描述或小数。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已转为正常用户的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
         </ol>
       </div>
     </div>
@@ -9680,7 +9733,7 @@
           <li>对手用户进入任一白名单域后，不再作为本页命中统计对象。</li>
           <li>`对敲交易配置` 按当前监控页面单独生效，可选择是否将交易对手用户一并纳入统一处理。</li>
           <li>`仓位ID` 默认最多展示 2 个；超出展示长度时显示 `查看更多`，点击后弹窗展示全部仓位ID。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已转为正常用户的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
         </ol>
       </div>
     </div>
@@ -10395,7 +10448,7 @@
         { title: '限制规则触发次数', values: { day: '12', week: '86', month: '364', total: '6,300' }, hint: '命中可疑用户限制规则并触发限制处理的次数' },
         { title: '自动加入次数', values: { day: '4', week: '23', month: '108', total: '1,420' }, hint: '按自动加入规则进入用户监控列表的次数' },
         { title: '手动加入次数', values: { day: '3', week: '17', month: '74', total: '986' }, hint: '运营人工加入用户监控列表的次数' },
-        { title: '移入正常用户数', values: { day: '8', week: '39', month: '186', total: '2,480' }, hint: '从用户监控列表移入正常用户的数量' },
+        { title: '标记正常事件/移出黑名单数', values: { day: '8', week: '39', month: '186', total: '2,480' }, hint: '标记当前命中为正常事件（可疑用户）或移出黑名单（黑名单用户）、从当前监控/告警命中名单（单一命中规则维度）移除的用户数量' },
         { title: '移入黑名单用户数', values: { day: '5', week: '21', month: '93', total: '1,206' }, hint: '从用户监控列表移入黑名单用户的数量', className: 'text-ok' }
       ],
       'rules': [
@@ -11078,7 +11131,7 @@
       const title = sanitizeMetricTitle(metric && metric.title ? metric.title : `指标${index + 1}`);
       const hint = sanitizeBusinessSpecText(metric && metric.hint ? metric.hint : `${title}以当前页面展示口径为准`);
       const isConfigMetric = /区间|阈值|百分比/.test(title);
-      const isCountMetric = /次数|用户数|数量|订单|事件|记录|白名单|黑名单|正常用户/.test(title);
+      const isCountMetric = /次数|用户数|数量|订单|事件|记录|白名单|黑名单|正常用户|正常事件/.test(title);
       if (isConfigMetric) {
         return `${index + 1}：${title}：按当前页面当前生效配置展示，不按累计命中次数统计，页面展示内容以${hint}为准`;
       }
@@ -11224,7 +11277,7 @@
       if (/添加/.test(label)) return '点击后打开当前新增弹窗或新增页面';
       if (/配置/.test(label)) return '点击后打开当前记录对应配置弹窗';
       if (/导出/.test(label)) return '点击后按当前筛选条件导出列表数据';
-      if (/批量|可疑用户|正常用户|正常事件|正常操作|黑名单用户|禁止/.test(label)) {
+      if (/批量|可疑用户|正常事件|正常事件|正常操作|黑名单用户|禁止/.test(label)) {
         return '点击后对当前选中记录执行对应处理，处理完成后刷新当前列表';
       }
       if (/确认|确定/.test(label)) return '点击后校验当前页面必填项，校验通过后提交当前操作';
@@ -11898,6 +11951,53 @@
       activateSpec(pageId);
       renderOverview(pageId);
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (pageId === 'risk-version-declare') {
+        (function () {
+          try {
+            var VERSIONS = ['2026090214:30', '2026090116:17', '20260826 14:26'];
+            window.__versionOrder = VERSIONS;
+            if (typeof window.switchVersion !== 'function') {
+              window.switchVersion = function (ver) {
+                try {
+                  if (!ver) return false;
+                  var idx = -1;
+                  for (var i = 0; i < VERSIONS.length; i++) if (VERSIONS[i] === ver) { idx = i; break; }
+                  if (idx < 0) { try { alert('版本号不存在：' + ver + '，可选版本：' + VERSIONS.join('、')); } catch (ae) {} return false; }
+                  var sec = document.getElementById('risk-version-declare');
+                  if (sec) {
+                    var blocks = sec.querySelectorAll('[data-version-block]');
+                    for (var bi = 0; bi < blocks.length; bi++) { var b = blocks[bi]; b.style.display = (b.getAttribute('data-version-block') === ver) ? 'block' : 'none'; }
+                    var pills = sec.querySelectorAll('[data-version-pill]');
+                    for (var pi = 0; pi < pills.length; pi++) { var p = pills[pi]; if (p.getAttribute('data-version-pill') === ver) p.classList.add('active'); else p.classList.remove('active'); }
+                    var chips = sec.querySelectorAll('[data-version-chip]');
+                    for (var ci = 0; ci < chips.length; ci++) { var c = chips[ci]; if (c.getAttribute('data-version-chip') === ver) c.classList.add('active'); else c.classList.remove('active'); }
+                    var headSpan = document.getElementById('ver-head-span'); if (headSpan) headSpan.textContent = ver;
+                    var footStrong = document.getElementById('ver-footer-strong'); if (footStrong) footStrong.textContent = ver;
+                    var jumpInput = document.getElementById('ver-jump-input'); if (jumpInput) jumpInput.value = ver;
+                    var prevBtn = document.getElementById('ver-chip-prev');
+                    var nextBtn = document.getElementById('ver-chip-next');
+                    if (prevBtn) { if (idx === 0) { prevBtn.setAttribute('disabled', 'disabled'); prevBtn.removeAttribute('onclick'); } else { prevBtn.removeAttribute('disabled'); prevBtn.setAttribute('onclick', "try{window.switchVersion('" + VERSIONS[idx - 1] + "');}catch(e){}finally{return false;}"); } }
+                    if (nextBtn) { if (idx === VERSIONS.length - 1) { nextBtn.setAttribute('disabled', 'disabled'); nextBtn.removeAttribute('onclick'); } else { nextBtn.removeAttribute('disabled'); nextBtn.setAttribute('onclick', "try{window.switchVersion('" + VERSIONS[idx + 1] + "');}catch(e){}finally{return false;}"); } }
+                  }
+                  var navs = document.querySelectorAll('.nav-btn.sub[data-version-nav]');
+                  for (var ni = 0; ni < navs.length; ni++) { var n = navs[ni]; if (n.getAttribute('data-version-nav') === ver) n.classList.add('active'); else n.classList.remove('active'); }
+                  window.__lastActiveVersion = ver;
+                } catch (e) { try { alert('版本切换异常：' + e.message); } catch (ae) {} return false; }
+                return false;
+              };
+            }
+            var target = window.__lastActiveVersion || VERSIONS[0];
+            try { window.switchVersion(target); } catch (e) {}
+          } catch (err) {
+            try {
+              var tip = document.createElement('div');
+              tip.style.cssText = 'margin:8px;padding:6px 10px;border:1px solid #c92a2a;color:#c92a2a;background:rgba(201,42,42,.08);font-size:12px;border-radius:4px;position:fixed;left:16px;bottom:16px;z-index:9999;';
+              tip.textContent = '[VERSION-IN-ACTIVATE-ERR] ' + err.message;
+              (document.body || document.documentElement).appendChild(tip);
+            } catch (ee) {}
+          }
+        })();
+      }
     }
 
     function renderOverview(pageId = state.activePage) {
@@ -12666,7 +12766,7 @@
       const cells = row ? Array.from(row.querySelectorAll('td')) : [];
       const uidCell = cells.find(cell => {
         const text = cell.textContent.replace(/\s+/g, ' ').trim();
-        return text && !/黑名单用户|可疑用户|正常用户|正常操作|正常事件|查看详情|配置|白名单/.test(text);
+        return text && !/黑名单用户|可疑用户|正常事件|正常操作|正常事件|查看详情|配置|白名单/.test(text);
       });
       const uid = uidCell ? uidCell.textContent.replace(/\s+/g, ' ').trim() : '当前批量选中用户';
       const proxy = document.createElement('button');
@@ -14017,7 +14117,7 @@
           }
         }
       }
-      var hasAny = new Set(['批量正常用户','批量可疑用户','批量黑名单用户','批量禁止登录','批量禁止现货交易','批量禁止合约开仓','批量禁止提现','批量恢复登录','批量恢复现货交易','批量恢复合约开仓','批量恢复提现']);
+      var hasAny = new Set(['批量正常事件','批量可疑用户','批量黑名单用户','批量禁止登录','批量禁止现货交易','批量禁止合约开仓','批量禁止提现','批量恢复登录','批量恢复现货交易','批量恢复合约开仓','批量恢复提现']);
       var bars = [];
       for (var xi = 0; xi < barCandidates.length; xi++) {
         var bar = barCandidates[xi];
@@ -14326,7 +14426,7 @@
                 if (cand.indexOf(wOuter.previousElementSibling) < 0) cand.unshift(wOuter.previousElementSibling);
               }
             }
-            var hasAny = new Set(['批量正常用户','批量可疑用户','批量黑名单用户','批量禁止登录','批量禁止现货交易','批量禁止合约开仓','批量禁止提现','批量恢复登录','批量恢复现货交易','批量恢复合约开仓','批量恢复提现']);
+            var hasAny = new Set(['批量正常事件','批量可疑用户','批量黑名单用户','批量禁止登录','批量禁止现货交易','批量禁止合约开仓','批量禁止提现','批量恢复登录','批量恢复现货交易','批量恢复合约开仓','批量恢复提现']);
             var bars = [];
             for (var xi=0; xi<cand.length; xi++) {
               var bar = cand[xi]; var btns = bar.querySelectorAll('.button, .js-batch-risk-action'); var hit=false;
@@ -14406,10 +14506,66 @@
             } catch (e) {}
           });
           try {
+            (function () {
+              var VERSIONS = ['2026090214:30', '2026090116:17', '20260826 14:26'];
+              window.__versionOrder = VERSIONS;
+              window.switchVersion = function (ver) {
+                try {
+                  if (!ver) return;
+                  var idx = -1;
+                  for (var i = 0; i < VERSIONS.length; i++) if (VERSIONS[i] === ver) { idx = i; break; }
+                  if (idx < 0) { alert('版本号不存在：' + ver + '，可选版本：' + VERSIONS.join('、')); return; }
+                  var sec = document.getElementById('risk-version-declare');
+                  if (sec) {
+                    var blocks = sec.querySelectorAll('[data-version-block]');
+                    for (var bi = 0; bi < blocks.length; bi++) {
+                      var b = blocks[bi];
+                      if (b.getAttribute('data-version-block') === ver) b.style.display = 'block';
+                      else b.style.display = 'none';
+                    }
+                    var pills = sec.querySelectorAll('[data-version-pill]');
+                    for (var pi = 0; pi < pills.length; pi++) {
+                      var p = pills[pi];
+                      if (p.getAttribute('data-version-pill') === ver) p.classList.add('active');
+                      else p.classList.remove('active');
+                    }
+                    var chips = sec.querySelectorAll('[data-version-chip]');
+                    for (var ci = 0; ci < chips.length; ci++) {
+                      var c = chips[ci];
+                      if (c.getAttribute('data-version-chip') === ver) c.classList.add('active');
+                      else c.classList.remove('active');
+                    }
+                    var headSpan = document.getElementById('ver-head-span');
+                    if (headSpan) headSpan.textContent = ver;
+                    var footStrong = document.getElementById('ver-footer-strong');
+                    if (footStrong) footStrong.textContent = ver;
+                    var jumpInput = document.getElementById('ver-jump-input');
+                    if (jumpInput) jumpInput.value = ver;
+                    var prevBtn = document.getElementById('ver-chip-prev');
+                    if (prevBtn) { if (idx === 0) { prevBtn.setAttribute('disabled', 'disabled'); prevBtn.classList.add('disabled'); } else { prevBtn.removeAttribute('disabled'); prevBtn.classList.remove('disabled'); } prevBtn.setAttribute('onclick', idx > 0 ? ("try{window.switchVersion('" + VERSIONS[idx - 1] + "');}catch(e){}") : ''); }
+                    var nextBtn = document.getElementById('ver-chip-next');
+                    if (nextBtn) { if (idx === VERSIONS.length - 1) { nextBtn.setAttribute('disabled', 'disabled'); nextBtn.classList.add('disabled'); } else { nextBtn.removeAttribute('disabled'); nextBtn.classList.remove('disabled'); } nextBtn.setAttribute('onclick', idx < VERSIONS.length - 1 ? ("try{window.switchVersion('" + VERSIONS[idx + 1] + "');}catch(e){}") : ''); }
+                  }
+                  var navs = document.querySelectorAll('.nav-btn.sub[data-version-nav]');
+                  for (var ni = 0; ni < navs.length; ni++) {
+                    var n = navs[ni];
+                    if (n.getAttribute('data-version-nav') === ver) n.classList.add('active');
+                    else n.classList.remove('active');
+                  }
+                  try {
+                    var verSec = document.getElementById('risk-version-declare');
+                    if (verSec && verSec.scrollIntoView) { /* keep page pos */ }
+                  } catch (e2) {}
+                } catch (e) { alert('版本切换异常：' + e.message); }
+              };
+            })();
+          } catch (e) {}
+          try {
             var orig = window.activate;
             if (typeof orig === 'function') {
               window.activate = function () {
                 var ret = orig.apply(this, arguments);
+                try { if (window.__versionOrder && typeof window.switchVersion === 'function') { var cur = window.__lastActiveVersion || window.__versionOrder[0]; window.switchVersion(cur); } } catch (e) {}
                 setTimeout(window.__initBanStatus, 10);
                 setTimeout(window.__initBanStatus, 150);
                 setTimeout(window.__initBanStatus, 500);
@@ -14497,6 +14653,89 @@
           try { window.__initBanStatus(); } catch(e){}
         }
       }, 250);
+    })();
+  </script>
+  <script>
+    (function () {
+      function ensureVersionSwitcher() {
+      try {
+        var VERSIONS = ['2026090214:30', '2026090116:17', '20260826 14:26'];
+        window.__versionOrder = VERSIONS;
+        if (typeof window.switchVersion === 'function') return;
+        window.switchVersion = function (ver) {
+          try {
+            if (!ver) return;
+            var idx = -1;
+            for (var i = 0; i < VERSIONS.length; i++) if (VERSIONS[i] === ver) { idx = i; break; }
+            if (idx < 0) { alert('版本号不存在：' + ver + '，可选版本：' + VERSIONS.join('、')); return; }
+            var sec = document.getElementById('risk-version-declare');
+            if (sec) {
+              var blocks = sec.querySelectorAll('[data-version-block]');
+              for (var bi = 0; bi < blocks.length; bi++) {
+                var b = blocks[bi];
+                b.style.display = (b.getAttribute('data-version-block') === ver) ? 'block' : 'none';
+              }
+              var pills = sec.querySelectorAll('[data-version-pill]');
+              for (var pi = 0; pi < pills.length; pi++) {
+                  var p = pills[pi];
+                  if (p.getAttribute('data-version-pill') === ver) p.classList.add('active');
+                  else p.classList.remove('active');
+              }
+              var chips = sec.querySelectorAll('[data-version-chip]');
+              for (var ci = 0; ci < chips.length; ci++) {
+                var c = chips[ci];
+                if (c.getAttribute('data-version-chip') === ver) c.classList.add('active');
+                else c.classList.remove('active');
+              }
+              var headSpan = document.getElementById('ver-head-span');
+              if (headSpan) headSpan.textContent = ver;
+              var footStrong = document.getElementById('ver-footer-strong');
+              if (footStrong) footStrong.textContent = ver;
+              var jumpInput = document.getElementById('ver-jump-input');
+              if (jumpInput) jumpInput.value = ver;
+              var prevBtn = document.getElementById('ver-chip-prev');
+              var nextBtn = document.getElementById('ver-chip-next');
+              if (prevBtn) {
+                if (idx === 0) { prevBtn.setAttribute('disabled', 'disabled'); prevBtn.removeAttribute('onclick'); }
+                else { prevBtn.removeAttribute('disabled'); prevBtn.setAttribute('onclick', "try{window.switchVersion('" + VERSIONS[idx-1] + "');}catch(e){}"); }
+              }
+              if (nextBtn) {
+                if (idx === VERSIONS.length - 1) { nextBtn.setAttribute('disabled', 'disabled'); nextBtn.removeAttribute('onclick'); }
+                else { nextBtn.removeAttribute('disabled'); nextBtn.setAttribute('onclick', "try{window.switchVersion('" + VERSIONS[idx+1] + "');}catch(e){}"); }
+              }
+            }
+            var navs = document.querySelectorAll('.nav-btn.sub[data-version-nav]');
+            for (var ni = 0; ni < navs.length; ni++) {
+              var n = navs[ni];
+              if (n.getAttribute('data-version-nav') === ver) n.classList.add('active');
+              else n.classList.remove('active');
+            }
+            window.__lastActiveVersion = ver;
+          } catch (e) { alert('版本切换异常：' + e.message); }
+        };
+        try { if (typeof window.activate === 'function') {
+          var _origAct = window.activate;
+          window.activate = function () {
+            var ret = _origAct.apply(this, arguments);
+            try { if (window.__versionOrder && window.__lastActiveVersion = window.__lastActiveVersion || window.__versionOrder[0]; window.switchVersion(window.__lastActiveVersion); } catch(e2){}
+            return ret;
+          };
+        }} catch(e2){}
+        try { window.switchVersion('2026090214:30'); } catch(e3){}
+      } catch (err) {
+          try {
+            var tip = document.createElement('div');
+            tip.style.cssText = 'margin:8px;padding:6px 10px;border:1px solid #c92a2a;color:#c92a2a;background:rgba(201,42,42,.08);font-size:12px;border-radius:4px;';
+            tip.textContent = '[VERSION-SWITCH-ERR] ' + err.message;
+            (document.body || document.documentElement).appendChild(tip);
+          } catch (e) {}
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function(){ setTimeout(ensureVersionSwitcher, 0); setTimeout(ensureVersionSwitcher, 150); setTimeout(ensureVersionSwitcher, 800); });
+      } else {
+        setTimeout(ensureVersionSwitcher, 0); setTimeout(ensureVersionSwitcher, 150); setTimeout(ensureVersionSwitcher, 800);
+      }
     })();
   </script>
 </body>
