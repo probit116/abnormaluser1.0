@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+﻿﻿﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -1333,7 +1333,7 @@
       background:rgba(255,255,255,.03);
       margin-bottom:12px;
     }
-    .spec-card strong{display:block; font-size:13px; margin-bottom:8px; color:#dceaff}
+    .spec-card > strong{display:block; font-size:13px; margin-bottom:8px; color:#dceaff}
     .spec-card em{
       display:block;
       margin:0 0 8px;
@@ -1345,6 +1345,20 @@
     .spec-card ul,
     .spec-card ol{margin:0; padding-left:20px; font-size:12px; color:#9fb3c8; line-height:1.8}
     .spec-card li{margin-bottom:6px}
+    .spec-card li .spec-term{
+      display:inline;
+      margin:0;
+      color:#eef5ff;
+      font-size:inherit;
+      font-weight:700;
+      letter-spacing:.01em;
+    }
+    .spec-card .spec-inline-keyword{
+      display:inline;
+      color:#eef5ff;
+      font-weight:700;
+      letter-spacing:.01em;
+    }
     .spec-page{display:none}
     .spec-context-trigger{
       min-width:auto;
@@ -1727,9 +1741,21 @@
             <button type="button" class="nav-group-toggle" data-group-toggle="version-declare" aria-label="展开或收回版本声明导航"></button>
           </div>
           <div class="nav-sub-list">
+            <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="2026091223:36" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">
+              <strong>2026091223:36</strong>
+              <span>当前版本改动明细（2026-09-12 当日最新汇总）</span>
+            </button>
+            <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="2026091122:03" onclick="try{window.switchVersion('2026091122:03');}catch(e){}finally{return false;}">
+              <strong>2026091122:03</strong>
+              <span>历史版本改动明细（异常登录列表去掉异常登录配置按钮）</span>
+            </button>
+            <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="2026091114:56" onclick="try{window.switchVersion('2026091114:56');}catch(e){}finally{return false;}">
+              <strong>2026091114:56</strong>
+              <span>历史版本改动明细（异常登录去关联项 + 相关操作配置入口隐藏）</span>
+            </button>
             <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="2026090214:30" onclick="try{window.switchVersion('2026090214:30');}catch(e){}finally{return false;}">
               <strong>2026090214:30</strong>
-              <span>当前版本改动明细（正常事件 / 移出黑名单拆分 + 口径统一）</span>
+              <span>历史版本改动明细（正常事件 / 移出黑名单拆分 + 口径统一）</span>
             </button>
             <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="2026090116:17" onclick="try{window.switchVersion('2026090116:17');}catch(e){}finally{return false;}">
               <strong>2026090116:17</strong>
@@ -3917,7 +3943,6 @@
                   <td>2025-07-15 10:01:15</td>
                   <td>合约全平</td>
                                     <td>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="异常登录监控">异常登录配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">移入用户白名单</a>
@@ -3935,7 +3960,6 @@
                   <td>2025-07-15 10:01:15</td>
                   <td>全部提现</td>
                                     <td>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="异常登录监控">异常登录配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">移入用户白名单</a>
@@ -3953,7 +3977,6 @@
                   <td>2025-07-15 10:01:15</td>
                   <td>平仓</td>
                                     <td>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="异常登录监控">异常登录配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">移入用户白名单</a>
@@ -4157,7 +4180,6 @@
                   <td>438,500 USDT</td>
                   <td>2025-07-15 10:01:15</td>
                                     <td>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高盈利高胜率用户">相关操作配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">移入用户白名单</a>
@@ -4175,7 +4197,6 @@
                   <td>155,800 USDT</td>
                   <td>2025-07-15 10:01:15</td>
                                     <td>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="223" data-related-users="223" data-relation-default="0" data-config-source="高盈利高胜率用户">相关操作配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">移入用户白名单</a>
@@ -4193,7 +4214,6 @@
                   <td>102,200 USDT</td>
                   <td>2025-07-15 10:01:15</td>
                                     <td>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="323" data-related-users="323" data-relation-default="0" data-config-source="高盈利高胜率用户">相关操作配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">移入用户白名单</a>
@@ -6306,7 +6326,6 @@
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="100312" data-related-users="100312" data-relation-default="0" data-config-source="异常充值监控">相关操作配置</a>
                   </td>
                 </tr>
                 <tr>
@@ -6325,7 +6344,6 @@
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="100488" data-related-users="100488" data-relation-default="0" data-config-source="异常充值监控">相关操作配置</a>
                   </td>
                 </tr>
                 <tr>
@@ -6344,7 +6362,6 @@
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">黑名单用户</a>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="100731" data-related-users="100731" data-relation-default="0" data-config-source="异常充值监控">相关操作配置</a>
                   </td>
                 </tr>
               </tbody>
@@ -7743,18 +7760,94 @@
               </div>
               <h3>版本声明</h3>
               <p style="margin:6px 0 0; font-size:12px; color:rgba(148,163,184,.7);">
-                迭代版本号：<span id="ver-head-span" style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">2026090214:30</span>
+                迭代版本号：<span id="ver-head-span" style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">2026091223:36</span>
               </p>
             </div>
           </div>
 
           <div class="pill-group" style="margin:12px 0 4px;">
-            <button type="button" class="pill active" data-version-pill="2026090214:30" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026090214:30');}catch(e){}finally{return false;}">2026090214:30</button>
+            <button type="button" class="pill active" data-version-pill="2026091223:36" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">2026091223:36</button>
+            <button type="button" class="pill" data-version-pill="2026091122:03" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091122:03');}catch(e){}finally{return false;}">2026091122:03</button>
+            <button type="button" class="pill" data-version-pill="2026091114:56" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091114:56');}catch(e){}finally{return false;}">2026091114:56</button>
+            <button type="button" class="pill" data-version-pill="2026090214:30" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026090214:30');}catch(e){}finally{return false;}">2026090214:30</button>
             <button type="button" class="pill" data-version-pill="2026090116:17" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026090116:17');}catch(e){}finally{return false;}">2026090116:17</button>
             <button type="button" class="pill" data-version-pill="20260826 14:26" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">20260826 14:26</button>
           </div>
 
-          <div data-version-block="2026090214:30" style="display:block;">
+          <div data-version-block="2026091223:36" style="display:block;">
+            <div class="config-panel" style="margin-top:8px;">
+              <div class="config-row">
+                <label>生效范围</label>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                  <span class="tag tag-warn">异常登录 / 批量注册</span>
+                  <span class="tag tag-warn">羊毛党 / 高盈利高胜率</span>
+                  <span class="tag tag-warn">同密码详情 / 同密码配置</span>
+                  <span class="tag tag-warn">同一用户配置弹窗</span>
+                  <span class="tag tag-silver">继续统一成字段定义口径</span>
+                </div>
+              </div>
+              <div class="config-row">
+                <label>当前版本改动明细（2026091223:36）</label>
+                <div style="font-size:13px; line-height:1.95; color:var(--text);">
+                  · 按同一天自然日只保留 1 条版本声明的规则，2026-09-12 当天全部改动统一汇总到本版本，不再拆成多条当日版本声明<br>
+                  · 本版本全面清理口径定义中的引号样式：字段名和术语不再显示反引号、单引号、中文引号，统一改成无引号加粗显示<br>
+                  · 本版本将 事前预警-同充值地址监控、事前预警-同uid内部划转监控 顶部异常统计统一改为图片要求的 4 个指标：命中事件数、涉及用户数、处理次数、累计处理事件<br>
+                  · 本版本新增字段名视觉强化：口径列表里凡是 字段名：说明 结构，统一去掉包裹符号，并把字段名改成行内加粗，方便开发一眼识别当前解释的是哪个词<br>
+                  · 本版本把按钮说明统一改成 点击--按钮名--后，... 的固定句式，避免开发在长句里看不清当前说的是哪个按钮<br>
+                  · 同步保留之前补过的硬规则：所有业务操作必须写入 处理记录；禁止类操作必须同步更新 禁止状态，并在操作列表展示对应 恢复 按钮<br>
+                  · 自动格式化逻辑会处理静态口径和补充生成卡片，保证后续新增同类文案也沿用这套字段高亮样式<br>
+                  · 当日版本号刷新为 2026091223:36；左侧导航、版本切换 tab、版本详情 block、脚本版本数组均只保留 2026091223:36 作为 2026-09-12 的唯一版本<br>
+                  · 版本声明迭代：本版本（2026091223:36）为 2026-09-12 当日唯一保留版本；历史仅保留前一自然日及更早版本：2026091122:03、2026091114:56、2026090214:30、2026090116:17、20260826 14:26
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-version-block="2026091122:03" style="display:none;">
+            <div class="config-panel" style="margin-top:8px;">
+              <div class="config-row">
+                <label>生效范围</label>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                  <span class="tag tag-warn">事前预警 - 异常登录监控</span>
+                  <span class="tag tag-silver">异常登录列表操作列</span>
+                  <span class="tag tag-silver">版本声明同步更新</span>
+                </div>
+              </div>
+              <div class="config-row">
+                <label>当前版本改动明细（2026091122:03）</label>
+                <div style="font-size:13px; line-height:1.95; color:var(--text);">
+                  · 事前预警 - 异常登录监控 - 异常登录列表 - 操作：去掉 `异常登录配置` 按钮，仅保留 `正常事件`、`可疑用户`、`移入用户白名单`、`移入用户黑名单`<br>
+                  · 版本声明迭代：本版本（2026091122:03）新增为当前展示的第一个版本，原 2026091114:56、2026090214:30、2026090116:17 与 20260826 14:26 作为历史版本保留
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-version-block="2026091114:56" style="display:none;">
+            <div class="config-panel" style="margin-top:8px;">
+              <div class="config-row">
+                <label>生效范围</label>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                  <span class="tag tag-warn">事前预警 - 异常登录监控</span>
+                  <span class="tag tag-warn">事前预警 / 事后报警 用户列表</span>
+                  <span class="tag tag-silver">同一用户配置弹窗口径</span>
+                  <span class="tag tag-silver">版本声明与页面说明同步更新</span>
+                </div>
+              </div>
+              <div class="config-row">
+                <label>当前版本改动明细（2026091114:56）</label>
+                <div style="font-size:13px; line-height:1.95; color:var(--text);">
+                  · 事前预警 - 异常登录监控：`异常登录配置` 弹窗去掉 `关联用户`、`是否关联用户` 两个关联项，仅保留当前用户单条处理<br>
+                  · 事前预警 / 事后报警用户列表全面检查：凡配置弹窗不带关联项的 `相关操作配置` 入口，列表中统一隐藏，不再显示<br>
+                  · 当前原型已移除 `高盈利高胜率用户`、`异常充值监控` 两页列表中的全部 `相关操作配置` 按钮，人工分流统一走列表操作项<br>
+                  · 同步修正文档口径：异常登录配置改为仅对当前命中用户生效；高盈利高胜率用户、异常充值监控页说明去掉 `相关操作配置` 描述<br>
+                  · 版本声明迭代：本版本（2026091114:56）新增为当前展示的第一个版本，原 2026090214:30、2026090116:17 与 20260826 14:26 作为历史版本保留
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-version-block="2026090214:30" style="display:none;">
             <div class="config-panel" style="margin-top:8px;">
               <div class="config-row">
                 <label>生效范围</label>
@@ -7766,7 +7859,7 @@
                 </div>
               </div>
               <div class="config-row">
-                <label>当前版本改动明细（2026090214:30）</label>
+                <label>历史版本改动明细（2026090214:30）</label>
                 <div style="font-size:13px; line-height:1.95; color:var(--text);">
                   · 操作按钮拆分：可疑用户范围（用户监控 / 事前预警 / 事后报警 / 黑白名单 / 规则列表等所有非黑名单维度页面）的原「正常行为」统一改为「正常事件」<br>
                   · 操作按钮拆分：黑名单范围（黑名单用户 / IP / 设备 / 充值地址 / 提币地址 / 密码 / 邮箱 / 黑名单市价 / 限价 / 强平历史共 10 个黑名单维度）的原「正常行为」统一改为「移出黑名单」<br>
@@ -7850,19 +7943,22 @@
           </div>
 
           <div class="footer-row" style="margin-top:16px;">
-            <div>当前展示 <strong id="ver-footer-strong" style="color:var(--text-primary); font-weight:600;">2026090214:30</strong> 版本改动明细</div>
+            <div>当前展示 <strong id="ver-footer-strong" style="color:var(--text-primary); font-weight:600;">2026091223:36</strong> 版本改动明细</div>
             <div class="pagination">
               <button type="button" class="page-chip" disabled id="ver-chip-prev">上一页</button>
-              <button type="button" class="page-chip active" data-version-chip="2026090214:30" onclick="try{window.switchVersion('2026090214:30');}catch(e){}finally{return false;}">2026090214:30</button>
+              <button type="button" class="page-chip active" data-version-chip="2026091223:36" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">2026091223:36</button>
+              <button type="button" class="page-chip" data-version-chip="2026091122:03" onclick="try{window.switchVersion('2026091122:03');}catch(e){}finally{return false;}">2026091122:03</button>
+              <button type="button" class="page-chip" data-version-chip="2026091114:56" onclick="try{window.switchVersion('2026091114:56');}catch(e){}finally{return false;}">2026091114:56</button>
+              <button type="button" class="page-chip" data-version-chip="2026090214:30" onclick="try{window.switchVersion('2026090214:30');}catch(e){}finally{return false;}">2026090214:30</button>
               <button type="button" class="page-chip" data-version-chip="2026090116:17" onclick="try{window.switchVersion('2026090116:17');}catch(e){}finally{return false;}">2026090116:17</button>
               <button type="button" class="page-chip" data-version-chip="20260826 14:26" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">20260826 14:26</button>
               <button type="button" class="page-chip" id="ver-chip-last" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">尾页</button>
-              <button type="button" class="page-chip" id="ver-chip-next" onclick="try{window.switchVersion('2026090116:17');}catch(e){}finally{return false;}">下一页</button>
+              <button type="button" class="page-chip" id="ver-chip-next" onclick="try{window.switchVersion('2026091122:03');}catch(e){}finally{return false;}">下一页</button>
               <span style="margin-left:8px;">到第</span>
-              <input id="ver-jump-input" type="text" style="width:140px; height:34px; border-radius:8px; border:1px solid rgba(148,163,184,.18); background:rgba(11,18,32,.72); color:var(--text); padding:0 8px; text-align:center; font-size:12px; font-variant-numeric: tabular-nums;" value="2026090214:30" placeholder="版本号">
+              <input id="ver-jump-input" type="text" style="width:140px; height:34px; border-radius:8px; border:1px solid rgba(148,163,184,.18); background:rgba(11,18,32,.72); color:var(--text); padding:0 8px; text-align:center; font-size:12px; font-variant-numeric: tabular-nums;" value="2026091223:36" placeholder="版本号">
               <span>页</span>
               <button type="button" class="button secondary" id="ver-jump-btn" style="height:34px; padding:0 12px;" onclick="try{var v=document.getElementById('ver-jump-input'); if(v) window.switchVersion(v.value.trim());}catch(e){}">确定</button>
-              <span style="margin-left:12px;">共 3 个版本</span>
+              <span style="margin-left:12px;">共 5 个版本</span>
             </div>
           </div>
         </div>
@@ -8035,7 +8131,7 @@
       <div class="modal-head">
         <div>
           <h3 id="same-user-config-title">同一用户配置</h3>
-          <p id="same-user-config-desc">用于对当前用户执行统一风控处理。弹窗标题、说明、关联用户字段会随点击来源页面动态切换。</p>
+          <p id="same-user-config-desc">这个弹窗只处理当前这条记录对应的用户；只有来源页面支持关联处理时，才会展示关联字段并允许把关联用户一起处理。</p>
         </div>
         <button type="button" class="modal-close" id="same-user-config-close">关闭</button>
       </div>
@@ -8108,7 +8204,7 @@
           </div>
         </div>
         <div class="modal-alert" id="same-user-config-alert">
-          当 `是否关联用户` 选择为 `是` 时，本次处理会按关联用户集合统一执行，并以关联用户集合替换当前页面的监控用户内容做展示说明。
+          当 `是否关联用户` 选择为 `是` 时，最终处理对象 = 当前用户 + 当前弹窗里展示的关联 UID；没有展示在弹窗里的 UID，不参与这次处理。
         </div>
         <div class="modal-field">
           <label>风控操作</label>
@@ -8139,7 +8235,7 @@
       <div class="modal-head">
         <div>
           <h3 id="permission-title">开启权限</h3>
-          <p>用于恢复当前处理对象的权限能力。处理记录页与处理记录详情页均按当前勾选范围执行开启权限，备注与谷歌验证码统一在弹窗内填写。</p>
+          <p>这个弹窗只恢复当前已勾选对象的权限；恢复权限后保留原处理记录，并新增一条解禁日志。</p>
         </div>
         <button type="button" class="modal-close" id="permission-close">关闭</button>
       </div>
@@ -8655,37 +8751,36 @@
     <h3>口径定义</h3>
     <div id="spec-current-structure-slot"></div>
     <div class="spec-card" style="margin-top:16px;">
-      <strong>正常事件 / 移出黑名单 口径说明</strong>
-      <em>口径定义-全局统一适用：可疑用户=正常事件；黑名单用户=移出黑名单；两者口径完全一致</em>
+      <strong>开发版阅读说明</strong>
+      <em>这一版口径定义只回答 4 类问题：这个字段是什么、什么情况下命中、点按钮后会发生什么、列表怎么展示</em>
       <ol>
-        <li>在可疑用户范围（用户监控、事前/事后各预警/报警列表），用户被标记为「正常事件」后，仅从「当前操作所在页面的单一命中风控规则列表」中移除：若同一用户同时命中多项风控（例：同时命中「高盈利高胜率用户」与「打单风控」两个列表），仅本次执行「正常事件」操作的对应命中列表移除该用户；其他仍命中的风控列表保留该用户，不做跨表移出。<br>在黑名单范围（黑名单用户列表、IP/设备/充值/提币地址/密码/邮箱黑名单、黑名单市价/限价历史、黑名单强平历史），用户被标记为「移出黑名单」后，仅从「当前操作所在页面的对应黑名单维度名单（单一维度）」中移除：若同一对象同时命中多个维度黑名单（例：同时在黑名单用户列表 + 在提币地址黑名单），仅本次执行「移出黑名单」操作的对应维度名单移除该对象；其他仍命中的维度名单保留，不做跨名单移出。</li>
-        <li>标记为「正常事件」或「移出黑名单」后，截止本次操作时间之前的历史数据全部视为正常；后续重新判断用户/对象是否会重新命中任一风控规则或任一黑名单维度时，所有统计、累计、比例、频率、阈值计算均以本次「正常事件 / 移出黑名单 的操作时间」作为新的判定起点，不再回溯操作时间之前的任何历史数据。</li>
+        <li>白名单、黑名单优先级最高。用户进入白名单后，相关风控列表不再展示该用户；用户进入黑名单后，相关风控列表也不再展示该用户，并且后续不再继续命中。</li>
+        <li>`正常事件` 只移除当前操作所在的那一个列表，不会跨列表联动移除。比如同一用户同时在 `异常登录监控` 和 `高频短时持仓监控` 里命中，只在 `异常登录监控` 点了 `正常事件`，那 `高频短时持仓监控` 里还保留。</li>
+        <li>用户被标记为 `正常事件` 或 `移出黑名单` 后，这个操作时间之前的数据都按已处理看待；后续是否再次命中，从这次操作时间重新开始算，不往前回溯。</li>
+        <li>开发侧如果要查“这个用户为什么被限制”，统一查 `处理记录`；处理记录就是风控流水，能反查来源页面、处理动作和时间。</li>
       </ol>
     </div>
     <div class="spec-page" data-spec-page="modal-manual-adl">
       <div class="spec-card">
         <strong>手动ADL弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于对单个持仓用户执行手动ADL减仓操作。</li>
-          <li>点击列表中的 `手动ADL` 按钮触发，弹窗展示当前用户对应合约的固定标的信息与减仓参数。</li>
+          <li>这个弹窗只处理当前点击的这一条持仓记录，不处理同 UID 的其他仓位，也不处理关联用户。</li>
+          <li>弹窗打开时，必须带出这条持仓记录对应的 `交易对`、`合约ID`、`当前价`、`持仓数量`、`持仓方向`、`持仓均价`。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>基础标的参数：固定展示、不可编辑，包含 `交易对`、`合约ID`、`操作类型`；当前原型示例值分别为 `BTC/USDT`、`10001`、`手动ADL减仓`。</li>
-          <li>破产价：手动输入字段；`多仓` 不可高于当前价，`空仓` 不可低于当前价；小数点位数跟随平台后端返回，页面截取处理。</li>
-          <li>当前价：只读输入框，由后台返回；小数点位数跟随平台后端返回，页面截取处理。</li>
-          <li>持仓数量：只读输入框，由后台返回；小数点位数跟随平台后端返回，页面截取处理。</li>
-          <li>持仓方向：只读输入框，由后台返回，取值为 `多仓` 或 `空仓`，用于决定破产价校验和盈亏公式。</li>
-          <li>持仓均价：只读输入框，由后台返回；小数点位数跟随平台后端返回，页面截取处理。</li>
-          <li>平仓数量：手动输入字段，不可大于用户当前持仓数量；小数点位数跟随平台后端返回，页面截取处理，不可超过持仓数量上限。</li>
+          <li>`交易对`、`合约ID`、`操作类型` 为只读字段；`操作类型` 固定显示 `手动ADL减仓`。</li>
+          <li>`破产价` 为手动输入字段；`多仓` 时输入值必须 `小于等于当前价`，`空仓` 时输入值必须 `大于等于当前价`。</li>
+          <li>`当前价`、`持仓数量`、`持仓方向`、`持仓均价` 都是只读字段，直接取当前持仓记录的实时值。</li>
+          <li>`平仓数量` 为手动输入字段；输入值必须 `大于 0` 且 `小于等于当前持仓数量`。</li>
           <li>平仓后用户盈亏显示：只读字段，按当前输入实时计算；`多仓 =（破产价 - 持仓均价）× 平仓数量`，`空仓 =（持仓均价 - 破产价）× 平仓数量`。</li>
-          <li>谷歌验证码：必填字段，用于确认本次手动ADL减仓操作。</li>
+          <li>`谷歌验证码` 为必填字段；为空时不允许提交。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：需先完成破产价、平仓数量、谷歌验证码校验；校验通过后提交手动ADL减仓操作。</li>
-          <li>取消：关闭弹窗，不执行操作。</li>
+          <li>点 `确认` 时，先校验 `破产价`、`平仓数量`、`谷歌验证码`；全部通过后才提交减仓。</li>
+          <li>点 `取消` 时，只关闭弹窗，不改任何持仓数据。</li>
         </ol>
       </div>
     </div>
@@ -8693,20 +8788,20 @@
     <div class="spec-page" data-spec-page="modal-auto-join-rules">
       <div class="spec-card">
         <strong>自动加入规则配置弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于配置用户自动加入 `可疑用户` 或 `黑名单用户` 的触发规则。</li>
-          <li>当前原型统一按触发类型勾选方式配置自动加入规则，不再区分继承模式或额外增加触发类型。</li>
+          <li>这个弹窗保存的是“哪些风控页面命中后，自动把用户加入当前名单”的规则。</li>
+          <li>如果入口来自 `可疑用户`，保存后影响自动加入可疑用户；如果入口来自 `黑名单用户`，保存后影响自动加入黑名单。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>触发类型：多选字段，用于配置当前名单自动加入的触发来源；可疑用户与黑名单用户均使用同一组勾选结构。</li>
-          <li>谷歌验证码：必填字段；当前原型按非空校验，未填写时不允许确认保存。</li>
+          <li>`触发类型` 为多选字段；每勾选一项，表示该风控页面命中后，用户自动进入当前名单。</li>
+          <li>`谷歌验证码` 为必填字段；为空时不允许保存。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：先校验 `谷歌验证码`；校验通过后保存当前勾选的触发类型。</li>
-          <li>取消：关闭弹窗，不保存配置。</li>
+          <li>点 `确认` 时，只保存当前勾选结果，不追加其他默认触发项。</li>
+          <li>点 `取消` 时，不保存本次修改。</li>
         </ol>
       </div>
     </div>
@@ -8714,22 +8809,22 @@
     <div class="spec-page" data-spec-page="modal-risk-limit">
       <div class="spec-card">
         <strong>合约可疑用户限制规则弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于配置 `合约可疑用户` 的限价延迟和市价滑点规则。</li>
-          <li>规则仅对进入合约可疑用户名单的用户生效，不影响普通用户。</li>
+          <li>这个弹窗保存的是 `合约可疑用户` 的交易限制规则，不影响普通用户，也不影响黑名单用户规则。</li>
+          <li>保存后只影响保存动作之后的新限制执行，不回改历史订单结果。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>限价延迟下单配置：包含 `最小值(MS)`、`最大值(MS)`、`开启/关闭`；最小值与最大值均为纯数字整数，单位为 `MS`，仅展示整数，无小数点，且必须满足 `最小值 小于等于 最大值`。</li>
-          <li>市价滑点百分比配置：包含 `最小值(%)`、`最大值(%)`、`开启/关闭`；按百分比口径录入与展示，页面展示默认保留两位小数点，且必须满足 `最小值 小于等于 最大值`。</li>
-          <li>市价滑点结算公式：规则开启时，`买入结算价 = 买入均价 × (1 + 市价滑点百分比)`，`卖出结算价 = 卖出均价 × (1 - 市价滑点百分比)`。</li>
-          <li>谷歌验证码：必填字段；当前原型按非空校验，未填写时不允许确认保存。</li>
+          <li>`限价延迟下单配置` 包含 `最小值(MS)`、`最大值(MS)`、`开启/关闭`；`最小值`、`最大值` 都必须是整数，且 `最小值 <= 最大值`。</li>
+          <li>`市价滑点百分比配置` 包含 `最小值(%)`、`最大值(%)`、`开启/关闭`；`最小值`、`最大值` 都必须是数字，且 `最小值 <= 最大值`。</li>
+          <li>当市价滑点规则开启时，`买入结算价 = 买入均价 × (1 + 市价滑点百分比)`，`卖出结算价 = 卖出均价 × (1 - 市价滑点百分比)`。</li>
+          <li>`谷歌验证码` 为必填字段；为空时不允许保存。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：先校验整数输入、区间上下限关系、谷歌验证码；校验通过后保存限制规则。</li>
-          <li>取消：关闭弹窗，不保存配置。</li>
+          <li>点 `确认` 时，先校验区间输入和验证码；全部通过后保存。</li>
+          <li>点 `取消` 时，不保存本次修改。</li>
         </ol>
       </div>
     </div>
@@ -8737,21 +8832,21 @@
     <div class="spec-page" data-spec-page="modal-monitor-status">
       <div class="spec-card">
         <strong>监控状态配置弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于切换当前监控页面的扫描状态。</li>
-          <li>状态变更仅影响后续新增命中，不回扫历史正常记录，也不批量修改历史处理结果。</li>
+          <li>这个弹窗只修改来源页面的监控开关，不修改其他页面的监控状态。</li>
+          <li>状态变更只影响保存之后的新命中，不回扫历史记录，也不重算已经处理过的数据。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>来源页面：只读输入框，显示当前点击来源页面名称，如 `异常登录监控`、`同秒开仓监控`。</li>
-          <li>当前状态：只读输入框，显示当前监控页生效状态，取值为 `开启` 或 `关闭`。</li>
-          <li>目标状态：单选字段，取值仅为 `开启` 或 `关闭`；点击任一状态按钮后，隐藏值同步更新为当前选中项。</li>
+          <li>`来源页面` 为只读字段，显示本次被修改监控开关的页面名称。</li>
+          <li>`当前状态` 为只读字段，只显示保存前的状态，取值只有 `开启` 或 `关闭`。</li>
+          <li>`目标状态` 为单选字段；保存后，来源页面的监控状态改成这里选中的值。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：按当前选中的 `目标状态` 保存；当前原型不额外校验备注、验证码或二次确认。</li>
-          <li>取消：关闭弹窗，不保存变更。</li>
+          <li>点 `确认` 时，直接按 `目标状态` 保存，不要求备注和验证码。</li>
+          <li>点 `取消` 时，不保存本次修改。</li>
         </ol>
       </div>
     </div>
@@ -8759,68 +8854,71 @@
     <div class="spec-page" data-spec-page="modal-same-user">
       <div class="spec-card">
         <strong>同一用户配置弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于对当前用户及其关联用户执行统一风控处理。</li>
-          <li>该弹窗会根据来源页面动态切换字段名称与处理范围，如 `同秒开仓监控`、`同提币地址监控`、`羊毛党监控`。</li>
+          <li>`当前用户`：当前点击记录的主体 UID。</li>
+          <li>`关联用户`：只在支持关联处理的页面出现；最终是否一起处理，取决于 `是否关联用户` 的选择结果。</li>
+          <li>如果来源页面不支持关联处理，就只处理当前用户；不能因为弹窗通用就默认扩展到关联 UID。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>来源页面：只读输入框，显示当前弹窗来源页面。</li>
-          <li>当前用户UID：只读输入框，默认带出当前操作用户UID。</li>
-          <li>关联用户展示：按来源页面动态显示，如 `关联同秒开仓用户`、`关联同提币地址用户`、`关联交易对手用户`；该字段为只读输入框展示。</li>
-          <li>是否关联用户：单选字段，取值为 `是/否`；选择 `是` 时，处理对象从当前用户切换为关联用户集合。</li>
-          <li>风控操作：多选字段，当前可选 `禁止登录`、`禁止用户邀请下级注册`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`；确认前至少勾选 `1` 项，否则不允许保存；如选择 `禁止登录`，用户一旦触发会立即退出登录，登录态丢失，且不能再登录。</li>
-          <li>备注：选填字段，用于记录统一处理说明；当前原型不做必填校验。</li>
+          <li>`来源页面` 为只读字段，显示本次操作从哪个页面进入。</li>
+          <li>`当前用户UID` 为只读字段，固定显示当前点击记录的 UID。</li>
+          <li>`关联用户展示` 只在支持关联处理的页面显示，内容是这条记录已经算好的关联 UID 集合，不允许在弹窗里新增 UID。</li>
+          <li>`是否关联用户` 只在支持关联处理的页面显示；选 `是` 时，最终处理对象 = 当前用户 + 当前弹窗展示的关联 UID；选 `否` 时，只处理当前用户。`异常登录监控` 不展示这个字段。</li>
+          <li>`风控操作` 为多选字段；至少选择 1 项才能保存。选了 `禁止登录` 后，处理对象立即退出登录，且后续不能再登录。</li>
+          <li>`备注` 为选填字段；为空也允许保存。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：先校验 `至少选择 1 项风控操作`，再按当前用户或关联用户集合执行统一处理；如本次包含 `全部列入黑名单` 且处理对象中存在白名单用户，需先弹窗确认是否同步移至黑名单。</li>
-          <li>取消：关闭弹窗，不执行操作。</li>
+          <li>点 `确认` 时，先校验 `至少选择 1 项风控操作`；校验通过后，再按 `是否关联用户` 计算最终处理对象。`异常登录监控` 固定只处理当前用户。</li>
+          <li>如果本次操作包含 `全部列入黑名单`，并且最终处理对象里有白名单用户，必须先弹名单冲突确认框。</li>
+          <li>点 `取消` 时，不执行任何处理。</li>
         </ol>
       </div>
       <div class="spec-card">
         <strong>批量注册配置弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于对 `批量注册监控` 当前命中对象及其关联用户执行统一风控处理。</li>
-          <li>处理对象按 `同IP`、`同设备`、`同邮箱后缀` 三类关系动态生成；白名单对象默认不受控制，选择 `全部列入黑名单` 时如关联集合中存在白名单用户，需先弹窗确认是否同步移至黑名单。</li>
+          <li>这个弹窗处理的是当前这条批量注册记录对应的 UID 集合，不处理其他批量注册记录。</li>
+          <li>候选 UID 集合按 `同IP`、`同设备`、`同邮箱后缀` 三种关系分别生成；白名单 UID 不进入默认处理集合。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
           <li>关联同IP用户数 / 关联同设备用户数 / 关联同邮箱后缀用户数：只读输入框，展示各关联维度的候选用户规模整数结果。</li>
-          <li>是否关联用户：多选字段，取值为 `关联同IP`、`关联同设备`、`关联同邮箱后缀`；至少勾选 1 项后才会生成关联用户集合。</li>
-          <li>关联用户数：只读展示输入框，显示当前勾选关系、默认可处理、去重、删除后的最终用户数量。</li>
-          <li>搜索用户UID删除：输入删除关键字后，对当前关联用户集合执行搜索删除；点击 `恢复默认UID` 后恢复到当前默认集合。</li>
-          <li>关联用户UID：只读结果字段，展示最终可处理用户列表；支持手动逐个删除。</li>
+          <li>`是否关联用户` 为多选字段；最终处理集合 = 当前勾选维度下的 UID 并集，再去重。</li>
+          <li>`关联用户数` 显示当前最终处理集合的 UID 数量；这个数量必须和下方 `关联用户UID` 一一对应。</li>
+          <li>`搜索用户UID删除` 只从当前最终处理集合里删除，不改原始候选集合；点 `恢复默认UID` 后，恢复到本次弹窗打开时的默认候选集合。</li>
+          <li>`关联用户UID` 展示当前最终会被处理的 UID 列表；列表里删除一个 UID，保存时就不处理这个 UID。</li>
           <li>风控操作：多选字段，当前可选 `禁止登录`、`禁止用户邀请下级注册`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`；确认前至少勾选 `1` 项，且最终关联用户集合不能为空。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：先校验 `至少选择 1 项风控操作` 且 `最终关联用户集合不为空`，再对最终保留UID集合执行统一处理；如本次包含 `全部列入黑名单` 且命中白名单用户，需先弹窗确认是否同步移至黑名单。</li>
-          <li>取消：关闭弹窗，不执行处理。</li>
+          <li>点 `确认` 时，先校验 `至少选择 1 项风控操作` 且 `最终关联用户集合不为空`；校验通过后，只处理最终保留的 UID 集合。</li>
+          <li>如果本次包含 `全部列入黑名单`，而最终处理集合里还有白名单 UID，必须先弹名单冲突确认框。</li>
+          <li>点 `取消` 时，不执行任何处理。</li>
         </ol>
       </div>
       <div class="spec-card">
         <strong>交易同用户风控配置弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于对 `交易同用户风控` 当前交易用户及其交易对手用户执行统一处理。</li>
-          <li>处理范围支持仅处理当前交易用户，或一并处理交易对手UID集合。</li>
+          <li>这个弹窗处理的是当前交易用户，以及这条记录里的交易对手 UID 集合。</li>
+          <li>如果不勾选关联交易对手，就只处理当前交易用户。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
           <li>来源页面：只读输入框，固定为 `交易同用户风控`。</li>
-          <li>当前用户UID：只读输入框，默认带出当前交易用户UID。</li>
-          <li>关联交易对手用户：只读输入框，默认带出当前记录中的全部交易对手UID集合。</li>
-          <li>是否关联交易对手：单选字段，取值为 `是/否`；选择 `是` 时，本次处理对象切换为 `当前交易用户 + 交易对手UID集合`。</li>
+          <li>`当前用户UID` 为只读字段，固定显示当前交易用户。</li>
+          <li>`关联交易对手用户` 为只读字段，固定显示这条记录中的全部交易对手 UID。</li>
+          <li>`是否关联交易对手` 选 `是` 时，最终处理对象 = 当前交易用户 + 全部交易对手 UID；选 `否` 时，只处理当前交易用户。</li>
           <li>风控操作：多选字段，当前可选 `禁止登录`、`禁止用户邀请下级注册`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`；确认前至少勾选 `1` 项，否则不允许保存。</li>
-          <li>备注：选填字段，用于记录本次统一处理说明。</li>
+          <li>`备注` 为选填字段；为空也允许保存。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：先校验 `至少选择 1 项风控操作`，再按是否关联交易对手决定最终处理对象范围。</li>
-          <li>取消：关闭弹窗，不执行处理。</li>
+          <li>点 `确认` 时，先校验 `至少选择 1 项风控操作`；校验通过后，再按 `是否关联交易对手` 计算最终处理对象。</li>
+          <li>点 `取消` 时，不执行任何处理。</li>
         </ol>
       </div>
     </div>
@@ -8828,23 +8926,23 @@
     <div class="spec-page" data-spec-page="modal-permission">
       <div class="spec-card">
         <strong>开启权限处理弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于对处理记录页或处理记录详情页中选中的对象执行 `开启权限`。</li>
-          <li>处理范围以当前页面勾选对象为准，弹窗仅承载权限恢复动作，不修改原处理记录内容。</li>
+          <li>这个弹窗只处理当前已勾选的对象，用来恢复权限，不新增对象也不删对象。</li>
+          <li>恢复权限后，原处理记录继续保留，只新增一条恢复权限日志。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>来源页面：只读输入框，显示本次操作来自 `处理记录` 或 `处理记录详情`。</li>
-          <li>处理对象：只读输入框，显示当前勾选对象；列表页按选中记录展示，详情页按已选详情用户范围展示。</li>
-          <li>开启权限项：多选字段，当前可选 `开放登录`、`开放提现`、`开放合约开仓`、`开放现货交易`、`正常提现流程`；确认前至少勾选 `1` 项。</li>
-          <li>备注：必填字段，填写本次恢复权限的处理说明；当前原型按去除首尾空格后非空校验。</li>
-          <li>谷歌验证码：必填字段；当前原型按非空校验，未填写时不允许确认开启。</li>
+          <li>`来源页面` 为只读字段，取值只有 `处理记录` 或 `处理记录详情`。</li>
+          <li>`处理对象` 为只读字段，显示本次会被恢复权限的对象范围。</li>
+          <li>`开启权限项` 为多选字段；至少勾选 1 项才能提交。</li>
+          <li>`备注` 为必填字段；去掉首尾空格后为空，不能提交。</li>
+          <li>`谷歌验证码` 为必填字段；为空不能提交。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>取消：关闭弹窗，不执行操作。</li>
-          <li>确认开启：先校验 `至少选择 1 个权限项`、`备注非空`、`谷歌验证码非空`，校验通过后执行权限恢复。</li>
+          <li>点 `确认开启` 时，先校验 `权限项`、`备注`、`谷歌验证码`；全部通过后才恢复权限。</li>
+          <li>点 `取消` 时，不执行恢复权限。</li>
         </ol>
       </div>
     </div>
@@ -8852,23 +8950,23 @@
     <div class="spec-page" data-spec-page="modal-batch-register">
       <div class="spec-card">
         <strong>批量注册规则配置弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于维护 `批量注册监控` 的检测规则。</li>
-          <li>规则按 `同IP`、`同设备`、`同邮箱后缀` 三组口径分别配置，不混用。</li>
+          <li>这个弹窗保存的是 `批量注册监控` 的识别规则。</li>
+          <li>规则分成 `同IP`、`同设备`、`同邮箱后缀` 三组分别保存，三组互不覆盖。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>同一IP操作类型 / 同一设备操作类型 / 同一邮箱后缀操作类型：分组标题，只读展示当前配置分组。</li>
-          <li>注册充值交易人数：纯数字整数字段，比较符号固定为 `大于等于`，单位为 `人`。</li>
-          <li>新注册时间差（与第一人注册时间比）：纯数字整数字段，比较符号固定为 `小于等于`，单位为 `分钟`；超过该时间的新对象移出监控。</li>
-          <li>异常处理方式：单选字段，取值以页面统一下拉项为准。</li>
-          <li>谷歌验证码：必填字段；当前原型按非空校验，未填写时不允许确认保存。</li>
+          <li>`同一IP操作类型 / 同一设备操作类型 / 同一邮箱后缀操作类型` 只是分组标题，不保存值。</li>
+          <li>`注册充值交易人数` 必须是整数，比较符号固定为 `大于等于`，单位固定为 `人`。</li>
+          <li>`新注册时间差（与第一人注册时间比）` 必须是整数，比较符号固定为 `小于等于`，单位固定为 `分钟`；超过这个时间差的账号，不纳入本次批量注册命中。</li>
+          <li>`异常处理方式` 为单选字段；保存时只保存当前选中的这一项。</li>
+          <li>`谷歌验证码` 为必填字段；为空时不允许保存。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：先校验各分组整数输入与谷歌验证码，再保存批量注册规则配置。</li>
-          <li>取消：关闭弹窗，不保存配置。</li>
+          <li>点 `确认` 时，先校验当前分组的整数输入和验证码；校验通过后保存。</li>
+          <li>点 `取消` 时，不保存本次修改。</li>
         </ol>
       </div>
     </div>
@@ -8876,22 +8974,22 @@
     <div class="spec-page" data-spec-page="modal-short-hold-config">
       <div class="spec-card">
         <strong>高频短时持仓配置弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于对 `高频短时持仓监控` 当前命中用户执行单条风控处理。</li>
-          <li>本弹窗仅对当前用户生效，不关联其他用户集合。</li>
+          <li>这个弹窗只处理当前这一条 `高频短时持仓监控` 记录对应的 UID。</li>
+          <li>不支持关联其他用户，也不支持批量扩展到其他记录。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
           <li>来源页面：只读输入框，固定为 `高频短时持仓监控`。</li>
-          <li>当前用户UID：只读输入框，默认带出当前命中用户UID。</li>
-          <li>风控操作：多选字段；确认前至少勾选 `1` 项，否则不允许保存。</li>
-          <li>备注：选填字段，用于记录本次处理说明。</li>
+          <li>`当前用户UID` 为只读字段，固定显示当前命中用户。</li>
+          <li>`风控操作` 为多选字段；至少勾选 1 项才能保存。</li>
+          <li>`备注` 为选填字段；为空也允许保存。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：先校验 `至少选择 1 项风控操作`，再对当前用户执行处理。</li>
-          <li>取消：关闭弹窗，不执行处理。</li>
+          <li>点 `确认` 时，先校验 `至少选择 1 项风控操作`；校验通过后，只处理当前 UID。</li>
+          <li>点 `取消` 时，不执行任何处理。</li>
         </ol>
       </div>
     </div>
@@ -8899,24 +8997,24 @@
     <div class="spec-page" data-spec-page="modal-withdraw-address-config">
       <div class="spec-card">
         <strong>同提币地址配置弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于对 `同提币地址监控` 当前命中用户及其关联同提币地址用户执行统一处理。</li>
-          <li>处理范围支持仅处理当前用户，或一并处理关联同提币地址用户集合。</li>
+          <li>这个弹窗处理的是当前命中用户，以及同一提币地址下的关联 UID 集合。</li>
+          <li>如果不勾选关联用户，就只处理当前用户。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
           <li>来源页面：只读输入框，固定为 `同提币地址监控`。</li>
-          <li>当前用户UID：只读输入框，默认带出当前命中用户UID。</li>
-          <li>关联同提币地址用户：只读输入框，默认带出当前记录中的关联用户UID集合。</li>
-          <li>是否关联同提币地址用户：单选字段，取值为 `是/否`；选择 `是` 时，本次处理对象切换为关联用户集合。</li>
-          <li>风控操作：多选字段；确认前至少勾选 `1` 项，否则不允许保存。</li>
-          <li>备注：选填字段，用于记录统一处理说明。</li>
+          <li>`当前用户UID` 为只读字段，固定显示当前命中用户。</li>
+          <li>`关联同提币地址用户` 为只读字段，固定显示这条记录里的关联 UID 集合。</li>
+          <li>`是否关联同提币地址用户` 选 `是` 时，最终处理对象 = 当前用户 + 关联 UID 集合；选 `否` 时，只处理当前用户。</li>
+          <li>`风控操作` 为多选字段；至少勾选 1 项才能保存。</li>
+          <li>`备注` 为选填字段；为空也允许保存。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：先校验 `至少选择 1 项风控操作`，再按是否关联同提币地址用户决定最终处理对象。</li>
-          <li>取消：关闭弹窗，不执行处理。</li>
+          <li>点 `确认` 时，先校验 `至少选择 1 项风控操作`；校验通过后，再按 `是否关联同提币地址用户` 计算最终处理对象。</li>
+          <li>点 `取消` 时，不执行任何处理。</li>
         </ol>
       </div>
     </div>
@@ -8924,23 +9022,23 @@
     <div class="spec-page" data-spec-page="modal-wool-config">
       <div class="spec-card">
         <strong>羊毛党配置弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于对 `羊毛党监控` 当前命中用户执行统一风控处理。</li>
-          <li>处理范围可按当前用户下级层级决定是否扩展到其下级账户。</li>
+          <li>这个弹窗处理的是羊毛党列表当前这一条记录对应的上级 UID。</li>
+          <li>是否同时处理下级，取决于这里选择的下级范围。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
           <li>来源页面：只读输入框，固定为 `羊毛党监控`。</li>
-          <li>当前用户UID：只读输入框，默认带出当前命中用户UID。</li>
-          <li>是否关联其下级：单选字段，取值为 `所有下级`、`一级以内`、`三级以内`；用于决定纳入处理的下级范围。</li>
-          <li>风控操作：多选字段；确认前至少勾选 `1` 项，否则不允许保存。</li>
-          <li>备注：选填字段，用于记录本次处理说明。</li>
+          <li>`当前用户UID` 为只读字段，固定显示当前命中的上级 UID。</li>
+          <li>`是否关联其下级` 为单选字段；`所有下级` 表示处理全部下级，`一级以内` 表示只处理一级下级，`三级以内` 表示处理一到三级下级。</li>
+          <li>`风控操作` 为多选字段；至少勾选 1 项才能保存。</li>
+          <li>`备注` 为选填字段；为空也允许保存。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：先校验 `至少选择 1 项风控操作`，再按下级范围对当前用户及其下级执行处理。</li>
-          <li>取消：关闭弹窗，不执行处理。</li>
+          <li>点 `确认` 时，先校验 `至少选择 1 项风控操作`；校验通过后，再按下级范围计算最终处理对象。</li>
+          <li>点 `取消` 时，不执行任何处理。</li>
         </ol>
       </div>
     </div>
@@ -8948,22 +9046,22 @@
     <div class="spec-page" data-spec-page="modal-related-action-config">
       <div class="spec-card">
         <strong>相关操作配置弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>历史状态</em>
         <ol>
-          <li>用于对 `合约可疑用户`、`异常充值监控` 等页面的当前命中用户执行单条相关操作处理。</li>
-          <li>本弹窗仅对当前用户生效，不扩展至关联用户集合。</li>
+          <li>这个弹窗只保留给历史版本说明使用，当前版本不再从列表打开。</li>
+          <li>事前预警和事后报警的用户列表里，`相关操作配置` 按钮已经隐藏。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
           <li>来源页面：只读输入框，显示当前来源页面名称。</li>
-          <li>当前用户UID：只读输入框，默认带出当前命中用户UID。</li>
-          <li>风控操作：多选字段；确认前至少勾选 `1` 项，否则不允许保存；如选择 `禁止登录`，用户一旦触发会立即退出登录，登录态丢失，且不能再登录。</li>
-          <li>备注：选填字段，用于记录处理说明。</li>
+          <li>`当前用户UID` 为只读字段，固定显示当前命中用户。</li>
+          <li>`风控操作` 为多选字段；至少勾选 1 项才能保存。选了 `禁止登录` 后，处理对象立即退出登录，且后续不能再登录。</li>
+          <li>`备注` 为选填字段；为空也允许保存。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：先校验 `至少选择 1 项风控操作`，再对当前用户执行处理。</li>
-          <li>取消：关闭弹窗，不执行处理。</li>
+          <li>历史版本点 `确认` 时，先校验 `至少选择 1 项风控操作`；校验通过后，只处理当前用户。</li>
+          <li>历史版本点 `取消` 时，不执行任何处理。</li>
         </ol>
       </div>
     </div>
@@ -8971,23 +9069,23 @@
     <div class="spec-page" data-spec-page="modal-rule-config">
       <div class="spec-card">
         <strong>通用规则配置弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>处理对象</em>
         <ol>
-          <li>用于承载各风控页面的 `规则配置`，如异常登录监控、批量注册监控、同秒开仓监控、异常充值监控等。</li>
-          <li>弹窗正文按当前点击来源动态加载，不同页面共用一套外层弹窗结构。</li>
+          <li>这个弹窗只是通用外壳，真正保存的是来源页面自己的规则配置。</li>
+          <li>一次只加载一个来源页面的配置块；不能在一个弹窗里同时保存多个页面的规则。</li>
         </ol>
-        <em>字段说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>标题：只读字段，按当前来源动态显示，如 `异常登录识别规则`、`同提币地址规则配置`。</li>
-          <li>配置内容：动态加载当前来源页面对应的规则表单；只展示本次点击入口对应的配置块，不混入其他页面配置。</li>
-          <li>统计时间口径：本功能属于事件驱动的独立动态窗口监控机制；当触发行为发生时生成一个独立的 Monitor ID，并记录统计开始时间；结束时间 = 开始时间 + 配置的统计时间；在结束时间前持续统计且触发不中断；到结束时间后停止统计，并依据窗口期内是否达标将状态结算为 `已触发` 或 `已结束`。</li>
-          <li>数字类输入：按页面业务口径区分为 `价格/数量字段按后端返回截取`、`百分比默认保留两位小数点`、`普通数字展示整数`、`分钟/MS仅展示整数无小数点`；输入框前的 `大于等于 / 小于等于`、单位、是否带 `%` 必须与页面正文一致。</li>
-          <li>谷歌验证码：统一追加在规则配置底部；当前原型按非空校验，未填写时主确认按钮不允许保存。</li>
+          <li>`标题` 为只读字段，显示当前来源页面的规则名称。</li>
+          <li>`配置内容` 只加载当前来源页面对应的表单，不混入其他页面的字段。</li>
+          <li>如果这个来源页面采用“事件触发后进入独立统计窗口”的机制，那么统计窗口口径固定为：`开始时间 = 触发时间`，`结束时间 = 开始时间 + 配置统计时长`；窗口结束后再结算是否命中。</li>
+          <li>数字字段的精度以当前来源页面正文定义为准：百分比字段保留两位小数，分钟和 MS 字段只允许整数。</li>
+          <li>`谷歌验证码` 统一放在弹窗底部；为空时不允许保存。</li>
         </ol>
-        <em>操作说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>确认：仅主按钮触发保存；先校验当前配置块内必填项与谷歌验证码，再执行保存并关闭弹窗。</li>
-          <li>取消：次按钮关闭弹窗，不保存配置。</li>
+          <li>点 `确认` 时，只保存当前页面的配置块；先校验当前配置块必填项和验证码，校验通过后保存。</li>
+          <li>点 `取消` 时，不保存本次修改。</li>
         </ol>
       </div>
     </div>
@@ -8995,22 +9093,17 @@
     <div class="spec-page" data-spec-page="modal-whitelist-events">
       <div class="spec-card">
         <strong>名单触发事件弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>展示名单相关的触发事件汇总与明细。</li>
-          <li>用于查看当前名单对象在所选周期内的触发情况。</li>
+          <li>这个弹窗展示的是“当前名单对象在选定时间内被哪些风控命中过”。</li>
+          <li>`名单类型` 显示当前对象所在的名单类型；`当前对象` 显示当前被查看的对象值。</li>
+          <li>汇总列表按 `触发日期` 聚合，字段固定为 `触发次数（排重）` 和 `触发UID数`。</li>
+          <li>详情列表展示 `触发时间（到秒）`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`风控操作`、`触发原因`。白名单用户固定展示 `设备/IP（排重）`；其他名单每条明细只展示一种关联维度。</li>
         </ol>
-        <em>字段说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>名单类型：显示当前事件对应的名单类型。</li>
-          <li>当前对象：显示事件关联的名单目标对象。</li>
-          <li>汇总列表：按 `触发日期` 展示 `触发次数（排重）`、`触发UID数`，并提供 `查看详情` 入口。</li>
-          <li>详情列表：展示 `触发时间（到秒）`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`风控操作`、`触发原因`；其中白名单用户详情列固定展示 `设备/IP（排重）`，其余名单同一条明细仅展示一种维度，触发原因按 `事前预警/事后报警-监控类型(次数)` 汇总。</li>
-        </ol>
-        <em>操作说明</em>
-        <ol>
-          <li>查看详情：查看指定触发日期下的放行明细。</li>
-          <li>关闭：关闭当前弹窗。</li>
+          <li>点 `查看详情` 时，只展开当前日期下的明细。</li>
+          <li>点 `关闭` 时，只关闭弹窗，不改名单状态。</li>
         </ol>
       </div>
     </div>
@@ -9018,20 +9111,15 @@
     <div class="spec-page" data-spec-page="modal-whitelist-events-detail">
       <div class="spec-card">
         <strong>名单触发详情弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>展示当前名单对象在指定触发日期下的明细记录。</li>
-          <li>当前弹窗只用于查看，不在详情内直接执行名单处理动作。</li>
+          <li>这个弹窗只展示某一天的名单触发明细，不做名单处理。</li>
+          <li>顶部固定展示 `名单类型`、`当前对象`、`触发日期`。</li>
+          <li>明细列表固定展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`风控操作`、`触发原因`。白名单用户固定展示 `设备/IP（排重）`；其他名单每条明细只展示一种关联维度。</li>
         </ol>
-        <em>字段说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>基础信息：展示 `名单类型`、`当前对象`、`触发日期`。</li>
-          <li>明细列表：展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`风控操作`、`触发原因`。</li>
-          <li>白名单用户详情因主列表已按UID汇总，明细列固定展示 `设备/IP（排重）`；其余名单同一条明细仅展示一种维度，按当前名单类型取值。</li>
-        </ol>
-        <em>操作说明</em>
-        <ol>
-          <li>关闭：返回上一层 `名单触发事件` 汇总弹窗。</li>
+          <li>点 `关闭` 时，返回上一层 `名单触发事件` 汇总弹窗。</li>
         </ol>
       </div>
     </div>
@@ -9039,19 +9127,15 @@
     <div class="spec-page" data-spec-page="modal-multi-id">
       <div class="spec-card">
         <strong>多ID查看弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>用于一次性查看页面中被折叠展示的全部仓位ID或长ID集合。</li>
-          <li>适用于表格内ID过长或数量过多的场景。</li>
+          <li>这个弹窗只负责把表格里被折叠的长 ID 或多 ID 全量展开。</li>
+          <li>`标题` 跟来源字段同名，例如来源列是 `仓位ID`，这里标题就显示 `仓位ID`。</li>
+          <li>`ID列表` 按原值逐个展示，不做截断、不做改写、不做去重。</li>
         </ol>
-        <em>字段说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>标题：默认展示为 `仓位ID`，与来源字段保持一致。</li>
-          <li>ID列表：按标签方式展示当前单元格对应的全部ID，不做业务改写。</li>
-        </ol>
-        <em>操作说明</em>
-        <ol>
-          <li>关闭：返回来源列表页。</li>
+          <li>点 `关闭` 时，返回来源列表页。</li>
         </ol>
       </div>
     </div>
@@ -9059,57 +9143,56 @@
     <div class="spec-page" data-spec-page="modal-blacklist-whitelist-confirm">
       <div class="spec-card">
         <strong>名单冲突提示弹窗口径定义</strong>
-        <em>功能说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>用于提示当前录入对象已存在于另一侧名单中，继续保存前需二次确认。</li>
-          <li>确认后，相关对象从原名单移出，并以本次配置为准写入当前名单。</li>
+          <li>这个弹窗表示“当前准备加入名单的对象，已经在另一侧名单里”。</li>
+          <li>`来源页面` 显示本次触发冲突的页面；`冲突对象` 显示会被移出原名单的对象。</li>
+          <li>确认后，冲突对象先从原名单移出，再加入本次目标名单。</li>
         </ol>
-        <em>字段说明</em>
+        <em>处理规则</em>
         <ol>
-          <li>来源页面：显示本次触发冲突确认的来源页。</li>
-          <li>冲突对象：按当前方向展示 `白名单对象` 或 `黑名单对象`。</li>
-          <li>提示说明：展示“以下数据在白名单（或黑名单），确认移出，以此次配置为准”口径。</li>
-        </ol>
-        <em>操作说明</em>
-        <ol>
-          <li>`确认移出白名单/黑名单`：继续执行当前录入配置，并从原名单移出冲突对象。</li>
-          <li>`取消`：关闭弹窗，不执行本次转入。</li>
+          <li>点 `确认移出白名单/黑名单` 时，继续执行本次名单保存，并从原名单移除冲突对象。</li>
+          <li>点 `取消` 时，本次名单保存终止。</li>
         </ol>
       </div>
     </div>
 
     <div class="spec-page" data-spec-page="monitor">
       <div class="spec-card">
-        <strong>用户监控列表口径</strong>
-        <em>运营说明</em>
+        <strong>可疑用户 - 用户监控</strong>
+        <em>数据说明</em>
         <ol>
-          <li>顶部 `异常统计` 区域会随当前页面切换统计项；用户监控页默认展示 `限制规则触发次数`、`自动加入次数`、`手动加入次数`、`标记正常事件/移出黑名单数`、`移入黑名单用户数` 5 个指标。</li>
-          <li>筛选项 `查询条件` 支持按用户ID、手机、邮箱模糊查询；`类型` 支持全部、手动、自动、正常事件、黑名单；`查询开始时间` 为统计起始日期。</li>
-          <li>列表第1列勾选框用于批量选择用户，不改变数据统计口径。</li>
-          <li>列表字段依次为 `用户ID`、`类型`、`原因`、`用户其他风控行为`、`平均持仓时间`、`胜率`、`盈利率`、`充值`、`提现`、`合约盈利额`、`合约盈利率`、`禁止状态`、`操作时间`、`操作`。</li>
-          <li>`禁止状态` 列为新增列，显示该 UID 当前 4 类禁止项（登录、现货交易、合约开仓、提现），禁止项显示为彩色胶囊标签；未禁止任何项显示「无禁止」。</li>
-          <li>`操作` 列中「禁止登录 / 禁止现货交易 / 禁止合约开仓 / 禁止提现」与「禁止状态」列 1:1 互斥联动：对应项已禁止 → 按钮文案切换为「恢复登录 / 恢复现货交易 / 恢复合约开仓 / 恢复提现」。</li>
-          <li>`用户ID` 为监控用户唯一标识；`用户其他风控行为` 用于汇总展示该用户当前命中的其他风控性质，仅有一项时展示一项，多项时并列展示多项。</li>
-          <li>`类型` 区分 `手动` 与 `自动`；`原因` 用于展示人工加入原因或自动命中的风控来源。</li>
-          <li>`平均持仓时间` 为用户历史开仓到平仓的平均时长，示例以分钟展示。</li>
-          <li>`胜率` = 盈利仓位数 / 统计仓位总数，页面展示为百分比，默认保留两位小数。</li>
-          <li>`盈利率` 与 `合约盈利率` 均按百分比展示；`合约盈利额`、`充值`、`提现` 按金额口径展示。</li>
-          <li>`操作时间` 为该用户最近一次被系统处理或人工标记的时间。</li>
-          <li>`操作` 包含 `正常事件`、`黑名单用户`、`禁止登录`、`禁止用户邀请下级注册`、`禁止现货交易`、`禁止合约开仓`、`禁止提现` 等动作。</li>
-          <li>页头新增 `自动加入规则配置`、`可疑用户限制规则`、`市价历史订单`、`限价历史订单` 四个入口。</li>
-          <li>列表上方提供批量操作，包含 `批量正常事件`、`批量黑名单用户`、`批量禁止登录`、`批量禁止现货交易`、`批量禁止合约开仓`、`批量禁止提现`。</li>
-          <li>分页区 `当前展示X条记录`、页码、跳页输入框仅影响展示范围，不改变统计口径。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
-          <li>用户被标记为「正常事件」后，仅从「当前命中的单一风控规则列表」中移除：若一用户同时命中多项（例：高盈利高胜率 + 打单风控），仅在本次执行正常事件的对应命中列表中移除，其他仍命中的风控列表保留该用户。&#10;标记为「正常事件」后，截止本次正常事件操作时间之前的数据视为正常；后续重新判断是否命中任一风控规则时，均以本次「正常事件的操作时间」作为新的累计与判定起点，不再回溯操作时间之前的历史数据。</li>
+          <li>`用户ID`：当前被加入可疑用户池的 UID。</li>
+          <li>`类型`：当前记录进入可疑用户池的方式，取值只有 `手动` 或 `自动`。</li>
+          <li>`原因`：当前记录进入可疑用户池的原因；`手动` 类型写人工原因，`自动` 类型写命中的风控页面或规则名。</li>
+          <li>`用户其他风控行为`：该 UID 当前同时命中的其他风控标签集合；没有其他命中时显示 `—`。</li>
+          <li>`禁止状态`：当前 UID 已生效的限制项集合，只包含 `登录`、`现货交易`、`合约开仓`、`提现` 4 类；都没有时显示 `无禁止`。</li>
+          <li>`操作时间`：这条用户监控记录最近一次被处理的时间，不是注册时间，也不是最后登录时间。</li>
+          <li>`操作`：当前页面对这条记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>`自动加入规则配置` 用于勾选 `风控用户` 下的类型；命中已勾选类型的用户，将自动以 `自动` 类型进入可疑用户列表。</li>
-          <li>手动加入的用户在 `类型` 字段显示为 `手动`，并在 `原因` 字段记录人工加入依据。</li>
-          <li>单条操作与批量操作口径保持一致，当前页不提供 `手动ADL` 入口。</li>
-          <li>`可疑用户限制规则` 为 `用户监控` 下的三级配置页，不在左侧二级导航中单独展示，需从 `用户监控` 页头入口进入。</li>
-          <li>顶部统计卡为示意数据，页面切换时按当前页面口径刷新，不与黑名单、白名单列表混用。</li>
-          <li>「禁止状态」列使用独立 localStorage 持久化（key = axhub_user_ban_status_v1），4 类禁止项按 UID 维度独立存储，与「正常事件/黑名单用户」标记互不覆盖。</li>
+          <li>`类型 = 手动` 时，表示人工把该 UID 加入可疑用户池。</li>
+          <li>`类型 = 自动` 时，表示该 UID 命中了自动加入规则，并被系统加入可疑用户池。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>点 `正常事件` 后，只移除当前这个列表里的记录，不自动解除该用户在其他风控页面上的限制。</li>
+          <li>点 `黑名单用户` 后，用户进入黑名单；相关事前预警、事后报警、可疑用户列表都不再展示该用户。</li>
+          <li>如果同一个用户同时被多个风控命中，并且多个风控都限制了 `合约开仓`，要一个风控一个风控地解除，不能只解除一处。</li>
+          <li>GTS 原有限制按钮不作为主操作入口；限制和解禁都以新风控平台记录为准。</li>
+          <li>当前页所有单条操作和批量操作都必须写入 `处理记录`；业务列表可以刷新或移除当前记录，但日志不能缺失。</li>
+          <li>凡是执行 `禁止登录`、`禁止现货交易`、`禁止合约开仓`、`禁止提现`，`禁止状态` 必须同步增加对应状态，且操作列表切换为对应 `恢复` 按钮。</li>
+          <li>凡是执行 `恢复登录`、`恢复现货交易`、`恢复合约开仓`、`恢复提现`，`禁止状态` 必须同步移除对应状态，且操作列表切回对应 `禁止` 按钮。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>顶部 `异常统计` 只按当前页面口径统计，不和黑名单、白名单混算。</li>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户ID倒序` 排列。</li>
+          <li>空值统一显示为 `—`。</li>
+          <li>批量操作和单条操作口径一致，按钮文案必须和单条操作保持同名。</li>
+          <li>筛选条件变化后，自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
@@ -9117,17 +9200,17 @@
     <div class="spec-page" data-spec-page="rules">
       <div class="spec-card">
         <strong>可疑用户限制规则说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
           <li>`限价延迟下单秒数` 为区间配置，左值为最小延迟、右值为最大延迟，单位展示为 `MS`。</li>
           <li>`市价滑点百分比` 为市价成交使用的滑点比例区间，展示口径为百分比。</li>
           <li>本页为 `用户监控` 下的三级限制规则页，仅作用于可疑用户列表中的用户。</li>
-          <li>页面中的百分比字段如无特殊说明，统一按百分比展示并保留两位小数。</li>
+          <li>本页所有百分比字段统一保留两位小数，不存在“特殊字段另算精度”的例外。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
           <li>配置页输入项均为数值字段，默认按非负数校验；空值、非法字符、负数应拦截。</li>
-          <li>`限价延迟下单秒数` 建议按整数录入；`市价滑点百分比` 按百分比录入和展示，默认保留两位小数。</li>
+          <li>`限价延迟下单秒数` 必须按整数录入；`市价滑点百分比` 必须按百分比录入并保留两位小数。</li>
           <li>保存后影响后续可疑用户的合约限制处理，不回溯改写历史成交结果。</li>
         </ol>
       </div>
@@ -9136,17 +9219,17 @@
     <div class="spec-page" data-spec-page="limit">
       <div class="spec-card">
         <strong>黑名单合约下单与强平规则配置说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
           <li>`限价延迟下单秒数` 为区间配置，左值为最小延迟、右值为最大延迟，单位展示为 `MS`。</li>
           <li>`状态` 表示当前限价延迟策略是否生效。</li>
           <li>`市价滑点百分比` 为市价成交使用的滑点比例区间，展示口径为百分比。</li>
-          <li>说明区中的 `卖1价格` 示例用于解释滑点计算依据，不作为单独配置字段保存。</li>
+          <li>说明区中的 `卖1价格` 只是公式示例，不入库，也不是单独配置字段。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
           <li>范围输入左值和右值组成闭区间；状态字段仅表示对应策略是否生效，不影响其他策略保存。</li>
-          <li>`限价延迟下单秒数` 建议按整数录入；`市价滑点百分比` 按百分比录入和展示，默认保留两位小数。</li>
+          <li>`限价延迟下单秒数` 必须按整数录入；`市价滑点百分比` 必须按百分比录入并保留两位小数。</li>
           <li>市价成交价计算示意：买入结算价 = 买入均价 × (1 + 滑点百分比)；卖出结算价 = 卖出均价 × (1 - 滑点百分比)。</li>
         </ol>
       </div>
@@ -9154,30 +9237,35 @@
 
     <div class="spec-page" data-spec-page="blacklist-monitor">
       <div class="spec-card">
-        <strong>黑名单用户说明</strong>
-        <em>运营说明</em>
+        <strong>黑名单用户</strong>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项 `查询条件` 支持按用户ID、手机、邮箱检索黑名单记录。</li>
-          <li>列表第1列勾选框用于批量选择名单用户。</li>
-          <li>列表字段依次为 `用户ID`、`邮箱/账号`、`用户其他风控行为`、`账户余额`、`盈利`、`转入原因`、`创建时间`、`操作时间`、`操作`。</li>
-          <li>`用户ID` 为黑名单记录对应用户唯一标识。</li>
-          <li>`邮箱/账号` 为用户注册邮箱或账号标识。</li>
-          <li>`用户其他风控行为` 用于汇总展示该黑名单用户在其他风控模块中的命中情况，便于管理区快速判断用户性质。</li>
-          <li>`转入原因` 为该用户被加入黑名单的原因说明。</li>
-          <li>`创建时间` 为该黑名单记录首次创建时间。</li>
-          <li>`操作时间` 为最近一次对该黑名单记录执行操作的时间。</li>
-          <li>`操作` 包含 `正常事件`、`可疑用户`、`禁止登录`、`禁止用户邀请下级注册`、`禁止现货交易`、`禁止合约开仓`、`禁止提现` 等动作；点击 `黑名单用户` 时统一先打开黑名单处理配置弹窗，再执行确认。</li>
-          <li>页头新增 `自动加入规则配置` 入口；该弹窗默认直接读取 `可疑用户` 自动加入规则，并额外增加一项黑名单专属附加规则。</li>
-          <li>列表上方提供批量操作，包含 `批量正常事件`、`批量可疑用户`、`批量禁止登录`、`批量禁止现货交易`、`批量禁止合约开仓`、`批量禁止提现`。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
-          <li>分页区仅切换数据展示范围，不改变黑名单统计结果。</li>
+          <li>`用户ID`：当前黑名单用户 UID。</li>
+          <li>`邮箱/账号`：该用户的注册邮箱或账号标识；没有值时显示 `—`。</li>
+          <li>`用户其他风控行为`：该 UID 进入黑名单之前，同时命中过的其他风控标签集合；没有值时显示 `—`。</li>
+          <li>`转入原因`：该用户进入黑名单的直接原因。</li>
+          <li>`创建时间`：该用户首次进入黑名单的时间。</li>
+          <li>`操作时间`：这条黑名单记录最近一次被修改的时间。</li>
+          <li>`操作`：当前页面对这条黑名单记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>黑名单自动加入规则继承可疑用户自动加入类型，并新增 `命中可疑用户限制规则后自动转黑名单` 附加项，避免与可疑用户配置完全重复。</li>
-          <li>所有禁止类动作均应保留操作日志与审批记录；`正常事件` 与 `可疑用户` 用于调整黑名单用户的目标归属名单。</li>
-          <li>禁止状态触发后，用户在前端执行对应行为时统一提示 `账号异常，请联系客服`。</li>
-          <li>当前新 HTML 中黑名单用户页不提供 `手动ADL` 入口，页面仅保留名单归属与禁止类处理动作。</li>
+          <li>用户被人工或规则处理成黑名单后，进入本列表。</li>
+          <li>黑名单优先级高于其他名单和风控列表。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>用户一旦进入黑名单，其他风控列表不再展示该用户，也不再继续命中。</li>
+          <li>在黑名单列表把用户处理成 `正常事件`，实际业务含义 = `移出黑名单`；移出后该条黑名单记录不再展示，该用户恢复为无黑名单状态。</li>
+          <li>如果用户同时在黑名单和白名单中，最终以最后一次确认的名单为准；保存前必须弹名单冲突提示。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户ID倒序` 排列。</li>
+          <li>空值统一显示为 `—`。</li>
+          <li>批量操作和单条操作口径一致；页面展示的动作必须是当前能对黑名单用户生效的动作。</li>
+          <li>筛选条件变化后，自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
@@ -9185,9 +9273,9 @@
     <div class="spec-page" data-spec-page="blacklist-liquidation-history">
       <div class="spec-card">
         <strong>黑名单强平仓列表说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>本页用于查看黑名单用户发生强平后的历史持仓记录，便于回溯强平触发与处置结果。</li>
+          <li>本页展示黑名单用户已经发生的强平历史记录，不展示未强平仓位。</li>
           <li>筛选项包含 `订单号`、`用户UID`、`交易对`、`方向`、`状态`、`开仓时间范围`、`最近更新时间范围`。</li>
           <li>列表字段依次为 `用户UID`、`合约交易对`、`方向`、`持仓数量`、`开仓均价`、`平仓均价`、`已实现盈亏`、`盈利率`、`开仓时间`、`最近更新时间`、`操作`。</li>
           <li>`操作` 仅包含 `对应订单详情`，点击后跳转订单详情页。</li>
@@ -9199,14 +9287,14 @@
     <div class="spec-page" data-spec-page="blacklist-add">
       <div class="spec-card">
         <strong>添加黑名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>`输入用户ID` 支持批量输入多个UID，多个UID之间以 `/` 分隔，例如 `10009/10010`。</li>
-          <li>`转入原因` 为本次加入黑名单的业务原因说明。</li>
+          <li>`输入用户ID` 支持批量输入多个 UID，多个 UID 之间必须使用 `/` 分隔，例如 `10009/10010`。</li>
+          <li>`转入原因` 记录这次加入黑名单的原因。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>批量UID输入框按 `/` 分隔解析，空项应忽略；提交前需校验UID非空、原因非空。</li>
+          <li>提交前先按 `/` 拆分 UID；空项删除，重复 UID 去重；`UID` 和 `转入原因` 任一为空都不能提交。</li>
           <li>如UID已在白名单中，不允许直接静默转黑；确认时需弹窗提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
@@ -9215,17 +9303,17 @@
     <div class="spec-page" data-spec-page="blacklist-ip">
       <div class="spec-card">
         <strong>IP黑名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项支持按 `IP/关联账号` 及时间范围检索IP黑名单记录。</li>
+          <li>筛选项按 `IP/关联账号` 和时间范围过滤 IP 黑名单记录。</li>
           <li>列表字段包含 `IP`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `编辑`、`删除`。</li>
-          <li>页头提供 `添加/编辑IP黑名单` 入口，新增与编辑共用同一配置区域，支持 `控制方式` 选择 `单个IP` 或 `国家`；选择 `单个IP` 时不展示国家选择，选择 `国家` 时不展示IP输入框。</li>
+          <li>`添加/编辑IP黑名单` 使用同一套表单。`控制方式 = 单个IP` 时，只展示 IP 输入框；`控制方式 = 国家` 时，只展示国家选择。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>进入IP黑名单的IP按黑名单口径参与后续风控限制。</li>
-          <li>`单个IP` 模式：支持多个IP使用 `/` 分隔批量录入；单条IP支持输入 1 至 4 段，不足段位可用 `*` 补齐，`*` 代表模糊匹配。</li>
-          <li>`国家` 模式：选择国家后，表示该国家范围内的IP按黑名单口径参与风控限制。</li>
+          <li>进入 IP 黑名单的对象，后续都按 IP 黑名单处理。</li>
+          <li>`单个IP` 模式支持多个 IP 用 `/` 分隔录入；单条 IP 允许输入 1 到 4 段，不足段位可以用 `*` 代替，`*` 表示该段模糊匹配。</li>
+          <li>`国家` 模式保存后，表示该国家范围内的 IP 全部按黑名单处理。</li>
           <li>如该IP当前已在IP白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
@@ -9234,13 +9322,13 @@
     <div class="spec-page" data-spec-page="blacklist-device">
       <div class="spec-card">
         <strong>设备黑名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项支持按 `设备ID/设备指纹` 与 `类型` 检索设备黑名单记录。</li>
+          <li>筛选项按 `设备ID/设备指纹` 和 `类型` 过滤设备黑名单记录。</li>
           <li>列表字段包含 `设备ID`、`类型`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `编辑`、`删除`。</li>
           <li>页头提供 `添加/编辑设备黑名单` 入口，新增与编辑共用同一配置区域。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
           <li>设备类型固定为 `WEB`、`安卓`、`IOS`。</li>
           <li>如该设备当前已在设备白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
@@ -9251,16 +9339,16 @@
     <div class="spec-page" data-spec-page="blacklist-deposit-address">
       <div class="spec-card">
         <strong>充值地址黑名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项支持按 `充值地址` 与时间范围检索充值地址黑名单记录。</li>
+          <li>筛选项按 `充值地址` 和时间范围过滤充值地址黑名单记录。</li>
           <li>列表字段包含 `地址`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `触发事件`、`编辑`、`删除`。</li>
           <li>页头提供 `添加/编辑充值地址黑名单` 入口，新增与编辑共用同一配置区域。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>进入充值地址黑名单的地址按黑名单口径参与后续风控限制。</li>
-          <li>多个充值地址使用 `/` 分隔批量录入，系统按单条地址拆分入库。</li>
+          <li>进入充值地址黑名单的地址，后续都按充值地址黑名单处理。</li>
+          <li>多个充值地址使用 `/` 分隔录入；保存时按单条地址拆分并分别入库。</li>
           <li>如该地址当前已在充值地址白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
           <li>`触发事件` 弹窗支持查看该充值地址关联的触发汇总与详情。</li>
         </ol>
@@ -9269,16 +9357,16 @@
     <div class="spec-page" data-spec-page="blacklist-withdraw-address">
       <div class="spec-card">
         <strong>提币地址黑名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项支持按 `提币地址` 与时间范围检索提币地址黑名单记录。</li>
+          <li>筛选项按 `提币地址` 和时间范围过滤提币地址黑名单记录。</li>
           <li>列表字段包含 `地址`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `触发事件`、`编辑`、`删除`。</li>
           <li>页头提供 `添加/编辑提币地址黑名单` 入口，新增与编辑共用同一配置区域。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>进入提币地址黑名单的地址按黑名单口径参与后续风控限制。</li>
-          <li>多个提币地址使用 `/` 分隔批量录入，系统按单条地址拆分入库。</li>
+          <li>进入提币地址黑名单的地址，后续都按提币地址黑名单处理。</li>
+          <li>多个提币地址使用 `/` 分隔录入；保存时按单条地址拆分并分别入库。</li>
           <li>如该地址当前已在提币地址白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
           <li>`触发事件` 弹窗支持查看该提币地址关联的触发汇总与详情。</li>
         </ol>
@@ -9288,13 +9376,13 @@
     <div class="spec-page" data-spec-page="blacklist-password">
       <div class="spec-card">
         <strong>密码黑名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项支持按 `密码摘要` 与 `类型` 检索密码黑名单记录。</li>
+          <li>筛选项按 `密码摘要` 和 `类型` 过滤密码黑名单记录。</li>
           <li>列表字段包含 `密码摘要`、`类型`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `编辑`、`删除`。</li>
           <li>页头提供 `添加/编辑密码黑名单` 入口，新增与编辑共用同一配置区域。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
           <li>密码黑名单仅展示脱敏摘要，不展示原始密码。</li>
           <li>`类型` 为多选项，可同时选择 `登录密码` 与 `支付密码`。</li>
@@ -9306,16 +9394,16 @@
     <div class="spec-page" data-spec-page="blacklist-phone">
       <div class="spec-card">
         <strong>邮箱黑名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项支持按 `邮箱/域名` 与 `类型` 检索邮箱黑名单记录。</li>
+          <li>筛选项按 `邮箱/域名` 和 `类型` 过滤邮箱黑名单记录。</li>
           <li>列表字段包含 `类型`、`邮箱/域名`、`转入原因`、`操作时间`、`操作`，其中 `操作` 包含 `触发事件`、`编辑`、`删除`。</li>
-          <li>页头提供 `添加/编辑邮箱黑名单` 入口，新增与编辑共用同一配置区域，用于维护单个邮箱或邮箱域名黑名单。</li>
+          <li>`添加/编辑邮箱黑名单` 使用同一套表单，既能维护单个邮箱，也能维护邮箱域名。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>`单个邮箱` 模式：不展示域名选择；多个邮箱使用 `/` 分隔批量录入，系统按单条邮箱拆分入库。</li>
-          <li>`邮箱域名` 模式：不展示邮箱输入框；录入域名后，表示该域名下邮箱默认按黑名单口径处理。</li>
+          <li>`单个邮箱` 模式下，不展示域名输入；多个邮箱使用 `/` 分隔录入，保存时按单条邮箱拆分入库。</li>
+          <li>`邮箱域名` 模式下，不展示单个邮箱输入；保存后，该域名下的邮箱全部按邮箱黑名单处理。</li>
           <li>如该邮箱或域名当前已在邮箱后缀白名单，保存时需提示“以下数据在白名单，确认移出，以此次配置为准么？”。</li>
           <li>`触发事件` 弹窗支持查看该邮箱/域名关联的触发汇总与详情。</li>
         </ol>
@@ -9325,10 +9413,10 @@
     <div class="spec-page" data-spec-page="market-history">
       <div class="spec-card">
         <strong>可疑用户/合约可疑用户市价历史订单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
           <li>本页为 `可疑用户` 与 `合约可疑用户` 共用的市价历史订单页，根据进入入口返回对应上一级页面。</li>
-          <li>筛选项包含 `订单号`、`用户UID`、`交易对`、`方向`、`成交时间`，用于检索市价订单历史。</li>
+          <li>筛选项按 `订单号`、`用户UID`、`交易对`、`方向`、`成交时间` 过滤市价订单历史。</li>
           <li>`订单号` 为订单唯一标识；`成交ID` 为成交记录唯一标识。</li>
           <li>`用户UID` 为下单用户唯一标识。</li>
           <li>`合约` 为对应交易合约，如 `BTC永续`、`ETH永续`。</li>
@@ -9339,10 +9427,10 @@
           <li>`委托时间` 为订单提交时间；`成交时间` 为订单实际成交时间。</li>
           <li>本页无 `更新时间` 字段，默认按 `成交时间` 倒序排序。</li>
         </ol>
-        <em>注意事项</em>
+        <em>列表显示规则</em>
         <ol>
           <li>页面底部排序说明需与右侧口径保持一致；当前页排序字段为成交时间。</li>
-          <li>`成交价格`、`委托价格`、`数量`、`杠杆`、`成交金额` 等交易字段以页面成交明细展示结果为准；如无特殊说明，页面不额外重算精度。</li>
+          <li>`成交价格`、`委托价格`、`数量`、`杠杆`、`成交金额` 直接显示订单明细原值；这个页面不额外重算，不再定义第二套精度规则。</li>
         </ol>
       </div>
     </div>
@@ -9350,10 +9438,10 @@
     <div class="spec-page" data-spec-page="limit-history">
       <div class="spec-card">
         <strong>可疑用户/合约可疑用户限价历史订单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
           <li>本页为 `可疑用户` 与 `合约可疑用户` 共用的限价历史订单页，根据进入入口返回对应上一级页面。</li>
-          <li>筛选项包含 `订单号`、`用户UID`、`交易对`、`方向`、`实际下单时间`，用于检索限价订单历史。</li>
+          <li>筛选项按 `订单号`、`用户UID`、`交易对`、`方向`、`实际下单时间` 过滤限价订单历史。</li>
           <li>`订单号` 为订单唯一标识；`用户UID` 为用户唯一标识。</li>
           <li>`合约` 为交易合约；`类型` 固定表示 `限价`；`方向` 表示做多或做空。</li>
           <li>`下单价格` 为用户设置的限价价格。</li>
@@ -9362,10 +9450,10 @@
           <li>`实际延迟毫秒数` = 实际下单时间 - 委托时间，单位为毫秒。</li>
           <li>本页无 `更新时间` 字段，默认按 `实际下单时间` 倒序排序。</li>
         </ol>
-        <em>注意事项</em>
+        <em>列表显示规则</em>
         <ol>
           <li>页面底部排序说明需与右侧口径保持一致；当前页排序字段为实际下单时间。</li>
-          <li>`下单价格`、`数量`、`杠杆`、`实际延迟毫秒数` 等字段以页面订单明细展示结果为准；延迟毫秒数字段按整数展示。</li>
+          <li>`下单价格`、`数量`、`杠杆`、`实际延迟毫秒数` 直接显示订单明细原值；`实际延迟毫秒数` 按整数展示。</li>
         </ol>
       </div>
     </div>
@@ -9373,9 +9461,9 @@
     <div class="spec-page" data-spec-page="blacklist-market-history">
       <div class="spec-card">
         <strong>黑名单市价历史订单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项包含 `订单号`、`用户UID`、`交易对`、`方向`、`成交时间`，用于检索黑名单市价订单历史。</li>
+          <li>筛选项按 `订单号`、`用户UID`、`交易对`、`方向`、`成交时间` 过滤黑名单市价订单历史。</li>
           <li>`订单号`、`成交ID`、`用户UID` 均为订单与成交记录唯一标识字段。</li>
           <li>`合约`、`类型`、`方向` 分别表示交易合约、订单类型、市价单方向。</li>
           <li>`成交价格` 为实际成交价；`委托价格` 为原始委托价格。</li>
@@ -9383,10 +9471,10 @@
           <li>`委托时间` 为委托提交时间；`成交时间` 为实际成交时间。</li>
           <li>本页无 `更新时间` 字段，默认按 `成交时间` 倒序排序。</li>
         </ol>
-        <em>注意事项</em>
+        <em>列表显示规则</em>
         <ol>
           <li>字段定义与可疑用户市价历史订单页保持一致，仅数据来源范围限定为黑名单。</li>
-          <li>`成交价格`、`委托价格`、`数量`、`杠杆`、`成交金额` 等交易字段以页面成交明细展示结果为准；如无特殊说明，页面不额外重算精度。</li>
+          <li>`成交价格`、`委托价格`、`数量`、`杠杆`、`成交金额` 直接显示订单明细原值；这个页面不额外重算，不再定义第二套精度规则。</li>
         </ol>
       </div>
     </div>
@@ -9394,9 +9482,9 @@
     <div class="spec-page" data-spec-page="blacklist-limit-history">
       <div class="spec-card">
         <strong>黑名单限价历史订单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项包含 `订单号`、`用户UID`、`交易对`、`方向`、`实际下单时间`，用于检索黑名单限价订单历史。</li>
+          <li>筛选项按 `订单号`、`用户UID`、`交易对`、`方向`、`实际下单时间` 过滤黑名单限价订单历史。</li>
           <li>`订单号`、`用户UID` 为订单和用户唯一标识。</li>
           <li>`合约`、`类型`、`方向` 分别表示交易合约、限价订单类型、买卖方向。</li>
           <li>`下单价格` 为用户设定的限价价格；`数量` 为委托数量；`杠杆` 为杠杆倍数。</li>
@@ -9404,32 +9492,42 @@
           <li>`实际延迟毫秒数` 为系统延迟下单耗时，单位毫秒。</li>
           <li>本页无 `更新时间` 字段，默认按 `实际下单时间` 倒序排序。</li>
         </ol>
-        <em>注意事项</em>
+        <em>列表显示规则</em>
         <ol>
           <li>字段定义与可疑用户限价历史订单页保持一致，仅数据来源范围限定为黑名单。</li>
-          <li>`下单价格`、`数量`、`杠杆`、`实际延迟毫秒数` 等字段以页面订单明细展示结果为准；延迟毫秒数字段按整数展示。</li>
+          <li>`下单价格`、`数量`、`杠杆`、`实际延迟毫秒数` 直接显示订单明细原值；`实际延迟毫秒数` 按整数展示。</li>
         </ol>
       </div>
     </div>
 
     <div class="spec-page" data-spec-page="whitelist-monitor">
       <div class="spec-card">
-        <strong>白名单用户说明</strong>
-        <em>运营说明</em>
+        <strong>白名单用户</strong>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项 `查询条件` 支持按用户ID、手机、邮箱检索白名单用户。</li>
-          <li>列表第1列勾选框用于批量勾选白名单记录。</li>
-          <li>`用户ID` 为白名单用户唯一标识；`邮箱/账号` 为用户注册使用的邮箱或账号。</li>
-          <li>`转入原因` 为加入白名单的业务原因。</li>
-          <li>`操作时间` 为最近一次对白名单记录执行操作的时间。</li>
-          <li>`操作` 当前支持 `删除`，表示从白名单移除该用户。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
-          <li>白名单用户不进入异常用户监控列表；添加黑名单时若命中白名单，应先移出白名单。</li>
-          <li>进入用户白名单的用户不再参与异常用户、羊毛党等用户维度监控命中。</li>
+          <li>`用户ID`：当前白名单用户 UID。</li>
+          <li>`邮箱/账号`：该用户的注册邮箱或账号标识；没有值时显示 `—`。</li>
+          <li>`转入原因`：该用户进入白名单的原因。</li>
+          <li>`操作时间`：这条白名单记录最近一次被处理或修改的时间。</li>
+          <li>`操作`：当前页面对这条白名单记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>白名单与黑名单存在互斥关系，同一用户不应同时存在于两个名单中。</li>
+          <li>用户被人工加入白名单后，进入本列表。</li>
+          <li>白名单用户不再进入用户维度的风控命中列表，例如 `异常登录监控`、`内部划转监控`、`羊毛党监控` 等。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>如果一个用户已经命中了多个风控，再把他加入白名单，相关风控限制全部解除，相关风控列表也不再展示这个用户。</li>
+          <li>白名单与黑名单互斥；如果保存时发现对象已在黑名单，要先弹提示确认移出黑名单，再以这次白名单保存为准。</li>
+          <li>点 `删除` 表示把用户从白名单移除；移除后，后续再命中时按普通用户逻辑重新进入相应风控列表。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户ID倒序` 排列。</li>
+          <li>空值统一显示为 `—`。</li>
+          <li>筛选条件变化后，自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
@@ -9437,357 +9535,481 @@
     <div class="spec-page" data-spec-page="whitelist-add">
       <div class="spec-card">
         <strong>添加白名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>`输入用户ID` 支持批量输入多个UID，多个UID之间以 `/` 分隔。</li>
-          <li>`转入原因` 为本次加入白名单的说明信息。</li>
+          <li>`输入用户ID` 支持批量输入多个 UID，多个 UID 之间必须使用 `/` 分隔。</li>
+          <li>`转入原因` 记录这次加入白名单的原因。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>批量UID输入框按 `/` 分隔解析，空项应忽略；提交前需校验UID非空、原因非空。</li>
+          <li>提交前先按 `/` 拆分 UID；空项删除，重复 UID 去重；`UID` 和 `转入原因` 任一为空都不能提交。</li>
           <li>如UID已在黑名单中，不允许直接静默转白；确认时需弹窗提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-login">
       <div class="spec-card">
-        <strong>异常登录监控说明</strong>
-        <em>运营说明</em>
+        <strong>异常登录监控</strong>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项包含 `查询条件`、`类型`、`登录开始时间`、`登录结束时间`；用于按用户、操作类型和时间范围筛选异常登录记录。</li>
-          <li>列表字段依次为 `用户ID`、`用户其他风控行为`、`登录设备`、`登录IP`、`操作类型`、`登录时间`、`操作时间`、`备注`、`操作`。</li>
-          <li>`操作类型` 表示用户登录后触发的敏感行为或设备异常行为，如 `合约全平`、`提现`、`同设备 1 天内多账号登录`、`同设备 10 天内多账号登录`、`1 天内频繁更换设备`。</li>
-          <li>`登录时间` 为用户登录时间；`操作时间` 为后续敏感操作实际发生时间。</li>
-          <li>`操作` 包含 `IP列入白名单`、`正常操作`、`可疑用户`、`黑名单用户`、`同一用户配置`，用于对该条风险记录做人工分流。</li>
-          <li>`监控状态配置` 用于配置当前规则扫描是否生效；配置为开启时继续扫描新增记录，配置为关闭时停止新增命中。</li>
-          <li>规则配置中的 `提现金额阈值`、`提现金额占总资产百分比阈值`、`操作时间间隔阈值`、`本站同设备 1 天内登录账号数阈值`、`本站同设备 10 天内登录账号数阈值`、`用户 1 天内更换设备数阈值` 共同参与异常登录判定，输入框前明确展示 `大于等于` 或 `小于等于` 口径。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
+          <li>`用户ID`：命中异常登录监控的用户唯一标识。</li>
+          <li>`登录设备`：当前这次命中对应的登录设备标识。</li>
+          <li>`登录IP`：当前这次命中对应的登录 IP。</li>
+          <li>`登录时间`：当前这次登录发生的时间。</li>
+          <li>`操作类型`：登录后触发的敏感行为类型；当前页面展示的取值包括 `合约全平`、`提现`、`同设备1天内多账号登录`、`同设备10天内多账号登录`、`1天内频繁更换设备`。</li>
+          <li>`操作时间`：登录后的实际触发时间，例如发起提现时间、平仓完成时间或设备切换触发时间；不是登录时间。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>`操作时间间隔阈值` 按整数分钟录入，无小数点；`提现金额阈值` 按金额口径录入；`提现金额占总资产百分比阈值` 按百分比口径录入，页面展示默认保留两位小数点；`本站同设备 1 天内登录账号数阈值`、`本站同设备 10 天内登录账号数阈值`、`用户 1 天内更换设备数阈值` 均按整数录入，无小数点。</li>
-          <li>监控状态关闭时，本页不再新增新的扫描结果；已存在记录仅用于历史查看。</li>
-          <li>列入 `可疑用户`、`黑名单用户` 或 `IP列入白名单` 时，应同步写入备注或转入原因，保证运营可追溯。</li>
-          <li>`同一用户配置` 用于对当前用户及其关联用户集合统一执行风控动作。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>`合约全平` 的口径是：用户登录时有仓位；后续平仓到用户名下无持仓；并且 `最新平仓时间 - 最新登录时间 <= 配置值`，才算命中。</li>
+          <li>`提现金额阈值` 和 `提现金额占总资产百分比阈值` 都不是看单笔，而是看“最新登录时间到当前触发时间”这段期间内，已经进入审核流程的提现累计金额 + 当前这笔提现金额。</li>
+          <li>`提现金额占总资产百分比阈值` 的分母是用户全部余额，统一折合成 `USDT`，不是只看现货账户余额。</li>
+          <li>`APP扫码登录WEB` 不参与这个场景的多设备登录统计。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>当前列表操作只保留 `IP列入白名单`、`正常事件`、`可疑用户`、`移入用户白名单`、`移入用户黑名单`；`异常登录配置` 按钮已去掉。</li>
+          <li>点 `正常事件` 后，只移除异常登录列表里的这条记录；如果同一用户还命中了别的风控，其他风控列表还保留。</li>
+          <li>用户加入白名单后，异常登录列表不再展示该用户，已有限制也一并解除；用户加入黑名单后，异常登录列表同样不再展示该用户。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户ID倒序` 排列。</li>
+          <li>空值统一显示为 `—`。</li>
+          <li>监控关闭后，只是不再新增新的命中；历史记录继续保留用于查询。</li>
+          <li>规则改动后，新命中按新规则进表；已经被处理成 `正常事件` 的旧数据不回扫。</li>
+          <li>筛选条件变化后，自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-batch-register">
       <div class="spec-card">
-        <strong>批量注册监控说明</strong>
-        <em>运营说明</em>
+        <strong>批量注册监控</strong>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项包含 `查询条件`、`类型`、`登录开始时间`、`登录结束时间`，其中 `查询条件` 可按 `IP`、`设备`、`邮箱后缀` 检索，`类型` 支持 `同IP`、`同设备`、`同邮箱后缀` 三类口径筛选。</li>
-          <li>列表字段依次为 `类型`、`注册邮箱`、`用户其他风控行为`、`IP/设备/邮箱后缀`、`注册时间`、`首充时间`、`首交易时间`、`备注`、`操作`。</li>
-          <li>`备注` 需与 `类型` 保持关联，如 `同IP批量注册`、`同设备批量注册并首交易`、`同邮箱后缀批量注册`。</li>
-          <li>`操作` 包含 `邮箱加入白名单`、`IP加入白名单`、`设备加入白名单`、`正常操作`、`可疑用户`、`黑名单用户`、`批量注册配置`；白名单操作按当前记录类型只展示对应按钮，避免误操作。</li>
-          <li>`规则配置` 按 `同一IP操作类型`、`同一设备操作类型`、`同一邮箱后缀操作类型` 三组口径分别维护人数与时间阈值，所有数字项均在输入框前标明 `大于等于` 或 `小于等于`。</li>
-          <li>`批量注册配置` 支持按 `同IP`、`同设备`、`同邮箱后缀` 三类关联范围独立或组合处理，并展示当前最终可处理的关联用户数。</li>
-          <li>本页无 `更新时间` 字段，时间字段拆分为 `首充时间` 与 `首交易时间`；默认按 `首交易时间` 倒序排序，为空时排在有值记录之后。</li>
+          <li>`类型`：当前记录的命中类型，取值只有 `同IP`、`同设备`、`同邮箱后缀`。</li>
+          <li>`IP/设备/邮箱后缀`：跟随 `类型` 变化显示对应值；`类型=同IP` 时显示 IP，`类型=同设备` 时显示设备标识，`类型=同邮箱后缀` 时显示邮箱后缀。</li>
+          <li>`注册时间`：当前这组用户完成注册的时间。</li>
+          <li>`首充时间`：当前这组用户完成首次充值的时间。</li>
+          <li>`首交易时间`：当前这组用户完成首次交易的时间。</li>
+          <li>`涉及用户UID`：当前这条批量注册监控关联的 UID 集合。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合；白名单按钮名称跟随命中类型变化。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>`注册充值交易人数`、`新注册时间差（与第一人注册时间比）` 均按纯数字整数录入，不支持小数。</li>
-          <li>`新注册时间差（与第一人注册时间比）` 表示以第一名注册用户时间为起点，超过配置时间的新IP、新设备、新邮箱后缀移出监控表。</li>
-          <li>若在当前监控阶段内仍有新注册进入，则按当前 `UTC+8` 时间顺延相同配置时长，继续保留在监控窗口内。</li>
-          <li>如用户邮箱后缀已在 `邮箱后缀白名单` 中，进入监控列表前应先按白名单规则过滤。</li>
-          <li>列入 `可疑用户`、`黑名单用户` 或对应类型白名单时，应同步记录转入原因并更新名单状态。</li>
-          <li>批量注册配置中的关联UID集合需先自动剔除白名单用户UID；管理员可手动删除，也可通过搜索用户UID删除，再按最终保留的UID集合统一处理。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>`交易` 的口径是 `合约 + 现货`，不是只看合约。</li>
+          <li>命中条件不是“三小时内注册了 3 个号，后面任何时候再去充值交易都算”，而是“三小时内完成 3 个账号的注册、充值、交易整套流程”。只注册、不充值、不交易都不算命中。</li>
+          <li>邮箱后缀、IP、设备如果已经在对应白名单里，进入列表前就应被过滤，不算命中。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>`批量注册配置` 处理的是当前记录对应的 UID 集合；先自动剔除白名单 UID，再允许人工搜索删除，最后对保留下来的 UID 集合统一处理。</li>
+          <li>点 `正常事件` 后，只移除批量注册列表里的当前记录；如果这些 UID 还命中了别的规则，其他列表继续保留。</li>
+          <li>点 `可疑用户` 或 `黑名单用户` 后，要同步写入处理记录，后续从处理记录可追溯是谁、因为什么规则做了什么动作。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `首交易时间倒序` 排列；没有首交易时间的记录排在有值记录之后；同一时间内按 `类型` 和命中值排序。</li>
+          <li>空值统一显示为 `—`。</li>
+          <li>规则改动后，只影响后续新增命中；已经处理成 `正常事件` 的旧记录不回扫。</li>
+          <li>白名单按钮、`正常事件`、`可疑用户`、`黑名单用户`、`批量注册配置` 的按钮名称必须按当前页面原文显示，不要再改成笼统按钮名。</li>
+          <li>筛选条件变化后，自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-email-suffix">
       <div class="spec-card">
         <strong>邮箱后缀白名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项 `查询条件` 支持按邮箱后缀检索白名单后缀。</li>
-          <li>列表字段依次为 `邮箱后缀`、`转入原因`、`操作时间`、`操作`。</li>
-          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
-          <li>新增区 `输入邮箱后缀` 支持多个后缀使用 `/` 分隔录入；`转入原因` 为本次加入白名单的原因。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
-          <li>默认白名单邮箱后缀列表包括：`@gmail.com`、`@icloud.com`、`@me.com`、`@mac.com`、`@outlook.com`、`@hotmail.com`、`@live.com`、`@yahoo.com`、`@yahoo.co.jp`、`@yahoo.co.uk`、`@protonmail.com`、`@proton.me`、`@aol.com`、`@zoho.com`、`@gmx.net`、`@gmx.com`、`@yandex.ru`、`@yandex.com`、`@mail.ru`、`@tutanota.com`、`@fastmail.com`、`@web.de`、`@comcast.net`、`@sbcglobal.net`、`@mail.com`、`@qq.com`、`@vip.qq.com`、`@163.com`、`@126.com`、`@139.com`，便于运营快速核对默认放行范围。</li>
+          <li>`查询条件`：按邮箱后缀过滤白名单记录。</li>
+          <li>`邮箱后缀`：当前白名单后缀原值，必须带 `@` 前缀。</li>
+          <li>`转入原因`：当前邮箱后缀进入白名单的原因。</li>
+          <li>`操作时间`：这条邮箱后缀白名单记录最近一次被录入或修改的时间。</li>
+          <li>`操作`：当前页面对这条记录可执行的按钮集合，只包含 `触发事件` 与 `删除`。</li>
+          <li>`输入邮箱后缀`：新增区录入字段，支持多个后缀使用 `/` 分隔。</li>
+          <li>`默认白名单邮箱后缀列表`：系统默认放行范围，按页面现有默认清单生效。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>邮箱后缀录入时建议统一包含 `@` 前缀，如 `@gmail.com`、`@outlook.com`。</li>
-          <li>多个后缀使用 `/` 分隔后，前端应先拆分、去空格、去重，再按单条后缀写入。</li>
+          <li>邮箱后缀录入时必须包含 `@` 前缀，例如 `@gmail.com`、`@outlook.com`；不带 `@` 的值视为非法输入。</li>
+          <li>多个后缀使用 `/` 分隔后，保存前先拆分、去空格、去重，再按单条后缀写入。</li>
           <li>邮箱后缀进入白名单后，命中该后缀的相关风控事件可通过 `触发事件` 查看放行汇总与明细。</li>
           <li>`转入原因` 不能为空；删除白名单后缀后，后续批量注册监控不再按该后缀做白名单过滤。</li>
           <li>如该邮箱后缀当前已在邮箱黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `邮箱后缀倒序` 排列。</li>
+          <li>空值统一显示为 `—`。</li>
+          <li>`触发事件` 先按触发日期汇总展示，再通过 `查看详情` 查看当日放行明细。</li>
+          <li>筛选条件变化后，自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-short-hold">
       <div class="spec-card">
-        <strong>高频短时持仓监控说明</strong>
-        <em>运营说明</em>
+        <strong>高频短时持仓监控</strong>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项包含 `查询条件`、`合约币对`、`查询开始时间`、`查询结束时间`，用于按用户与合约币对查询高频短时持仓记录。</li>
-          <li>列表字段依次为 `用户ID`、`仓位ID`、`用户其他风控行为`、`合约币对`、`持仓时间`、`交易频率`、`胜率`、`平台最新价`、`币安最新价`、`价差`、`操作时间`、`操作`。</li>
-          <li>`持仓时间` 表示单笔交易从买入到卖出的持有时长；`交易频率` 表示单位时间内的交易次数。</li>
-          <li>`价差` = 币安最新价 - 平台最新价，用于辅助判断是否存在跨平台价格差套利行为。</li>
-          <li>`操作` 包含 `可疑用户`、`正常事件`、`黑名单用户`、`同一用户配置`。</li>
-          <li>规则配置中的 `持仓时间阈值`、`交易频率阈值`、`胜率阈值`、`异常处理方式` 用于识别高频短持行为；`异常处理方式` 统一使用固定 8 个下拉项。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
+          <li>`持仓时间` 不是单笔委托持有时间，而是从第一笔开仓到完全平仓的时间。</li>
+          <li>`交易频率` 统计每一笔成功成交的开仓和平成交，部分成交也算一次成交。</li>
+          <li>`胜率` 的口径是 `历史持仓已实现盈亏 / 历史持仓开仓保证金`；如果这块还没有正式数据源，就先占位、不允许填写假值。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>数字类规则配置统一使用纯数字整数录入；本页 `持仓时间小于等于`、`交易频率大于等于`、`胜率大于等于` 均按整数维护。</li>
-          <li>`平台最新价`、`币安最新价`、`价差` 等价格字段以页面行情展示结果为准，页面不额外重算精度。</li>
-          <li>如选择 `禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`提现人工审核` 或 `需要人脸认证KYC`，应在实际系统中记录执行日志与人工复核结果。</li>
-          <li>`仓位ID` 默认最多展示 2 个；超出展示长度时显示 `查看更多`，点击后弹窗展示全部仓位ID。</li>
-          <li>`高频短时持仓配置` 仅针对当前命中的单条用户记录执行风控处理，不再附带关联用户范围配置。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>本页配置只对当前命中的这一个用户生效，不带关联用户处理。</li>
+          <li>点 `正常事件` 后，只从本页移除，不影响该用户在其他风控列表里的记录。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>`仓位ID` 超过展示上限时用 `查看更多` 打开弹窗看全量。</li>
+          <li>本页默认按 `操作时间倒序`。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-same-second-open">
       <div class="spec-card">
-        <strong>同秒开仓监控说明</strong>
-        <em>运营说明</em>
+        <strong>同秒开仓监控</strong>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项包含 `查询条件`、`币对类型`、`币对`、`查询开始时间`、`查询结束时间`，用于按用户、现货/合约币对和时间范围查询同秒开仓事件。</li>
-          <li>列表字段依次为 `开仓时间`、`币对类型`、`币对`、`同秒开仓用户数`、`涉及用户ID`、`仓位ID`、`同秒开仓事件次数`、`操作时间`、`操作`。</li>
-          <li>`同秒开仓用户数` 表示同一秒内对同一交易对开仓的用户数量。</li>
-          <li>`涉及用户ID` 为该事件对应的用户ID集合；`同秒开仓事件次数` 为该组用户在统计周期内命中的总次数。</li>
-          <li>`操作` 包含 `同一用户配置`、`正常事件`、`可疑用户`、`黑名单用户`。</li>
-          <li>规则配置中的 `同秒开仓次数阈值`、`涉及用户数阈值`、`时间范围`、`异常处理方式` 用于识别同秒开仓关联事件；`异常处理方式` 统一使用固定 8 个下拉项。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
+          <li>`同秒开仓用户数` 表示同一秒内、同一交易对、同时开仓的去重用户数。</li>
+          <li>`涉及用户ID` 是这次命中的 UID 集合；`同秒开仓事件次数` 是这组 UID 在统计窗口里累计命中的次数。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>数字类规则配置统一使用纯数字整数录入；本页 `同秒开仓次数大于等于`、`涉及用户数大于等于` 均按整数维护，时间范围按枚举选项录入。</li>
-          <li>`同一用户配置` 中可选择是否纳入关联同秒开仓用户集合；纳入后按关联用户集合作为统一处理范围。</li>
-          <li>`涉及用户ID` 为组合字段，展示时可按逗号分隔，后台应保留原始数组结构。</li>
-          <li>`仓位ID` 默认最多展示 2 个；超出展示长度时显示 `查看更多`，点击后弹窗展示全部仓位ID。</li>
-          <li>统一风控操作固定包含 `禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有事件是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>做市用户不单独加“剔除做市”开关，处理方式是把做市用户放到白名单，白名单用户不参与命中。</li>
+          <li>当前口径没有再追加“必须同方向开仓”等额外条件，按页面现有规则字段判断。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>`同一用户配置` 可选是否把关联同秒开仓用户一起处理；不勾关联时，只处理当前用户。</li>
+          <li>点 `正常事件` 后，只移除当前这条同秒开仓事件记录，不影响别的风控列表。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>`仓位ID` 超出展示上限时，通过 `查看更多` 看全量。</li>
+          <li>本页默认按 `操作时间倒序`。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-withdraw-address-monitor">
       <div class="spec-card">
-        <strong>同提币地址监控说明</strong>
-        <em>运营说明</em>
+        <strong>同提币地址监控</strong>
+        <em>数据说明</em>
         <ol>
-          <li>本页按同提币地址事件识别异常链上地址聚合行为，页面结构与 `同秒开仓监控` 保持一致。</li>
-          <li>筛选项包含 `查询条件`、`链类型`、`提币地址`、`查询开始时间`、`查询结束时间`，用于按用户ID、链类型、提币地址与时间范围检索记录。</li>
-          <li>列表字段依次为 `提币时间`、`链类型`、`提币地址`、`同提币用户数`、`涉及用户ID`、`同提币地址事件次数`、`操作时间`、`操作`。</li>
-          <li>`规则配置` 仅包含 `同提币用户数大于等于`、`时间范围`、`异常处理方式` 三项核心内容。</li>
-          <li>`操作` 当前支持 `同提币地址配置`、`正常事件`、`可疑用户`、`黑名单用户`。</li>
+          <li>`提币地址`：命中的链上提币地址原值。</li>
+          <li>`链类型`：当前记录展示的链类型；只做展示，不参与地址是否相同的判断。</li>
+          <li>`同提币用户数`：命中同一提币地址的去重用户数。</li>
+          <li>`涉及用户ID`：命中这条提币地址的 UID 集合。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>`同地址用户数大于等于` 用于配置同一地址关联的最少用户数量阈值，按纯数字整数录入。</li>
-          <li>同提币地址监控默认按 `同一用户排重` 处理，不在规则配置中单独展示或要求人工配置。</li>
-          <li>`同提币地址配置` 中可选择是否纳入关联同提币地址用户集合；纳入后按关联用户集合作为统一处理范围。</li>
+          <li>不同链但地址字符串相同，也算同地址命中，不做链维度拆分。</li>
+          <li>同一地址的统计按用户去重后再看是否达到阈值。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>`同提币地址配置` 可以只处理当前用户，也可以把关联同提币地址用户一起处理。</li>
+          <li>如果关联用户里有白名单用户，白名单用户不进入本次处理对象。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `提币地址倒序` 排列。</li>
+          <li>`涉及用户ID` 超出展示长度时，通过 `查看更多` 查看全量 UID。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-wool-monitor">
       <div class="spec-card">
-        <strong>羊毛党监控说明</strong>
-        <em>运营说明</em>
+        <strong>羊毛党监控</strong>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项包含 `查询条件`、`查询开始时间`、`查询结束时间`、`提现状态`，用于按用户ID/手机/邮箱、时间和提现结果筛选羊毛党候选记录。</li>
-          <li>列表字段依次为 `用户UID`、`用户其他风控行为`、`下级总数`、`下级交易用户总充值金额`、`下级交易用户总提现金额`、`下级交易用户数`、`下级交易用户领取福利总金额`、`命中证据说明`、`操作时间`、`操作`。</li>
-          <li>`操作` 包含 `可疑用户`、`正常事件`、`黑名单用户`、`此用户与其下级全部列为黑名单`、`同一用户配置`。</li>
-          <li>规则配置中的核心条件为：`下级交易用户总提现金额大于等于下级交易用户领取福利总金额`，且 `下级交易用户总充值金额小于等于下级交易用户领取福利总金额`；百分比输入统一按纯数字整数维护，`异常处理方式` 使用固定 8 个下拉项。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
+          <li>`用户UID`：列表主体是上级 A，不是下级 B/C；页面展示和处理的主体始终是上级。</li>
+          <li>`下级交易用户领取福利总金额`：当前口径等同于虚充金额。</li>
+          <li>`下级交易`：下级产生的 `现货` 或 `合约` 交易；页面口径按 `现货或合约` 理解，不再写“更偏向”。</li>
+          <li>`操作时间`：这条羊毛党监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>进入用户白名单的用户不再进入本页羊毛党监控命中结果。</li>
-          <li>`下级交易用户领取福利总金额` = `下级交易用户体验金金额` + `下级交易用户虚充金额`，金额展示以页面展示结果为准。</li>
-          <li>命中逻辑要求同时满足两项比例条件：提现比例高于阈值，且充值比例低于阈值，单独满足其中一项不进入本页。</li>
-          <li>涉及百分比阈值均按百分比录入和展示，默认保留两位小数。</li>
-          <li>`此用户与其下级全部列为黑名单` 表示将当前用户及其下级账户统一转入黑名单名单，需保留批量转入日志。</li>
-          <li>若异常处理方式为 `禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`提现人工审核` 或 `需要人脸认证KYC`，应在真实系统中记录执行日志和人工复核结果。</li>
-          <li>`羊毛党配置` 可针对当前用户，并按 `所有下级`、`一级以内`、`三级以内` 三种范围选择是否将其下级账户一并纳入统一处理。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>判断是否命中时，统计数据只算下级 B/C，不算上级 A 自己。</li>
+          <li>如果配置里有“关联项”，按关联项决定最终纳入处理的下级范围。</li>
+          <li>下级是白名单时，上级仍可能命中，只是不把这个白名单下级算进关联处理对象；上级是白名单时，一级下级不再因这个条件命中。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>列表里的限制动作限制的是上级 A，不是下级 B/C。</li>
+          <li>`此用户与其下级全部列为黑名单` 才会把下级一起处理；普通 `可疑用户`、`黑名单用户` 默认处理当前列表主体。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户UID倒序` 排列。</li>
+          <li>空值统一显示为 `—`。</li>
+          <li>点 `正常事件` 后，只从羊毛党列表移除，不影响其他规则列表。</li>
+          <li>筛选条件变化后，自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-contract-suspicious-monitor">
       <div class="spec-card">
-        <strong>高盈利高胜率用户说明</strong>
-        <em>运营说明</em>
+        <strong>高盈利高胜率用户</strong>
+        <em>数据说明</em>
         <ol>
-          <li>本页用于识别高盈利、高胜率且具备持续盈利特征的用户，不再使用 `合约可疑用户` 命名。</li>
-          <li>筛选项包含 `查询条件`、`类型`、`查询开始时间`，其中 `查询条件` 统一按 `用户ID/手机/邮箱` 检索合约可疑用户池中的用户记录。</li>
-          <li>列表字段依次为 `用户ID`、`用户其他风控行为`、`平均持仓时间`、`胜率`、`盈利率`、`账户余额`、`盈利`、`操作时间`、`操作`。</li>
-          <li>`操作` 当前支持 `正常事件`、`黑名单用户`、`相关操作配置` 三类入口；`相关操作配置` 按当前用户单条生效。</li>
-          <li>右上角提供 `规则配置`、`监控状态配置`、`合约可疑用户限制规则`、`市价历史订单`、`限价历史订单` 五个入口。</li>
-          <li>列表上方提供批量操作，固定包含 `可疑用户`、`正常事件`、`黑名单用户` 三类入口。</li>
+          <li>`用户UID`：命中高盈利高胜率监控的用户唯一标识。</li>
+          <li>`胜率`：当前规则使用的胜率结果值。</li>
+          <li>`盈利率`：当前规则使用的盈利率结果值。</li>
+          <li>`平均持仓时间`：当前规则使用的平均持仓时间结果值。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>本页数据口径与原 `用户监控列表` 保持一致，仅展示位置迁移到 `风控用户` 分组下。</li>
-          <li>`用户其他风控行为` 以标签展示用户已命中的其他风控类型，便于运营快速判断用户性质。</li>
-          <li>`规则配置` 用于维护 `胜率阈值`、`盈利率阈值`、`盈利率与胜率统计最低历史仓位数` 三项核心条件，三个数字项均按 `大于等于` 口径配置。</li>
-          <li>`合约可疑用户限制规则` 采用弹窗方式配置，不再单独作为风控用户页面展示。</li>
-          <li>`市价历史订单` 与 `限价历史订单` 作为 `合约可疑用户` 下的三级页面展示，返回入口统一回到本页。</li>
-          <li>`相关操作配置` 展示来源页面、当前用户UID、风控操作与备注，适合对当前单条合约可疑用户执行人工处置。</li>
+          <li>用户满足当前页面配置的胜率、盈利率、持仓时间等阈值条件后，进入列表。</li>
+          <li>规则调整后，只对新的开仓生效，已有持仓不处理。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>当前列表操作不再提供 `相关操作配置` 按钮。</li>
+          <li>如果用户被处理成 `正常事件`，只从当前这个列表移除，不影响其他命中的风控列表。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户UID倒序` 排列。</li>
+          <li>空值统一显示为 `—`。</li>
+          <li>单条操作仅保留当前页面支持的按钮，不再展示已经被下线的入口。</li>
+          <li>筛选条件变化后，自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-abnormal-deposit-monitor">
       <div class="spec-card">
-        <strong>异常充值监控说明</strong>
-        <em>运营说明</em>
+        <strong>异常充值监控</strong>
+        <em>数据说明</em>
         <ol>
-          <li>本页用于识别异常充值与快进快出场景，按 `充值入账金额触发次数` 和 `停留时长 + 低交易占比 + 转出方式` 两条规则判定，任意命中一条即记录。</li>
-          <li>筛选项包含 `查询条件`、`开始时间`、`结束时间`，其中 `查询条件` 仅支持按 `用户UID` 检索异常充值记录。</li>
-          <li>列表字段依次为 `用户UID`、`用户其他风控行为`、`充值笔数`、`充值总额`、`充值后交易次数`、`充值后交易总额`、`停留时长`、`交易金额占比`、`命中证据说明`、`操作时间`、`操作`。</li>
-          <li>`命中证据说明` 必须按实际触发规则清晰展示次数阈值、停留时长、现货交易金额占比或合约交易初始保证金占比，以及 `提现`、`站内转账`、`C2C` 等转出方式，便于审计复核与客诉解释。</li>
-          <li>`操作` 当前支持 `正常事件`、`可疑用户`、`黑名单用户`、`相关操作配置` 四类人工分流动作；`相关操作配置` 按当前用户单条生效。</li>
-          <li>规则配置仅保留 `触发角度1：充值入账金额触发次数`、`触发角度2：停留时长 + 低交易占比 + 转出方式`、`异常处理方式`、`记录逻辑` 四块内容。</li>
+          <li>`用户UID`：命中异常充值监控的用户唯一标识。</li>
+          <li>`充值笔数`：当前统计窗口内，命中的充值入账笔数。</li>
+          <li>`充值总额`：当前统计窗口内，命中的充值入账总金额。</li>
+          <li>`充值后交易次数`：充值后，在当前统计窗口内产生的交易次数。</li>
+          <li>`充值后交易总额`：充值后，在当前统计窗口内产生的交易总金额。</li>
+          <li>`停留时长`：充值入账后，到触发转出或命中时为止的资金停留时间。</li>
+          <li>`交易金额占比`：当前命中规则对应的交易金额占充值金额的比例。</li>
+          <li>`命中证据说明`：当前记录实际命中的规则说明；必须写明阈值、时间、转出方式，不允许只写“命中规则”。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>触发角度1表示：在统计时间窗口内，用户 `充值入账金额达到低风险以上` 的次数大于等于配置值，即进入异常充值监控。</li>
-          <li>触发角度2表示：`停留时长小于等于阈值`，且 `现货交易金额小于等于充值金额指定百分比` 或 `合约交易初始保证金小于等于充值金额指定百分比`，并通过 `提现`、`站内转账`、`C2C` 任一方式转出时，进入异常充值监控。</li>
-          <li>`交易金额占比` 为当前实际触发口径对应的交易占充值金额比例；现货场景展示现货交易金额占比，合约场景展示合约交易初始保证金占比。</li>
-          <li>`异常处理方式` 沿用统一风控处理选项，包括 `仅标记`、`禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`提现人工审核`、`需要人脸认证KYC`。</li>
-          <li>`相关操作配置` 展示来源页面、当前用户UID、风控操作与备注，适合对当前单条异常充值命中用户执行人工处置。</li>
-          <li>数字类规则配置统一使用纯数字整数录入，不支持输入文字描述。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>命中路径一：充值入账相关指标达到配置阈值时，进入列表。</li>
+          <li>命中路径二：满足 `停留时长 + 低交易占比 + 转出方式` 这一组条件时，进入列表。</li>
+          <li>任意一条命中路径满足，就进入列表。</li>
+          <li>和提现相关的判断，以“发起提现并进入审核流程”为准，不等提现成功才算。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>本页不再提供 `相关操作配置` 按钮；人工分流只通过列表已有按钮完成。</li>
+          <li>点 `正常事件` 后，只移除当前异常充值记录。</li>
+          <li>点 `可疑用户` 或 `黑名单用户` 后，处理结果同步写入 `处理记录`。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户UID倒序` 排列。</li>
+          <li>空值统一显示为 `—`。</li>
+          <li>`命中证据说明` 必须直接写命中的阈值、时间、转出方式。</li>
+          <li>筛选条件变化后，自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-password-monitor">
       <div class="spec-card">
-        <strong>用户同密码说明</strong>
-        <em>运营说明</em>
+        <strong>用户同密码</strong>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项包含 `用户ID`、`登录密码`、`支付密码`、`关联类型`、`查询开始时间`、`查询结束时间`，用于分别按用户和两类密码摘要特征筛选同密码风险记录。</li>
-          <li>列表字段依次为 `加密后的登录密码`、`同登录密码用户数`、`加密后的支付密码`、`同支付密码用户数`、`登录密码与支付密码都相同用户数`、`同密码配置数`、`操作时间`、`操作`。</li>
-          <li>`加密后的登录密码` 与 `加密后的支付密码` 为脱敏后的密码摘要，仅用于识别关联用户，不展示原始密码。</li>
-          <li>`同登录密码用户数` 表示命中同一登录密码摘要的用户数；`同支付密码用户数` 表示命中同一支付密码摘要的用户数。</li>
-          <li>`登录密码与支付密码都相同用户数` 表示同时满足两类密码摘要一致的用户数量。</li>
-          <li>右上角提供 `规则配置` 与 `监控状态配置`；规则配置包含 `同登录密码用户大于等于`、`同支付密码用户大于等于`、`同登录密码并同支付密码用户大于等于` 三项核心条件。</li>
-          <li>`操作` 包含 `查看详情`、`正常事件`、`可疑用户`、`黑名单用户`、`同密码用户配置`。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
+          <li>`加密后的登录密码`：脱敏后的登录密码摘要，不展示原始密码。</li>
+          <li>`同登录密码用户数`：命中相同登录密码摘要的去重用户数。</li>
+          <li>`加密后的支付密码`：脱敏后的支付密码摘要，不展示原始密码。</li>
+          <li>`同支付密码用户数`：命中相同支付密码摘要的去重用户数。</li>
+          <li>`登录密码与支付密码都相同用户数`：同时命中相同登录密码摘要和相同支付密码摘要的去重用户数。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>密码关联识别只展示加密摘要，不应在前端或日志中暴露原始密码内容。</li>
-          <li>同密码用户配置按当前监控页面单独生效，不应作为跨页面的全局统一配置。</li>
-          <li>数字类规则配置统一使用纯数字整数录入，不支持输入文字描述或小数。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>当任一密码关联人数达到规则阈值时，进入列表。</li>
+          <li>人数统计统一按去重用户数计算，不按记录数计算。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>点 `查看详情` 时，查看这一类密码关联实际命中的 UID 集合。</li>
+          <li>点 `同密码用户配置` 时，只对当前这次选中的关联 UID 集合生效，不是全局配置。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按摘要字段倒序排列。</li>
+          <li>密码字段只展示脱敏摘要，不展示原始密码。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-password-detail">
       <div class="spec-card">
         <strong>同密码详情说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>详情列表字段包含 `关联类型`、`加密后的登录密码`、`加密后的支付密码`、`关联的所有用户具体UID`、`操作时间`、`操作`。</li>
-          <li>`关联类型` 用于标识该条记录命中的密码关联维度，如 `同登录密码`、`同支付密码`、`同登录密码和同支付密码`。</li>
-          <li>`关联的所有用户具体UID` 用于一次性展示该关联类型下命中的全部用户UID集合。</li>
+          <li>`关联类型`：这条记录命中的密码关联维度，取值只可能是 `同登录密码`、`同支付密码`、`同登录密码和同支付密码`。</li>
+          <li>`加密后的登录密码`：脱敏后的登录密码摘要，不展示原始密码。</li>
+          <li>`加密后的支付密码`：脱敏后的支付密码摘要，不展示原始密码。</li>
+          <li>`关联的所有用户具体UID`：当前关联类型下命中的全部 UID 集合。</li>
+          <li>`操作时间`：这条详情记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条详情记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>详情页用于核对同密码关联用户集合，不应展示原始密码。</li>
-          <li>操作列中的 `同密码用户配置` 以当前关联类型对应的用户UID集合作为默认处理对象。</li>
+          <li>详情页只用于核对同密码关联用户集合，不展示原始密码。</li>
+          <li>操作列中的 `同密码用户配置` 以当前关联类型对应的 UID 集合作为默认处理对象。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `关联类型倒序` 排列。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-password-config">
       <div class="spec-card">
         <strong>同密码用户配置说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>配置页字段包含 `来源页面`、`先选中类型`、`搜索删除UID`、`相关联的所有用户UID`、`风控操作`、`备注`。</li>
-          <li>`先选中类型` 支持 `同登录密码`、`同支付密码`、`同登录密码和同支付密码` 三类范围独立或组合处理。</li>
-          <li>`相关联的所有用户UID` 根据当前选中类型自动汇总展示，管理员可手动删除，也可通过搜索删除后再执行处理。</li>
-          <li>`风控操作` 固定包含 `禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`。</li>
+          <li>`来源页面`：只读字段，显示当前配置从哪个页面进入。</li>
+          <li>`先选中类型`：支持 `同登录密码`、`同支付密码`、`同登录密码和同支付密码` 三类范围独立或组合处理。</li>
+          <li>`搜索删除UID`：用于从当前关联 UID 集合里人工剔除不参与本次处理的 UID。</li>
+          <li>`相关联的所有用户UID`：根据当前选中类型自动汇总展示；从这里删除的 UID，不参与本次处理。</li>
+          <li>`风控操作`：固定包含 `禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`、`全部列入可疑用户`、`全部列入黑名单`。</li>
+          <li>`备注`：本次统一处理原因说明。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>该配置页按当前异常监控页面单独生效，不应作为全局统一配置。</li>
-          <li>提交时以当前保留下来的关联UID集合作为最终处理对象，被删除的UID不参与本次处理。</li>
-          <li>`备注` 应记录本次统一处理原因，便于后续审计和追溯。</li>
+          <li>这个配置页只对当前打开的这条同密码记录生效，不是全局配置。</li>
+          <li>提交时以当前保留下来的关联 UID 集合作为最终处理对象；被删除的 UID 不参与本次处理。</li>
+          <li>`备注` 应记录本次统一处理原因，后续审计和追溯都查这里。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-trade-peer-monitor">
       <div class="spec-card">
-        <strong>对敲交易监控说明</strong>
-        <em>运营说明</em>
+        <strong>对敲交易监控</strong>
+        <em>数据说明</em>
         <ol>
-          <li>统计时间口径：当触发行为发生时，为该用户动态生成一个独立的 Monitor ID，并记录统计开始时间与结束时间（结束时间 = 开始时间 + 配置的统计时间）；在结束时间前持续统计且触发不中断；到结束时间后停止统计，并依据窗口期内是否达标将状态结算为 `已触发` 或 `已结束`。</li>
-          <li>在统计窗口期内，如用户在 `现货` 或 `合约` 交易中，与同一批对手用户发生的交易次数超过阈值，且对手用户不在白名单，则进入本页展示。</li>
-          <li>筛选项包含 `查询条件`、`类型`、`开始时间`、`结束时间`，用于按交易用户UID、对手用户UID、交易类型和时间范围检索命中记录。</li>
-          <li>列表字段依次为 `交易用户UID`、`对手用户UID`、`仓位ID`、`用户`、`用户其他风控行为`、`现货次数`、`合约次数`、`总金额`、`操作时间`、`操作`。</li>
-          <li>`用户其他风控行为` 用于汇总展示该用户已命中的其他风控性质；仅有一项时展示一项，多项时并列展示多项，便于管理区快速定位用户性质。</li>
-          <li>`操作` 包含 `查看详情` 与 `对敲交易配置`。</li>
-          <li>规则配置中的 `统计时间范围`、`交易次数阈值`、`时间段内累计交易金额`、`统计类型`、`异常处理方式` 用于识别对敲交易行为。</li>
+          <li>`交易用户UID`：当前命中记录的交易主体 UID。</li>
+          <li>`对手用户UID`：与交易用户形成对敲关系的对手 UID 集合。</li>
+          <li>`总金额`：当前记录的累计成交额；现货和合约统一按成交额统计。</li>
+          <li>`交易次数`：按委托 ID 去重后的交易次数；同一委托分多次成交也只算 1 次。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
-          <li>对手用户进入任一白名单域后，不再作为本页命中统计对象。</li>
-          <li>`对敲交易配置` 按当前监控页面单独生效，可选择是否将交易对手用户一并纳入统一处理。</li>
-          <li>`仓位ID` 默认最多展示 2 个；超出展示长度时显示 `查看更多`，点击后弹窗展示全部仓位ID。</li>
-          <li>规则配置或监控状态配置变更后，仅重新判断当前列表中的已有记录是否仍属于命中范围；此前已标记为正常事件的历史记录不再回扫，新命中记录按新规则入表。</li>
+          <li>这个规则按独立统计窗口跑；窗口开始后持续累计，到结束时间再结算是否命中。</li>
+          <li>白名单对象不参与对敲命中统计。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>`对敲交易配置` 可以只处理交易用户，也可以把对手用户一起处理。</li>
+          <li>处理完成后，要能在 `处理记录` 里查到这次处理来自 `对敲交易监控`。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `交易用户UID倒序` 排列。</li>
+          <li>`仓位ID` 超出展示上限时，通过 `查看更多` 看全量。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-trade-peer-detail">
       <div class="spec-card">
         <strong>交易同用户详情说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>详情页顶部展示 `用户`、`交易用户UID`、`对手用户UID`、`现货次数`、`合约次数`、`总金额`、`操作时间` 等汇总信息。</li>
-          <li>详情列表字段依次为 `交易类型`、`交易对`、`对手用户UID`、`仓位ID`、`成交金额`、`成交时间`、`操作`。</li>
-          <li>操作列中的 `对敲交易配置` 默认以当前交易用户和全部对手用户UID作为可处理对象。</li>
+          <li>`用户`：当前详情页展示的主体对象说明。</li>
+          <li>`交易用户UID`：当前详情页对应的交易主体 UID。</li>
+          <li>`对手用户UID`：当前详情页对应的对手 UID 集合。</li>
+          <li>`现货次数`：当前详情页汇总的现货成交次数。</li>
+          <li>`合约次数`：当前详情页汇总的合约成交次数。</li>
+          <li>`总金额`：当前详情页汇总的累计成交额。</li>
+          <li>`操作时间`：当前详情页汇总信息最近一次被处理或生成的时间。</li>
+          <li>详情列表字段为 `交易类型`、`交易对`、`对手用户UID`、`仓位ID`、`成交金额`、`成交时间`、`操作`。</li>
+          <li>`对敲交易配置` 默认以当前交易用户和全部对手用户 UID 作为可处理对象。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>详情页用于核对同交易对手命中的成交明细；成交字段展示以页面明细展示结果为准。</li>
+          <li>详情页只用于核对同交易对手命中的成交明细；成交字段直接显示明细原值，不额外重算。</li>
           <li>当选择关联交易对手统一处理时，应同步保留交易用户与对手用户的处理日志。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `成交时间倒序` 排列；同一秒内按 `对手用户UID倒序` 排列。</li>
+          <li>`仓位ID` 超出展示长度时，通过 `查看更多` 查看全量仓位 ID。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-ip-whitelist">
       <div class="spec-card">
         <strong>IP白名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项 `查询条件` 支持按IP或关联账号信息检索IP白名单记录。</li>
-          <li>列表字段依次为 `IP`、`转入原因`、`操作时间`、`操作`。</li>
-          <li>新增入口支持 `控制方式` 选择 `单个IP` 或 `国家`；选择 `单个IP` 时不展示国家选择，选择 `国家` 时不展示IP输入框。</li>
-          <li>`操作` 当前支持 `删除`，表示将该IP从白名单移除。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
+          <li>`查询条件`：按 IP 或关联账号信息过滤 IP 白名单记录。</li>
+          <li>`IP`：当前白名单对象；当控制方式为 `国家` 时，这一列显示国家范围值。</li>
+          <li>`转入原因`：当前 IP 或国家范围进入白名单的原因。</li>
+          <li>`操作时间`：这条 IP 白名单记录最近一次被录入或修改的时间。</li>
+          <li>`操作`：当前页面对这条记录可执行的按钮集合，当前只包含 `删除`。</li>
+          <li>`控制方式`：新增区可选 `单个IP` 或 `国家`；不同控制方式展示对应录入字段。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
           <li>进入IP白名单的IP不再参与异常登录等IP维度风控监控命中。</li>
-          <li>`单个IP` 模式：`输入IP` 支持多个IP使用 `/` 分隔；单条IP支持输入 1 至 4 段，不足段位可用 `*` 补齐，`*` 代表模糊匹配；录入前需先拆分、去空格、去重，再按单条规则写入。</li>
-          <li>`国家` 模式：选择国家后，表示该国家范围内的IP按白名单口径放行。</li>
+          <li>`单个IP` 模式下，`输入IP` 支持多个 IP 使用 `/` 分隔；录入前先拆分、去空格、去重，再按单条规则写入。</li>
+          <li>`国家` 模式保存后，表示该国家范围内的 IP 全部按白名单放行。</li>
           <li>`转入原因` 不能为空；移出IP白名单后，后续监控重新按普通IP规则扫描。</li>
           <li>IP白名单属于白名单域配置，应与用户白名单、邮箱后缀白名单、设备白名单并列维护。</li>
           <li>如该IP当前已在IP黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `IP倒序` 排列。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-device-whitelist">
       <div class="spec-card">
         <strong>设备白名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项 `查询条件` 支持按设备ID或设备指纹检索设备白名单记录。</li>
-          <li>列表字段依次为 `设备ID`、`类型`、`转入原因`、`操作时间`、`操作`。</li>
-          <li>`类型` 用于区分设备所属终端来源，固定展示为 `WEB`、`安卓`、`IOS`。</li>
-          <li>`转入原因` 用于说明设备进入白名单的业务依据。</li>
-          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
+          <li>`查询条件`：按设备ID或设备指纹过滤设备白名单记录。</li>
+          <li>`设备ID`：当前白名单设备标识。</li>
+          <li>`类型`：设备所属终端来源，固定展示为 `WEB`、`安卓`、`IOS`。</li>
+          <li>`转入原因`：当前设备进入白名单的原因。</li>
+          <li>`操作时间`：这条设备白名单记录最近一次被录入或修改的时间。</li>
+          <li>`操作`：当前页面对这条记录可执行的按钮集合，只包含 `触发事件` 与 `删除`。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
           <li>进入设备白名单的设备不再参与批量注册等设备维度风控监控命中。</li>
           <li>设备相关白名单放行记录可通过 `触发事件` 查看触发汇总与明细，明细中需展示设备关联的UID、设备与IP排重结果。</li>
@@ -9797,178 +10019,378 @@
           <li>设备白名单属于白名单域配置，应与用户白名单、IP白名单、邮箱后缀白名单并列维护。</li>
           <li>如该设备当前已在设备黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
         </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `设备ID倒序` 排列。</li>
+          <li>`触发事件` 先按触发日期汇总展示，再通过 `查看详情` 查看当日放行明细。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
+        </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-deposit-address-whitelist">
       <div class="spec-card">
         <strong>充值地址白名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项包含 `查询条件`、`开始时间`、`结束时间`，用于按充值地址与选择周期检索充值地址白名单记录。</li>
-          <li>列表字段依次为 `勾选`、`地址`、`转入原因`、`操作时间`、`操作`。</li>
-          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
-          <li>新增充值地址支持多个地址使用 `/` 分隔批量录入；`转入原因` 为本次加入白名单的业务依据。</li>
+          <li>`查询条件`、`开始时间`、`结束时间`：用于过滤充值地址白名单记录。</li>
+          <li>`地址`：当前充值地址白名单对象原值。</li>
+          <li>`转入原因`：当前地址进入白名单的原因。</li>
+          <li>`操作时间`：这条充值地址白名单记录最近一次被录入或修改的时间。</li>
+          <li>`操作`：当前页面对这条记录可执行的按钮集合，只包含 `触发事件` 与 `删除`。</li>
+          <li>`新增充值地址`：支持多个地址使用 `/` 分隔录入。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
           <li>进入充值地址白名单的地址不再参与异常充值监控等充值维度的地址命中。</li>
           <li>如该地址当前已在充值地址黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
           <li>`触发事件` 弹窗需先展示 `触发日期`、`触发次数（排重）`、`触发UID数`，并在详情中展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`触发原因`；同一条明细仅展示一种维度。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `地址倒序` 排列。</li>
+          <li>`触发事件` 先展示触发日期、触发次数和触发UID数，再通过 `查看详情` 查看明细。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-withdraw-address-whitelist">
       <div class="spec-card">
         <strong>提币地址白名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项包含 `查询条件`、`开始时间`、`结束时间`，用于按提币地址与选择周期检索提币地址白名单记录。</li>
-          <li>列表字段依次为 `勾选`、`地址`、`转入原因`、`操作时间`、`操作`。</li>
-          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
-          <li>新增提币地址支持多个地址使用 `/` 分隔批量录入；`转入原因` 为本次加入白名单的业务依据。</li>
+          <li>`查询条件`、`开始时间`、`结束时间`：用于过滤提币地址白名单记录。</li>
+          <li>`地址`：当前提币地址白名单对象原值。</li>
+          <li>`转入原因`：当前地址进入白名单的原因。</li>
+          <li>`操作时间`：这条提币地址白名单记录最近一次被录入或修改的时间。</li>
+          <li>`操作`：当前页面对这条记录可执行的按钮集合，只包含 `触发事件` 与 `删除`。</li>
+          <li>`新增提币地址`：支持多个地址使用 `/` 分隔录入。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
           <li>进入提币地址白名单的地址不再参与同提币地址监控等提币维度的地址命中。</li>
           <li>如该地址当前已在提币地址黑名单，保存时需提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
           <li>`触发事件` 弹窗需先展示 `触发日期`、`触发次数（排重）`、`触发UID数`，并在详情中展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`触发原因`；同一条明细仅展示一种维度。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `地址倒序` 排列。</li>
+          <li>`触发事件` 先展示触发日期、触发次数和触发UID数，再通过 `查看详情` 查看明细。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-password-whitelist">
       <div class="spec-card">
         <strong>密码白名单说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>筛选项包含 `查询条件`、`类型`、`开始时间`、`结束时间`，用于按密码摘要、密码类型与选择周期检索白名单记录。</li>
-          <li>列表字段依次为 `密码摘要`、`类型`、`转入原因`、`操作时间`、`操作`。</li>
-          <li>`类型` 为多选项，可同时选择 `登录密码` 与 `支付密码`；录入和筛选时均需明确类型。</li>
-          <li>`操作` 包含 `触发事件` 与 `删除`；`触发事件` 以弹窗方式先按触发日期汇总展示，再支持 `查看详情` 查看当日放行明细。</li>
-          <li>新增密码支持多个密码摘要使用 `/` 分隔批量录入；录入时可同时勾选当前摘要所属 `登录密码` 和 `支付密码`。</li>
+          <li>`查询条件`、`类型`、`开始时间`、`结束时间`：用于过滤密码白名单记录。</li>
+          <li>`密码摘要`：脱敏后的密码摘要原值，不展示原始密码。</li>
+          <li>`类型`：当前摘要所属类型，可选 `登录密码` 或 `支付密码`；录入和筛选时都要明确类型。</li>
+          <li>`转入原因`：当前密码摘要进入白名单的原因。</li>
+          <li>`操作时间`：这条密码白名单记录最近一次被录入或修改的时间。</li>
+          <li>`操作`：当前页面对这条记录可执行的按钮集合，只包含 `触发事件` 与 `删除`。</li>
+          <li>`新增密码`：支持多个密码摘要使用 `/` 分隔批量录入。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
           <li>密码白名单仅展示脱敏后的密码摘要，不应在前端、日志或说明中暴露原始密码。</li>
           <li>进入密码白名单的密码摘要不再参与 `用户同密码` 相关密码维度命中。</li>
           <li>如该密码摘要当前已在密码黑名单，确认时需弹窗提示“以下数据在黑名单，确认移出，以此次配置为准么？”。</li>
           <li>`触发事件` 弹窗需先展示 `触发日期`、`触发次数（排重）`、`触发UID数`，并在详情中展示 `触发时间`、`相关用户UID/设备/IP（排重）`、`触发总次数`、`触发原因`；同一条明细仅展示一种维度。</li>
-          <li>本页无 `更新时间` 字段，默认按 `操作时间` 倒序排序。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `密码摘要倒序` 排列。</li>
+          <li>`触发事件` 先展示触发日期、触发次数和触发UID数，再通过 `查看详情` 查看明细。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-large-position-monitor">
       <div class="spec-card">
         <strong>大额持仓监控说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>本页用于按 `用户持仓总名义价值` 与 `盈利率` 识别大额持仓预警用户。</li>
-          <li>规则配置包含 `用户持仓总名义价值大于等于`、`盈利率大于等于`、`异常处理方式`。</li>
+          <li>`用户UID`：命中大额持仓监控的用户唯一标识。</li>
+          <li>`用户持仓总名义价值`：当前统计时点，用户全部持仓按名义价值汇总后的金额；页面按金额字段展示，不使用科学计数法。</li>
+          <li>`盈利率`：当前统计时点的大额持仓盈利率；页面按百分比字段展示。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
+        </ol>
+        <em>命中规则</em>
+        <ol>
+          <li>同时满足 `用户持仓总名义价值 >= 配置阈值` 和 `盈利率 >= 配置阈值`，才进入列表。</li>
+          <li>`异常处理方式` 只决定命中后的处理动作，不参与是否命中的判断。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>点 `正常事件` 后，只移除当前列表里的这条记录，不影响该用户在其他风控列表里的记录。</li>
+          <li>点 `可疑用户` 或 `黑名单用户` 后，处理结果同步写入 `处理记录`。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户UID倒序` 排列。</li>
+          <li>空值统一显示为 `—`。</li>
+          <li>筛选条件变化后，自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-deposit-address-monitor">
       <div class="spec-card">
         <strong>同充值地址监控说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>本页用于识别同一充值地址在短时间内聚合多个用户的预警记录。</li>
-          <li>规则配置包含 `同地址用户数大于等于` 与 `时间范围`，时间范围支持 `1小时/4小时/8小时/12小时/48小时`。</li>
+          <li>`充值地址`：本次命中的链上充值地址原值。</li>
+          <li>`同地址用户数`：在统计窗口内，命中同一充值地址的去重用户数。</li>
+          <li>`涉及用户UID`：本次命中该充值地址的 UID 集合。</li>
+          <li>`时间范围`：当前规则选择的统计窗口，取值为 `1小时 / 4小时 / 8小时 / 12小时 / 48小时`。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
+        </ol>
+        <em>命中规则</em>
+        <ol>
+          <li>在当前 `时间范围` 内，同一 `充值地址` 命中的去重用户数达到 `同地址用户数大于等于` 配置值，才进入列表。</li>
+          <li>地址是否相同，按地址字符串判断；同一地址下重复出现的同一 UID 只计 1 个用户。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>点 `正常事件` 后，只移除当前这条充值地址监控记录，不影响其他风控列表。</li>
+          <li>点关联处理类按钮时，最终处理对象以当前弹窗里展示的 UID 集合为准。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `充值地址` 字符串倒序排列。</li>
+          <li>`涉及用户UID` 超出展示长度时，通过 `查看更多` 查看全量 UID。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-internal-transfer-monitor">
       <div class="spec-card">
         <strong>同uid内部划转监控说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>本页用于识别 `1小时内同一UID接受的划转次数` 异常聚合的预警记录。</li>
-          <li>规则配置核心项为 `1小时内同一UID接受的划转次数大于等于`。</li>
+          <li>`接收用户UID`：在内部划转关系中，接收划转的一方 UID。</li>
+          <li>`1小时内接受的划转次数`：当前统计窗口内，接收用户被划入的累计次数。</li>
+          <li>`发起用户UID`：在统计窗口内，向该接收用户发起过内部划转的 UID 集合。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
+        </ol>
+        <em>命中规则</em>
+        <ol>
+          <li>当 `1小时内同一UID接受的划转次数 >= 配置阈值` 时，接收用户进入列表。</li>
+          <li>不只统计发起方和接收方的一对一关系；所有给这个接收用户发起过划转的账户，都属于关联监控范围。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>点 `正常事件` 后，只移除当前这条内部划转监控记录。</li>
+          <li>点关联处理类按钮时，最终处理对象以接收用户和当前弹窗里展示的发起用户 UID 集合为准。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `接收用户UID倒序` 排列。</li>
+          <li>`发起用户UID` 超出展示长度时，通过 `查看更多` 查看全量 UID。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-large-transfer-monitor">
       <div class="spec-card">
         <strong>大额出入金监控说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>本页用于识别单笔 `C2C/链上/内部转账` 大额出入金预警。</li>
-          <li>筛选项包含 `查询条件` 与 `类型`，可单独查看 `出金` 或 `入金` 记录。</li>
-          <li>规则配置核心项为 `单笔出金大于等于`、`单笔入金大于等于` 与渠道选择。</li>
+          <li>`用户UID`：命中大额出入金监控的用户唯一标识。</li>
+          <li>`类型`：当前记录是 `出金` 还是 `入金`。</li>
+          <li>`渠道`：当前记录所属渠道，范围为 `C2C / 链上 / 内部转账`。</li>
+          <li>`单笔金额`：当前这笔出金或入金的金额。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
+        </ol>
+        <em>命中规则</em>
+        <ol>
+          <li>当记录类型 = `出金` 时，`单笔金额 >= 单笔出金阈值` 才进入列表。</li>
+          <li>当记录类型 = `入金` 时，`单笔金额 >= 单笔入金阈值` 才进入列表。</li>
+          <li>只有被规则勾选的渠道才参与判断；未勾选渠道不进入列表。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>筛选项里的 `类型` 只切换列表显示范围，不改变原始命中结果。</li>
+          <li>点 `正常事件` 后，只移除当前这条大额出入金监控记录。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户UID倒序` 排列。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
+          <li>`类型` 只显示 `出金` 或 `入金`，不允许出现第三种文案。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-cumulative-withdraw-monitor">
       <div class="spec-card">
         <strong>累计出金超过入金监控说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>本页用于识别用户累计出金大于累计入金指定金额后，每次出金都触发的预警记录。</li>
-          <li>规则配置核心项为 `累计出金大于累计入金` 与渠道选择。</li>
+          <li>`用户UID`：命中累计出金超过入金监控的用户唯一标识。</li>
+          <li>`累计出金金额`：当前统计窗口内，用户累计出金总金额。</li>
+          <li>`累计入金金额`：当前统计窗口内，用户累计入金总金额。</li>
+          <li>`累计出金超过入金金额`：`累计出金金额 - 累计入金金额` 的差额。</li>
+          <li>`当前出金金额`：触发本次记录的这笔出金金额。</li>
+          <li>`渠道`：当前记录所属渠道，按规则勾选的渠道范围统计。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+        </ol>
+        <em>命中规则</em>
+        <ol>
+          <li>当 `累计出金金额 - 累计入金金额 >= 配置阈值` 后，用户后续每一笔新的出金都触发一条记录。</li>
+          <li>只有被规则勾选的渠道才参与累计；未勾选渠道不参与累计，也不触发记录。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>点 `正常事件` 后，只移除当前这条累计出金超过入金监控记录，不回滚累计结果。</li>
+          <li>点 `可疑用户` 或 `黑名单用户` 后，处理结果同步写入 `处理记录`。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户UID倒序` 排列。</li>
+          <li>金额字段按金额口径展示，空值统一显示为 `—`。</li>
+          <li>筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-small-coin-monitor">
       <div class="spec-card">
         <strong>小币种风控说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>本页规则触发条件包含 `持仓金额大于等于`、`持仓时间小于等于`、`24小时内胜率大于等于`、`输入不在统计列表的币对`。</li>
-          <li>排除币对仅支持单个合约币对格式录入，示例 `BTC/USDT`，添加后可在下方列表逐条删除。</li>
-          <li>列表字段包含 `用户UID`、`仓位ID`、`币对`、`杠杆`、`相同杠杆同币种持仓时间`、`用户持仓时间的仓位数量与24小时内总持仓数量占比`、`24小时胜率`、`操作时间`、`操作`。</li>
-          <li>`仓位ID` 默认最多展示 2 个；超出展示长度时显示 `查看更多`，点击后弹窗展示全部仓位ID。</li>
+          <li>`用户UID`：命中小币种风控的用户唯一标识。</li>
+          <li>`仓位ID`：命中的仓位标识；一个用户可对应多个仓位 ID。</li>
+          <li>`币对`：当前命中的合约币对。</li>
+          <li>`杠杆`：当前仓位使用的杠杆倍数。</li>
+          <li>`相同杠杆同币种持仓时间`：同一用户在相同杠杆、相同币对下的持仓时长。</li>
+          <li>`用户持仓时间的仓位数量与24小时内总持仓数量占比`：当前命中仓位数量占用户 24 小时内总持仓数量的比例。</li>
+          <li>`24小时胜率`：用户 24 小时内的胜率指标，页面按百分比字段展示。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
+        </ol>
+        <em>命中规则</em>
+        <ol>
+          <li>同时满足 `持仓金额 >= 配置阈值`、`持仓时间 <= 配置阈值`、`24小时内胜率 >= 配置阈值`，才进入列表。</li>
+          <li>被加入“输入不在统计列表的币对”的币对，不参与命中判断。</li>
+          <li>排除币对只支持单个合约币对格式录入，例如 `BTC/USDT`；保存后按单个币对生效。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>点 `正常事件` 后，只移除当前这条小币种风控记录。</li>
+          <li>点 `可疑用户` 或 `黑名单用户` 后，处理结果同步写入 `处理记录`。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户UID倒序` 排列。</li>
+          <li>`仓位ID` 默认最多展示 2 个；超出展示长度时，通过 `查看更多` 查看全量仓位 ID。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-order-brush-monitor">
       <div class="spec-card">
         <strong>打单风控说明</strong>
-        <em>运营说明</em>
+        <em>数据说明</em>
         <ol>
-          <li>本页用于识别同一uid在同一仓位内频繁加仓减仓，且24小时胜率较高的行为。</li>
-          <li>规则配置核心项为 `同一仓位内加仓减仓操作次数大于等于` 与 `24小时内胜率大于等于`。</li>
-          <li>列表字段包含 `用户UID`、`仓位ID`、`同仓位加仓减仓次数`、`24小时胜率`、`累计成交金额`、`操作时间`、`操作`。</li>
-          <li>`仓位ID` 默认最多展示 2 个；超出展示长度时显示 `查看更多`，点击后弹窗展示全部仓位ID。</li>
+          <li>`用户UID`：命中打单风控的用户唯一标识。</li>
+          <li>`仓位ID`：命中的仓位标识；一个用户可对应多个仓位 ID。</li>
+          <li>`同仓位加仓减仓次数`：同一仓位内，加仓和减仓的累计操作次数。</li>
+          <li>`24小时胜率`：用户 24 小时内的胜率指标，页面按百分比字段展示。</li>
+          <li>`累计成交金额`：当前统计窗口内，这条命中记录对应的累计成交金额。</li>
+          <li>`操作时间`：这条监控记录最近一次进入列表或被处理的时间。</li>
+          <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
+        </ol>
+        <em>命中规则</em>
+        <ol>
+          <li>当 `同一仓位内加仓减仓操作次数 >= 配置阈值`，且 `24小时内胜率 >= 配置阈值` 时，才进入列表。</li>
+          <li>统计范围只看同一 UID、同一仓位内的加仓减仓行为，不和其他仓位合并统计。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>点 `正常事件` 后，只移除当前这条打单风控记录。</li>
+          <li>点 `可疑用户` 或 `黑名单用户` 后，处理结果同步写入 `处理记录`。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户UID倒序` 排列。</li>
+          <li>`仓位ID` 默认最多展示 2 个；超出展示长度时，通过 `查看更多` 查看全量仓位 ID。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-handle-record">
       <div class="spec-card">
-        <strong>处理记录说明</strong>
-        <em>运营说明</em>
+        <strong>处理记录</strong>
+        <em>数据说明</em>
         <ol>
-          <li>本页为独立一级导航，用于展示开启权限相关处理记录。</li>
-          <li>筛选项包含 `查询条件`、`处理来源`、`类型`、`开始时间`、`结束时间`；其中 `查询条件` 仅支持按 `相关用户UID` 检索。</li>
-          <li>列表字段依次为 `相关用户UID`、`处理来源`、`类型`、`操作人`、`相关总资金`、`处理操作`、`原因`、`时间`、`操作`，每条处理记录单独展示。</li>
-          <li>`处理来源` 表示记录来自哪个风控页面；`相关总资金` 表示本次处理关联账户的资金汇总。</li>
-          <li>`类型` 区分 `批量用户` 与 `单个用户`；`相关用户UID` 在单个用户场景直接显示UID，在批量用户场景显示 `查看详情` 按钮。</li>
-          <li>`处理操作` 展示该次处理里执行过的动作，如 `禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`。</li>
-          <li>`操作` 当前以 `开启权限` 为主；批量用户查看关联UID明细通过 `相关用户UID` 列中的 `查看详情` 进入。</li>
-          <li>本页无 `更新时间` 字段，默认按 `时间` 倒序排序。</li>
+          <li>`相关用户UID`：本次处理关联的用户对象；单用户场景直接显示 UID，批量场景通过 `查看详情` 查看 UID 集合。</li>
+          <li>`处理来源`：这次处理来自哪个页面，例如 `异常登录监控`、`批量注册监控`、`对敲交易监控`。</li>
+          <li>`类型`：这次处理是 `单个用户` 还是 `批量用户`。</li>
+          <li>`操作人`：执行这次处理的人员标识。</li>
+          <li>`相关总资金`：这次处理关联对象的资金汇总金额。</li>
+          <li>`处理操作`：这次实际执行的动作，例如 `禁止登录`、`禁止提现`、`禁止现货交易`、`禁止合约开仓`。</li>
+          <li>`原因`：这次处理的原因说明。</li>
+          <li>`时间`：这条处理记录生成的时间。</li>
+          <li>`操作`：当前页面对这条处理记录可执行的处理按钮集合。</li>
         </ol>
-        <em>注意事项</em>
+        <em>命中规则</em>
         <ol>
+          <li>任何风控页面产生人工处理或自动处理后，都要写入一条处理记录。</li>
+          <li>`正常事件`、`可疑用户`、`黑名单用户`、`白名单用户`、`禁止登录`、`禁止现货交易`、`禁止合约开仓`、`禁止提现`、`恢复登录`、`恢复现货交易`、`恢复合约开仓`、`恢复提现` 都属于必须记录到本页的处理动作。</li>
+          <li>处理记录是风控流水，不是名单页；开发查询用户为什么被限、被谁处理、何时处理，统一查这里。</li>
+        </ol>
+        <em>处理规则</em>
+        <ol>
+          <li>`开启权限` 只做解禁，不改原来的处理记录内容。</li>
           <li>`开启权限` 的权限项固定为 `开放登录`、`开放提现`、`开放合约开仓`、`开放现货交易`、`正常提现流程`。</li>
-          <li>处理记录中一次处理可能关联多个用户；真实系统应同步写入本次处理涉及用户清单和审批日志。</li>
+          <li>批量场景下，点 `查看详情` 后查看本次处理关联的 UID 明细。</li>
+          <li>同一个对象如果先被 `禁止`，后被 `恢复`，处理记录必须保留两条独立日志：一条记录限制动作，一条记录恢复动作，不能覆盖历史。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `时间倒序` 排列；同一秒内按 `处理来源倒序` 排列。</li>
+          <li>空值统一显示为 `—`。</li>
+          <li>操作完成后，当前业务列表可以移除记录，但处理记录必须保留日志。</li>
+          <li>筛选条件变化后，自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
     <div class="spec-page" data-spec-page="risk-handle-record-detail">
       <div class="spec-card">
-        <strong>处理记录详情说明</strong>
-        <em>运营说明</em>
+        <strong>处理记录详情</strong>
+        <em>数据说明</em>
         <ol>
-          <li>详情页展示当前处理记录关联的用户列表，用于查看一次处理下涉及的多个用户。</li>
-          <li>详情页顶部展示 `处理来源`、`操作人`、`相关总资金`、`处理时间`、`处理操作`、`关联用户数`、`原因` 等汇总信息。</li>
-          <li>详情列表字段包含 `用户UID`、`账户余额`、`操作时间`、`处理操作`、`操作`。</li>
+          <li>详情页展示这一次处理到底影响了哪些用户。</li>
+          <li>顶部汇总信息显示来源页面、处理时间、处理动作、原因；下方明细列表显示受影响的具体 UID。</li>
         </ol>
-        <em>注意事项</em>
+        <em>处理规则</em>
         <ol>
-          <li>详情页以处理记录汇总信息和关联用户列表为核心展示内容。</li>
-          <li>`开启权限` 所需的备注、验证码等处理信息应与权限恢复日志一并留痕。</li>
-          <li>详情页开启权限不再区分单用户或批量口径，而是按当前勾选的详情用户范围执行。</li>
-          <li>如处理对象已恢复全部权限，真实系统中应提示重复处理并保留操作日志。</li>
+          <li>从详情页点 `开启权限` 时，按当前勾选的详情用户范围执行，不再区分原来是单用户处理还是批量处理。</li>
+          <li>备注、验证码等解禁信息要和权限恢复日志一起留痕。</li>
+          <li>恢复动作执行后，对应用户在来源业务列表里的 `禁止状态` 需要同步移除对应项，操作列同步恢复成对应 `禁止` 按钮。</li>
+        </ol>
+        <em>列表显示规则</em>
+        <ol>
+          <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
+          <li>全表按 `时间倒序` 排列；同一秒内按 `相关用户UID倒序` 排列。</li>
+          <li>如果某个用户已经恢复全部权限，再次处理要给出重复处理提示，但日志仍要保留。</li>
+          <li>空值统一显示为 `—`；筛选条件变化后自动回到第 1 页。</li>
         </ol>
       </div>
     </div>
@@ -10559,6 +10981,18 @@
         { title: '放行命中', values: { day: '3', week: '11', month: '48', total: '680' }, hint: '命中密码白名单并被放行的记录数' },
         { title: '累计放行密码', values: { day: '26', week: '108', month: '420', total: '5,260' }, hint: '通过密码白名单累计放行的密码命中请求量', className: 'text-ok' }
       ],
+      'risk-deposit-address-monitor': [
+        { title: '命中事件数', values: { day: '3', week: '14', month: '57', total: '820' }, hint: '同充值地址监控当前命中的事件量' },
+        { title: '涉及用户数', values: { day: '0', week: '0', month: '0', total: '0' }, hint: '命中充值地址事件关联的用户总数' },
+        { title: '处理次数', values: { day: '0', week: '0', month: '0', total: '0' }, hint: '人工处理同充值地址事件的次数' },
+        { title: '累计处理事件', values: { day: '0', week: '0', month: '0', total: '0' }, hint: '累计已处理的同充值地址事件数', className: 'text-ok' }
+      ],
+      'risk-internal-transfer-monitor': [
+        { title: '命中事件数', values: { day: '3', week: '12', month: '49', total: '706' }, hint: '同uid内部划转监控当前命中的事件量' },
+        { title: '涉及用户数', values: { day: '0', week: '0', month: '0', total: '0' }, hint: '命中内部划转事件关联的用户总数' },
+        { title: '处理次数', values: { day: '0', week: '0', month: '0', total: '0' }, hint: '人工处理同uid内部划转事件的次数' },
+        { title: '累计处理事件', values: { day: '0', week: '0', month: '0', total: '0' }, hint: '累计已处理的同uid内部划转事件数', className: 'text-ok' }
+      ],
       'risk-short-hold': [
         { title: '命中用户数', values: { day: '9', week: '43', month: '176', total: '2,620' }, hint: '高频短时持仓监控当前命中的用户量' },
         { title: '新增命中', values: { day: '3', week: '14', month: '62', total: '920' }, hint: '按当前阈值新增进入列表的用户数' },
@@ -10686,8 +11120,8 @@
         modals: ['羊毛党配置弹窗：来源页面与当前用户UID为只读输入框|是否关联其下级为单选字段，取值为 所有下级/一级以内/三级以内|风控操作至少勾选 1 项后方可确认，备注当前为选填字段。']
       },
       'modal-related-action-config': {
-        hierarchy: ['一级：风控', '二级：合约可疑用户 或 异常充值监控', '三级：无', '弹窗：相关操作配置'],
-        modals: ['相关操作配置弹窗：来源页面与当前用户UID为只读输入框，仅对当前用户生效|风控操作为多选字段，确认前至少勾选 1 项；如选择 禁止登录，则用户一旦触发会立即退出登录，登录态丢失，且不能再登录|备注当前为选填字段，确认后仅处理当前用户。']
+        hierarchy: ['一级：风控', '二级：高盈利高胜率用户 或 异常充值监控', '三级：无', '弹窗：相关操作配置（当前入口隐藏）'],
+        modals: ['相关操作配置弹窗：当前版本已隐藏列表入口，不在事前预警与事后报警用户列表中展示；保留静态口径说明仅用于历史版本对照。']
       },
       'modal-rule-config': {
         hierarchy: ['一级：风控', '二级：各风控监控页', '三级：无', '弹窗：规则配置'],
@@ -10807,7 +11241,7 @@
       },
       'risk-login': {
         hierarchy: ['一级：风控', '二级：异常登录监控', '三级：无', '弹窗：规则配置、监控状态配置、同一用户配置'],
-        modals: ['规则配置弹窗：标题与正文按当前来源动态加载，异常登录页仅展示本页识别规则|数字与比例字段需明确整数/小数位、单位和 大于等于/小于等于 口径|确认保存前需填写谷歌验证码。', '监控状态配置弹窗：来源页面与当前状态为只读输入框，目标状态仅支持 开启/关闭 两个选项|确认时按当前目标状态直接保存。', '同一用户配置弹窗：来源页面、当前用户UID、关联同秒开仓用户为只读输入框按当前记录带出|是否关联同秒开仓用户为 是/否 单选，风控操作至少勾选 1 项后方可确认。']
+        modals: ['规则配置弹窗：异常登录页只展示本页识别规则|数字与比例字段需明确整数/小数位、单位和 大于等于/小于等于 口径|确认保存前需填写谷歌验证码。', '监控状态配置弹窗：来源页面与当前状态为只读输入框，目标状态仅支持 开启/关闭 两个选项|确认时按当前目标状态直接保存。', '同一用户配置弹窗：来源页面与当前用户UID为只读输入框|异常登录页不展示关联用户字段，只处理当前用户|风控操作至少勾选 1 项后方可确认。']
       },
       'risk-batch-register': {
         hierarchy: ['一级：风控', '二级：批量注册监控', '三级：无', '弹窗：规则配置、监控状态配置、批量注册配置'],
@@ -10830,12 +11264,12 @@
         modals: ['规则配置弹窗：按当前页面动态加载比例阈值、金额阈值与异常处理方式|比例字段按百分比口径录入与展示，页面展示默认保留两位小数点；金额字段小数点位数跟随平台后端返回，页面截取处理|确认保存前需填写谷歌验证码。', '监控状态配置弹窗：来源页面与当前状态为只读输入框，目标状态仅支持 开启/关闭 两个选项|确认时按当前目标状态直接保存。', '羊毛党配置弹窗：来源页面与当前用户UID为只读输入框|是否关联其下级为单选字段，取值为 所有下级/一级以内/三级以内|风控操作至少勾选 1 项后方可确认，备注当前为选填字段。']
       },
       'risk-contract-suspicious-monitor': {
-        hierarchy: ['一级：风控', '二级：合约可疑用户', '三级：合约可疑用户限制规则、市价历史订单、限价历史订单', '弹窗：规则配置、监控状态配置、相关操作配置、合约可疑用户限制规则'],
-        modals: ['规则配置弹窗：按当前页面动态加载胜率阈值、盈利率阈值与最低历史仓位数|比例字段按百分比口径录入与展示，页面展示默认保留两位小数点；仓位数为纯数字整数|确认保存前需填写谷歌验证码。', '监控状态配置弹窗：来源页面与当前状态为只读输入框，目标状态仅支持 开启/关闭 两个选项|确认时按当前目标状态直接保存。', '相关操作配置弹窗：来源页面与当前用户UID为只读输入框，仅对当前用户生效|风控操作至少勾选 1 项后方可确认，备注当前为选填字段。', '合约可疑用户限制规则弹窗：限价延迟按整数MS展示，滑点百分比默认保留两位小数点，并需分别校验上下限关系，确认前需填写谷歌验证码。']
+        hierarchy: ['一级：风控', '二级：合约可疑用户', '三级：合约可疑用户限制规则、市价历史订单、限价历史订单', '弹窗：规则配置、监控状态配置、合约可疑用户限制规则'],
+        modals: ['规则配置弹窗：按当前页面动态加载胜率阈值、盈利率阈值与最低历史仓位数|比例字段按百分比口径录入与展示，页面展示默认保留两位小数点；仓位数为纯数字整数|确认保存前需填写谷歌验证码。', '监控状态配置弹窗：来源页面与当前状态为只读输入框，目标状态仅支持 开启/关闭 两个选项|确认时按当前目标状态直接保存。', '当前版本已隐藏相关操作配置入口，列表仅保留 正常事件、可疑用户、移入用户白名单、移入用户黑名单 四类人工分流动作。', '合约可疑用户限制规则弹窗：限价延迟按整数MS展示，滑点百分比默认保留两位小数点，并需分别校验上下限关系，确认前需填写谷歌验证码。']
       },
       'risk-abnormal-deposit-monitor': {
-        hierarchy: ['一级：风控', '二级：异常充值监控', '三级：无', '弹窗：规则配置、监控状态配置、相关操作配置'],
-        modals: ['规则配置弹窗：按当前页面动态加载触发次数、停留时长、交易占比与记录逻辑|次数和停留时长字段为整数，停留时长按分钟/小时口径展示时无小数点；占比字段按百分比口径录入与展示，页面展示默认保留两位小数点|确认保存前需填写谷歌验证码。', '监控状态配置弹窗：来源页面与当前状态为只读输入框，目标状态仅支持 开启/关闭 两个选项|确认时按当前目标状态直接保存。', '相关操作配置弹窗：来源页面与当前用户UID为只读输入框，仅对当前用户生效|风控操作至少勾选 1 项后方可确认，备注当前为选填字段。']
+        hierarchy: ['一级：风控', '二级：异常充值监控', '三级：无', '弹窗：规则配置、监控状态配置'],
+        modals: ['规则配置弹窗：按当前页面动态加载触发次数、停留时长、交易占比与记录逻辑|次数和停留时长字段为整数，停留时长按分钟/小时口径展示时无小数点；占比字段按百分比口径录入与展示，页面展示默认保留两位小数点|确认保存前需填写谷歌验证码。', '监控状态配置弹窗：来源页面与当前状态为只读输入框，目标状态仅支持 开启/关闭 两个选项|确认时按当前目标状态直接保存。', '当前版本已隐藏相关操作配置入口，列表仅保留 正常事件、可疑用户、黑名单用户 三类人工分流动作。']
       },
       'risk-password-monitor': {
         hierarchy: ['一级：风控', '二级：用户同密码', '三级：查看详情、同密码用户配置', '弹窗：规则配置、监控状态配置'],
@@ -11012,22 +11446,20 @@
 
     function getTemplateFallbackLines(cardTitle) {
       return [
-        `当前${cardTitle}的功能说明以页面实际业务流程为准。`,
-        `当前${cardTitle}的展示与交互逻辑以页面实现为准。`,
-        `当前${cardTitle}的字段名称、字段类型和展示内容以页面当前展示结果为准。`,
-        `当前${cardTitle}的字段处理逻辑以当前页面交互限制为准。`,
-        `当前${cardTitle}的展示内容以页面当前展示结果为准。`,
-        `当前${cardTitle}的数据展示与格式化规则以页面当前显示结果为准。`,
-        `当前${cardTitle}的边界与拦截规则以页面交互校验为准。`,
-        `当前${cardTitle}的确认保存逻辑以页面当前按钮校验结果为准。`,
-        `${cardTitle}涉及数字输入或数字展示时，格式、位数、单位和比较符号以当前页面显示规则为准。`,
-        `当前${cardTitle}无独立计算公式时，展示结果以页面自动计算或页面校验结果为准。`,
-        `当前${cardTitle}确认操作以页面实际按钮逻辑为准。`,
-        `当前${cardTitle}取消操作关闭当前页面或弹窗，不执行保存。`,
-        `当前${cardTitle}提示文案内容以页面展示或语言包返回为准。`,
-        `当前${cardTitle}页面初始化展示内容以页面默认展示结果为准。`,
-        `当前${cardTitle}列表与字段展示规则以页面显示限制为准。`,
-        `当前${cardTitle}超出显示范围时，换行、省略与按钮折行规则以页面统一显示标准为准。`
+        `${cardTitle}未配置专属口径时，只实现当前页面已经展示出来的字段、按钮和筛选项。`,
+        `${cardTitle}的字段名称直接使用当前页面文案，不新增别名，也不改名。`,
+        `${cardTitle}的字段类型直接按当前页面控件实现：输入框就是输入框，下拉框就是下拉框，只读字段不允许编辑。`,
+        `${cardTitle}的展示内容只显示当前页面已经出现的数据项，不补充隐藏字段或推测字段。`,
+        `${cardTitle}的数据格式直接按当前页面可见规则实现，不额外定义第二套格式。`,
+        `${cardTitle}的边界拦截直接按当前页面已有校验执行；页面没写出的规则，不自行补充。`,
+        `${cardTitle}点确认时，只提交当前页面已经录入且通过校验的内容。`,
+        `${cardTitle}涉及数字输入或数字展示时，单位、位数、比较符号直接按当前页面文案实现。`,
+        `${cardTitle}没有写明计算公式的字段，不额外推导第二套公式。`,
+        `${cardTitle}点取消时，只关闭当前页面或弹窗，不保存。`,
+        `${cardTitle}提示文案直接使用当前页面已经写出的文案。`,
+        `${cardTitle}初始化时只展示默认首屏内容，不自动展开隐藏区域。`,
+        `${cardTitle}列表与字段展示范围只按当前页面可见内容实现。`,
+        `${cardTitle}超出显示范围时，换行、省略与按钮折行直接按统一显示标准处理。`
       ];
     }
 
@@ -11195,14 +11627,14 @@
           items.push(`${items.length + 1}：${label}：时间选择，按当前页面时间格式选择，开始时间不可大于结束时间`);
           return;
         }
-        items.push(`${items.length + 1}：${label}：文本输入，按当前页面占位提示输入查询内容，点击查询后按当前条件刷新当前列表`);
+        items.push(`${items.length + 1}：${label}：文本输入，按当前页面占位提示输入查询内容；点击--查询--后，按当前条件刷新当前列表`);
       });
       const filterButtons = Array.from(fieldGrid.querySelectorAll('button')).map(button => button.textContent.trim());
       if (filterButtons.includes('查询')) {
-        items.push(`${items.length + 1}：查询：点击后按当前筛选条件刷新当前列表与异常统计`);
+        items.push(`${items.length + 1}：查询：点击--查询--后，按当前筛选条件刷新当前列表与异常统计`);
       }
       if (filterButtons.includes('重置')) {
-        items.push(`${items.length + 1}：重置：点击后清空当前筛选条件并恢复默认值`);
+        items.push(`${items.length + 1}：重置：点击--重置--后，清空当前筛选条件并恢复默认值`);
       }
       return items;
     }
@@ -11267,22 +11699,46 @@
     }
 
     function describeActionRule(label) {
-      if (label === '查询') return '点击后按当前筛选条件刷新当前列表与异常统计';
-      if (label === '重置') return '点击后清空当前筛选条件并恢复默认值';
-      if (label === '规则配置') return '点击后打开当前页面对应规则配置，确认后以最新配置结果为准';
-      if (label === '监控状态配置') return '点击后打开监控状态配置弹窗，确认后以当前状态展示结果为准';
-      if (/返回/.test(label)) return '点击后返回上一级页面，当前页面展示按返回目标页口径为准';
-      if (/查看详情/.test(label)) return '点击后进入当前记录对应详情页面';
-      if (/历史订单/.test(label)) return '点击后进入对应历史订单页面';
-      if (/添加/.test(label)) return '点击后打开当前新增弹窗或新增页面';
-      if (/配置/.test(label)) return '点击后打开当前记录对应配置弹窗';
-      if (/导出/.test(label)) return '点击后按当前筛选条件导出列表数据';
-      if (/批量|可疑用户|正常事件|正常事件|正常操作|黑名单用户|禁止/.test(label)) {
-        return '点击后对当前选中记录执行对应处理，处理完成后刷新当前列表';
+      if (label === '查询') return '点击--查询--后，按当前筛选条件刷新当前列表与异常统计';
+      if (label === '重置') return '点击--重置--后，清空当前筛选条件并恢复默认值';
+      if (label === '规则配置') return '点击--规则配置--后，打开当前页面对应规则配置弹窗；确认后只保存当前弹窗里的配置项';
+      if (label === '监控状态配置') return '点击--监控状态配置--后，打开监控状态配置弹窗；确认后把当前页面监控状态改成所选状态';
+      if (/返回/.test(label)) return `点击--${label}--后，返回上一级页面，不保存当前页面未确认的修改`;
+      if (/查看详情/.test(label)) return `点击--${label}--后，进入当前记录对应详情页面`;
+      if (/历史订单/.test(label)) return `点击--${label}--后，进入对应历史订单页面`;
+      if (/添加/.test(label)) return `点击--${label}--后，打开当前新增弹窗或新增页面`;
+      if (/配置/.test(label)) return `点击--${label}--后，打开当前记录对应配置弹窗`;
+      if (/导出/.test(label)) return `点击--${label}--后，按当前筛选条件导出列表数据`;
+      if (/批量禁止登录|禁止登录/.test(label)) {
+        return `点击--${label}--后，对当前选中记录执行禁止登录处理；处理完成后，对应用户的 \`禁止状态\` 增加 \`登录\`，操作列表切换为 \`恢复登录\`，并新增一条处理记录`;
       }
-      if (/确认|确定/.test(label)) return '点击后校验当前页面必填项，校验通过后提交当前操作';
-      if (/取消|关闭/.test(label)) return '点击后关闭当前区域或弹窗，不保留本次未提交内容';
-      return '点击后执行当前页面对应操作，页面结果以当前展示内容为准';
+      if (/批量禁止现货交易|禁止现货交易/.test(label)) {
+        return `点击--${label}--后，对当前选中记录执行禁止现货交易处理；处理完成后，对应用户的 \`禁止状态\` 增加 \`现货交易\`，操作列表切换为 \`恢复现货交易\`，并新增一条处理记录`;
+      }
+      if (/批量禁止合约开仓|禁止合约开仓/.test(label)) {
+        return `点击--${label}--后，对当前选中记录执行禁止合约开仓处理；处理完成后，对应用户的 \`禁止状态\` 增加 \`合约开仓\`，操作列表切换为 \`恢复合约开仓\`，并新增一条处理记录`;
+      }
+      if (/批量禁止提现|禁止提现/.test(label)) {
+        return `点击--${label}--后，对当前选中记录执行禁止提现处理；处理完成后，对应用户的 \`禁止状态\` 增加 \`提现\`，操作列表切换为 \`恢复提现\`，并新增一条处理记录`;
+      }
+      if (/恢复登录/.test(label)) {
+        return `点击--${label}--后，对当前选中记录执行恢复登录处理；处理完成后，对应用户的 \`禁止状态\` 移除 \`登录\`，操作列表切回 \`禁止登录\`，并新增一条恢复处理记录`;
+      }
+      if (/恢复现货交易/.test(label)) {
+        return `点击--${label}--后，对当前选中记录执行恢复现货交易处理；处理完成后，对应用户的 \`禁止状态\` 移除 \`现货交易\`，操作列表切回 \`禁止现货交易\`，并新增一条恢复处理记录`;
+      }
+      if (/恢复合约开仓/.test(label)) {
+        return `点击--${label}--后，对当前选中记录执行恢复合约开仓处理；处理完成后，对应用户的 \`禁止状态\` 移除 \`合约开仓\`，操作列表切回 \`禁止合约开仓\`，并新增一条恢复处理记录`;
+      }
+      if (/恢复提现/.test(label)) {
+        return `点击--${label}--后，对当前选中记录执行恢复提现处理；处理完成后，对应用户的 \`禁止状态\` 移除 \`提现\`，操作列表切回 \`禁止提现\`，并新增一条恢复处理记录`;
+      }
+      if (/批量正常事件|正常事件|可疑用户|黑名单用户|白名单用户|批量/.test(label)) {
+        return `点击--${label}--后，对当前选中记录执行对应处理；处理完成后刷新当前列表，并新增一条对应的处理记录`;
+      }
+      if (/确认|确定/.test(label)) return `点击--${label}--后，校验当前页面必填项；校验通过后提交当前操作`;
+      if (/取消|关闭/.test(label)) return `点击--${label}--后，关闭当前区域或弹窗，不保留本次未提交内容`;
+      return `点击--${label}--后，执行当前页面对应操作，页面结果以当前展示内容为准`;
     }
 
     function collectActionRuleItems(root) {
@@ -11356,6 +11812,48 @@
       });
     }
 
+    function formatSpecTermItems() {
+      document.querySelectorAll('.spec-card li').forEach(li => {
+        if (li.querySelector('.spec-term')) return;
+        const html = li.innerHTML.trim();
+        if (!html) return;
+        if (/^\d+\s*：/.test(html)) return;
+        const match = html.match(/^(?:[`'‘’“”])?([^`'‘’“”：:<>]{1,24})(?:[`'‘’“”])?([：:])([\s\S]*)$/);
+        if (!match) return;
+        const term = match[1] ? match[1].trim() : '';
+        const separator = match[2] || '：';
+        const rest = match[3] || '';
+        if (!term) return;
+        li.innerHTML = `<strong class="spec-term">${term}</strong>${separator}${rest}`;
+      });
+    }
+
+    function highlightInlineKeywordQuotes(html) {
+      if (!html || html.indexOf('spec-inline-keyword') >= 0) return html;
+      const quotedKeywordPatterns = [
+        [/`([^`<>\n]{1,32}?)`/g, '<span class="spec-inline-keyword">$1</span>'],
+        [/‘([^‘’<>\n]{1,32}?)’/g, '<span class="spec-inline-keyword">$1</span>'],
+        [/“([^“”<>\n]{1,32}?)”/g, '<span class="spec-inline-keyword">$1</span>'],
+        [/'([^'<>\n]{1,32}?)'/g, '<span class="spec-inline-keyword">$1</span>']
+      ];
+      quotedKeywordPatterns.forEach(([pattern, replacement]) => {
+        html = html.replace(pattern, replacement);
+      });
+      return html;
+    }
+
+    function formatSpecInlineKeywords() {
+      const scopeSelector = '.spec-page li, .spec-page p, .spec-page span, .helper-text, .page p[style*="font-size:12px"], [data-version-block] div[style*="font-size:13px"]';
+      document.querySelectorAll(scopeSelector).forEach(node => {
+        if (node.closest('.overview-card, button, label, td, th, .table-card, .table-wrap, .table, .nav-btn, .pill, .page-chip')) return;
+        if (node.querySelector('input, textarea, select, button')) return;
+        let html = node.innerHTML;
+        if (!html) return;
+        html = highlightInlineKeywordQuotes(html);
+        node.innerHTML = html;
+      });
+    }
+
     function getFieldLabelText(field) {
       if (!field) return '';
       const wrapper = field.closest('.modal-field, .config-row, .field');
@@ -11367,7 +11865,7 @@
       const label = String(labelText || '').replace(/[:：]/g, '').trim();
       const fieldType = (field.getAttribute('type') || field.tagName || '').toLowerCase();
       if (label === '破产价') {
-        return '手动输入，校验规则随页面当前状态动态变化，根据当前状态限制输入数值大小，小数点位数跟随平台后端返回，页面截取处理';
+        return '手动输入；多仓时必须小于等于当前价，空仓时必须大于等于当前价；小数点位数跟随后端返回值截取';
       }
       if (label === '平仓数量') {
         return '手动输入，输入数值不可大于页面展示的用户持仓数量，小数点位数跟随平台后端返回，页面截取处理';
@@ -11388,7 +11886,7 @@
         return '手动输入，小数点位数跟随平台后端返回，页面截取处理';
       }
       if (fieldType === 'number') {
-        return '手动输入，校验规则随页面当前状态动态变化，根据当前状态限制输入数值大小，页面按当前口径展示结果处理';
+        return '手动输入，按当前字段的最小值、最大值、整数或小数规则校验；不满足校验时不允许提交';
       }
       if (field.tagName.toLowerCase() === 'textarea') {
         return '手动输入，按当前页面填写规则校验，根据当前状态限制输入内容，不可为空';
@@ -11954,7 +12452,7 @@
       if (pageId === 'risk-version-declare') {
         (function () {
           try {
-            var VERSIONS = ['2026090214:30', '2026090116:17', '20260826 14:26'];
+            var VERSIONS = ['2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
             window.__versionOrder = VERSIONS;
             if (typeof window.switchVersion !== 'function') {
               window.switchVersion = function (ver) {
@@ -12166,7 +12664,7 @@
       const currentSource = source || '高盈利高胜率用户';
       state.riskGlobalLimitSource = currentSource;
       if (riskGlobalLimitTitle) riskGlobalLimitTitle.textContent = `${currentSource}限制规则`;
-      if (riskGlobalLimitDesc) riskGlobalLimitDesc.textContent = `用于维护${currentSource}的限制规则，采用弹窗方式配置限价延迟与市价滑点两类限制。`;
+      if (riskGlobalLimitDesc) riskGlobalLimitDesc.textContent = `这个弹窗保存的是${currentSource}的限制规则，只包含限价延迟和市价滑点两类配置。`;
       if (riskGlobalLimitGoogle) riskGlobalLimitGoogle.value = '';
     }
 
@@ -12614,6 +13112,7 @@
       const source = trigger.dataset.configSource || (pageNames[state.activePage] || '当前页面');
       const configName = userConfigNames[source] || `${source}配置`;
       const isBatchRegister = source === '批量注册监控';
+      const isRiskLogin = source === '异常登录监控';
       const isContractSuspicious = source === '高盈利高胜率用户';
       const isShortHold = source === '高频短时持仓监控';
       const isWoolMonitor = source === '羊毛党监控';
@@ -12621,7 +13120,7 @@
       const isTradePeerMonitor = source === '对敲交易监控';
       const isWithdrawAddressMonitor = source === '同提币地址监控';
       const isBlacklistManage = ['IP黑名单', '设备黑名单', '充值地址黑名单', '提币地址黑名单', '密码黑名单', '邮箱黑名单'].includes(source);
-      const hideRelationBlock = isBatchRegister || isContractSuspicious || isShortHold || isWoolMonitor || isAbnormalDeposit || isBlacklistManage;
+      const hideRelationBlock = isBatchRegister || isRiskLogin || isContractSuspicious || isShortHold || isWoolMonitor || isAbnormalDeposit || isBlacklistManage;
       const relatedIpUsers = trigger.dataset.relatedIpUsers || uid;
       const relatedDeviceUsers = trigger.dataset.relatedDeviceUsers || uid;
       const relatedEmailUsers = trigger.dataset.relatedEmailUsers || uid;
@@ -12647,24 +13146,28 @@
       if (sameUserConfigSource) sameUserConfigSource.value = source;
       if (sameUserConfigTitle) sameUserConfigTitle.textContent = configName;
       if (sameUserConfigDesc) sameUserConfigDesc.textContent = isBatchRegister
-        ? `用于将当前批量注册用户及其关联用户做统一风控处理。当前来源页面为${source}，可按同IP、同设备、同邮箱后缀三类维度选择关联用户范围，并对过滤白名单后的关联UID集合做删除与处理。`
+        ? `这个弹窗处理的是${source}当前这条记录对应的 UID 集合；可按同IP、同设备、同邮箱后缀三类维度生成候选 UID，并在过滤白名单后删除不需要处理的 UID。`
+        : isRiskLogin
+          ? `这个弹窗只处理${source}当前这条记录对应的用户，不处理关联用户。`
         : isContractSuspicious
-          ? `用于对当前高盈利高胜率用户执行相关风控处理。当前来源页面为${source}，本配置页仅针对当前用户生效。`
+          ? `这个弹窗只处理${source}当前这条记录对应的用户。`
         : isBlacklistManage
-          ? `用于对当前黑名单对象执行单条用户控制处理。当前来源页面为${source}，本配置页仅针对当前对象生效。`
+          ? `这个弹窗只处理${source}当前这条黑名单对象记录。`
         : isShortHold
-          ? `用于对当前高频短时持仓用户执行单条风控处理。当前来源页面为${source}，本配置页仅针对当前用户生效。`
+          ? `这个弹窗只处理${source}当前这条记录对应的用户。`
           : isAbnormalDeposit
-            ? `用于对当前异常充值命中用户执行相关风控处理。当前来源页面为${source}，本配置页仅针对当前用户生效。`
+            ? `这个弹窗只处理${source}当前这条记录对应的用户。`
           : isTradePeerMonitor
-            ? `用于将当前用户或关联交易对手用户做统一风控处理。当前来源页面为${source}，勾选关联交易对手用户后，当前页面监控用户内容按关联用户集合进行替换展示与处理。`
+            ? `这个弹窗处理的是当前用户和交易对手 UID 集合；勾选关联交易对手后，最终处理对象 = 当前用户 + 全部交易对手 UID。`
           : relatedTerm
-            ? `用于将当前用户或关联${termWord}做统一风控处理。当前来源页面为${source}，勾选${relatedTermLabel.replace('关联','')}后，当前页面监控用户内容按关联用户集合进行替换展示与处理。`
+            ? `这个弹窗处理的是当前用户和关联${termWord}；勾选${relatedTermLabel.replace('关联','')}后，最终处理对象 = 当前用户 + 当前弹窗展示的关联${termWord}。`
           : isWoolMonitor
-            ? `用于对当前羊毛党监控用户执行风控处理。当前来源页面为${source}，可按下级范围决定是否将其下级账户一并纳入处理。`
-            : `用于对当前用户执行统一风控处理。当前来源页面为${source}，弹窗名称随页面展示为${configName}。`;
+            ? `这个弹窗处理的是${source}当前这条记录对应的上级 UID；是否同时处理下级，取决于这里选择的下级范围。`
+            : `这个弹窗只处理${source}当前这条记录对应的对象。`;
       if (sameUserConfigAlert) sameUserConfigAlert.textContent = isBatchRegister
         ? '当勾选任一关联项时，弹窗会展示默认可处理的关联UID集合；白名单对象默认不受控制，如本次选择全部列入黑名单且关联对象中存在白名单用户，确认前会单独弹窗提示是否移至黑名单。'
+        : isRiskLogin
+          ? ''
         : isContractSuspicious
           ? ''
         : isBlacklistManage
@@ -13908,6 +14411,8 @@
 
     normalizeStaticSpecCards();
     renderSupplementSpecCards();
+    formatSpecTermItems();
+    formatSpecInlineKeywords();
     ensurePageSpecTriggers();
     ensureSectionHeadSpecTriggers();
     ensureModalSpecTriggers();
@@ -14517,7 +15022,7 @@
           });
           try {
             (function () {
-              var VERSIONS = ['2026090214:30', '2026090116:17', '20260826 14:26'];
+              var VERSIONS = ['2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
               window.__versionOrder = VERSIONS;
               window.switchVersion = function (ver) {
                 try {
@@ -14669,7 +15174,7 @@
     (function () {
       function ensureVersionSwitcher() {
       try {
-        var VERSIONS = ['2026090214:30', '2026090116:17', '20260826 14:26'];
+        var VERSIONS = ['2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
         window.__versionOrder = VERSIONS;
         if (typeof window.switchVersion === 'function') return;
         window.switchVersion = function (ver) {
@@ -14731,7 +15236,7 @@
             return ret;
           };
         }} catch(e2){}
-        try { window.switchVersion('2026090214:30'); } catch(e3){}
+        try { window.switchVersion('2026091223:36'); } catch(e3){}
       } catch (err) {
           try {
             var tip = document.createElement('div');
