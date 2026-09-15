@@ -1741,6 +1741,10 @@
             <button type="button" class="nav-group-toggle" data-group-toggle="version-declare" aria-label="展开或收回版本声明导航"></button>
           </div>
           <div class="nav-sub-list">
+            <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="2026091423:59" onclick="try{window.switchVersion('2026091423:59');}catch(e){}finally{return false;}">
+              <strong>2026091423:59</strong>
+              <span>当前版本改动明细（2026-09-14 当日汇总）</span>
+            </button>
             <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="2026091223:36" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">
               <strong>2026091223:36</strong>
               <span>当前版本改动明细（2026-09-12 当日最新汇总）</span>
@@ -1771,7 +1775,7 @@
     </aside>
 
     <main class="content">
-      <div class="overview-bar">
+      <div class="overview-bar" style="display:none" aria-hidden="true">
         <div class="overview-bar__head">
           <h3 id="overview-title">异常统计</h3>
           <div class="pill-group">
@@ -3249,7 +3253,7 @@
                   <th>方向</th>
                   <th>成交价格</th>
                   <th>委托价格</th>
-                  <th>滑点率显示</th>
+                  <th>滑点率</th>
                   <th>数量</th>
                   <th>杠杆</th>
                   <th>成交金额</th>
@@ -3548,6 +3552,7 @@
                   <th>方向</th>
                   <th>成交价格</th>
                   <th>委托价格</th>
+                  <th>滑点率</th>
                   <th>数量</th>
                   <th>杠杆</th>
                   <th>成交金额</th>
@@ -3565,6 +3570,7 @@
                   <td>做多</td>
                   <td>46000</td>
                   <td>44680</td>
+                  <td>2.95%</td>
                   <td>1</td>
                   <td>10x</td>
                   <td>46000</td>
@@ -3579,7 +3585,8 @@
                   <td>市价</td>
                   <td>做空</td>
                   <td>3100</td>
-                  <td>295</td>
+                  <td>2950</td>
+                  <td>5.08%</td>
                   <td>5</td>
                   <td>20x</td>
                   <td>15500</td>
@@ -4658,7 +4665,6 @@
                   <td>5.00</td>
                   <td>2025-07-15 10:01:15</td>
                                     <td>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高频短时持仓监控">高频短时持仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">移入用户白名单</a>
@@ -4681,7 +4687,6 @@
                   <td>2.50</td>
                   <td>2025-07-15 10:01:15</td>
                                     <td>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高频短时持仓监控">高频短时持仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">移入用户白名单</a>
@@ -4704,7 +4709,6 @@
                   <td>2.50</td>
                   <td>2025-07-15 10:01:15</td>
                                     <td>
-                    <a href="#" class="action-link js-open-user-config" data-user-uid="123" data-related-users="123" data-relation-default="0" data-config-source="高频短时持仓监控">高频短时持仓配置</a>
                     <a href="#" class="action-link">正常事件</a>
                     <a href="#" class="action-link">可疑用户</a>
                     <a href="#" class="action-link">移入用户白名单</a>
@@ -7763,13 +7767,14 @@
               </div>
               <h3>版本声明</h3>
               <p style="margin:6px 0 0; font-size:12px; color:rgba(148,163,184,.7);">
-                迭代版本号：<span id="ver-head-span" style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">2026091223:36</span>
+                迭代版本号：<span id="ver-head-span" style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">2026091423:59</span>
               </p>
             </div>
           </div>
 
           <div class="pill-group" style="margin:12px 0 4px;">
-            <button type="button" class="pill active" data-version-pill="2026091223:36" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">2026091223:36</button>
+            <button type="button" class="pill active" data-version-pill="2026091423:59" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091423:59');}catch(e){}finally{return false;}">2026091423:59</button>
+            <button type="button" class="pill" data-version-pill="2026091223:36" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">2026091223:36</button>
             <button type="button" class="pill" data-version-pill="2026091122:03" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091122:03');}catch(e){}finally{return false;}">2026091122:03</button>
             <button type="button" class="pill" data-version-pill="2026091114:56" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091114:56');}catch(e){}finally{return false;}">2026091114:56</button>
             <button type="button" class="pill" data-version-pill="2026090214:30" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026090214:30');}catch(e){}finally{return false;}">2026090214:30</button>
@@ -7777,7 +7782,30 @@
             <button type="button" class="pill" data-version-pill="20260826 14:26" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">20260826 14:26</button>
           </div>
 
-          <div data-version-block="2026091223:36" style="display:block;">
+          <div data-version-block="2026091423:59" style="display:block;">
+            <div class="config-panel" style="margin-top:8px;">
+              <div class="config-row">
+                <label>生效范围</label>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                  <span class="tag tag-warn">打单风控 / 高盈利高胜率</span>
+                  <span class="tag tag-warn">黑名单 6 个维度统计口径</span>
+                  <span class="tag tag-warn">黑名单市价 / 限价历史订单</span>
+                  <span class="tag tag-silver">处理记录 / IP 黑名单弹窗</span>
+                </div>
+              </div>
+              <div class="config-row">
+                <label>当前版本改动明细（2026091423:59）</label>
+                <div style="font-size:13px; line-height:1.95; color:var(--text);">
+                  · 高频短时持仓列表：去掉 高频短时持仓配置 按钮；顶部 监控用户总数 的提示文案 当前合约可疑用户池中的用户量 同步去掉<br>
+                  · 添加/编辑 IP 黑名单：风控动作文案由 禁止用户邀请下级注册 改为 禁止注册，减少页面文案歧义<br>
+                  · 黑名单 - 市价历史订单：列表新增 滑点率 字段，示例值与字段说明同步补齐，计算口径为 (成交价格 - 委托价格) / 委托价格 × 100%，按百分比展示并保留两位小数<br>
+                  · 版本声明迭代：新增 2026-09-14 当日汇总版本 2026091423:59，历史版本继续保留 2026091223:36、2026091122:03、2026091114:56、2026090214:30、2026090116:17、20260826 14:26
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-version-block="2026091223:36" style="display:none;">
             <div class="config-panel" style="margin-top:8px;">
               <div class="config-row">
                 <label>生效范围</label>
@@ -7946,22 +7974,23 @@
           </div>
 
           <div class="footer-row" style="margin-top:16px;">
-            <div>当前展示 <strong id="ver-footer-strong" style="color:var(--text-primary); font-weight:600;">2026091223:36</strong> 版本改动明细</div>
+            <div>当前展示 <strong id="ver-footer-strong" style="color:var(--text-primary); font-weight:600;">2026091423:59</strong> 版本改动明细</div>
             <div class="pagination">
               <button type="button" class="page-chip" disabled id="ver-chip-prev">上一页</button>
-              <button type="button" class="page-chip active" data-version-chip="2026091223:36" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">2026091223:36</button>
+              <button type="button" class="page-chip active" data-version-chip="2026091423:59" onclick="try{window.switchVersion('2026091423:59');}catch(e){}finally{return false;}">2026091423:59</button>
+              <button type="button" class="page-chip" data-version-chip="2026091223:36" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">2026091223:36</button>
               <button type="button" class="page-chip" data-version-chip="2026091122:03" onclick="try{window.switchVersion('2026091122:03');}catch(e){}finally{return false;}">2026091122:03</button>
               <button type="button" class="page-chip" data-version-chip="2026091114:56" onclick="try{window.switchVersion('2026091114:56');}catch(e){}finally{return false;}">2026091114:56</button>
               <button type="button" class="page-chip" data-version-chip="2026090214:30" onclick="try{window.switchVersion('2026090214:30');}catch(e){}finally{return false;}">2026090214:30</button>
               <button type="button" class="page-chip" data-version-chip="2026090116:17" onclick="try{window.switchVersion('2026090116:17');}catch(e){}finally{return false;}">2026090116:17</button>
               <button type="button" class="page-chip" data-version-chip="20260826 14:26" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">20260826 14:26</button>
               <button type="button" class="page-chip" id="ver-chip-last" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">尾页</button>
-              <button type="button" class="page-chip" id="ver-chip-next" onclick="try{window.switchVersion('2026091122:03');}catch(e){}finally{return false;}">下一页</button>
+              <button type="button" class="page-chip" id="ver-chip-next" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">下一页</button>
               <span style="margin-left:8px;">到第</span>
-              <input id="ver-jump-input" type="text" style="width:140px; height:34px; border-radius:8px; border:1px solid rgba(148,163,184,.18); background:rgba(11,18,32,.72); color:var(--text); padding:0 8px; text-align:center; font-size:12px; font-variant-numeric: tabular-nums;" value="2026091223:36" placeholder="版本号">
+              <input id="ver-jump-input" type="text" style="width:140px; height:34px; border-radius:8px; border:1px solid rgba(148,163,184,.18); background:rgba(11,18,32,.72); color:var(--text); padding:0 8px; text-align:center; font-size:12px; font-variant-numeric: tabular-nums;" value="2026091423:59" placeholder="版本号">
               <span>页</span>
               <button type="button" class="button secondary" id="ver-jump-btn" style="height:34px; padding:0 12px;" onclick="try{var v=document.getElementById('ver-jump-input'); if(v) window.switchVersion(v.value.trim());}catch(e){}">确定</button>
-              <span style="margin-left:12px;">共 5 个版本</span>
+              <span style="margin-left:12px;">共 7 个版本</span>
             </div>
           </div>
         </div>
@@ -9469,7 +9498,7 @@
           <li>筛选项按 `订单号`、`用户UID`、`交易对`、`方向`、`成交时间` 过滤黑名单市价订单历史。</li>
           <li>`订单号`、`成交ID`、`用户UID` 均为订单与成交记录唯一标识字段。</li>
           <li>`合约`、`类型`、`方向` 分别表示交易合约、订单类型、市价单方向。</li>
-          <li>`成交价格` 为实际成交价；`委托价格` 为原始委托价格；`滑点率显示` = `(成交价格 - 委托价格) / 委托价格 × 100%`，按百分比展示，默认保留两位小数。</li>
+          <li>`成交价格` 为实际成交价；`委托价格` 为原始委托价格；`滑点率` = `(成交价格 - 委托价格) / 委托价格 × 100%`，按百分比展示，默认保留两位小数。</li>
           <li>`数量`、`杠杆`、`成交金额` 分别表示数量、杠杆倍数、成交总额。</li>
           <li>`委托时间` 为委托提交时间；`成交时间` 为实际成交时间。</li>
           <li>本页无 `更新时间` 字段，默认按 `成交时间` 倒序排序。</li>
@@ -10895,30 +10924,6 @@
         { title: '开启权限', values: { day: '2', week: '9', month: '36', total: '420' }, hint: '人工复核后恢复权限的处理次数' },
         { title: '累计处理数量', values: { day: '17', week: '94', month: '420', total: '9,830' }, hint: '黑名单用户累计处理量', className: 'text-ok' }
       ],
-      'blacklist-ip': [
-        { title: '触发总次数', values: { day: '12', week: '86', month: '364', total: '6,300' }, hint: '命中当前IP黑名单并触发用户限制处理的总次数' },
-        { title: '移入黑名单用户数', values: { day: '5', week: '21', month: '93', total: '1,206' }, hint: '通过当前IP黑名单名单沉淀进入黑名单控制范围的数量', className: 'text-ok' }
-      ],
-      'blacklist-device': [
-        { title: '触发总次数', values: { day: '3', week: '17', month: '74', total: '986' }, hint: '命中当前设备黑名单并触发用户限制处理的总次数' },
-        { title: '移入黑名单用户数', values: { day: '5', week: '21', month: '93', total: '1,206' }, hint: '通过当前设备黑名单名单沉淀进入黑名单控制范围的用户数量', className: 'text-ok' }
-      ],
-      'blacklist-phone': [
-        { title: '触发总次数', values: { day: '3', week: '17', month: '74', total: '986' }, hint: '命中当前邮箱黑名单并触发用户限制处理的总次数' },
-        { title: '移入黑名单用户数', values: { day: '5', week: '21', month: '93', total: '1,206' }, hint: '通过当前邮箱黑名单名单沉淀进入黑名单控制范围的用户数量', className: 'text-ok' }
-      ],
-      'blacklist-deposit-address': [
-        { title: '触发总次数', values: { day: '3', week: '17', month: '74', total: '986' }, hint: '命中当前充值地址黑名单并触发用户限制处理的总次数' },
-        { title: '移入黑名单用户数', values: { day: '5', week: '21', month: '93', total: '1,206' }, hint: '通过当前充值地址黑名单名单沉淀进入黑名单控制范围的用户数量', className: 'text-ok' }
-      ],
-      'blacklist-withdraw-address': [
-        { title: '触发总次数', values: { day: '3', week: '17', month: '74', total: '986' }, hint: '命中当前提币地址黑名单并触发用户限制处理的总次数' },
-        { title: '移入黑名单用户数', values: { day: '5', week: '21', month: '93', total: '1,206' }, hint: '通过当前提币地址黑名单名单沉淀进入黑名单控制范围的用户数量', className: 'text-ok' }
-      ],
-      'blacklist-password': [
-        { title: '触发总次数', values: { day: '3', week: '17', month: '74', total: '986' }, hint: '命中当前密码黑名单并触发用户限制处理的总次数' },
-        { title: '移入黑名单用户数', values: { day: '5', week: '21', month: '93', total: '1,206' }, hint: '通过当前密码黑名单名单沉淀进入黑名单控制范围的用户数量', className: 'text-ok' }
-      ],
       'blacklist-add': [
         { title: '本次录入UID数', values: { day: '2', week: '2', month: '2', total: '2' }, hint: '当前录入框内待提交的UID数量' },
         { title: '新增黑名单', values: { day: '3', week: '11', month: '44', total: '612' }, hint: '按当前筛选口径成功提交的黑名单新增数' },
@@ -10932,6 +10937,7 @@
         { title: '涉及用户数', values: { day: '12', week: '57', month: '208', total: '1,980' }, hint: '发生市价历史订单的用户数量' }
       ],
       'limit-history': [
+        { title: '限价订单数', values: { day: '24', week: '136', month: '498', total: '6,820' }, hint: '当前筛选条件下的限价订单数' },
         { title: '延迟异常订单', values: { day: '11', week: '68', month: '244', total: '3,106' }, hint: '实际延迟超过阈值的订单量' },
         { title: '平均延迟毫秒', values: { day: '1,120', week: '1,045', month: '980', total: '936' }, hint: '限价单实际延迟的平均值' },
         { title: '涉及用户数', values: { day: '9', week: '38', month: '126', total: '1,204' }, hint: '发生限价异常订单的用户数' }
@@ -10943,6 +10949,7 @@
         { title: '涉及用户数', values: { day: '8', week: '24', month: '86', total: '786' }, hint: '发生黑名单市价订单的用户数' }
       ],
       'blacklist-limit-history': [
+        { title: '黑名单限价订单', values: { day: '17', week: '92', month: '356', total: '4,980' }, hint: '当前筛选条件下的黑名单限价订单数' },
         { title: '延迟异常订单', values: { day: '9', week: '54', month: '206', total: '2,440' }, hint: '超过当前阈值的黑名单限价订单数' },
         { title: '平均延迟毫秒', values: { day: '1,360', week: '1,240', month: '1,180', total: '1,126' }, hint: '黑名单限价单实际延迟平均值' },
         { title: '涉及用户数', values: { day: '6', week: '19', month: '71', total: '622' }, hint: '发生黑名单限价异常的用户数' }
@@ -10966,6 +10973,7 @@
         { title: '同一用户处理数', values: { day: '3', week: '12', month: '48', total: '706' }, hint: '通过异常登录配置触发的统一处理次数', className: 'text-ok' }
       ],
       'risk-contract-suspicious-monitor': [
+        { title: '监控用户总数', values: { day: '15', week: '67', month: '284', total: '3,960' }, hint: '高盈利高胜率监控当前命中的用户量' },
         { title: '新增命中', values: { day: '4', week: '23', month: '108', total: '1,420' }, hint: '按当前监控规则新增入表的用户数' },
         { title: '处理次数', values: { day: '8', week: '39', month: '186', total: '2,480' }, hint: '运营人工处理的执行次数' },
         { title: '累计处理数量', values: { day: '63', week: '418', month: '1,860', total: '63,000' }, hint: '累计已处理的异常用户数量', className: 'text-ok' }
@@ -11030,9 +11038,6 @@
         { title: '处理次数', values: { day: '4', week: '15', month: '71', total: '966' }, hint: '人工处理同秒开仓事件的次数' },
         { title: '累计处理事件', values: { day: '21', week: '96', month: '402', total: '5,640' }, hint: '累计已处理的同秒开仓事件数', className: 'text-ok' }
       ],
-      'risk-order-brush-monitor': [
-        { title: '限制规则触发次数', values: { day: '12', week: '86', month: '364', total: '6,300' }, hint: '命中打单风控限制规则并触发处理的次数' }
-      ],
       'risk-withdraw-address-monitor': [
         { title: '命中事件数', values: { day: '6', week: '24', month: '102', total: '1,520' }, hint: '同提币地址监控当前命中的事件量' },
         { title: '涉及用户数', values: { day: '21', week: '94', month: '388', total: '5,860' }, hint: '命中提币地址事件关联的用户总数' },
@@ -11090,7 +11095,8 @@
       'risk-handle-record': [
         { title: '处理记录数', values: { day: '13', week: '62', month: '248', total: '3,820' }, hint: '当前处理记录页中的记录总量' },
         { title: '开启权限', values: { day: '5', week: '18', month: '77', total: '1,104' }, hint: '按当前筛选口径已执行的开启权限次数' },
-        { title: '新增记录', values: { day: '4', week: '16', month: '72', total: '1,018' }, hint: '按当前筛选口径新增生成的处理记录数' }
+        { title: '新增记录', values: { day: '4', week: '16', month: '72', total: '1,018' }, hint: '按当前筛选口径新增生成的处理记录数' },
+        { title: '累计关联资金', values: { day: '1.26M USDT', week: '5.84M USDT', month: '22.70M USDT', total: '318M USDT' }, hint: '当前筛选口径下处理记录关联的累计资金', className: 'text-ok' }
       ],
       'risk-handle-record-detail': [
         { title: '关联用户数', values: { day: '128', week: '128', month: '128', total: '128' }, hint: '当前处理记录关联的用户数量' },
@@ -12479,7 +12485,7 @@
       if (pageId === 'risk-version-declare') {
         (function () {
           try {
-            var VERSIONS = ['2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
+            var VERSIONS = ['2026091423:59', '2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
             window.__versionOrder = VERSIONS;
             if (typeof window.switchVersion !== 'function') {
               window.switchVersion = function (ver) {
@@ -12529,24 +12535,11 @@
       try {
         if (typeof pageTitleMap === 'undefined') window.pageTitleMap = window.pageTitleMap || {};
       } catch (e) { window.pageTitleMap = {}; }
-      const granularity = state.granularity || 'day';
-      const metrics = overviewMetrics[pageId] || overviewMetrics.monitor;
       const overviewBarEl = document.querySelector('.overview-bar');
       const safeTitle = (window.pageTitleMap && window.pageTitleMap[pageId]) || '异常统计';
-      if (!metrics || metrics.length === 0) {
-        overviewTitle.textContent = safeTitle;
-        if (overviewBarEl) overviewBarEl.style.display = 'none';
-        return;
-      }
-      if (overviewBarEl) overviewBarEl.style.display = '';
-      overviewTitle.textContent = safeTitle;
-      overviewGrid.innerHTML = metrics.map(m => `
-        <div class="overview-card">
-          <small>${sanitizeMetricTitle(m.title)}</small>
-          <strong class="${m.className || ''}">${(m.values && m.values[granularity]) || ''}</strong>
-          <span>${m.hint}</span>
-        </div>
-      `).join('');
+      if (overviewTitle) overviewTitle.textContent = safeTitle;
+      if (overviewGrid) overviewGrid.innerHTML = '';
+      if (overviewBarEl) overviewBarEl.style.display = 'none';
     }
 
     navSubButtons.forEach(btn => {
@@ -15049,7 +15042,7 @@
           });
           try {
             (function () {
-              var VERSIONS = ['2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
+              var VERSIONS = ['2026091423:59', '2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
               window.__versionOrder = VERSIONS;
               window.switchVersion = function (ver) {
                 try {
@@ -15201,7 +15194,7 @@
     (function () {
       function ensureVersionSwitcher() {
       try {
-        var VERSIONS = ['2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
+        var VERSIONS = ['2026091423:59', '2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
         window.__versionOrder = VERSIONS;
         if (typeof window.switchVersion === 'function') return;
         window.switchVersion = function (ver) {
@@ -15263,7 +15256,7 @@
             return ret;
           };
         }} catch(e2){}
-        try { window.switchVersion('2026091223:36'); } catch(e3){}
+        try { window.switchVersion('2026091423:59'); } catch(e3){}
       } catch (err) {
           try {
             var tip = document.createElement('div');
