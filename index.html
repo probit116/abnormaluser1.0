@@ -1,4 +1,4 @@
-﻿﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -1741,6 +1741,10 @@
             <button type="button" class="nav-group-toggle" data-group-toggle="version-declare" aria-label="展开或收回版本声明导航"></button>
           </div>
           <div class="nav-sub-list">
+            <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="2026091623:59" onclick="try{window.switchVersion('2026091623:59');}catch(e){}finally{return false;}">
+              <strong>2026091623:59</strong>
+              <span>当前版本改动明细（2026-09-16 当日汇总）</span>
+            </button>
             <button class="nav-btn sub" data-page="risk-version-declare" data-version-nav="2026091423:59" onclick="try{window.switchVersion('2026091423:59');}catch(e){}finally{return false;}">
               <strong>2026091423:59</strong>
               <span>当前版本改动明细（2026-09-14 当日汇总）</span>
@@ -4003,75 +4007,77 @@
                   <div>
                     <span class="panel-tag">规则配置</span>
                     <h2>异常登录识别规则</h2>
-                    <p>按敏感操作类型、金额条件、登录后操作时间差及设备异常行为组合识别异常登录行为，展示布局参考右侧紧凑信息卡样式，方便运营快速比对。</p>
+                    <p>按批量注册规则配置的理解方式逐项展示异常登录命中条件。合约全平与提现相关项单独配置操作时间阈值，设备类规则只保留自身数量阈值，方便运营直接按行理解。</p>
                   </div>
                 </div>
                 <div class="compact-grid">
                   <div class="config-row span-2">
                     <label>命中操作类型</label>
-                    <div class="checkbox-list">
-                      <label class="checkbox-item"><input type="checkbox" checked>合约全平</label>
-                      <label class="checkbox-item"><input type="checkbox" checked>提现金额大于等于</label>
-                      <label class="checkbox-item"><input type="checkbox">提现金额大于等于总资产的百分之</label>
-                      <label class="checkbox-item"><input type="checkbox" checked>本站同设备 1 天内超过指定账号数登录</label>
-                      <label class="checkbox-item"><input type="checkbox" checked>本站同设备 10 天内超过指定账号数登录</label>
-                      <label class="checkbox-item"><input type="checkbox" checked>用户 1 天内更换超过指定设备数</label>
-                    </div>
-                    <div class="helper-text">命中以下任一敏感操作或设备异常条件，并满足对应阈值时，记录进入异常登录监控列表。</div>
+                    <div class="helper-text">按批量注册规则配置的理解方式逐项配置。每一行只描述 1 个命中条件，勾选后只按当前行阈值独立判断，不与其他行共用操作时间阈值。</div>
                   </div>
-                  <div class="config-row">
-                    <label>提现金额阈值</label>
+                  <div class="config-row span-2">
+                    <label class="checkbox-item"><input type="checkbox" checked>合约全平</label>
+                    <div class="input-suffix">
+                      <span class="range-operator">操作时间小于等于</span>
+                      <input type="number" value="30">
+                      <span>分钟</span>
+                    </div>
+                    <div class="helper-text">用户登录后平仓至无持仓，且最新平仓时间与最新登录时间的时间差小于等于该值时命中。</div>
+                  </div>
+                  <div class="config-row span-2">
+                    <label class="checkbox-item"><input type="checkbox" checked>提现金额大于等于</label>
                     <div class="input-suffix">
                       <span class="range-operator">大于等于</span>
                       <input type="number" value="50000">
                       <span>元</span>
                     </div>
-                    <div class="helper-text">请输入纯数字整数。</div>
+                    <div class="input-suffix" style="margin-top:8px;">
+                      <span class="range-operator">操作时间小于等于</span>
+                      <input type="number" value="30">
+                      <span>分钟</span>
+                    </div>
+                    <div class="helper-text">从最新登录时间起算，累计提现金额达到该值，且当前提现操作时间与最新登录时间的时间差小于等于该值时命中。</div>
                   </div>
-                  <div class="config-row">
-                    <label>提现金额占总资产百分比阈值</label>
+                  <div class="config-row span-2">
+                    <label class="checkbox-item"><input type="checkbox">提现金额占总资产百分比大于等于</label>
                     <div class="input-suffix">
                       <span class="range-operator">大于等于</span>
                       <input type="number" value="30">
                       <span>%</span>
                     </div>
-                    <div class="helper-text">请输入纯数字整数。</div>
-                  </div>
-                  <div class="config-row">
-                    <label>操作时间间隔阈值（与登录时间比）</label>
-                    <div class="input-suffix">
-                      <span class="range-operator">小于等于</span>
+                    <div class="input-suffix" style="margin-top:8px;">
+                      <span class="range-operator">操作时间小于等于</span>
                       <input type="number" value="30">
                       <span>分钟</span>
                     </div>
-                    <div class="helper-text">请输入纯数字整数。</div>
+                    <div class="helper-text">从最新登录时间起算，累计提现金额占用户总资产比例达到该值，且当前提现操作时间与最新登录时间的时间差小于等于该值时命中。</div>
                   </div>
-                  <div class="config-row">
-                    <label>本站同设备 1 天内登录账号数阈值</label>
+                  <div class="config-row span-2">
+                    <label class="checkbox-item"><input type="checkbox" checked>本站同设备 1 天内登录账号数大于等于</label>
                     <div class="input-suffix">
                       <span class="range-operator">大于等于</span>
                       <input type="number" value="3">
                       <span>个账号</span>
                     </div>
-                    <div class="helper-text">请输入纯数字整数。表示同一设备在 1 天内登录账号数大于等于该值时命中。</div>
+                    <div class="helper-text">该规则本身已经固定统计 1 天窗口，只需要配置账号数阈值，不再额外配置操作时间阈值。</div>
                   </div>
-                  <div class="config-row">
-                    <label>本站同设备 10 天内登录账号数阈值</label>
+                  <div class="config-row span-2">
+                    <label class="checkbox-item"><input type="checkbox" checked>本站同设备 10 天内登录账号数大于等于</label>
                     <div class="input-suffix">
                       <span class="range-operator">大于等于</span>
                       <input type="number" value="5">
                       <span>个账号</span>
                     </div>
-                    <div class="helper-text">请输入纯数字整数。表示同一设备在 10 天内登录账号数大于等于该值时命中。</div>
+                    <div class="helper-text">该规则本身已经固定统计 10 天窗口，只需要配置账号数阈值，不再额外配置操作时间阈值。</div>
                   </div>
-                  <div class="config-row">
-                    <label>用户 1 天内更换设备数阈值</label>
+                  <div class="config-row span-2">
+                    <label class="checkbox-item"><input type="checkbox" checked>用户 1 天内更换设备数大于等于</label>
                     <div class="input-suffix">
                       <span class="range-operator">大于等于</span>
                       <input type="number" value="3">
                       <span>个设备</span>
                     </div>
-                    <div class="helper-text">请输入纯数字整数。表示同一用户在 1 天内更换设备数大于等于该值时命中。</div>
+                    <div class="helper-text">该规则本身已经固定统计 1 天窗口，只需要配置设备数阈值，不再额外配置操作时间阈值。</div>
                   </div>
                   <div class="config-row">
                     <label>异常处理方式</label>
@@ -7767,13 +7773,14 @@
               </div>
               <h3>版本声明</h3>
               <p style="margin:6px 0 0; font-size:12px; color:rgba(148,163,184,.7);">
-                迭代版本号：<span id="ver-head-span" style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">2026091423:59</span>
+                迭代版本号：<span id="ver-head-span" style="font-variant-numeric: tabular-nums; color:var(--text-primary); font-weight:600;">2026091623:59</span>
               </p>
             </div>
           </div>
 
           <div class="pill-group" style="margin:12px 0 4px;">
-            <button type="button" class="pill active" data-version-pill="2026091423:59" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091423:59');}catch(e){}finally{return false;}">2026091423:59</button>
+            <button type="button" class="pill active" data-version-pill="2026091623:59" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091623:59');}catch(e){}finally{return false;}">2026091623:59</button>
+            <button type="button" class="pill" data-version-pill="2026091423:59" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091423:59');}catch(e){}finally{return false;}">2026091423:59</button>
             <button type="button" class="pill" data-version-pill="2026091223:36" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">2026091223:36</button>
             <button type="button" class="pill" data-version-pill="2026091122:03" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091122:03');}catch(e){}finally{return false;}">2026091122:03</button>
             <button type="button" class="pill" data-version-pill="2026091114:56" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('2026091114:56');}catch(e){}finally{return false;}">2026091114:56</button>
@@ -7782,7 +7789,24 @@
             <button type="button" class="pill" data-version-pill="20260826 14:26" style="font-variant-numeric: tabular-nums; padding:0 18px;" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">20260826 14:26</button>
           </div>
 
-          <div data-version-block="2026091423:59" style="display:block;">
+          <div data-version-block="2026091623:59" style="display:block;">
+            <div class="config-panel" style="margin-top:8px;">
+              <div class="config-row">
+                <label>生效范围</label>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                  <span class="tag tag-warn">异常登录规则配置</span>
+                </div>
+              </div>
+              <div class="config-row">
+                <label>当前版本改动明细（2026091623:59）</label>
+                <div style="font-size:13px; line-height:1.95; color:var(--text);">
+                  · 异常登录规则配置：按单项规则分行展示，合约全平与提现相关项单独配置操作时间阈值，设备类规则仅保留自身数量阈值
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-version-block="2026091423:59" style="display:none;">
             <div class="config-panel" style="margin-top:8px;">
               <div class="config-row">
                 <label>生效范围</label>
@@ -7796,17 +7820,32 @@
               <div class="config-row">
                 <label>当前版本改动明细（2026091423:59）</label>
                 <div style="font-size:13px; line-height:1.95; color:var(--text);">
-                  · 高频短时持仓列表：去掉 高频短时持仓配置 按钮；顶部 监控用户总数 的提示文案 当前合约可疑用户池中的用户量 同步去掉<br>
-                  · 全部页面：去掉所有的统计项，顶部异常统计区统一不再展示<br>
-                  · 添加/编辑 IP 黑名单：风控动作文案由 禁止用户邀请下级注册 改为 禁止注册，减少页面文案歧义<br>
-                  · 黑名单 - 市价历史订单：列表新增 滑点率 字段，示例值与字段说明同步补齐，计算口径为 (成交价格 - 委托价格) / 委托价格 × 100%，按百分比展示并保留两位小数<br>
-                  · 版本声明迭代：新增 2026-09-14 当日汇总版本 2026091423:59，历史版本继续保留 2026091223:36、2026091122:03、2026091114:56、2026090214:30、2026090116:17、20260826 14:26
+                  · 异常登录规则配置：按单项规则分行展示，合约全平与提现相关项单独配置操作时间阈值，设备类规则仅保留自身数量阈值
                 </div>
               </div>
             </div>
           </div>
 
-          <div data-version-block="2026091223:36" style="display:none;">
+          <div data-version-block="2026091223:36" style="display:none;">'@ 'rewrite version block'
+$rewrite = Replace-OrThrow $rewrite @'
+            <div>当前展示 <strong id="ver-footer-strong" style="color:var(--text-primary); font-weight:600;">2026091423:59</strong> 版本改动明细</div>
+            <div class="pagination">
+              <button type="button" class="page-chip" disabled id="ver-chip-prev">上一页</button>
+              <button type="button" class="page-chip active" data-version-chip="2026091423:59" onclick="try{window.switchVersion('2026091423:59');}catch(e){}finally{return false;}">2026091423:59</button>
+              <button type="button" class="page-chip" data-version-chip="2026091223:36" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">2026091223:36</button>
+              <button type="button" class="page-chip" data-version-chip="2026091122:03" onclick="try{window.switchVersion('2026091122:03');}catch(e){}finally{return false;}">2026091122:03</button>
+              <button type="button" class="page-chip" data-version-chip="2026091114:56" onclick="try{window.switchVersion('2026091114:56');}catch(e){}finally{return false;}">2026091114:56</button>
+              <button type="button" class="page-chip" data-version-chip="2026090214:30" onclick="try{window.switchVersion('2026090214:30');}catch(e){}finally{return false;}">2026090214:30</button>
+              <button type="button" class="page-chip" data-version-chip="2026090116:17" onclick="try{window.switchVersion('2026090116:17');}catch(e){}finally{return false;}">2026090116:17</button>
+              <button type="button" class="page-chip" data-version-chip="20260826 14:26" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">20260826 14:26</button>
+              <button type="button" class="page-chip" id="ver-chip-last" onclick="try{window.switchVersion('20260826 14:26');}catch(e){}finally{return false;}">尾页</button>
+              <button type="button" class="page-chip" id="ver-chip-next" onclick="try{window.switchVersion('2026091223:36');}catch(e){}finally{return false;}">下一页</button>
+              <span style="margin-left:8px;">到第</span>
+              <input id="ver-jump-input" type="text" style="width:140px; height:34px; border-radius:8px; border:1px solid rgba(148,163,184,.18); background:rgba(11,18,32,.72); color:var(--text); padding:0 8px; text-align:center; font-size:12px; font-variant-numeric: tabular-nums;" value="2026091423:59" placeholder="版本号">
+              <span>页</span>
+              <button type="button" class="button secondary" id="ver-jump-btn" style="height:34px; padding:0 12px;" onclick="try{var v=document.getElementById('ver-jump-input'); if(v) window.switchVersion(v.value.trim());}catch(e){}">确定</button>
+              <span style="margin-left:12px;">共 8 个版本</span>
+            </div>
             <div class="config-panel" style="margin-top:8px;">
               <div class="config-row">
                 <label>生效范围</label>
@@ -7823,7 +7862,6 @@
                 <div style="font-size:13px; line-height:1.95; color:var(--text);">
                   · 按同一天自然日只保留 1 条版本声明的规则，2026-09-12 当天全部改动统一汇总到本版本，不再拆成多条当日版本声明<br>
                   · 本版本全面清理口径定义中的引号样式：字段名和术语不再显示反引号、单引号、中文引号，统一改成无引号加粗显示<br>
-                  · 本版本将 事前预警-同充值地址监控、事前预警-同uid内部划转监控 顶部异常统计统一改为图片要求的 4 个指标：命中事件数、涉及用户数、处理次数、累计处理事件<br>
                   · 本版本新增字段名视觉强化：口径列表里凡是 字段名：说明 结构，统一去掉包裹符号，并把字段名改成行内加粗，方便开发一眼识别当前解释的是哪个词<br>
                   · 本版本把按钮说明统一改成 点击--按钮名--后，... 的固定句式，避免开发在长句里看不清当前说的是哪个按钮<br>
                   · 同步保留之前补过的硬规则：所有业务操作必须写入 处理记录；禁止类操作必须同步更新 禁止状态，并在操作列表展示对应 恢复 按钮<br>
@@ -7991,7 +8029,7 @@
               <input id="ver-jump-input" type="text" style="width:140px; height:34px; border-radius:8px; border:1px solid rgba(148,163,184,.18); background:rgba(11,18,32,.72); color:var(--text); padding:0 8px; text-align:center; font-size:12px; font-variant-numeric: tabular-nums;" value="2026091423:59" placeholder="版本号">
               <span>页</span>
               <button type="button" class="button secondary" id="ver-jump-btn" style="height:34px; padding:0 12px;" onclick="try{var v=document.getElementById('ver-jump-input'); if(v) window.switchVersion(v.value.trim());}catch(e){}">确定</button>
-              <span style="margin-left:12px;">共 7 个版本</span>
+              <span style="margin-left:12px;">共 8 个版本</span>
             </div>
           </div>
         </div>
@@ -8517,9 +8555,9 @@
             <label class="checkbox-card"><input type="checkbox" checked><span>同秒开仓监控</span></label>
             <label class="checkbox-card"><input type="checkbox"><span>同提币地址监控</span></label>
             <label class="checkbox-card"><input type="checkbox" checked><span>羊毛党监控</span></label>
-            <label class="checkbox-card"><input type="checkbox"><span>异常充值监控</span></label>
+            <label class="checkbox-card"><input type="checkbox"><span>同充值地址监控</span></label>
             <label class="checkbox-card"><input type="checkbox" checked><span>用户同密码</span></label>
-            <label class="checkbox-card"><input type="checkbox" checked><span>交易同用户风控</span></label>
+            <label class="checkbox-card"><input type="checkbox" checked><span>高盈利高胜率用户</span></label>
           </div>
         </div>
 
@@ -9006,11 +9044,12 @@
 
     <div class="spec-page" data-spec-page="modal-short-hold-config">
       <div class="spec-card">
-        <strong>高频短时持仓配置弹窗口径定义</strong>
+        <strong>高频短时持仓配置弹窗口径定义（历史保留）</strong>
         <em>处理对象</em>
         <ol>
           <li>这个弹窗只处理当前这一条 `高频短时持仓监控` 记录对应的 UID。</li>
           <li>不支持关联其他用户，也不支持批量扩展到其他记录。</li>
+          <li>当前版本的 `高频短时持仓监控` 列表已去掉 `高频短时持仓配置` 入口；本口径定义仅作为历史弹窗说明保留，不再从当前列表直接打开。</li>
         </ol>
         <em>数据说明</em>
         <ol>
@@ -9220,7 +9259,7 @@
         </ol>
         <em>列表显示规则</em>
         <ol>
-          <li>顶部 `异常统计` 只按当前页面口径统计，不和黑名单、白名单混算。</li>
+          <li>顶部 `异常统计` 在当前版本已整体去掉；本页只保留筛选、列表、分页，不再展示任何统计项。</li>
           <li>默认每页 10 条；分页器可切换每页条数时，按页面提供的档位切换。</li>
           <li>全表按 `操作时间倒序` 排列；同一秒内按 `用户ID倒序` 排列。</li>
           <li>空值统一显示为 `—`。</li>
@@ -9589,15 +9628,17 @@
           <li>`登录设备`：当前这次命中对应的登录设备标识。</li>
           <li>`登录IP`：当前这次命中对应的登录 IP。</li>
           <li>`登录时间`：当前这次登录发生的时间。</li>
-          <li>`操作类型`：登录后触发的敏感行为类型；当前页面展示的取值包括 `合约全平`、`提现`、`同设备1天内多账号登录`、`同设备10天内多账号登录`、`1天内频繁更换设备`。</li>
+          <li>`操作类型`：异常登录规则里的单项命中条件；页面按 `合约全平`、`提现金额大于等于`、`提现金额占总资产百分比大于等于`、`本站同设备1天内登录账号数大于等于`、`本站同设备10天内登录账号数大于等于`、`用户1天内更换设备数大于等于` 逐行展示。</li>
           <li>`操作时间`：登录后的实际触发时间，例如发起提现时间、平仓完成时间或设备切换触发时间；不是登录时间。</li>
           <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
         </ol>
         <em>命中规则</em>
         <ol>
-          <li>`合约全平` 的口径是：用户登录时有仓位；后续平仓到用户名下无持仓；并且 `最新平仓时间 - 最新登录时间 <= 配置值`，才算命中。</li>
-          <li>`提现金额阈值` 和 `提现金额占总资产百分比阈值` 都不是看单笔，而是看“最新登录时间到当前触发时间”这段期间内，已经进入审核流程的提现累计金额 + 当前这笔提现金额。</li>
-          <li>`提现金额占总资产百分比阈值` 的分母是用户全部余额，统一折合成 `USDT`，不是只看现货账户余额。</li>
+          <li>`异常登录规则配置` 按单项规则逐行展示；每一行只对应 1 个命中条件，勾选后只按当前行阈值判断，不和其他行共用操作时间阈值。</li>
+          <li>`合约全平` 的口径是：用户登录时有仓位；后续平仓到用户名下无持仓；并且 `最新平仓时间 - 最新登录时间 <= 当前行配置的操作时间阈值`，才算命中。</li>
+          <li>`提现金额大于等于` 与 `提现金额占总资产百分比大于等于` 都不是看单笔，而是看“最新登录时间到当前触发时间”这段期间内，已经进入审核流程的提现累计金额 + 当前这笔提现金额；两项都必须单独配置各自的操作时间阈值。</li>
+          <li>`提现金额占总资产百分比大于等于` 的分母是用户全部余额，统一折合成 `USDT`，不是只看现货账户余额。</li>
+          <li>`本站同设备1天内登录账号数大于等于`、`本站同设备10天内登录账号数大于等于`、`用户1天内更换设备数大于等于` 不额外配置操作时间阈值，因为规则本身已经固定了 1 天或 10 天统计窗口。</li>
           <li>`APP扫码登录WEB` 不参与这个场景的多设备登录统计。</li>
         </ol>
         <em>处理规则</em>
@@ -9697,6 +9738,7 @@
         <ol>
           <li>本页配置只对当前命中的这一个用户生效，不带关联用户处理。</li>
           <li>点 `正常事件` 后，只从本页移除，不影响该用户在其他风控列表里的记录。</li>
+          <li>当前版本的 `高频短时持仓监控` 列表已去掉 `高频短时持仓配置` 入口；列表操作不再从本页直接打开该弹窗。</li>
         </ol>
         <em>列表显示规则</em>
         <ol>
@@ -10340,7 +10382,7 @@
         <em>数据说明</em>
         <ol>
           <li>`用户UID`：命中打单风控的用户唯一标识。</li>
-          <li>顶部 `异常统计`：本页只展示 `限制规则触发次数`，不复用用户监控页的通用 5 项统计。</li>
+          <li>顶部 `异常统计` 在当前版本已整体去掉；本页不再展示任何统计项。</li>
           <li>`仓位ID`：命中的仓位标识；一个用户可对应多个仓位 ID。</li>
           <li>`同仓位加仓减仓次数`：同一仓位内，加仓和减仓的累计操作次数。</li>
           <li>`24小时胜率`：用户 24 小时内的胜率指标，页面按百分比字段展示。</li>
@@ -11142,8 +11184,8 @@
         modals: ['批量注册规则配置弹窗：同一IP/同一设备/同一邮箱后缀为分组标题，只读展示当前配置组|注册充值交易人数、新注册时间差均为纯数字整数，并保留对应的大于等于/小于等于与单位口径|异常处理方式按统一下拉项取值，确认保存前需填写谷歌验证码。']
       },
       'modal-short-hold-config': {
-        hierarchy: ['一级：风控', '二级：高频短时持仓监控', '三级：无', '弹窗：高频短时持仓配置'],
-        modals: ['高频短时持仓配置弹窗：来源页面与当前用户UID为只读输入框，仅针对当前用户生效|风控操作为多选字段，确认前至少勾选 1 项|备注当前为选填字段，确认后仅处理当前用户。']
+        hierarchy: ['一级：风控', '二级：高频短时持仓监控', '三级：无', '弹窗：高频短时持仓配置（当前入口已删除）'],
+        modals: ['高频短时持仓配置弹窗：当前版本已去掉列表入口，本说明仅保留作历史对照|来源页面与当前用户UID为只读输入框，仅针对当前用户生效|风控操作为多选字段，确认前至少勾选 1 项|备注当前为选填字段，确认后仅处理当前用户。']
       },
       'modal-withdraw-address-config': {
         hierarchy: ['一级：风控', '二级：同提币地址监控', '三级：无', '弹窗：同提币地址配置'],
@@ -11282,8 +11324,8 @@
         modals: ['规则配置弹窗：按同IP、同设备、同邮箱后缀三组口径动态加载配置内容|所有人数与时间差字段需明确整数、单位及 大于等于/小于等于 口径|确认保存前需填写谷歌验证码。', '监控状态配置弹窗：来源页面与当前状态为只读输入框，目标状态仅支持 开启/关闭 两个选项|确认时按当前目标状态直接保存。', '批量注册配置弹窗：关联同IP/同设备/同邮箱后缀用户数为只读输入框，展示各维度候选用户规模整数结果，是否关联用户为多选字段|关联用户数为只读展示输入框，按过滤白名单、去重、手动删除后的最终集合实时统计|确认前需至少选择 1 项风控操作，且最终关联用户集合不能为空。']
       },
       'risk-short-hold': {
-        hierarchy: ['一级：风控', '二级：高频短时持仓监控', '三级：无', '弹窗：规则配置、监控状态配置、高频短时持仓配置'],
-        modals: ['规则配置弹窗：按当前页面动态加载持仓时间、频率、比例和异常处理方式配置|数字字段需明确整数/小数位、单位及比较符号|确认保存前需填写谷歌验证码。', '监控状态配置弹窗：来源页面与当前状态为只读输入框，目标状态仅支持 开启/关闭 两个选项|确认时按当前目标状态直接保存。', '高频短时持仓配置弹窗：来源页面与当前用户UID为只读输入框，仅针对当前用户生效|风控操作至少勾选 1 项后方可确认，备注当前为选填字段。']
+        hierarchy: ['一级：风控', '二级：高频短时持仓监控', '三级：无', '弹窗：规则配置、监控状态配置'],
+        modals: ['规则配置弹窗：按当前页面动态加载持仓时间、频率、比例和异常处理方式配置|数字字段需明确整数/小数位、单位及比较符号|确认保存前需填写谷歌验证码。', '监控状态配置弹窗：来源页面与当前状态为只读输入框，目标状态仅支持 开启/关闭 两个选项|确认时按当前目标状态直接保存。', '高频短时持仓配置弹窗：当前版本已去掉列表入口，不属于当前页面可直接打开的弹窗，仅保留历史口径对照。']
       },
       'risk-same-second-open': {
         hierarchy: ['一级：风控', '二级：同秒开仓监控', '三级：无', '弹窗：规则配置、监控状态配置、同一用户配置'],
@@ -11608,17 +11650,7 @@
     }
 
     function createOverviewMetricDefinitionCard(pageId) {
-      const metrics = overviewMetrics[pageId] || [];
-      if (!metrics.length) return null;
-      const card = document.createElement('div');
-      card.className = 'spec-card spec-card--supplement spec-card--overview-metrics';
-      const title = document.createElement('strong');
-      title.textContent = '异常统计指标定义';
-      card.appendChild(title);
-      metrics.forEach((metric, index) => {
-        card.appendChild(createTemplateLine(buildOverviewMetricRule(metric, index)));
-      });
-      return card;
+      return null;
     }
 
     function createSimpleSupplementCard(titleText, items) {
@@ -11665,7 +11697,7 @@
       });
       const filterButtons = Array.from(fieldGrid.querySelectorAll('button')).map(button => button.textContent.trim());
       if (filterButtons.includes('查询')) {
-        items.push(`${items.length + 1}：查询：点击--查询--后，按当前筛选条件刷新当前列表与异常统计`);
+        items.push(`${items.length + 1}：查询：点击--查询--后，按当前筛选条件刷新当前列表`);
       }
       if (filterButtons.includes('重置')) {
         items.push(`${items.length + 1}：重置：点击--重置--后，清空当前筛选条件并恢复默认值`);
@@ -11733,7 +11765,7 @@
     }
 
     function describeActionRule(label) {
-      if (label === '查询') return '点击--查询--后，按当前筛选条件刷新当前列表与异常统计';
+      if (label === '查询') return '点击--查询--后，按当前筛选条件刷新当前列表';
       if (label === '重置') return '点击--重置--后，清空当前筛选条件并恢复默认值';
       if (label === '规则配置') return '点击--规则配置--后，打开当前页面对应规则配置弹窗；确认后只保存当前弹窗里的配置项';
       if (label === '监控状态配置') return '点击--监控状态配置--后，打开监控状态配置弹窗；确认后把当前页面监控状态改成所选状态';
@@ -12486,7 +12518,7 @@
       if (pageId === 'risk-version-declare') {
         (function () {
           try {
-            var VERSIONS = ['2026091423:59', '2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
+            var VERSIONS = ['2026091623:59', '2026091423:59', '2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
             window.__versionOrder = VERSIONS;
             if (typeof window.switchVersion !== 'function') {
               window.switchVersion = function (ver) {
@@ -15043,7 +15075,7 @@
           });
           try {
             (function () {
-              var VERSIONS = ['2026091423:59', '2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
+              var VERSIONS = ['2026091623:59', '2026091423:59', '2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
               window.__versionOrder = VERSIONS;
               window.switchVersion = function (ver) {
                 try {
@@ -15195,7 +15227,7 @@
     (function () {
       function ensureVersionSwitcher() {
       try {
-        var VERSIONS = ['2026091423:59', '2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
+        var VERSIONS = ['2026091623:59', '2026091423:59', '2026091223:36', '2026091122:03', '2026091114:56', '2026090214:30', '2026090116:17', '20260826 14:26'];
         window.__versionOrder = VERSIONS;
         if (typeof window.switchVersion === 'function') return;
         window.switchVersion = function (ver) {
@@ -15257,7 +15289,7 @@
             return ret;
           };
         }} catch(e2){}
-        try { window.switchVersion('2026091423:59'); } catch(e3){}
+        try { window.switchVersion('2026091623:59'); } catch(e3){}
       } catch (err) {
           try {
             var tip = document.createElement('div');
