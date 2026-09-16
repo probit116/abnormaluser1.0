@@ -632,6 +632,50 @@
     .config-row.span-2{
       grid-column:1 / -1;
     }
+    .rule-group-box{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px 16px;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(96,165,250,.28);
+      background:linear-gradient(180deg, rgba(15,23,42,.94) 0%, rgba(11,18,32,.88) 100%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+    }
+    .rule-group-box + .rule-group-box{
+      margin-top:4px;
+    }
+    .rule-group-box .config-row{
+      margin-bottom:0;
+    }
+    .rule-group-box--timed{
+      border-color:rgba(96,165,250,.36);
+      background:linear-gradient(180deg, rgba(18,37,68,.92) 0%, rgba(11,18,32,.9) 100%);
+    }
+    .rule-group-box--device{
+      border-color:rgba(45,212,191,.36);
+      background:linear-gradient(180deg, rgba(9,45,58,.9) 0%, rgba(11,18,32,.9) 100%);
+    }
+    .rule-group-title{
+      grid-column:1 / -1;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:2px;
+      padding-bottom:10px;
+      border-bottom:1px solid rgba(148,163,184,.12);
+    }
+    .rule-group-title strong{
+      font-size:13px;
+      color:#e2e8f0;
+      letter-spacing:.02em;
+    }
+    .rule-group-title span{
+      font-size:12px;
+      color:var(--muted);
+    }
     .config-row label{
       display:block;
       font-size:12px;
@@ -4007,77 +4051,87 @@
                   <div>
                     <span class="panel-tag">规则配置</span>
                     <h2>异常登录识别规则</h2>
-                    <p>按批量注册规则配置的理解方式逐项展示异常登录命中条件。合约全平与提现相关项单独配置操作时间阈值，设备类规则只保留自身数量阈值，方便运营直接按行理解。</p>
+                    <p>按批量注册规则配置的理解方式展示异常登录规则。操作时间间隔先做一级统一配置，合约全平、提现金额大于等于、提现金额占总资产百分比大于等于作为它下面的二级条件，设备类规则继续独立配置数量阈值。</p>
                   </div>
                 </div>
                 <div class="compact-grid">
-                  <div class="config-row span-2">
-                    <label>命中操作类型</label>
-                    <div class="helper-text">按批量注册规则配置的理解方式逐项配置。每一行只描述 1 个命中条件，勾选后只按当前行阈值独立判断，不与其他行共用操作时间阈值。</div>
+                  <div class="rule-group-box rule-group-box--timed">
+                    <div class="rule-group-title">
+                      <strong>受操作时间间隔影响</strong>
+                      <span>上方时间阈值统一作用于本组</span>
+                    </div>
+                    <div class="config-row span-2">
+                      <label>操作时间间隔</label>
+                      <div class="input-suffix">
+                        <span class="range-operator">小于等于</span>
+                        <input type="number" value="30">
+                        <span>分钟</span>
+                      </div>
+                      <div class="helper-text">这是一级统一配置，只作用于 `合约全平`、`提现金额大于等于`、`提现金额占总资产百分比大于等于` 这 3 个二级条件。</div>
+                    </div>
+                    <div class="config-row span-2">
+                      <label>命中操作类型</label>
+                      <div class="helper-text">先配置上方操作时间间隔，再配置下方二级命中条件。`合约全平`、`提现金额大于等于`、`提现金额占总资产百分比大于等于` 共用上方时间阈值。</div>
+                    </div>
+                    <div class="config-row span-2">
+                      <label class="checkbox-item"><input type="checkbox" checked>合约全平</label>
+                      <div class="helper-text">作为操作时间间隔的二级条件。用户登录后平仓至无持仓，且最新平仓时间与最新登录时间的时间差小于等于上方阈值时命中。</div>
+                    </div>
+                    <div class="config-row span-2">
+                      <label class="checkbox-item"><input type="checkbox" checked>提现金额大于等于</label>
+                      <div class="input-suffix">
+                        <span class="range-operator">大于等于</span>
+                        <input type="number" value="50000">
+                        <span>元</span>
+                      </div>
+                      <div class="helper-text">作为操作时间间隔的二级条件。从最新登录时间起算，累计提现金额达到该值，且当前提现操作时间与最新登录时间的时间差小于等于上方阈值时命中。</div>
+                    </div>
+                    <div class="config-row span-2">
+                      <label class="checkbox-item"><input type="checkbox">提现金额占总资产百分比大于等于</label>
+                      <div class="input-suffix">
+                        <span class="range-operator">大于等于</span>
+                        <input type="number" value="30">
+                        <span>%</span>
+                      </div>
+                      <div class="helper-text">作为操作时间间隔的二级条件。从最新登录时间起算，累计提现金额占用户总资产比例达到该值，且当前提现操作时间与最新登录时间的时间差小于等于上方阈值时命中。</div>
+                    </div>
                   </div>
-                  <div class="config-row span-2">
-                    <label class="checkbox-item"><input type="checkbox" checked>合约全平</label>
-                    <div class="input-suffix">
-                      <span class="range-operator">操作时间小于等于</span>
-                      <input type="number" value="30">
-                      <span>分钟</span>
+                  <div class="rule-group-box rule-group-box--device">
+                    <div class="rule-group-title">
+                      <strong>独立统计窗口</strong>
+                      <span>本组不受上方操作时间间隔影响</span>
                     </div>
-                    <div class="helper-text">用户登录后平仓至无持仓，且最新平仓时间与最新登录时间的时间差小于等于该值时命中。</div>
-                  </div>
-                  <div class="config-row span-2">
-                    <label class="checkbox-item"><input type="checkbox" checked>提现金额大于等于</label>
-                    <div class="input-suffix">
-                      <span class="range-operator">大于等于</span>
-                      <input type="number" value="50000">
-                      <span>元</span>
+                    <div class="config-row span-2">
+                      <label>设备行为规则（独立统计窗口）</label>
+                      <div class="helper-text">以下 3 项单独成组展示。规则本身已经自带 1 天或 10 天统计窗口，不受上方 `操作时间间隔` 影响。</div>
                     </div>
-                    <div class="input-suffix" style="margin-top:8px;">
-                      <span class="range-operator">操作时间小于等于</span>
-                      <input type="number" value="30">
-                      <span>分钟</span>
+                    <div class="config-row span-2">
+                      <label class="checkbox-item"><input type="checkbox" checked>本站同设备 1 天内登录账号数大于等于</label>
+                      <div class="input-suffix">
+                        <span class="range-operator">大于等于</span>
+                        <input type="number" value="3">
+                        <span>个账号</span>
+                      </div>
+                      <div class="helper-text">该规则本身已经固定统计 1 天窗口，只需要配置账号数阈值，不参与上方操作时间间隔判断。</div>
                     </div>
-                    <div class="helper-text">从最新登录时间起算，累计提现金额达到该值，且当前提现操作时间与最新登录时间的时间差小于等于该值时命中。</div>
-                  </div>
-                  <div class="config-row span-2">
-                    <label class="checkbox-item"><input type="checkbox">提现金额占总资产百分比大于等于</label>
-                    <div class="input-suffix">
-                      <span class="range-operator">大于等于</span>
-                      <input type="number" value="30">
-                      <span>%</span>
+                    <div class="config-row span-2">
+                      <label class="checkbox-item"><input type="checkbox" checked>本站同设备 10 天内登录账号数大于等于</label>
+                      <div class="input-suffix">
+                        <span class="range-operator">大于等于</span>
+                        <input type="number" value="5">
+                        <span>个账号</span>
+                      </div>
+                      <div class="helper-text">该规则本身已经固定统计 10 天窗口，只需要配置账号数阈值，不参与上方操作时间间隔判断。</div>
                     </div>
-                    <div class="input-suffix" style="margin-top:8px;">
-                      <span class="range-operator">操作时间小于等于</span>
-                      <input type="number" value="30">
-                      <span>分钟</span>
+                    <div class="config-row span-2">
+                      <label class="checkbox-item"><input type="checkbox" checked>用户 1 天内更换设备数大于等于</label>
+                      <div class="input-suffix">
+                        <span class="range-operator">大于等于</span>
+                        <input type="number" value="3">
+                        <span>个设备</span>
+                      </div>
+                      <div class="helper-text">该规则本身已经固定统计 1 天窗口，只需要配置设备数阈值，不参与上方操作时间间隔判断。</div>
                     </div>
-                    <div class="helper-text">从最新登录时间起算，累计提现金额占用户总资产比例达到该值，且当前提现操作时间与最新登录时间的时间差小于等于该值时命中。</div>
-                  </div>
-                  <div class="config-row span-2">
-                    <label class="checkbox-item"><input type="checkbox" checked>本站同设备 1 天内登录账号数大于等于</label>
-                    <div class="input-suffix">
-                      <span class="range-operator">大于等于</span>
-                      <input type="number" value="3">
-                      <span>个账号</span>
-                    </div>
-                    <div class="helper-text">该规则本身已经固定统计 1 天窗口，只需要配置账号数阈值，不再额外配置操作时间阈值。</div>
-                  </div>
-                  <div class="config-row span-2">
-                    <label class="checkbox-item"><input type="checkbox" checked>本站同设备 10 天内登录账号数大于等于</label>
-                    <div class="input-suffix">
-                      <span class="range-operator">大于等于</span>
-                      <input type="number" value="5">
-                      <span>个账号</span>
-                    </div>
-                    <div class="helper-text">该规则本身已经固定统计 10 天窗口，只需要配置账号数阈值，不再额外配置操作时间阈值。</div>
-                  </div>
-                  <div class="config-row span-2">
-                    <label class="checkbox-item"><input type="checkbox" checked>用户 1 天内更换设备数大于等于</label>
-                    <div class="input-suffix">
-                      <span class="range-operator">大于等于</span>
-                      <input type="number" value="3">
-                      <span>个设备</span>
-                    </div>
-                    <div class="helper-text">该规则本身已经固定统计 1 天窗口，只需要配置设备数阈值，不再额外配置操作时间阈值。</div>
                   </div>
                   <div class="config-row">
                     <label>异常处理方式</label>
@@ -7800,7 +7854,7 @@
               <div class="config-row">
                 <label>当前版本改动明细（2026091623:59）</label>
                 <div style="font-size:13px; line-height:1.95; color:var(--text);">
-                  · 异常登录规则配置：按单项规则分行展示，合约全平与提现相关项单独配置操作时间阈值，设备类规则仅保留自身数量阈值
+                  · 异常登录规则配置：操作时间间隔上提为一级统一配置，合约全平、提现金额、提现比例作为其二级条件；设备类规则独立分组展示并以两个明显框区区分
                 </div>
               </div>
             </div>
@@ -7820,14 +7874,18 @@
               <div class="config-row">
                 <label>当前版本改动明细（2026091423:59）</label>
                 <div style="font-size:13px; line-height:1.95; color:var(--text);">
-                  · 异常登录规则配置：按单项规则分行展示，合约全平与提现相关项单独配置操作时间阈值，设备类规则仅保留自身数量阈值
+                  · 高频短时持仓列表：去掉 高频短时持仓配置 按钮<br>
+                  · 全部页面：去掉所有的统计项，顶部异常统计区统一不再展示<br>
+                  · 黑名单用户自动加入规则配置：触发类型展示名调整为 同充值地址监控、同提币地址监控、高盈利高胜率用户，便于和页面名称保持一致<br>
+                  · 添加/编辑 IP 黑名单：风控动作文案由 禁止用户邀请下级注册 改为 禁止注册，减少页面文案歧义<br>
+                  · 黑名单 - 市价历史订单：列表新增 滑点率 字段，示例值与字段说明同步补齐，计算口径为 (成交价格 - 委托价格) / 委托价格 × 100%，按百分比展示并保留两位小数<br>
+                  · 版本声明迭代：新增 2026-09-14 当日汇总版本 2026091423:59，历史版本继续保留 2026091223:36、2026091122:03、2026091114:56、2026090214:30、2026090116:17、20260826 14:26
                 </div>
               </div>
             </div>
           </div>
 
-          <div data-version-block="2026091223:36" style="display:none;">'@ 'rewrite version block'
-$rewrite = Replace-OrThrow $rewrite @'
+          <div data-version-block="2026091223:36" style="display:none;">
             <div>当前展示 <strong id="ver-footer-strong" style="color:var(--text-primary); font-weight:600;">2026091423:59</strong> 版本改动明细</div>
             <div class="pagination">
               <button type="button" class="page-chip" disabled id="ver-chip-prev">上一页</button>
@@ -9628,17 +9686,17 @@ $rewrite = Replace-OrThrow $rewrite @'
           <li>`登录设备`：当前这次命中对应的登录设备标识。</li>
           <li>`登录IP`：当前这次命中对应的登录 IP。</li>
           <li>`登录时间`：当前这次登录发生的时间。</li>
-          <li>`操作类型`：异常登录规则里的单项命中条件；页面按 `合约全平`、`提现金额大于等于`、`提现金额占总资产百分比大于等于`、`本站同设备1天内登录账号数大于等于`、`本站同设备10天内登录账号数大于等于`、`用户1天内更换设备数大于等于` 逐行展示。</li>
+          <li>`操作类型`：页面拆成两个区域展示；前 3 项 `合约全平`、`提现金额大于等于`、`提现金额占总资产百分比大于等于` 挂在一级操作时间间隔下面，后 3 项设备类条件在下方独立分组展示。</li>
           <li>`操作时间`：登录后的实际触发时间，例如发起提现时间、平仓完成时间或设备切换触发时间；不是登录时间。</li>
           <li>`操作`：当前页面对这条监控记录可执行的处理按钮集合。</li>
         </ol>
         <em>命中规则</em>
         <ol>
-          <li>`异常登录规则配置` 按单项规则逐行展示；每一行只对应 1 个命中条件，勾选后只按当前行阈值判断，不和其他行共用操作时间阈值。</li>
-          <li>`合约全平` 的口径是：用户登录时有仓位；后续平仓到用户名下无持仓；并且 `最新平仓时间 - 最新登录时间 <= 当前行配置的操作时间阈值`，才算命中。</li>
-          <li>`提现金额大于等于` 与 `提现金额占总资产百分比大于等于` 都不是看单笔，而是看“最新登录时间到当前触发时间”这段期间内，已经进入审核流程的提现累计金额 + 当前这笔提现金额；两项都必须单独配置各自的操作时间阈值。</li>
+          <li>`异常登录规则配置` 拆成两块：上半部分是一级 `操作时间间隔` 和其下方 3 个二级条件；下半部分是设备类规则独立分组，它们不挂在一级操作时间间隔下面。页面视觉上使用两个独立边框框区区分这两块规则。</li>
+          <li>`合约全平` 的口径是：用户登录时有仓位；后续平仓到用户名下无持仓；并且 `最新平仓时间 - 最新登录时间 <= 一级操作时间间隔阈值`，才算命中。</li>
+          <li>`提现金额大于等于` 与 `提现金额占总资产百分比大于等于` 都不是看单笔，而是看“最新登录时间到当前触发时间”这段期间内，已经进入审核流程的提现累计金额 + 当前这笔提现金额；两项共用一级操作时间间隔阈值。</li>
           <li>`提现金额占总资产百分比大于等于` 的分母是用户全部余额，统一折合成 `USDT`，不是只看现货账户余额。</li>
-          <li>`本站同设备1天内登录账号数大于等于`、`本站同设备10天内登录账号数大于等于`、`用户1天内更换设备数大于等于` 不额外配置操作时间阈值，因为规则本身已经固定了 1 天或 10 天统计窗口。</li>
+          <li>`本站同设备1天内登录账号数大于等于`、`本站同设备10天内登录账号数大于等于`、`用户1天内更换设备数大于等于` 在下方独立分组展示，不挂在一级操作时间间隔下面，因为规则本身已经固定了 1 天或 10 天统计窗口。</li>
           <li>`APP扫码登录WEB` 不参与这个场景的多设备登录统计。</li>
         </ol>
         <em>处理规则</em>
